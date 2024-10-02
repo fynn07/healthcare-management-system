@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <title>Digital IDs</title>
+</head>
+<body class="text-gray-800 font-inter">
+    
+    
+    <div class="fixed left-0 top-0 w-64 h-full bg-white p-4 z-50 sidebar-menu transition-transform">
+        <a href="#" class="flex items-center pb-4 border-b border-b-gray-800">
+
+            <h2 class="text-2xl text-sky-600 ml-5">
+                <i>The</i><span class="danger"><strong>HealthBook</strong></span>
+              </h2>
+              
+        </a>
+        <ul class="mt-4">
+            <li class="mb-1 group active">
+                <a href="#" class="flex items-center py-2 px-4 text-gray-800 hover:bg-cyan-50 hover:text-sky-600 rounded-md group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
+                    <i class="ri-wallet-line mr-3 text-xl"></i> 
+                    <span class="text-base font-semibold font-inter">Digital IDs</span>
+                </a>
+            </li>
+            
+            <li class="mb-1 group">
+                <a href="#" class="flex items-center py-2 px-4 text-slate-700 hover:bg-cyan-50 hover:text-sky-600 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+                    <i class="ri-user-line mr-3 text-xl"></i>
+                    <span class="text-base font-semibold font-inter">My Account</span>
+                    
+                </a>
+                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
+                    <li class="mb-4">
+                        <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Active order</a>
+                    </li> 
+                    <li class="mb-4">
+                        <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Completed order</a>
+                    </li> 
+                    <li class="mb-4">
+                        <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Canceled order</a>
+                    </li> 
+                </ul>
+            </li>
+           
+        </ul>
+    </div>
+    <div class="fixed top-0 left-0 w-full h-full bg-black/50 z-40 md:hidden sidebar-overlay"></div>
+    <!-- end: Sidebar -->
+
+    <!-- start: Main -->
+    <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-gray-50 min-h-screen transition-all main">
+        <div class="py-2 px-6 bg-white flex items-center shadow-md shadow-black/5 sticky top-0 left-0 z-30">
+            <button type="button" class="text-lg text-gray-600 sidebar-toggle">
+                <i class="ri-menu-line"></i>
+            </button>
+            <ul class="flex items-center text-sm ml-4">
+                <li class="mr-2">
+                    <a href="#" class="text-gray-400 hover:text-gray-600 font-medium">Dashboard</a>
+                </li>
+               
+            </ul>
+            <div class="ml-auto flex items-center space-x-4">
+                <span class="text-gray-600 font-medium font-inter">Juan Dela Cruz</span>
+                <div class="relative">
+                    <button class="flex items-center text-gray-600 hover:text-sky-600 focus:outline-none">
+                        <i class="ri-account-circle-line text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>   
+        
+       
+        
+        
+
+        <div class="h-full w-full flex justify-center mt-10">
+            <div class="max-w-8xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 custom-table">
+                <span class="text-2xl font-semibold pl-4 text-sky-600 font-poppins">Digital IDs</span>
+                <div class="overflow-x-auto rounded-lg shadow-md pt-4">
+                    <table id="prescription-table" class="w-full text-sm text-left rtl:text-right  text-gray-500 dark:text-gray-400 font-poppins">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">Name</th>
+                                <th scope="col" class="px-6 py-3">Gender</th>
+                                <th scope="col" class="px-6 py-3">Birthdate</th>
+                                
+                                <th scope="col" class="px-6 py-3"><span class="sr-only">Edit</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="digId-body">
+                            
+                        </tbody>
+                    </table>
+                </div>
+              
+                
+            </div>
+        </div>
+
+
+        
+        
+    </main>
+    
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.bundle.js"></script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="dist/js/script.js"></script>
+    <script defer src="digIdTable.js"></script>
+   <script defer src="idhistory.js"></script>
+</body>
+</html>

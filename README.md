@@ -1,4 +1,3 @@
-# theHealthBook - Healthcare Digital Identification Management System
 
 This project, *theHealthBook*, is a Healthcare Digital Identification Management System designed to streamline and improve the management of patient medical records and healthcare identification using a digital platform. This web app enables patients, healthcare providers, and hospital staff to access and manage medical information with ease, providing convenience and efficiency in handling healthcare documentation.
 
