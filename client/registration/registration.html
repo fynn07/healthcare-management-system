@@ -1,64 +1,64 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styleforregis.css">
     <title>Login</title>
 </head>
 
-<body class="bg-gradient-to-r from-gray-200 to-blue-200 flex items-center justify-center h-screen">
+<body>
 
-    <div class="bg-white rounded-2xl shadow-xl relative overflow-hidden w-[768px] max-w-full min-h-[480px]">
-        <!-- Sign Up Form -->
-        <div class="absolute w-full h-full flex transition-all duration-600 ease-in-out" id="container">
-            <div class="bg-white flex flex-col items-center justify-center p-10 w-1/2" id="signUpForm">
-                <h1 class="text-2xl font-semibold">Create Account</h1>
-                <div class="flex space-x-3 mt-5">
-                    <a href="#" class="border border-gray-300 rounded-full p-3"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="border border-gray-300 rounded-full p-3"><i class="fa-brands fa-facebook-f"></i></a>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                
                 </div>
-                <span class="text-sm mt-5">or use your email for registration</span>
-                <input type="text" placeholder="Name" class="mt-4 p-3 w-full bg-gray-200 rounded-lg">
-                <input type="email" placeholder="Email" class="mt-4 p-3 w-full bg-gray-200 rounded-lg">
-                <input type="password" placeholder="Password" class="mt-4 p-3 w-full bg-gray-200 rounded-lg">
-                <button class="mt-6 bg-blue-600 text-white px-8 py-2 rounded-lg uppercase font-semibold">Sign Up</button>
-            </div>
-
-            <!-- Sign In Form -->
-            <div class="bg-white flex flex-col items-center justify-center p-10 w-1/2" id="signInForm">
-                <h1 class="text-2xl font-semibold">Sign In</h1>
-                <div class="flex space-x-3 mt-5">
-                    <a href="#" class="border border-gray-300 rounded-full p-3"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="border border-gray-300 rounded-full p-3"><i class="fa-brands fa-facebook-f"></i></a>
-                </div>
-                <span class="text-sm mt-5">or use your email password</span>
-                <input type="email" placeholder="Email" class="mt-4 p-3 w-full bg-gray-200 rounded-lg">
-                <input type="password" placeholder="Password" class="mt-4 p-3 w-full bg-gray-200 rounded-lg">
-                <a href="#" class="text-xs mt-3">Forget Your Password?</a>
-                <button class="mt-6 bg-blue-600 text-white px-8 py-2 rounded-lg uppercase font-semibold">Sign In</button>
-            </div>
+                <span>or use your email for registeration</span>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>Sign Up</button>
+            </form>
         </div>
-
-        <!-- Toggle Panels -->
-        <div class="absolute w-1/2 h-full top-0 left-1/2 bg-gradient-to-r from-blue-700 to-blue-500 text-white flex flex-col items-center justify-center p-8 transition-all duration-600 ease-in-out"
-            id="overlay">
-            <div class="text-center" id="leftPanel">
-                <h1 class="text-3xl font-bold">Welcome Back!</h1>
-                <p class="mt-4 text-sm">Enter your personal details to use all of site features</p>
-                <button class="mt-6 border-white border px-8 py-2 rounded-lg uppercase font-semibold" id="signInButton">Sign In</button>
-            </div>
-            <div class="text-center" id="rightPanel">
-                <h1 class="text-3xl font-bold">Welcome to <i>The</i><span class="text-blue-300">Health</span><strong>Book</strong></h1>
-                <p class="mt-4 text-sm">For Providers</p>
-                <button class="mt-6 border-white border px-8 py-2 rounded-lg uppercase font-semibold" id="signUpButton">Sign Up</button>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                
+                </div>
+                <span>or use your email password</span>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <a href="#">Forget Your Password?</a>
+                <button id="signInButton">Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Welcome to </h1>
+                    <h2><i>The</i>Health<span class="danger"><strong>Book</strong></span></h2>
+                    <p>For Providers</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
             </div>
         </div>
     </div>
-
+    
     <script src="scriptforregis.js"></script>
 </body>
-
-</html>
+</html>      -->
