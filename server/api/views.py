@@ -80,6 +80,20 @@ def create_patient(request):
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def fetch_patients(request):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExist:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+    
+    patients = Patient.objects.filter(provider=provider)
+    serializer = PatientSerializer(patients, many=True)
+
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 
 

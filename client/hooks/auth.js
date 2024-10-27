@@ -30,6 +30,11 @@ document.getElementById("login-form").addEventListener("submit", async function(
             }).showToast();
   
             console.log("login successful")
+
+            setTimeout(() => {
+                window.location.href = "/client/pages/digitalid.html"; 
+            }, 3000); 
+
         } else {
             // Handle errors
             Toastify({
