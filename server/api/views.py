@@ -83,6 +83,23 @@ def create_patient(request):
 @api_view(['GET'])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
+def fetch_single_patient(request, id):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+    
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    serializer = PatientSerializer(patient)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def fetch_patients(request):
     try:
         provider = Provider.objects.get(account=request.user.id)

@@ -25,12 +25,20 @@ function formatData(item) {
     
     const gender = item.gender === 'M' ? 'Male' : item.gender === 'F' ? 'Female' : 'N/A';
     
-    const formattedBirthday = item.birthday ? new Date(item.birthday).toLocaleDateString('en-US') : 'N/A';
+    const birthday = new Date(item.birthday).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: '2-digit'
+    });
+
+    const age = new Date().getFullYear() - new Date(item.birthday).getFullYear();
 
     return {
+        id: item.id,
         fullName,
         gender,
-        formattedBirthday,
+        birthday,
+        age
     };
 }
 
@@ -41,15 +49,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     const digIDdata = await fetchPatients();
 
     digIDdata.forEach(item => {
-        const { fullName, gender, birthday } = formatData(item);
+        const { id, fullName, gender, birthday, age } = formatData(item);
 
         const row = `
-          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" data-id="${id}">
             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
               ${fullName}
             </th>
             <td class="px-6 py-4">${gender}</td>
-            <td class="px-6 py-4">${birthday}</td>
+            <td class="px-6 py-4">${birthday}<br>${age} Years Old </td>
             <td class="px-6 py-4 text-right">
               <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
             </td>
