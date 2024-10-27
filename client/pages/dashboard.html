@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../dist/css/style.css">
+
+    <script defer src="../hooks/fetchPatientDetails.js"></script>
+
     <title>Dashboard</title>
 </head>
 <body class="text-gray-800 font-poppins">
@@ -86,29 +89,29 @@
                 <div class="flex items-start space-x-6"> 
                     <img class="h-24 w-24 rounded-full" src="../assets/default.jpg" alt="Profile Picture"> 
                     <div>
-                        <h2 class="text-2xl font-semibold text-black tracking-tight font-poppins">Fynn Borja</h2>
+                        <h2 id="fullName" class="text-2xl font-semibold text-black tracking-tight font-poppins">N/A</h2>
                         <span class="text-base text-gray-500 font-medium tracking-tight font-poppins">Shared Today, Mar 17 at 11:37</span>
                         <p class="pt-5 pb-3 text-base text-gray-500 font-medium tracking-normal font-poppins">Personal Information</p>
                         <div class="pt-2 flex items-center space-x-4"> 
                             <i class="ri-women-line text-base"></i>
-                            <h2 class="text-sm font-medium text-black tracking-tight font-poppins">Female</h2>
+                            <h2 id="gender" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
                             <i class="ri-cake-2-line text-base"></i>
-                            <h2 class="text-sm font-medium text-black tracking-tight font-poppins">Jan 31, 2004 (20)</h2>
+                            <h2 id="birthday" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
                             <i class="ri-mail-line text-base"></i>
-                            <h2 class="text-sm font-medium text-black tracking-tight font-poppins">natehiggers@gmail.com</h2>
+                            <h2 id="email" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
                             <i class="ri-phone-line text-base"></i>
-                            <h2 class="text-sm font-medium text-black tracking-tight font-poppins">09155483788</h2>
+                            <h2 id="contactNumber" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
                             
                         </div>
                         <div class = "pb-3 pt-3 flex items-center space-x-4">
                             <i class="ri-ruler-line text-base"></i>
-                            <h2 class="text-sm font-medium text-black tracking-tight font-poppins">5 feet</h2>
+                            <h2 id="height" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
                             <i class="ri-game-line text-base"></i>
-                            <h2 class="text-sm font-medium text-black tracking-tight font-poppins">100kg</h2>
+                            <h2 id="weight" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
                         </div>
                         <div class="pb-5 flex items-center space-x-4">
                             <i class="ri-home-3-line text-base"></i>
-                            <h2 class="text-sm font-medium text-black tracking-tight font-poppins">23 Avenir Tower, Bilat, Bohol</h2>
+                            <h2 id="address" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
                         </div>
                     </div>
                 </div>
