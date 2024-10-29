@@ -1,8 +1,8 @@
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
 
-from .serializers import UserSerializer, ProviderSerializer, PatientSerializer
-from .models import Provider, Patient, Records
+from .serializers import UserSerializer, ProviderSerializer, PatientSerializer, MedicationHistorySerializer
+from .models import Provider, Patient, MedicationHistory
 
 from rest_framework import status
 from rest_framework.response import Response
@@ -109,6 +109,53 @@ def fetch_patients(request):
     patients = Patient.objects.filter(provider=provider)
     serializer = PatientSerializer(patients, many=True)
 
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+#RECORDS
+
+@api_view(['POST'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def create_medication_history_record(request, id):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExists:
+        return Response({"error" : "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    data = request.data.copy()
+    data['patient'] = patient.id
+
+    serializer = MedicationHistorySerializer(data=data)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
+
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def fetch_medication_history_records(request, id):   
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExist:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+    
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    medication_history = MedicationHistory.objects.filter(patient=patient.id)
+
+    serializer = MedicationHistorySerializer(medication_history, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 

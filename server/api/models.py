@@ -31,5 +31,11 @@ class Patient(models.Model):
     def __str__(self):
         return self.last_name
     
-class Records(models.Model):
+class MedicationHistory(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    date_prescribed = models.DateField(null=False)
+    generic_name = models.CharField(max_length=30)
+    dosage_form = models.CharField(max_length=30)
+    quantity = models.PositiveIntegerField()
+    instructions = models.TextField()
+
