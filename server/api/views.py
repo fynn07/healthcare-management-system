@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 from .serializers import UserSerializer, ProviderSerializer, PatientSerializer, MedicationHistorySerializer
 from .models import Provider, Patient, MedicationHistory
+from .pagination import initialize_pagination
 
 from rest_framework import status
 from rest_framework.response import Response
@@ -155,8 +156,10 @@ def fetch_medication_history_records(request, id):
     
     medication_history = MedicationHistory.objects.filter(patient=patient.id)
 
-    serializer = MedicationHistorySerializer(medication_history, many=True)
-    return Response(serializer.data, status=status.HTTP_200_OK)
+    paginator, paginated_medication_history = initialize_pagination(medication_history, request)
+
+    serializer = MedicationHistorySerializer(paginated_medication_history, many=True)
+    return paginator.get_paginated_response(serializer.data)
 
 
 
