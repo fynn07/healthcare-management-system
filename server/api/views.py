@@ -18,7 +18,7 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def user_token_auth(request):
-    return Response("passed for {}".format(request.user.username))
+    return Response(request.user.id)
 
 @api_view(['POST'])
 def user_signup(request):

@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="../dist/css/style.css">
 
     <script defer src="../hooks/fetchPatientDetails.js"></script>
+    <script defer src="../hooks/medicationHistory/useFetchMedicationHistory.js"></script>
+    <script type="module" defer src="../utils/pagination.js"></script>
 
     <title>Dashboard</title>
 </head>
@@ -137,18 +139,18 @@
                                 <th scope="col" class="px-6 py-3">Date Prescribed</th>
                                 <th scope="col" class="px-6 py-3">Generic Name</th>
                                 <th scope="col" class="px-6 py-3">Dosage Form</th>
-                                <th scope="col" class="px-6 py-3">QTY</th>
+                                <th scope="col" class="px-6 py-3">Quantity</th>
                                 <th scope="col" class="px-6 py-3">Instructions</th>
                                 <th scope="col" class="px-6 py-3"><span class="sr-only">Edit</span></th>
                             </tr>
                         </thead>
-                        <tbody id="prescription-body">
+                        <tbody id="medication-history-body">
                             <!-- Data Rows -->
                         </tbody>
                     </table>
                 </div>
                 <nav aria-label="Page navigation example" class="mt-4 flex justify-end">
-                    <ul class="inline-flex -space-x-px text-sm">
+                    <ul id="medication-history-navigation" class="inline-flex -space-x-px text-sm">
                         <li>
                             <a href="#" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                                 <span class="sr-only">Previous</span>
@@ -179,7 +181,7 @@
                                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                 </svg>
                               </a>                       
-                             </li>
+                        </li>
                     </ul>
                 </nav>
             </div>
