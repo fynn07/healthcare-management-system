@@ -115,6 +115,7 @@ def fetch_patients(request):
 
 #RECORDS
 
+#MEDICATION HISTORY
 @api_view(['POST'])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])

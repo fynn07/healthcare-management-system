@@ -39,3 +39,15 @@ class MedicationHistory(models.Model):
     quantity = models.PositiveIntegerField()
     instructions = models.TextField()
 
+class VaccinationHistory(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    date_added = models.DateField(null=False)
+    date_administered = models.DateField(null=False)
+    vaccine_name = models.CharField(max_length=30)
+    provider = models.CharField(max_length=30)
+    site_given = models.CharField(max_length=30)
+    dose_ml = models.CharField(max_length=20)
+    next_dose_date = models.DateField(null=False)
+
+
+
