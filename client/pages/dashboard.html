@@ -228,9 +228,15 @@
 
         <div class="h-full w-full flex justify-center mt-10">
             <div class="max-w-8xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 custom-table">
-                <span class="text-2xl font-semibold pl-4 text-sky-600 font-poppins">Vaccination History</span>
+               <div class="flex justify-between">
+                <span class="text-2xl font-semibold pl-4 text-sky-600 font-poppins">Medication History</span>
+                  <button id="add-btnvacc" class="px-4 py-2 bg-sky-300 text-blue-700 rounded border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                        + Add
+                    </button>
+               </div>
+                
                 <div class="overflow-x-auto rounded-lg shadow-md pt-4">
-                    <table id="prescription-table" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 font-poppins">
+                    <table id="vaccine-table" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 font-poppins">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">Date Added</th>
@@ -284,11 +290,54 @@
             </div>
             
         </div>
+
+        <section id="add-formvacc" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
+            <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
+                <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Vaccination Record</h2>
+                <form id="vaccination-history-form">
+                    <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+                        <div class="sm:col-span-2">
+                            <label for="vaccDateAdded" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Added</label>
+                            <input type="date" name="vaccDateAdded" id="vacc-history-date-added" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type date added" required="">
+                        </div>
+                        <div class="w-full">
+                            <label for="vaccName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Vaccine and Brand Name</label>
+                            <input type="text" name="vaccName" id="vacc-generic-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Moderna" required="">
+                        </div>
+                        <div class="w-full">
+                            <label for="vaccProvider" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Provider</label>
+                            <input type="text" name="provider" id="vacc-history-provider" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                        </div>
+        
+                        <div>
+                            <label for="vaccSite" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Site Given</label>
+                            <input type="text" name="siteGiven" id="vacc-site-given" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leg" required="">
+                        </div> 
+                        <div class="sm:col-span-2">
+                            <label for="vaccDose" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dose ML</label>
+                            <input type="text" name="doseMl" id="vacc-dose" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="500mg" required="">
+                        </div>
+                    </div>
+                    <div class="flex justify-between mt-4 sm:mt-6">
+                        <button id="close-formvacc" class="px-4 py-2 bg-white text-blue-700 border border-blue-700 rounded">Cancel</button>
+                        <button type="submit" class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">
+                            Add Record
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
         <div class="h-full w-full flex justify-center mt-10">
             <div class="max-w-8xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 custom-table">
-                <span class="text-2xl font-semibold pl-4 text-sky-600 font-poppins">Family History</span>
+                <div class="flex justify-between">
+                    <span class="text-2xl font-semibold pl-4 text-sky-600 font-poppins">Family History</span>
+                    <button id="add-btnfam" class="px-4 py-2 bg-sky-300 text-blue-700 rounded border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                            + Add
+                        </button>
+                   </div>
                 <div class="overflow-x-auto rounded-lg shadow-md pt-4">
-                    <table id="prescription-table" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 font-poppins">
+                    <table id="family-table" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 font-poppins">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">Date Added</th>
@@ -339,12 +388,49 @@
             </div>
             
         </div>
+        <section id="add-formfam" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
+            <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
+                <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Family History Record</h2>
+                <form id="fam-history-form">
+                    <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+                        <div class="sm:col-span-2">
+                            <label for="famDateAdded" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Added</label>
+                            <input type="date" name="vaccDateAdded" id="vacc-history-date-added" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type date added" required="">
+                        </div>
+                        <div class="w-full">
+                            <label for="relationship" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Relationship</label>
+                            <input type="text" name="relation" id="fam-relation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Mother" required="">
+                        </div>
+                        <div class="w-full">
+                            <label for="famIllness" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Condition Illness</label>
+                            <input type="text" name="illness" id="fam-history-illness" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                        </div>
+    
+                     
+                    </div>
+                    <div class="flex justify-between mt-4 sm:mt-6">
+                        <button id="close-formfam" class="px-4 py-2 bg-white text-blue-700 border border-blue-700 rounded">Cancel</button>
+                        <button type="submit" class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">
+                            Add Record
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
         
         <div class="h-full w-full flex justify-center mt-10">
             <div class="max-w-8xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 custom-table">
-                <span class="text-2xl font-semibold pl-4 text-sky-600 font-poppins">Social History</span>
+                <div class="flex justify-between">
+                    <span class="text-2xl font-semibold pl-4 text-sky-600 font-poppins">Social History</span>
+                    <button id="add-btnsocial" class="px-4 py-2 bg-sky-300 text-blue-700 rounded border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                        + Add
+                    </button>
+                    
+                </div>
+              
                 <div class="overflow-x-auto rounded-lg shadow-md pt-4">
-                    <table id="prescription-table" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 font-poppins">
+                    <table id="social-table" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 font-poppins">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">Date Added</th>
@@ -398,6 +484,47 @@
             </div>
             
         </div>
+    
+        <section id="add-formsocial" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
+            <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
+                <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Social History Record</h2>
+                <form id="soc-history-form">
+                    <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+                        <div class="sm:col-span-2">
+                            <label for="socDateAdded" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Added</label>
+                            <input type="date" name="socDateAdded" id="social-history-date-added" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type date added" required="">
+                        </div>
+                        <div class="w-full">
+                            <label for="nicotine" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nictone Consumption</label>
+                            <input type="text" name="nicCons" id="nic-consump" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
+                        </div>
+                        <div class="w-full">
+                            <label for="alcohol" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alcohol Consumption</label>
+                            <input type="text" name="alcoCons" id="alc-consump" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
+                        </div>
+                        <div class="w-full">
+                            <label for="drugs" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Drugs taken</label>
+                            <input type="text" name="drugs" id="social-history-drugs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                        </div>
+                        <div class="w-full">
+                            <label for="diet" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Diet</label>
+                            <input type="text" name="diet" id="social-history-diet" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                        </div>
+                        <div class="w-full">
+                            <label for="physicalAct" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Physical Activity</label>
+                            <textarea id="social-history-activity" name="physicalAct" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
+                        </div>
+                     
+                    </div>
+                    <div class="flex justify-between mt-4 sm:mt-6">
+                        <button id="close-formsocial" class="px-4 py-2 bg-white text-blue-700 border border-blue-700 rounded">Cancel</button>
+                        <button type="submit" class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">
+                            Add Record
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
        
         
     </main>

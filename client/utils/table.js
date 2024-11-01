@@ -10,23 +10,65 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const addBtn = document.getElementById('add-btn');
     const addForm = document.getElementById('add-form');
-    const closeForm = document.getElementById('close-form');
     
+    const addBtnVacc = document.getElementById('add-btnvacc');
+    const addFormVacc = document.getElementById('add-formvacc');
 
+    const addBtnFam = document.getElementById('add-btnfam');
+    const addFormFam = document.getElementById('add-formfam');
 
-
+  
+    const closeForm = document.getElementById('close-form');
+    const closeFormVacc = document.getElementById('close-formvacc');
+    const closeFormFam = document.getElementById('close-formfam');
+    const closeFormSoc = document.getElementById('close-formsocial');
+    
+    
+    const addBtnSocial = document.getElementById('add-btnsocial');
+    const addFormSoc = document.getElementById('add-formsocial');
+    
+  
   
     addBtn.addEventListener('click', () => {
         addForm.classList.remove('hidden');
     });
+    
+    addBtnVacc.addEventListener('click', () => {
+        addFormVacc.classList.remove('hidden');
+    });
+    
+    addBtnFam.addEventListener('click', () => {
+        addFormFam.classList.remove('hidden');
+    });
 
-
+    addBtnSocial.addEventListener('click', () => {
+      addFormSoc.classList.remove('hidden');
+    })
+  
+    
+    // Close form listeners
     closeForm.addEventListener('click', () => {
         addForm.classList.add('hidden');
     });
-      
-      
     
+    closeFormVacc.addEventListener('click', () => {
+        addFormVacc.classList.add('hidden');
+    });
+    
+    closeFormFam.addEventListener('click', () => {
+        addFormFam.classList.add('hidden');
+    });
+
+    closeFormSoc.addEventListener('click', () => {
+      addFormSoc.classList.add('hidden');
+  });
+  
+    
+    
+       
+ 
+    
+  
     prescriptionData.forEach(item => {
       const row = `
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
