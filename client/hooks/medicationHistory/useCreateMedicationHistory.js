@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("medication-history-form");
 
     form.addEventListener("submit", async function(event) {
+        event.preventDefault()
+
         const date_prescribed = document.getElementById("medication-history-date-prescribed").value;
         const generic_name = document.getElementById("medication-history-generic-name").value;
         const dosage = document.getElementById("medication-history-dosage").value;
@@ -11,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function() {
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
 
-        const token = localStorage.getItem('token');
-
         try {
+            const token = localStorage.getItem('token');
+            
             const response = await fetch(`http://127.0.0.1:8000/api/patient/create/${id}/medication_history/`, {
                 method: "POST",
                 headers: {

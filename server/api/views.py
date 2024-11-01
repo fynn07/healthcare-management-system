@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 from .serializers import UserSerializer, ProviderSerializer, PatientSerializer, MedicationHistorySerializer
 from .models import Provider, Patient, MedicationHistory
+from .pagination import initialize_pagination
 
 from rest_framework import status
 from rest_framework.response import Response
@@ -17,7 +18,7 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def user_token_auth(request):
-    return Response("passed for {}".format(request.user.username))
+    return Response(request.user.id)
 
 @api_view(['POST'])
 def user_signup(request):
@@ -114,6 +115,7 @@ def fetch_patients(request):
 
 #RECORDS
 
+#MEDICATION HISTORY
 @api_view(['POST'])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
@@ -155,8 +157,10 @@ def fetch_medication_history_records(request, id):
     
     medication_history = MedicationHistory.objects.filter(patient=patient.id)
 
-    serializer = MedicationHistorySerializer(medication_history, many=True)
-    return Response(serializer.data, status=status.HTTP_200_OK)
+    paginator, paginated_medication_history = initialize_pagination(medication_history, request)
+
+    serializer = MedicationHistorySerializer(paginated_medication_history, many=True)
+    return paginator.get_paginated_response(serializer.data)
 
 
 
