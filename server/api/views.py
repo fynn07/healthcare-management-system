@@ -162,6 +162,7 @@ def fetch_medication_history_records(request, id):
     serializer = MedicationHistorySerializer(paginated_medication_history, many=True)
     return paginator.get_paginated_response(serializer.data)
 
+#VACCINATION HISTORY
 
 
 
