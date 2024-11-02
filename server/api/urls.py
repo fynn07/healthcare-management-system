@@ -12,7 +12,9 @@ urlpatterns = [
     path("patient/fetch/<int:id>/medication_history/", views.fetch_medication_history_records),
     path("patient/fetch/<int:id>/vaccination_history/", views.fetch_vaccination_history_records),
     path("patient/fetch/<int:id>/family_history/", views.fetch_family_history_records),
+    path("patient/fetch/<int:id>/social_history/", views.fetch_social_history_records),
     path("patient/create/<int:id>/medication_history/", views.create_medication_history_record),
     path("patient/create/<int:id>/vaccination_history/", views.create_vaccination_history_record),
     path("patient/create/<int:id>/family_history/", views.create_family_history_record),
+    path("patient/create/<int:id>/social_history/", views.create_social_history_record),
 ]
