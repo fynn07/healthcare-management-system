@@ -18,7 +18,7 @@
     <script defer src="../hooks/medicationHistory/useFetchMedicationHistory.js"></script>
     <script defer src="../hooks/vaccinationHistory/useFetchVaccinationHistory.js"></script>
     <script defer src="../hooks/familyHistory/useFetchFamilyHistory.js"></script>
-    <!-- <script type="module" defer src="../utils/pagination.js"></script> -->
+    <script defer src="../hooks/socialHistory/useFetchSocialHistory.js"></script>
 
     <title>Dashboard</title>
 </head>
@@ -363,43 +363,14 @@
                                 <th scope="col" class="px-6 py-3"><span class="sr-only">Edit</span></th>
                             </tr>
                         </thead>
-                        <tbody id="social-body" class="bg-gray-50 dark:bg-gray-700">
+                        <tbody id="social-history-body" class="bg-gray-50 dark:bg-gray-700">
+                            <!-- Data Rows -->
                         </tbody>
                     </table>
                 </div>
                 <nav aria-label="Page navigation example" class="mt-4 flex justify-end">
-                    <ul class="inline-flex -space-x-px text-sm">
-                        <li>
-                            <a href="#" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                                <span class="sr-only">Previous</span>
-                                <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                                </svg>
-                              </a>                       
-                             </li>
-                        <li>
-                            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-                        </li>
-                        <li>
-                            <a href="#" aria-current="page" class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                                <span class="sr-only">Next</span>
-                                <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                                </svg>
-                              </a>                       
-                             </li>
+                    <ul id="social-history-navigation" class="inline-flex -space-x-px text-sm">
+                        <!-- Navigation -->
                     </ul>
                 </nav>
             </div>
@@ -411,21 +382,17 @@
                 <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Social History Record</h2>
                 <form id="social-history-form">
                     <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
-                        <div class="sm:col-span-2">
-                            <label for="socDateAdded" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Added</label>
-                            <input type="date" name="socDateAdded" id="social-history-date-added" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type date added" required="">
-                        </div>
                         <div class="w-full">
                             <label for="nicotine" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nictone Consumption</label>
-                            <input type="text" name="nicCons" id="nic-consump" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
+                            <input type="text" name="nicotine" id="social-history-nicotine-consumption" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
                         </div>
                         <div class="w-full">
                             <label for="alcohol" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alcohol Consumption</label>
-                            <input type="text" name="alcoCons" id="alc-consump" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
+                            <input type="text" name="alcohol" id="social-history-alcohol-consumption" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
                         </div>
                         <div class="w-full">
                             <label for="drugs" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Drugs taken</label>
-                            <input type="text" name="drugs" id="social-history-drugs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                            <input type="text" name="drugs" id="social-history-drugs-taken" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                         </div>
                         <div class="w-full">
                             <label for="diet" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Diet</label>
@@ -433,7 +400,7 @@
                         </div>
                         <div class="w-full">
                             <label for="physicalAct" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Physical Activity</label>
-                            <textarea id="social-history-activity" name="physicalAct" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
+                            <textarea id="social-history-physical-activity" name="physicalAct" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
                         </div>
                      
                     </div>
@@ -459,6 +426,7 @@
     <script src="../hooks/medicationHistory/useCreateMedicationHistory.js"></script> 
     <script src="../hooks/vaccinationHistory/useCreateVaccinationHistory.js"></script> 
     <script src="../hooks/familyHistory/useCreateFamilyHistory.js"></script> 
+    <script src="../hooks/socialHistory/useCreateSocialHistory.js"></script> 
     <script src="../utils/toastMessageOnRefresh.js"></script> 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script defer src="../medHistory.js"></script>
