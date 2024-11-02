@@ -133,6 +133,7 @@ def create_medication_history_record(request, id):
     
     data = request.data.copy()
     data['patient'] = patient.id
+    data['date_added'] = date.today()
 
     serializer = MedicationHistorySerializer(data=data)
 

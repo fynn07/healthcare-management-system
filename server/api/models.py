@@ -33,6 +33,7 @@ class Patient(models.Model):
     
 class MedicationHistory(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    date_added = models.DateField(null=False)
     date_prescribed = models.DateField(null=False)
     generic_name = models.CharField(max_length=30)
     dosage = models.CharField(max_length=30)
@@ -55,7 +56,7 @@ class FamilyHistory(models.Model):
     date_added = models.DateField(null=False)
     relationship = models.CharField(max_length=30)
     condition_illness = models.CharField(max_length=50)
-    
+
 
 
 
