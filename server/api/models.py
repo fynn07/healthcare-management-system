@@ -50,5 +50,12 @@ class VaccinationHistory(models.Model):
     dose_ml = models.CharField(max_length=20)
     next_dose_date = models.DateField(null=False)
 
+class FamilyHistory(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    date_added = models.DateField(null=False)
+    relationship = models.CharField(max_length=30)
+    condition_illness = models.CharField(max_length=50)
+    
+
 
 
