@@ -25,6 +25,11 @@ async function fetchMedicationHistory(page = 1) {
 }
 
 function formatMedicationData(item) {
+    const date_added = new Date(item.date_added).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: '2-digit'
+    });
     const date_prescribed = new Date(item.date_prescribed).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
@@ -33,7 +38,7 @@ function formatMedicationData(item) {
 
     const generic_name = item.generic_name.charAt(0).toUpperCase() + item.generic_name.slice(1);
 
-    return { ...item, date_prescribed, generic_name };
+    return { ...item, date_added, date_prescribed, generic_name };
 }
 
 // Pagination rendering function
@@ -110,8 +115,9 @@ function updateMedicationHistoryTable(medicationHistory) {
         const row = `
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    ${formatted_item.date_prescribed}
+                    ${formatted_item.date_added}
                 </th>
+                <td class="px-6 py-4">${formatted_item.date_prescribed}</td>
                 <td class="px-6 py-4">${formatted_item.generic_name}</td>
                 <td class="px-6 py-4">${formatted_item.dosage}</td>
                 <td class="px-6 py-4">${formatted_item.quantity}</td>
