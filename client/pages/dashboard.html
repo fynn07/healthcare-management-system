@@ -213,7 +213,7 @@
                             <tr>
                                 <th scope="col" class="px-6 py-3">Date Added</th>
                                 <th scope="col" class="px-6 py-3">Vaccine and Brand Name</th>
-                                <th scope="col" class="px-6 py-3">Provider</th>
+                                <th scope="col" class="px-6 py-3">Provider/Date</th>
                                 <th scope="col" class="px-6 py-3">Site Given</th>
                                 <th scope="col" class="px-6 py-3">Dose Ml</th>
                                 <th scope="col" class="px-6 py-3">Next Dose On</th>
@@ -269,25 +269,33 @@
                 <form id="vaccination-history-form">
                     <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                         <div class="sm:col-span-2">
-                            <label for="vaccDateAdded" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Added</label>
-                            <input type="date" name="vaccDateAdded" id="vacc-history-date-added" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type date added" required="">
+                            <label for="vaccDateAdministered" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Administered</label>
+                            <input type="date" name="vaccDateAdministered" id="vaccine-history-date-administered" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type date added" required="">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label for="vaccNextDoseDate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Next Dose On</label>
+                            <input type="date" name="vaccNextDoseDate" id="vaccine-history-next-dose-date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type date added" required="">
                         </div>
                         <div class="w-full">
-                            <label for="vaccName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Vaccine and Brand Name</label>
-                            <input type="text" name="vaccName" id="vacc-generic-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Moderna" required="">
+                            <label for="vaccName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Vaccine Name</label>
+                            <input type="text" name="vaccName" id="vaccine-history-vaccine-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Influenza Vaccine" required="">
+                        </div>
+                        <div class="w-full">
+                            <label for="brandName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand Name</label>
+                            <input type="text" name="brandName" id="vaccine-history-brand-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Fluzone Quadrivalent" required="">
                         </div>
                         <div class="w-full">
                             <label for="vaccProvider" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Provider</label>
-                            <input type="text" name="provider" id="vacc-history-provider" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                            <input type="text" name="provider" id="vaccine-history-provider" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                         </div>
         
                         <div>
                             <label for="vaccSite" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Site Given</label>
-                            <input type="text" name="siteGiven" id="vacc-site-given" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leg" required="">
+                            <input type="text" name="siteGiven" id="vaccine-history-site-given" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leg" required="">
                         </div> 
                         <div class="sm:col-span-2">
                             <label for="vaccDose" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dose ML</label>
-                            <input type="text" name="doseMl" id="vacc-dose" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="500mg" required="">
+                            <input type="text" name="doseMl" id="vaccine-history-dose-ml" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="500mg" required="">
                         </div>
                     </div>
                     <div class="flex justify-between mt-4 sm:mt-6">
@@ -363,11 +371,11 @@
         <section id="add-formfam" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
             <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
                 <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Family History Record</h2>
-                <form id="fam-history-form">
+                <form id="family-history-form">
                     <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                         <div class="sm:col-span-2">
                             <label for="famDateAdded" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Added</label>
-                            <input type="date" name="vaccDateAdded" id="vacc-history-date-added" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type date added" required="">
+                            <input type="date" name="famDateAdded" id="vacc-history-date-added" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type date added" required="">
                         </div>
                         <div class="w-full">
                             <label for="relationship" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Relationship</label>
@@ -460,7 +468,7 @@
         <section id="add-formsocial" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
             <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
                 <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Social History Record</h2>
-                <form id="soc-history-form">
+                <form id="social-history-form">
                     <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                         <div class="sm:col-span-2">
                             <label for="socDateAdded" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Added</label>
@@ -508,6 +516,7 @@
     <script src="../../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
     <script src="../hooks/medicationHistory/useCreateMedicationHistory.js"></script> 
+    <script src="../hooks/vaccinationHistory/useCreateVaccinationHistory.js"></script> 
     <script src="../utils/toastMessageOnRefresh.js"></script> 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script defer src="../medHistory.js"></script>
