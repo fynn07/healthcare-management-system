@@ -1,5 +1,5 @@
 .env
 env
 client/node_modules
-server/db.sqlite3
+# server/db.sqlite3
 test.rest

@@ -57,6 +57,15 @@ class FamilyHistory(models.Model):
     relationship = models.CharField(max_length=30)
     condition_illness = models.CharField(max_length=50)
 
+class SocialHistory(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    date_added = models.DateField(null=False)
+    nicotine_consumption = models.CharField(max_length=50)
+    alcohol_consumption = models.CharField(max_length=50)
+    drugs_taken = models.CharField(max_length=30)
+    diet = models.CharField(max_length=100)
+    physical_activity = models.CharField(max_length=100)
+
 
 
 
