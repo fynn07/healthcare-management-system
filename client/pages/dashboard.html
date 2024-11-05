@@ -19,6 +19,7 @@
     <script defer src="../hooks/vaccinationHistory/useFetchVaccinationHistory.js"></script>
     <script defer src="../hooks/familyHistory/useFetchFamilyHistory.js"></script>
     <script defer src="../hooks/socialHistory/useFetchSocialHistory.js"></script>
+    <script defer src="../hooks/fetchProviderName.js"></script>
 
     <title>Dashboard</title>
 </head>
@@ -79,7 +80,8 @@
                 <li class="text-gray-600 mr-2 font-medium">Medical History</li>
             </ul>
             <div class="ml-auto flex items-center space-x-4">
-                <span class="text-gray-600 font-medium font-inter">Juan Dela Cruz</span>
+                <div id="provider_name_field">
+                </div>
                 <div class="relative">
                     <button class="flex items-center text-gray-600 hover:text-sky-600 focus:outline-none">
                         <i class="ri-account-circle-line text-3xl"></i>
