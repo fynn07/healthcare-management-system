@@ -62,6 +62,23 @@ def setup_provider(request):
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def fetch_provider(request):
+    user = request.user
+
+    try:
+        provider = Provider.objects.get(account=user)
+    except:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+
+    provider = Provider.objects.get(account=user)
+    serializer = ProviderSerializer(provider)
+
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+
 @api_view(['POST'])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])

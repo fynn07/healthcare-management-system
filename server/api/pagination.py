@@ -2,7 +2,7 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 
 class HistoryPageNumberPagination(PageNumberPagination):
-    page_size = 8
+    page_size = 5
 
     def paginate_queryset(self, queryset, request, view=None):
         return super().paginate_queryset(queryset, request, view)
