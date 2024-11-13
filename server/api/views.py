@@ -1,8 +1,8 @@
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
 
-from .serializers import UserSerializer, ProviderSerializer, PatientSerializer, MedicationHistorySerializer, VaccinationHistorySerializer, FamilyHistorySerializer, SocialHistorySerializer
-from .models import Provider, Patient, MedicationHistory, VaccinationHistory, FamilyHistory, SocialHistory
+from .serializers import UserSerializer, ProviderSerializer, PatientSerializer, MedicationHistorySerializer, VaccinationHistorySerializer, FamilyHistorySerializer, SocialHistorySerializer, SurgicalHistorySerializer
+from .models import Provider, Patient, MedicationHistory, VaccinationHistory, FamilyHistory, SocialHistory, SurgicalHistory
 from .pagination import initialize_pagination
 from datetime import date
 
@@ -326,6 +326,56 @@ def fetch_social_history_records(request, id):
     paginator, paginated_social_history = initialize_pagination(social_history, request)
 
     serializer = SocialHistorySerializer(paginated_social_history, many=True)
+    return paginator.get_paginated_response(serializer.data)
+
+#SURGICAL HISTORY
+
+@api_view(['POST'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def create_surgical_history_record(request, id):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExists:
+        return Response({"error" : "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    data = request.data.copy()
+    data['patient'] = patient.id
+    data['date_added'] = date.today()
+
+    serializer = SurgicalHistorySerializer(data=data)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
+
+
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def fetch_surgical_history_records(request, id):   
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExist:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+    
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    surgical_history = SurgicalHistory.objects.filter(patient=patient.id)
+
+    paginator, paginated_surgical_history = initialize_pagination(surgical_history, request)
+
+    serializer = SurgicalHistorySerializer(paginated_surgical_history, many=True)
     return paginator.get_paginated_response(serializer.data)
 
 
