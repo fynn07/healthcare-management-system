@@ -66,6 +66,14 @@ class SocialHistory(models.Model):
     diet = models.CharField(max_length=100)
     physical_activity = models.CharField(max_length=100)
 
+class SurgicalHistory(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    date_added = models.DateField(null=False)
+    operation_procedure = models.CharField(max_length=50)
+    indication = models.CharField(max_length=50)
+    hospital = models.CharField(max_length=50)
+    operation_date = models.DateField(null=False)
+
 
 
 
