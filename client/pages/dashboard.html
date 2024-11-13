@@ -20,6 +20,7 @@
     <script defer src="../hooks/familyHistory/useFetchFamilyHistory.js"></script>
     <script defer src="../hooks/socialHistory/useFetchSocialHistory.js"></script>
     <script defer src="../hooks/surgicalHistory/useFetchSurgicalHistory.js"></script>
+    <script defer src="../hooks/vitalHistory/useFetchVitalHistory.js"></script>
     <script defer src="../hooks/fetchProviderName.js"></script>
 
     <title>Dashboard</title>
@@ -533,19 +534,19 @@
                     <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                         <div class="w-full">
                             <label for="temperature" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Temperature</label>
-                            <input type="text" name="nicotine" id="vital-history-temp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="39C" required="">
+                            <input type="text" name="nicotine" id="vital-history-temperature" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="39C" required="">
                         </div>
                         <div class="w-full">
                             <label for="bp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Blood Pressure</label>
-                            <input type="text" name="bp" id="vital-history-bp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
+                            <input type="text" name="bp" id="vital-history-blood-pressure" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
                         </div>
                         <div class="w-full">
                             <label for="pulse" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pulse Rate</label>
-                            <input type="text" name="pulse" id="vital-history-pulse" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                            <input type="text" name="pulse" id="vital-history-pulse-rate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                         </div>
                         <div class="w-full">
-                            <label for="bg" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Blood Glocuse</label>
-                            <input type="text" name="bg" id="vital-history-bg" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                            <label for="bg" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Blood Glucose</label>
+                            <input type="text" name="bg" id="vital-history-blood-glucose" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                         </div>
                        
                         
@@ -650,6 +651,7 @@
     <script src="../hooks/familyHistory/useCreateFamilyHistory.js"></script> 
     <script src="../hooks/socialHistory/useCreateSocialHistory.js"></script> 
     <script src="../hooks/surgicalHistory/useCreateSurgicalHistory.js"></script> 
+    <script src="../hooks/vitalHistory/useCreateVitalHistory.js"></script> 
     <script src="../utils/toastMessageOnRefresh.js"></script> 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script defer src="../medHistory.js"></script>
