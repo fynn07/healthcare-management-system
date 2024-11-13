@@ -1,4 +1,4 @@
-from .models import Provider, Patient, MedicationHistory, VaccinationHistory, FamilyHistory, SocialHistory, SurgicalHistory
+from .models import Provider, Patient, MedicationHistory, VaccinationHistory, FamilyHistory, SocialHistory, SurgicalHistory, VitalHistory
 
 from django.contrib.auth.models import User
 from rest_framework import serializers
@@ -41,4 +41,9 @@ class SocialHistorySerializer(serializers.ModelSerializer):
 class SurgicalHistorySerializer(serializers.ModelSerializer):
     class Meta(object):
         model = SurgicalHistory
+        fields = '__all__'
+
+class VitalHistorySerializer(serializers.ModelSerializer):
+    class Meta(object):
+        model = VitalHistory
         fields = '__all__'

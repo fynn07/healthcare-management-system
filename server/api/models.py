@@ -74,6 +74,14 @@ class SurgicalHistory(models.Model):
     hospital = models.CharField(max_length=50)
     operation_date = models.DateField(null=False)
 
+class VitalHistory(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    date_added = models.DateField(null=False)
+    temperature = models.CharField(max_length=20)
+    blood_pressure = models.CharField(max_length=20)
+    pulse_rate = models.CharField(max_length=20)
+    blood_glucose = models.CharField(max_length=20)
+
 
 
 
