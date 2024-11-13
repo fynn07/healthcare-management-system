@@ -82,6 +82,13 @@ class VitalHistory(models.Model):
     pulse_rate = models.CharField(max_length=20)
     blood_glucose = models.CharField(max_length=20)
 
+class AllergyHistory(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    date_added = models.DateField(null=False)
+    substance = models.CharField(max_length=30)
+    description = models.TextField()
+    severity = models.CharField(max_length=30)
+    criticality = models.CharField(max_length=30)
 
 
 
