@@ -328,3 +328,4 @@ def fetch_social_history_records(request, id):
     serializer = SocialHistorySerializer(paginated_social_history, many=True)
     return paginator.get_paginated_response(serializer.data)
 
+
