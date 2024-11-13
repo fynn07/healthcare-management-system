@@ -32,7 +32,7 @@ document.getElementById("login-form").addEventListener("submit", async function(
             console.log("login successful")
 
             setTimeout(() => {
-                window.location.href = "/client/pages/digitalid.html"; 
+                window.location.href = "/healthcare-management-system/client/pages/digitalid.html";
             }, 3000); 
 
         } else {
