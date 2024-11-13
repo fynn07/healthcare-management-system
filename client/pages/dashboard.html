@@ -21,6 +21,7 @@
     <script defer src="../hooks/socialHistory/useFetchSocialHistory.js"></script>
     <script defer src="../hooks/surgicalHistory/useFetchSurgicalHistory.js"></script>
     <script defer src="../hooks/vitalHistory/useFetchVitalHistory.js"></script>
+    <script defer src="../hooks/allergyHistory/useFetchAllergyHistory.js"></script>
     <script defer src="../hooks/fetchProviderName.js"></script>
 
     <title>Dashboard</title>
@@ -584,13 +585,13 @@
                                 <th scope="col" class="px-6 py-3"><span class="sr-only">Edit</span></th>
                             </tr>
                         </thead>
-                        <tbody id="medication-history-body">
+                        <tbody id="allergy-history-body">
                             <!-- Data Rows -->
                         </tbody>
                     </table>
                 </div>
                 <nav aria-label="Page navigation example" class="mt-4 flex justify-end">
-                    <ul id="medication-history-navigation" class="inline-flex -space-x-px text-sm">
+                    <ul id="allergy-history-navigation" class="inline-flex -space-x-px text-sm">
                             <!-- Navigation -->
                     </ul>
                 </nav>
@@ -605,20 +606,20 @@
                     <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                         <div class="w-full">
                             <label for="temperature" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Substance</label>
-                            <input type="text" name="nicotine" id="vital-history-temp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="39C" required="">
+                            <input type="text" name="nicotine" id="allergy-history-substance" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="39C" required="">
                         </div>
                         
                         <div class="w-full">
                             <label for="severity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Severity</label>
-                            <input type="text" name="severe" id="allergy-history-severe" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                            <input type="text" name="severe" id="allergy-history-severity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                         </div>
                         <div class="w-full">
                             <label for="crit" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Criticality</label>
-                            <input type="text" name="cit" id="allergy-history-crit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                            <input type="text" name="cit" id="allergy-history-criticality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                         </div>
                         <div class="sm:col-span-2">
-                            <label for="allergyDesc" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Instructions</label>
-                            <textarea id="allergy-history-desc" name="allergyDesc" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
+                            <label for="allergyDesc" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                            <textarea id="allergy-history-description" name="allergyDesc" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
                         </div>
                        
                         
@@ -652,6 +653,7 @@
     <script src="../hooks/socialHistory/useCreateSocialHistory.js"></script> 
     <script src="../hooks/surgicalHistory/useCreateSurgicalHistory.js"></script> 
     <script src="../hooks/vitalHistory/useCreateVitalHistory.js"></script> 
+    <script src="../hooks/allergyHistory/useCreateAllergyHistory.js"></script> 
     <script src="../utils/toastMessageOnRefresh.js"></script> 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script defer src="../medHistory.js"></script>
