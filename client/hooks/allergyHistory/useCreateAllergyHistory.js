@@ -1,5 +1,18 @@
+// import { hey } from './useUpdateAllergyHistory.js';
+
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("allergy-history-form");
+
+    // const urlParams = new URLSearchParams(window.location.search);
+    // const editId = urlParams.get('edit_id');
+
+    // if (editId) {
+    //     console.log('lol');
+    //     // Add the event listener to handle form submission when editId is present
+    //     form.addEventListener("submit", function(event) {
+    //         hey();
+    //     });
+    // }
 
     form.addEventListener("submit", async function(event) {
         event.preventDefault()

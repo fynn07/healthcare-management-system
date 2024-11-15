@@ -1,3 +1,5 @@
+ import { useUpdateAllergyHistory } from './useUpdateAllergyHistory.js';
+
 async function fetchAllergyHistory(page = 1) {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
@@ -138,6 +140,8 @@ function updateUrlParameters(itemId) {
     params.set('edit_id', itemId);
 
     window.history.replaceState({}, '', `${url.pathname}?${params.toString()}`);
+
+    useUpdateAllergyHistory(itemId)
 }
 
 // Initial fetch on page load
