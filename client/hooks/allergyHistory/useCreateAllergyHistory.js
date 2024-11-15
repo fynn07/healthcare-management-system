@@ -1,5 +1,3 @@
-// import { hey } from './useUpdateAllergyHistory.js';
-
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("allergy-history-form");
 

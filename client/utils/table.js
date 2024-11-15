@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
     closeFormFam.addEventListener('click', () => {
         addFormFam.classList.add('hidden');
+        removeParam();
     });
 
     closeFormSoc.addEventListener('click', () => {

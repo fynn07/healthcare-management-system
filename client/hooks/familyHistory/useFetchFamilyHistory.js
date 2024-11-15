@@ -1,3 +1,5 @@
+import { useUpdateFamilyHistory } from './useUpdateFamilyHistory.js';
+
 async function fetchFamilyHistory(page = 1) {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
@@ -114,12 +116,31 @@ function updateFamilyHistoryTable(familyHistory) {
                 <td class="px-6 py-4">${formatted_item.relationship}</td>
                 <td class="px-6 py-4">${formatted_item.condition_illness}</td>
                 <td class="px-6 py-4 text-right">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                    <p href="#" class="edit-link cursor-pointer font-medium text-blue-600 dark:text-blue-500 hover:underline" data-id="${item.id}">Edit</p>
                 </td>
             </tr>
         `;
         family_history_body.insertAdjacentHTML('beforeend', row);
     });
+}
+
+// Attach event delegation to the parent element
+document.getElementById('family-history-body').addEventListener('click', (event) => {
+    if (event.target.classList.contains('edit-link')) {
+        const itemId = event.target.getAttribute('data-id');
+        updateUrlParameters(itemId);
+    }
+});
+
+function updateUrlParameters(itemId) {
+    const url = new URL(window.location.href);
+    const params = url.searchParams;
+
+    params.set('edit_id', itemId);
+
+    window.history.replaceState({}, '', `${url.pathname}?${params.toString()}`);
+
+    useUpdateFamilyHistory(itemId)
 }
 
 // Initial fetch on page load
