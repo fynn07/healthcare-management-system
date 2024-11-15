@@ -1,4 +1,5 @@
-// table.js
+import {removeParam} from './removeParam.js';
+
 document.addEventListener('DOMContentLoaded', function () {
     const addBtn = document.getElementById('add-btn');
     const addForm = document.getElementById('add-form');
@@ -89,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
       
     closeFormAllergy.addEventListener('click', () => {
         addFormAllergy.classList.add('hidden');
+        removeParam();
     });
 });
   
