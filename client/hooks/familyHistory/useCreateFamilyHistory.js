@@ -1,20 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("family-history-form");
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const editId = urlParams.get('edit_id');
-
-    if (editId) {
-        return;
-    }
-
     form.addEventListener("submit", async function(event) {
         event.preventDefault()
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const editId = urlParams.get('edit_id');
+
+        if (editId) {
+            return;
+        }
 
         const relationship = document.getElementById("family-history-relationship").value;
         const condition_illness = document.getElementById("family-history-condition-illness").value;
 
-        const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
 
         try {

@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("medication-history-form");
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const editId = urlParams.get('edit_id');
-
-    if (editId) {
-        return;
-    }
-
     form.addEventListener("submit", async function(event) {
         event.preventDefault()
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const editId = urlParams.get('edit_id');
+
+        if (editId) {
+            return;
+        }
 
         const date_prescribed = document.getElementById("medication-history-date-prescribed").value;
         const generic_name = document.getElementById("medication-history-generic-name").value;
@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const quantity = document.getElementById("medication-history-quantity").value;
         const instructions = document.getElementById("medication-history-instructions").value;
 
-        const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
 
         try {

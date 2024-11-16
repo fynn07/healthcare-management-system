@@ -1,22 +1,21 @@
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("allergy-history-form");
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const editId = urlParams.get('edit_id');
-
-    if (editId) {
-        return;
-    }
-
     form.addEventListener("submit", async function(event) {
         event.preventDefault()
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const editId = urlParams.get('edit_id');
+
+        if (editId) {
+            return;
+        }
 
         const substance = document.getElementById("allergy-history-substance").value;
         const description = document.getElementById("allergy-history-description").value;
         const severity = document.getElementById("allergy-history-severity").value;
         const criticality = document.getElementById("allergy-history-criticality").value;
 
-        const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
 
         try {

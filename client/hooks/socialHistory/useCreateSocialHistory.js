@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("social-history-form")
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const editId = urlParams.get('edit_id');
-
-    if (editId) {
-        return;
-    }
-
     form.addEventListener("submit", async function(event) {
         event.preventDefault()
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const editId = urlParams.get('edit_id');
+
+        if (editId) {
+            return;
+        }
 
         const nicotine_consumption = document.getElementById("social-history-nicotine-consumption").value;
         const alcohol_consumption = document.getElementById("social-history-alcohol-consumption").value;
@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const diet = document.getElementById("social-history-diet").value;
         const physical_activity = document.getElementById("social-history-physical-activity").value;
 
-        const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
 
         try {
