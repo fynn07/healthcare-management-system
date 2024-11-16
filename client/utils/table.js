@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Close form listeners
     closeForm.addEventListener('click', () => {
         addForm.classList.add('hidden');
+        removeParam();
     });
   
     closeFormVacc.addEventListener('click', () => {

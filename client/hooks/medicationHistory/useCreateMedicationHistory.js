@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("medication-history-form");
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const editId = urlParams.get('edit_id');
+
+    if (editId) {
+        return;
+    }
+
     form.addEventListener("submit", async function(event) {
         event.preventDefault()
 
