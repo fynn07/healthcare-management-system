@@ -19,6 +19,7 @@ urlpatterns = [
     path("patient/fetch/<int:id>/allergy_history/", views.fetch_allergy_history_records),
     path("patient/fetch/<int:id>/medication_history/<int:record_id>/", views.fetch_single_medication_history_record),
     path("patient/fetch/<int:id>/family_history/<int:record_id>/", views.fetch_single_family_history_record),
+    path("patient/fetch/<int:id>/social_history/<int:record_id>/", views.fetch_single_social_history_record),
     path("patient/fetch/<int:id>/allergy_history/<int:record_id>/", views.fetch_single_allergy_history_record),
     path("patient/create/<int:id>/medication_history/", views.create_medication_history_record),
     path("patient/create/<int:id>/vaccination_history/", views.create_vaccination_history_record),
@@ -29,5 +30,6 @@ urlpatterns = [
     path("patient/create/<int:id>/allergy_history/", views.create_allergy_history_record),
     path("patient/update/<int:id>/medication_history/<int:record_id>/", views.update_medication_history_record),
     path("patient/update/<int:id>/family_history/<int:record_id>/", views.update_family_history_record),
+    path("patient/update/<int:id>/social_history/<int:record_id>/", views.update_social_history_record),
     path("patient/update/<int:id>/allergy_history/<int:record_id>/", views.update_allergy_history_record),
 ]

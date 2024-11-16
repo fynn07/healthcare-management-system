@@ -438,6 +438,61 @@ def fetch_social_history_records(request, id):
     serializer = SocialHistorySerializer(paginated_social_history, many=True)
     return paginator.get_paginated_response(serializer.data)
 
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def fetch_single_social_history_record(request, id, record_id):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExist:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    try:
+        social_history = SocialHistory.objects.get(id=record_id, patient=patient)
+    except SocialHistory.DoesNotExist:
+        return Response({"error": "Social history record not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    serializer = SocialHistorySerializer(social_history)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['PUT'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def update_social_history_record(request, id, record_id):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExist:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    try:
+        social_history = SocialHistory.objects.get(id=record_id, patient=patient)
+    except SocialHistory.DoesNotExist:
+        return Response({"error": "Social history record not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    # Update the allergy history record with the new data
+    data = request.data.copy()
+    data['patient'] = patient.id  # Ensure the patient ID stays the same
+    data['date_added'] = social_history.date_added  # Keep the original date_added
+
+    serializer = SocialHistorySerializer(social_history, data=data)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 #SURGICAL HISTORY
 
 @api_view(['POST'])
