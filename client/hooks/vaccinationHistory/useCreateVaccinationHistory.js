@@ -4,6 +4,13 @@ document.addEventListener("DOMContentLoaded", function() {
     form.addEventListener("submit", async function(event) {
         event.preventDefault()
 
+        const urlParams = new URLSearchParams(window.location.search);
+        const editId = urlParams.get('edit_id');
+
+        if (editId) {
+            return;
+        }
+
         const date_administered = document.getElementById("vaccine-history-date-administered").value;
         const next_dose_date = document.getElementById("vaccine-history-next-dose-date").value;
         const vaccine_name = document.getElementById("vaccine-history-vaccine-name").value;
@@ -12,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const site_given = document.getElementById("vaccine-history-site-given").value;
         const dose_ml = document.getElementById("vaccine-history-dose-ml").value;
 
-        const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
 
         try {
