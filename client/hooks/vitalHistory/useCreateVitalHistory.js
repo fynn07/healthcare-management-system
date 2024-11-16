@@ -4,12 +4,18 @@ document.addEventListener("DOMContentLoaded", function() {
     form.addEventListener("submit", async function(event) {
         event.preventDefault()
 
+        const urlParams = new URLSearchParams(window.location.search);
+        const editId = urlParams.get('edit_id');
+
+        if (editId) {
+            return;
+        }
+
         const temperature = document.getElementById("vital-history-temperature").value;
         const blood_pressure = document.getElementById("vital-history-blood-pressure").value;
         const pulse_rate = document.getElementById("vital-history-pulse-rate").value;
         const blood_glucose = document.getElementById("vital-history-blood-glucose").value;
 
-        const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
 
         try {
