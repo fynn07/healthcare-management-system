@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     closeFormSurg.addEventListener('click', () => {
         addFormSurg.classList.add('hidden');
+        removeParam();
     });
 
     closeFormVital.addEventListener('click', () => {

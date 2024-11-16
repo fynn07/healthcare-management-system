@@ -4,12 +4,18 @@ document.addEventListener("DOMContentLoaded", function() {
     form.addEventListener("submit", async function(event) {
         event.preventDefault()
 
+        const urlParams = new URLSearchParams(window.location.search);
+        const editId = urlParams.get('edit_id');
+
+        if (editId) {
+            return;
+        }
+
         const operation_procedure = document.getElementById("surgical-history-operation-procedure").value;
         const indication = document.getElementById("surgical-history-indication").value;
         const hospital = document.getElementById("surgical-history-hospital").value;
         const operation_date = document.getElementById("surgical-history-operation-date").value;
 
-        const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
 
         try {
