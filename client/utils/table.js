@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     closeFormSoc.addEventListener('click', () => {
         addFormSoc.classList.add('hidden');
+        removeParam();
     });
 
     closeFormSurg.addEventListener('click', () => {
