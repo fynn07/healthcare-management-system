@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
 class ProviderSerializer(serializers.ModelSerializer):
     class Meta(object):
         model = Provider
-        fields = ['id','account', 'name']  
+        fields = ["account", "name", "provider_type", "provider_location"]  
 
 class PatientSerializer(serializers.ModelSerializer):
     class Meta(object):

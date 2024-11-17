@@ -1,3 +1,5 @@
+import { checkProvider } from "../utils/checkProviderPresent.js";
+
 document.getElementById("login-form").addEventListener("submit", async function(event) {
     event.preventDefault();
     
@@ -28,12 +30,19 @@ document.getElementById("login-form").addEventListener("submit", async function(
                 backgroundColor: "#4CAF50", 
                 stopOnFocus: true 
             }).showToast();
-  
-            console.log("login successful")
+            
+            const provider_is_present = await checkProvider();
 
-            setTimeout(() => {
-                window.location.href = "/client/pages/digitalid.html";
-            }, 3000); 
+            if(provider_is_present){
+                setTimeout(() => {
+                    window.location.href = "/client/pages/digitalid.html";
+                }, 3000); 
+            }
+            else{
+                setTimeout(() => {
+                    window.location.href = "/client/pages/test.html";
+                }, 3000); 
+            }
 
         } else {
             // Handle errors

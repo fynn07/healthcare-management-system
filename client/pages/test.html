@@ -10,55 +10,50 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="module" src="../hooks/createProvider.js"></script> 
+    <script type="module" src="../utils/redirectFromProvider.js"></script> 
     <link rel="stylesheet" href="../dist/css/style.css">
     <title>Digital IDs</title>
 </head>
 <body class="text-gray-800 font-inter">
     
-    
     <div class="fixed left-0 top-0 w-64 h-full bg-white p-4 z-50 sidebar-menu transition-transform">
         <a href="#" class="flex items-center pb-4 border-b border-b-gray-800">
-
             <h2 class="text-2xl text-sky-600 ml-5">
                 <i>The</i><span class="danger"><strong>HealthBook</strong></span>
-              </h2>
-              
+            </h2>
         </a>
         <ul class="mt-4">
             <li class="mb-1 group active">
-                <a href="#" class="flex items-center py-2 px-4 text-gray-800 hover:bg-cyan-50 hover:text-sky-600 rounded-md group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
+                <a href="#" class="flex items-center py-2 px-4 text-gray-800 hover:bg-cyan-50 hover:text-sky-600 rounded-md">
                     <i class="ri-wallet-line mr-3 text-xl"></i> 
                     <span class="text-base font-semibold font-inter">Digital IDs</span>
                 </a>
             </li>
-            
             <li class="mb-1 group">
-                <a href="#" class="flex items-center py-2 px-4 text-slate-700 hover:bg-cyan-50 hover:text-sky-600 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+                <a href="#" class="flex items-center py-2 px-4 text-slate-700 hover:bg-cyan-50 hover:text-sky-600 rounded-md">
                     <i class="ri-user-line mr-3 text-xl"></i>
                     <span class="text-base font-semibold font-inter">My Account</span>
-                    
                 </a>
-                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
+                <ul class="pl-7 mt-2 hidden">
                     <li class="mb-4">
-                        <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Active order</a>
+                        <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100">Active order</a>
                     </li> 
                     <li class="mb-4">
-                        <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Completed order</a>
+                        <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100">Completed order</a>
                     </li> 
                     <li class="mb-4">
-                        <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Canceled order</a>
+                        <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100">Canceled order</a>
                     </li> 
                 </ul>
             </li>
-           
         </ul>
     </div>
     <div class="fixed top-0 left-0 w-full h-full bg-black/50 z-40 md:hidden sidebar-overlay"></div>
-    <!-- end: Sidebar -->
 
-    <!-- start: Main -->
     <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-gray-50 min-h-screen transition-all main">
-        <div class="py-2 px-6 bg-white flex items-center shadow-md shadow-black/5 sticky top-0 left-0 z-30">
+        <div class="py-2 px-6 bg-white flex items-center shadow-md sticky top-0 z-30">
             <button type="button" class="text-lg text-gray-600 sidebar-toggle">
                 <i class="ri-menu-line"></i>
             </button>
@@ -66,52 +61,68 @@
                 <li class="mr-2">
                     <a href="#" class="text-gray-400 hover:text-gray-600 font-medium">Dashboard</a>
                 </li>
-               
             </ul>
             <div class="ml-auto flex items-center space-x-4">
                 <span class="text-gray-600 font-medium font-inter">Juan Dela Cruz</span>
                 <div class="relative">
-                    <button class="flex items-center text-gray-600 hover:text-sky-600 focus:outline-none">
+                    <button class="flex items-center text-gray-600 hover:text-sky-600">
                         <i class="ri-account-circle-line text-3xl"></i>
                     </button>
                 </div>
             </div>
         </div>    
-        
-        <!-- component -->
+
         <div class="h-full w-full flex justify-center mt-10 font-poppins">
             <section class="bg-white dark:bg-gray-900">
-                <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+                <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 lg:grid-cols-12 bg-white p-8 rounded shadow-md">
                     <div class="mr-auto lg:col-span-7">
-                        <h1 class="max-w-2xl mb-4 ml-5 text-3xl font-poppins text-sky-600 font-semibold tracking-tight leading-none dark:text-white">Health Provider Name:</h1>
-                        <input id="providerName" type="text" placeholder="Enter Provider Name"
-                        class="w-full h-15 px-3 font-poppins py-2 mt-2 ml-5 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent mb-10" />
-                        <h2 class="max-w-2xl mb-2 ml-5 text-base font-montserrat text-black font-semibold tracking-tight leading-none dark:text-white">Provider Type:</h2>
-                        <select id="providerType" class="w-64 px-3 py-2 mb-4 ml-5 font-poppins rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-gray-400">
-                            <option value="" disabled selected>Select type</option>
-                            <option value="clinic" class="text-gray-800">Clinic</option>
-                            <option value="hospital" class="text-gray-800">Hospital</option>
-                            <option value="lgu" class="text-gray-800">LGU (Local Government Unit)</option>
-                        </select>
-                        
-                        <h2 class="max-w-2xl mt-3 mb-2 ml-5 text-base font-montserrat text-black font-semibold tracking-tight leading-none dark:text-white">Location:</h2>
-                        <select id="location" class="w-64 px-3 py-2 ml-5 mb-5 font-poppins rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-gray-400">
-                            <option value="" disabled selected>Location</option>
-                            <option value="cebu_city" class="text-gray-800">Cebu City</option>
-                            <option value="mandaue" class="text-gray-800">Mandaue City</option>
-                            <option value="lapu_lapu" class="text-gray-800">Lapu-Lapu City</option>
-                            <option value="talisay" class="text-gray-800">Talisay City</option>
-                            <option value="consolacion" class="text-gray-800">Consolacion City</option>
-                        </select>
-                        
+                        <form id="create-provider-form">
+                            <h1 class="text-3xl font-poppins text-sky-600 font-semibold mb-4">Health Provider Registration</h1>
+                            <label for="provider_name" class="block mb-2 text-gray-600">Health Provider Name:</label>
+                            <input 
+                                id="provider-name" 
+                                name="provider_name" 
+                                type="text" 
+                                placeholder="Enter Provider Name"
+                                class="w-full px-3 py-2 mb-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" 
+                                required
+                            />
 
-                        <div class="ml-5 mt-10">
-                            <button type="submit" class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">
+                            <label for="provider_type" class="block mb-2 text-gray-600">Provider Type:</label>
+                            <select 
+                                id="provider-type" 
+                                name="provider_type" 
+                                class="w-full px-3 py-2 mb-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" 
+                                required
+                            >
+                                <option value="" disabled selected>Select type</option>
+                                <option value="clinic">Clinic</option>
+                                <option value="hospital">Hospital</option>
+                                <option value="lgu">LGU (Local Government Unit)</option>
+                            </select>
+
+                            <label for="location" class="block mb-2 text-gray-600">Location:</label>
+                            <select 
+                                id="provider-location" 
+                                name="location" 
+                                class="w-full px-3 py-2 mb-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" 
+                                required
+                            >
+                                <option value="" disabled selected>Select location</option>
+                                <option value="cebu_city">Cebu City</option>
+                                <option value="mandaue">Mandaue City</option>
+                                <option value="lapu_lapu">Lapu-Lapu City</option>
+                                <option value="talisay">Talisay City</option>
+                                <option value="consolacion">Consolacion</option>
+                            </select>
+
+                            <button 
+                                type="submit" 
+                                class="w-full px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800"
+                            >
                                 Submit
                             </button>
-                        </div>
-                       
-
+                        </form>
                     </div>
                     <div class="lg:mt-0 lg:col-span-5 lg:flex">
                         <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup">
@@ -121,12 +132,6 @@
         </div>
     </main>
     
-
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.bundle.js"></script>
-    <script src="../../path/to/flowbite/dist/flowbite.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-    <script src="../hooks/fetchPatients.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>
