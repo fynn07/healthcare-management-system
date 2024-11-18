@@ -132,7 +132,7 @@ function updateVaccinationHistoryTable(vaccinationHistory) {
                 <td class="px-6 py-4">${formatted_item.dose_ml}</td>
                 <td class="px-6 py-4">${formatted_item.next_dose_date}</td>
                 <td class="px-6 py-4 text-right">
-                    <p href="#" class="edit-link cursor-pointer font-medium text-blue-600 dark:text-blue-500 hover:underline" data-id="${item.id}">Edit</p>
+                    <p href="#" class="edit-link cursor-pointer font-medium text-blue_main dark:text-blue_main hover:underline" data-id="${item.id}">Edit</p>
                 </td>
             </tr>
         `;
