@@ -29,8 +29,9 @@
 
     <title>Dashboard</title>
 </head>
-<body class="text-gray-800 font-poppins">
-    <header class="fixed top-0 w-full z-10 px-6 py-4 bg-white border-b border-neutral-300 justify-between items-center inline-flex z-10">
+
+<body class="flex justify-end text-gray-800 font-poppins border-box">
+    <header class="fixed top-0 w-full z-10 px-6 py-4 bg-white border-b border-[#DAE3E5] justify-between items-center inline-flex z-10">
         <a href="#" class="justify-center items-center cursor-pointer gap-2.5 flex">
             <img src="../assets/logo_the_healthbook.svg" alt="The Health Book Logo">
         </a>
@@ -53,7 +54,7 @@
     </header>
 
     <aside
-        class="fixed w-80 h-full flex flex-col justify-start items-start grow basis-0 px-6 py-8 pt-[7rem] bg-white border-r border-neutral-300 gap-8">
+        class="fixed left-0 w-80 h-full flex flex-col justify-start items-start grow basis-0 px-6 py-8 pt-[7rem] bg-white border-r border-[#DAE3E5] gap-8">
         <div class="HospitalName flex flex-col gap-y-1">
             <a href="#">
                 <span class="Provider_Name_Field text-neutral-800 text-base font-bold font-montserrat leading-normal"></span>
@@ -89,45 +90,11 @@
     </aside>
 
 
-    <!--<div class="fixed left-0 top-10 w-64 h-full bg-white p-4 z-10 sidebar-menu transition-transform">
-        <ul class="mt-4">
-            <li class="mb-1 group active">
-                <a href="#" class="flex items-center py-2 px-4 text-gray-800 hover:bg-cyan-50 hover:text-sky-600 rounded-md group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
-                    <i class="ri-wallet-line mr-3 text-xl"></i>
-                    <span class="text-base font-semibold font-inter">Digital IDs</span>
-                </a>
-            </li>
-
-            <li class="mb-1 group">
-                <a href="#" class="flex items-center py-2 px-4 text-slate-700 hover:bg-cyan-50 hover:text-sky-600 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
-                    <i class="ri-user-line mr-3 text-xl"></i>
-                    <span class="text-base font-semibold font-inter">My Account</span>
-
-                </a>
-                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
-                    <li class="mb-4">
-                        <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Active order</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Completed order</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Canceled order</a>
-                    </li>
-                </ul>
-            </li>
-
-        </ul>
-    </div>-->
-
-
-    <div class="fixed top-0 left-0 w-full h-full bg-black/50 z-40 md:hidden sidebar-overlay z-30"></div>
-    <!-- end: Sidebar -->
-
-
     <!-- start: Main -->
-    <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-gray-50 min-h-screen transition-all main">
-        <div class="py-2 px-6 bg-white flex items-center shadow-md shadow-black/5">
+    <main
+        class="flex flex-col w-full md:ml-80 bg-gray-50 min-h-screen transition-all px-12 mt-[69px] pt-10 pb-16 gap-8 main">
+
+        <div class="w-fit h-5 rounded-lg gap-2 inline-flex items-center text-[#054F99] mb-2">
             <button type="button" class="text-lg text-gray-600 sidebar-toggle">
                 <i class="ri-menu-line"></i>
             </button>
@@ -139,45 +106,57 @@
                 <li class="text-gray-600 mr-2 font-medium">Medical History</li>
             </ul>
         </div>
-        
-       
-        <div class="h-full w-full flex justify-center mt-10">
-            <div class="max-w-8xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 custom-table">
-                <div class="flex items-start space-x-6"> 
-                    <img class="h-24 w-24 rounded-full" src="../assets/default.jpg" alt="Profile Picture"> 
-                    <div>
-                        <h2 id="fullName" class="text-2xl font-semibold text-black tracking-tight font-poppins">N/A</h2>
-                        <span class="text-base text-gray-500 font-medium tracking-tight font-poppins">Shared Today, Mar 17 at 11:37</span>
-                        <p class="pt-5 pb-3 text-base text-gray-500 font-medium tracking-normal font-poppins">Personal Information</p>
-                        <div class="pt-2 flex items-center space-x-4"> 
-                            <i class="ri-women-line text-base"></i>
-                            <h2 id="gender" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
-                            <i class="ri-cake-2-line text-base"></i>
-                            <h2 id="birthday" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
-                            <i class="ri-mail-line text-base"></i>
-                            <h2 id="email" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
-                            <i class="ri-phone-line text-base"></i>
-                            <h2 id="contactNumber" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
-                            
-                        </div>
-                        <div class = "pb-3 pt-3 flex items-center space-x-4">
-                            <i class="ri-ruler-line text-base"></i>
-                            <h2 id="height" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
-                            <i class="ri-game-line text-base"></i>
-                            <h2 id="weight" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
-                        </div>
-                        <div class="pb-5 flex items-center space-x-4">
-                            <i class="ri-home-3-line text-base"></i>
-                            <h2 id="address" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
-                        </div>
+
+        <!-- Patient Profile Overview -->
+        <div
+            class="flex flex-col justify-center w-full px-12 pt-8 pb-10 bg-white rounded-lg border border-[#DAE3E5] dark:bg-gray-800 custom-table">
+            <div class="flex items-center gap-4 w-full">
+                <img class="h-24 w-24 rounded-full" src="../assets/default_user_profile.svg" alt="Profile Picture">
+                <div class="flex flex-col gap-1">
+                    <h2 id="fullName" class="text-2xl font-semibold text-black tracking-tight font-poppins">N/A</h2>
+                    <span class="text-base text-gray-500 font-medium tracking-tight font-poppins">Shared Today, Mar 17 at 11:37</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col flex-1 ml-24 gap-3">
+                <p class="pt-5 pb-3 text-base text-gray-500 font-medium tracking-normal font-poppins">Personal Information</p>
+
+                <div class="flex flex-wrap flex-1 gap-x-8 gap-y-2">
+                    <div class="flex gap-3">
+                        <i class="ri-women-line text-base"></i>
+                        <h2 id="gender" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="ri-cake-2-line text-base"></i>
+                        <h2 id="birthday" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="ri-mail-line text-base"></i>
+                        <h2 id="email" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="ri-phone-line text-base"></i>
+                        <h2 id="contactNumber" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="ri-ruler-line text-base"></i>
+                        <h2 id="height" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="ri-game-line text-base"></i>
+                        <h2 id="weight" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="ri-home-3-line text-base"></i>
+                        <h2 id="address" class="text-sm font-medium text-black tracking-tight font-poppins">N/A</h2>
                     </div>
                 </div>
-                
             </div>
+
         </div>
         
 
-        <div class="h-full w-full flex justify-center mt-10">
+        <div class=" w-full flex justify-center mt-10">
             <div class="max-w-8xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 custom-table">
                 <div class="flex justify-between">
                     <span class="text-2xl font-semibold pl-4 text-sky-600 font-poppins">Medication History</span>
@@ -253,7 +232,7 @@
         
 
 
-        <div class="h-full w-full flex justify-center mt-10">
+        <div class=" w-full flex justify-center mt-10">
             <div class="max-w-8xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 custom-table">
                <div class="flex justify-between">
                 <span class="text-2xl font-semibold pl-4 text-sky-600 font-poppins">Vaccination History</span>
