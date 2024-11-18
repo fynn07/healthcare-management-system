@@ -21,7 +21,7 @@ async function fetchProviderName(){
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
-    const provider_names = document.getElementsByClassName('Provider_Name_Field');
+    const provider_names = document.getElementsByClassName('provider_name_field');
     const provider_data = await fetchProviderName();
 
     Array.from(provider_names).forEach(provider_name => {
