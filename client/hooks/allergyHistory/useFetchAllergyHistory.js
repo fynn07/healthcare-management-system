@@ -45,8 +45,7 @@ function renderAllergyPagination(totalPages, currentPage) {
         <li style="display: inline;">
             <a href="#" class="allergy-pagination-link" data-page="${currentPage > 1 ? currentPage - 1 : 1}"
                style="display: flex; align-items: center; justify-content: center; padding: 0.5rem 0.75rem; 
-                      height: 32px; color: gray; background: white; border: 1px solid #D1D5DB; 
-                      border-top-left-radius: 0.375rem; border-bottom-left-radius: 0.375rem; 
+                      height: 32px; color: rgb(163 163 163); background: white;
                       transition: background-color 0.2s; text-decoration: none;">
                 <span style="display: none;">Previous</span>
                 <svg style="width: 0.625rem; height: 0.625rem;" 
@@ -62,9 +61,8 @@ function renderAllergyPagination(totalPages, currentPage) {
             <li style="display: inline;">
                 <a href="#" class="allergy-pagination-link" data-page="${i}" 
                    style="display: flex; align-items: center; justify-content: center; padding: 0.5rem 0.75rem; 
-                          height: 32px; color: ${i === currentPage ? '#2563EB' : 'gray'}; 
-                          background: ${i === currentPage ? '#DBEAFE' : 'white'};
-                          border: 1px solid #D1D5DB; text-decoration: none;">
+                          height: 32px; ${i === currentPage ? 'color: gray; border: 1px solid #D1D5DB;' : 'color: #054F99;'}
+                          border-radius: 0.375rem; text-decoration: none;">
                     ${i}
                 </a>
             </li>
@@ -75,8 +73,7 @@ function renderAllergyPagination(totalPages, currentPage) {
         <li style="display: inline;">
             <a href="#" class="allergy-pagination-link" data-page="${currentPage < totalPages ? currentPage + 1 : totalPages}"
                style="display: flex; align-items: center; justify-content: center; padding: 0.5rem 0.75rem; 
-                      height: 32px; color: gray; background: white; border: 1px solid #D1D5DB; 
-                      border-top-right-radius: 0.375rem; border-bottom-right-radius: 0.375rem; 
+                      height: 32px; color: rgb(163 163 163); background: white;
                       transition: background-color 0.2s; text-decoration: none;">
                 <span style="display: none;">Next</span>
                 <svg style="width: 0.625rem; height: 0.625rem;" 
@@ -117,7 +114,7 @@ function updateAllergyHistoryTable(allergyHistory) {
             <td class="px-6 py-4">${formatted_item.severity}</td>
             <td class="px-6 py-4">${formatted_item.criticality}</td>
             <td class="px-6 py-4 text-right">
-                <p href="#" class="edit-link cursor-pointer font-medium text-blue-600 dark:text-blue-500 hover:underline" data-id="${item.id}">Edit</p>
+                <p href="#" class="edit-link cursor-pointer font-medium text-blue_main dark:text-blue_main hover:underline" data-id="${item.id}">Edit</p>
             </td>
             </tr>
         `;
