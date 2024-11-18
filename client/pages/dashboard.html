@@ -176,7 +176,8 @@
             </div>
 
             <div class="overflow-x-auto">
-                <table id="prescription-table" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 font-poppins">
+                <table id="medication-table"
+                       class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 font-poppins">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3">Date Added</th>
@@ -239,43 +240,53 @@
         </section>
         
         
-
-
-        <div class=" w-full flex justify-center mt-10">
-            <div class="max-w-8xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 custom-table">
-               <div class="flex justify-between">
-                <span class="text-2xl font-semibold pl-4 text-sky-600 font-poppins">Vaccination History</span>
-                  <button id="add-btnvacc" class="px-4 py-2 bg-sky-300 text-blue_main rounded border border-blue_main hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+        <!-- MEDICATION HISTORY -->
+        <div id="vaccination-history-card"
+             class="flex flex-col justify-center w-full bg-white rounded-lg border border-[#DAE3E5] dark:bg-gray-800 custom-table">
+            <div class="flex flex-col pt-6 gap-4">
+                <div class="flex justify-between px-8">
+                    <span class="text-lg font-poppins font-medium pl-4">Vaccination History</span>
+                    <button id="add-btnvacc"
+                            class="px-4 py-2 bg-blue_super_light text-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
                         + Add
                     </button>
-               </div>
-                
-                <div class="overflow-x-auto rounded-lg shadow-md pt-4">
-                    <table id="vaccine-table" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 font-poppins">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                            <tr>
-                                <th scope="col" class="px-6 py-3">Date Added</th>
-                                <th scope="col" class="px-6 py-3">Vaccine and Brand Name</th>
-                                <th scope="col" class="px-6 py-3">Provider/Date</th>
-                                <th scope="col" class="px-6 py-3">Site Given</th>
-                                <th scope="col" class="px-6 py-3">Dose Ml</th>
-                                <th scope="col" class="px-6 py-3">Next Dose On</th>
-                                <th scope="col" class="px-6 py-3"><span class="sr-only">Edit</span></th>
-                            </tr>
-                        </thead>
-                        <tbody id="vaccination-history-body" class="bg-gray-50 dark:bg-gray-700">
-                            <!-- Data Rows -->
-                        </tbody>
-                    </table>
                 </div>
-                <nav aria-label="Page navigation example" class="mt-4 flex justify-end">
-                    <ul id="vaccination-history-navigation" class="inline-flex -space-x-px text-sm">
-                            <!-- Navigation -->
-                    </ul>
-                </nav>
+                <div class="flex px-8 border-b border-[#DAE3E5] gap-4 text-base ">
+                    <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
+                        Administered by you
+                    </button>
+                    <button class="px-2 pb-4">
+                        Administered by others
+                    </button>
+                </div>
             </div>
-            
+
+            <div class="overflow-x-auto">
+                <table id="vaccination-table"
+                       class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 font-poppins">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">Date Added</th>
+                            <th scope="col" class="px-6 py-3">Vaccine and Brand Name</th>
+                            <th scope="col" class="px-6 py-3">Provider/Date</th>
+                            <th scope="col" class="px-6 py-3">Site Given</th>
+                            <th scope="col" class="px-6 py-3">Dose Ml</th>
+                            <th scope="col" class="px-6 py-3">Next Dose On</th>
+                            <th scope="col" class="px-6 py-3"><span class="sr-only">Edit</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="vaccination-history-body">
+                        <!-- Data Rows -->
+                    </tbody>
+                </table>
+            </div>
+            <nav aria-label="Page navigation example" class=" flex justify-end">
+                <ul id="vaccination-history-navigation" class="flex items-center p-2 text-sm">
+                        <!-- Navigation -->
+                </ul>
+            </nav>
         </div>
+
 
         <section id="add-formvacc" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
             <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
