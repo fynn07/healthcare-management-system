@@ -1244,6 +1244,10 @@ input:checked + .toggle-bg {
   margin-left: 6rem;
 }
 
+.ml-0 {
+  margin-left: 0px;
+}
+
 .block {
   display: block;
 }
@@ -1378,6 +1382,10 @@ input:checked + .toggle-bg {
   width: fit-content;
 }
 
+.w-72 {
+  width: 18rem;
+}
+
 .max-w-4xl {
   max-width: 56rem;
 }
@@ -1387,6 +1395,14 @@ input:checked + .toggle-bg {
 }
 
 .max-w-screen-xl {
+  max-width: 1280px;
+}
+
+.max-w-\[1200px\] {
+  max-width: 1200px;
+}
+
+.max-w-\[1280px\] {
   max-width: 1280px;
 }
 
@@ -2512,12 +2528,20 @@ input:checked + .toggle-bg {
 }
 
 @media (min-width: 768px) {
+  .md\:visible {
+    visibility: visible;
+  }
+
   .md\:ml-64 {
     margin-left: 16rem;
   }
 
   .md\:ml-80 {
     margin-left: 20rem;
+  }
+
+  .md\:block {
+    display: block;
   }
 
   .md\:hidden {
@@ -2535,9 +2559,21 @@ input:checked + .toggle-bg {
   .md\:w-\[calc\(100\%-8rem\)\] {
     width: calc(100% - 8rem);
   }
+
+  .md\:w-60 {
+    width: 15rem;
+  }
 }
 
 @media (min-width: 1024px) {
+  .lg\:visible {
+    visibility: visible;
+  }
+
+  .lg\:fixed {
+    position: fixed;
+  }
+
   .lg\:col-span-5 {
     grid-column: span 5 / span 5;
   }
@@ -2550,8 +2586,20 @@ input:checked + .toggle-bg {
     margin-top: 0px;
   }
 
+  .lg\:ml-80 {
+    margin-left: 20rem;
+  }
+
+  .lg\:block {
+    display: block;
+  }
+
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:w-80 {
+    width: 20rem;
   }
 
   .lg\:grid-cols-12 {
@@ -2560,6 +2608,16 @@ input:checked + .toggle-bg {
 
   .lg\:gap-8 {
     gap: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:ml-80 {
+    margin-left: 20rem;
+  }
+
+  .xl\:flex {
+    display: flex;
   }
 }
 
