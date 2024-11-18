@@ -21,12 +21,12 @@ async function fetchProviderName(){
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
-    
-    const provider_name = document.getElementById('provider_name_field');
-    console.log(provider_name)
-
+    const provider_names = document.getElementsByClassName('provider_name_field');
     const provider_data = await fetchProviderName();
 
-    const row = `<span class="text-gray-600 font-medium font-inter">${provider_data.name}</span>`;
-    provider_name.insertAdjacentHTML('beforeend', row);
-  });
+    Array.from(provider_names).forEach(provider_name => {
+        const row = `${provider_data.name}`;
+        provider_name.insertAdjacentHTML('beforeend', row);
+    });
+});
+
