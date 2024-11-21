@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Landing Page</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">
+                <i class="font-light">The</i><span class="font-bold">HealthBook</span>
+            </h1>
+            <nav>
+                <a href="#features" class="text-gray-700 font-medium hover:text-blue-600 mx-4">Features</a>
+                <a href="#about" class="text-gray-700 font-medium hover:text-blue-600 mx-4">About</a>
+                <a href="#contact" class="text-gray-700 font-medium hover:text-blue-600 mx-4">Contact</a>
+                <a href="#signin" class="bg-blue-600 text-white py-2 px-6 rounded-lg shadow hover:bg-blue-500 transition">
+                    Sign In
+                </a>
+            </nav>
+        </div>
+    </header>
+
+  
+    <section class="bg-blue-50 h-screen flex items-center justify-center pt-16">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center">
+            <div class="w-full lg:w-1/2 text-center lg:text-left">
+                <h1 class="text-4xl lg:text-5xl font-bold text-blue-600">
+                    Welcome to <span class="text-blue-800">HealthBook</span>
+                </h1>
+                <p class="text-lg text-gray-600 mt-4">
+                    Your all-in-one solution for managing patient records, seamlessly and securely.
+                </p>
+                <div class="mt-8">
+                    <a href="#features" class="bg-blue-600 text-white py-3 px-8 rounded-lg shadow-lg hover:bg-blue-500 transition mr-4">
+                        Learn More
+                    </a>
+                    <a href="#signin" class="text-blue-600 font-medium underline hover:text-blue-800">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 mt-10 lg:mt-0">
+                <img src="https://via.placeholder.com/500x400" alt="HealthBook Preview" class="mx-auto rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+
+
+    <section id="features" class="bg-white py-16">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-blue-600">Features</h2>
+            <p class="text-gray-600 text-center mt-2">Discover what makes HealthBook your best choice</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <i class="ri-folder-user-line text-4xl text-blue-600"></i>
+                    <h3 class="text-xl font-semibold mt-4">Patient Management</h3>
+                    <p class="text-gray-600 mt-2">
+                        Securely store and access patient information anytime, anywhere.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <i class="ri-heart-pulse-line text-4xl text-blue-600"></i>
+                    <h3 class="text-xl font-semibold mt-4">Health Insights</h3>
+                    <p class="text-gray-600 mt-2">
+                        Gain actionable insights with real-time data analytics.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <i class="ri-lock-2-line text-4xl text-blue-600"></i>
+                    <h3 class="text-xl font-semibold mt-4">Data Security</h3>
+                    <p class="text-gray-600 mt-2">
+                        Your data is protected with the latest encryption standards.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-blue-50 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-blue-600">Why Choose HealthBook?</h2>
+            <p class="text-gray-600 mt-4">
+                HealthBook is trusted by healthcare providers around the globe for its reliability and ease of use.
+            </p>
+            <div class="mt-8">
+                <a href="#signin" class="bg-blue-600 text-white py-3 px-8 rounded-lg shadow-lg hover:bg-blue-500 transition">
+                    Get Started Today
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-6">
+        <div class="container mx-auto text-center text-gray-600">
+            <p>&copy; 2024 HealthBook. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

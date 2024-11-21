@@ -14,3 +14,16 @@
 .main.active {
     @apply md:w-full md:ml-0;
 }
+
+
+.btn {
+  @apply shadow-md py-3 px-6 rounded-md transition duration-300;
+}
+
+.btn-purple {
+  @apply bg-bookmark-purple text-white;
+}
+
+.btn-white {
+  @apply bg-bookmark-white;
+}
