@@ -18,6 +18,29 @@ namespace server_dotnet.Services
         }
 
         // Helper method for token-based authentication
+        public async Task<User> ValidateTokenAsync(string tokenValue)
+        {
+            if (string.IsNullOrEmpty(tokenValue))
+            {
+                return null; // Or handle missing token differently
+            }
+
+            // Fetch the token and its associated user from the database
+            var token = await _context.Tokens
+                .Include(t => t.User)
+                .FirstOrDefaultAsync(t => t.Value == tokenValue);
+
+            // If no token found or token is invalid, return null
+            if (token == null || token.User == null)
+            {
+                return null;
+            }
+
+            // Return the associated user if token is valid
+            return token.User;
+        }
+
+        // Optionally, you can have a method to fetch the token directly
         public async Task<Token> GetTokenFromHeader()
         {
             var tokenValue = _httpContextAccessor.HttpContext.Request.Headers["Authorization"].ToString().Replace("Token ", "");

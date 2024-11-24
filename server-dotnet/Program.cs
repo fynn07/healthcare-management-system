@@ -3,6 +3,8 @@ using PostgreSQL.Data;
 using DotNetEnv;
 using Microsoft.OpenApi.Models;
 using server_dotnet.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); // Register IHttpContextAccessor
 builder.Services.AddScoped<TokenService>(); // Register TokenService
+builder.Services.AddAuthentication("Token")
+    .AddScheme<AuthenticationSchemeOptions, TokenAuthenticationHandler>("Token", options => { });
 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -59,6 +63,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
