@@ -46,9 +46,9 @@ namespace server_dotnet.Controllers
             var provider = new Provider
             {
                 UserId = user.Id,
-                Name = request.Name,
-                ProviderType = request.ProviderType,
-                ProviderLocation = request.ProviderLocation
+                Name = request.name,
+                ProviderType = request.provider_type,
+                ProviderLocation = request.provider_location
             };
 
             _context.Providers.Add(provider);
@@ -110,14 +110,14 @@ namespace server_dotnet.Controllers
     {
         [Required]
         [StringLength(50)]
-        public string Name { get; set; } = string.Empty;
+        public string name { get; set; } = string.Empty;
 
         [Required]
         [StringLength(50)]
-        public string ProviderType { get; set; } = string.Empty;
+        public string provider_type { get; set; } = string.Empty;
 
         [Required]
         [StringLength(100)]
-        public string ProviderLocation { get; set; } = string.Empty;
+        public string provider_location { get; set; } = string.Empty;
     }
 }

@@ -1,0 +1,8 @@
+//DATABASE: 'DJANGO' 
+//DATABASE: 'CSHARP'
+
+export const config = {
+    DATABASE: 'CSHARP',
+    DJANGO_URL: 'http://127.0.0.1:8000',
+    CSHARP_URL: 'http://localhost:5255'
+};

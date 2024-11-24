@@ -44,6 +44,15 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigins", builder =>
+        builder.WithOrigins("http://127.0.0.1:3000")  // Replace with your frontend URLs
+               .AllowAnyMethod()  // Allows any HTTP method (GET, POST, etc.)
+               .AllowAnyHeader()  // Allows any HTTP header
+               .AllowCredentials());  // Allows credentials like cookies or authorization headers
+});
+
 // builder.Services.AddScoped<TokenAuthenticationMiddleware>();
 
 var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION");
@@ -62,13 +71,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowSpecificOrigins");
+
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
 
 app.UseAuthorization();
-
-// app.UseMiddleware<TokenAuthenticationMiddleware>();
 
 app.MapControllers();
 
