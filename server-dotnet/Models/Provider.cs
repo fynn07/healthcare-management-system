@@ -8,9 +8,10 @@ namespace server_dotnet.Models
         [Key]
         public int Id { get; set; }
 
-        public int AccountId { get; set; } 
+        [Column("user_id")]
+        public int UserId { get; set; } 
 
-        public Account Account { get; set; } = null!;
+        public User Account { get; set; } = null!;
 
         [Required] 
         [StringLength(50)]

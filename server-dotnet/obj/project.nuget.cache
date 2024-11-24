@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Z72TWBoW65k=",
+  "dgSpecHash": "nBMFqyPjNBQ=",
   "success": true,
   "projectFilePath": "/Users/mars/Desktop/Code/Websites/healthcare-management-system/server-dotnet/server-dotnet.csproj",
   "expectedPackageFiles": [
     "/Users/mars/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/mars/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
+    "/Users/mars/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/mars/.nuget/packages/dotnetenv/3.1.1/dotnetenv.3.1.1.nupkg.sha512",
     "/Users/mars/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/mars/.nuget/packages/microsoft.aspnetcore.openapi/8.0.11/microsoft.aspnetcore.openapi.8.0.11.nupkg.sha512",

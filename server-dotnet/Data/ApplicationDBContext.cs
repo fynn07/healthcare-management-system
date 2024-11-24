@@ -20,7 +20,8 @@ namespace PostgreSQL.Data
             options.UseNpgsql(Environment.GetEnvironmentVariable("DATABASE_CONNECTION"));
         }
 
-        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Token> Tokens { get; set; }
+        public DbSet<User> Users { get; set; }
         public DbSet<Provider> Providers { get; set; }
     }
 }

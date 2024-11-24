@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace server_dotnet.Models
 {
-    public class Account
+    public class User
     {
         [Key]
         public int Id { get; set; }

@@ -140,3 +140,4 @@
 /Users/mars/Desktop/Code/Websites/healthcare-management-system/server-dotnet/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Runtime.Caching.dll
 /Users/mars/Desktop/Code/Websites/healthcare-management-system/server-dotnet/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
 /Users/mars/Desktop/Code/Websites/healthcare-management-system/server-dotnet/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
+/Users/mars/Desktop/Code/Websites/healthcare-management-system/server-dotnet/bin/Debug/net8.0/BCrypt.Net-Next.dll
