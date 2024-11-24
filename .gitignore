@@ -3,3 +3,4 @@ env
 client/node_modules
 # server/db.sqlite3
 test.rest
+server-dotnet/.env

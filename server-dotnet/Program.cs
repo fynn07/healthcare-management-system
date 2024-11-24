@@ -1,9 +1,23 @@
+using Microsoft.EntityFrameworkCore;
+using PostgreSQL.Data;
+using DotNetEnv;
+
 var builder = WebApplication.CreateBuilder(args);
+
+Env.Load();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// var connectionString = builder.Configuration.GetConnectionString("WebApiDatabase");
+var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION");
+
+
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
+    options.UseNpgsql(connectionString) // Use PostgreSQL
+);
 
 var app = builder.Build();
 
