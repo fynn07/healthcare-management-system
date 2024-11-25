@@ -22,8 +22,7 @@ namespace server_dotnet.Controllers
             _tokenService = tokenService;
         }
 
-        // POST: api/patients/create
-        [HttpPost("patients/create")]
+        [HttpPost("patient/create")]
         [Authorize]
         public async Task<IActionResult> CreatePatient([FromBody] PatientRequest request)
         {
@@ -63,7 +62,7 @@ namespace server_dotnet.Controllers
         }
 
         // GET: api/patients/{id}
-        [HttpGet("patients/{id}")]
+        [HttpGet("patient/fetch/{id}")]
         [Authorize]
         public async Task<IActionResult> FetchSinglePatient(int id)
         {
@@ -107,7 +106,7 @@ namespace server_dotnet.Controllers
         }
 
         // GET: api/patients
-        [HttpGet("patients")]
+        [HttpGet("patient/fetch")]
         [Authorize]
         public async Task<IActionResult> FetchPatients()
         {
