@@ -14,6 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); // Register IHttpContextAccessor
 builder.Services.AddScoped<TokenService>(); // Register TokenService
+builder.Services.AddScoped<PaginationService>();
 builder.Services.AddAuthentication("Token")
     .AddScheme<AuthenticationSchemeOptions, TokenAuthenticationHandler>("Token", options => { });
 

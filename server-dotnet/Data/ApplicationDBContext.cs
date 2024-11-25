@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using server_dotnet.Models;
 
 using Microsoft.Extensions.Configuration;
+using YourNamespace;
 
 namespace PostgreSQL.Data
 {
@@ -24,5 +25,6 @@ namespace PostgreSQL.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Provider> Providers { get; set; }
         public DbSet<Patient> Patients { get; set; }
+        public DbSet<MedicationHistory> MedicationHistory { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PostgreSQL.Data;
@@ -11,9 +12,11 @@ using PostgreSQL.Data;
 namespace server_dotnet.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20241125021315_MedicationModel")]
+    partial class MedicationModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -139,7 +142,7 @@ namespace server_dotnet.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("MedicationHistory");
+                    b.ToTable("MedicationHistories");
                 });
 
             modelBuilder.Entity("server_dotnet.Models.Provider", b =>

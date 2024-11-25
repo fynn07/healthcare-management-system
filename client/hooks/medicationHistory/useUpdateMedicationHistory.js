@@ -1,12 +1,17 @@
 import { removeParam } from '../../utils/removeParam.js';
+import { getApiEndpoint } from "../../utils/getApiEndpoint.js";
+import { UtcTimeValidifier } from '../../utils/UtcTimeValidifier.js';
+import { forceRefresh } from '../../utils/forceRefresh.js';
 
 async function getMedicationData(record_id) {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
+
+    const ENDPOINT = getApiEndpoint();
     
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://127.0.0.1:8000/api/patient/fetch/${id}/medication_history/${record_id}/`, {
+        const response = await fetch(`${ENDPOINT}/api/patient/fetch/${id}/medication_history/${record_id}/`, {
             method: 'GET',
             headers: {
                 'Authorization': `Token ${token}`,
@@ -30,6 +35,8 @@ export async function useUpdateMedicationHistory(record_id) {
     const medication_data = await getMedicationData(record_id);
     const addFormMed = document.getElementById('add-form');
 
+    const ENDPOINT = getApiEndpoint();
+
     addFormMed.classList.remove('hidden'); 
     
     document.getElementById("medication-history-date-prescribed").value = medication_data.date_prescribed;
@@ -43,11 +50,13 @@ export async function useUpdateMedicationHistory(record_id) {
     form.addEventListener("submit", async function(event) {
         event.preventDefault();
 
-        const date_prescribed = document.getElementById("medication-history-date-prescribed").value;
+        let date_prescribed = document.getElementById("medication-history-date-prescribed").value;
         const generic_name = document.getElementById("medication-history-generic-name").value;
         const dosage = document.getElementById("medication-history-dosage").value;
         const quantity = document.getElementById("medication-history-quantity").value;
         const instructions = document.getElementById("medication-history-instructions").value;
+
+        date_prescribed = UtcTimeValidifier(date_prescribed);
 
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
@@ -69,7 +78,7 @@ export async function useUpdateMedicationHistory(record_id) {
                 instructions, 
             };
 
-            const response = await fetch(`http://127.0.0.1:8000/api/patient/update/${id}/medication_history/${record_id}/`, {
+            const response = await fetch(`${ENDPOINT}/api/patient/update/${id}/medication_history/${record_id}/`, {
                 method: "PUT",
                 headers: {
                     'Authorization': `Token ${token}`,
@@ -84,6 +93,7 @@ export async function useUpdateMedicationHistory(record_id) {
             if (response.ok) {
                 sessionStorage.setItem('toastMessage', 'Record Successfully Updated');
                 sessionStorage.setItem('toastType', 'success');
+                forceRefresh();
             } else {
                 sessionStorage.setItem('toastMessage', 'Failed to Update Record');
                 sessionStorage.setItem('toastType', 'error');
