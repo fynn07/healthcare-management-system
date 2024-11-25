@@ -1,5 +1,9 @@
+import { getApiEndpoint } from "../utils/getApiEndpoint.js";
+
 document.getElementById("create-provider-form").addEventListener("submit", async function(event) {
     event.preventDefault();
+
+    const ENDPOINT = getApiEndpoint();
 
     const name = document.getElementById("provider-name").value;
     const provider_type = document.getElementById("provider-type").value;
@@ -22,7 +26,7 @@ document.getElementById("create-provider-form").addEventListener("submit", async
     }
 
     try {
-        const response = await fetch("http://127.0.0.1:8000/api/setup_provider/", {
+        const response = await fetch(`${ENDPOINT}/api/setup_provider/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

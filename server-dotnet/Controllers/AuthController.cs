@@ -22,7 +22,7 @@ namespace server_dotnet.Controllers
             _tokenService = tokenService;
         }
 
-        [HttpGet("test-token")]
+        [HttpGet("test_token")]
         public async Task<IActionResult> GetUserFromToken()
         {
             // Extract the token from the request header

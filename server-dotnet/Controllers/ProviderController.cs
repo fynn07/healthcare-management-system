@@ -23,7 +23,7 @@ namespace server_dotnet.Controllers
         }
 
         // POST: api/Provider/setup
-        [HttpPost("setup-provider")]
+        [HttpPost("setup_provider")]
         [Authorize]  // This ensures that the user is authenticated
         public async Task<IActionResult> SetupProvider([FromBody] SetupProviderRequest request)
         {
@@ -68,7 +68,7 @@ namespace server_dotnet.Controllers
         }
 
         // GET: api/Provider/fetch
-        [HttpGet("fetch-provider")]
+        [HttpGet("fetch_provider")]
         [Authorize]  // This ensures that the user is authenticated
         public async Task<IActionResult> FetchProvider()
         {

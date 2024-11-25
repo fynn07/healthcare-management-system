@@ -23,5 +23,6 @@ namespace PostgreSQL.Data
         public DbSet<Token> Tokens { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Provider> Providers { get; set; }
+        public DbSet<Patient> Patients { get; set; }
     }
 }
