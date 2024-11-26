@@ -1,12 +1,17 @@
 import {removeParam} from '../../utils/removeParam.js';
+import { getApiEndpoint } from "../../utils/getApiEndpoint.js";
+import { UtcTimeValidifier } from '../../utils/UtcTimeValidifier.js';
+import { forceRefresh } from '../../utils/forceRefresh.js';
 
 async function getAllergyData(record_id){
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
+
+    const ENDPOINT = getApiEndpoint();
     
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://127.0.0.1:8000/api/patient/fetch/${id}/allergy_history/${record_id}/`, {
+        const response = await fetch(`${ENDPOINT}/api/patient/fetch/${id}/allergy_history/${record_id}/`, {
             method: 'GET',
             headers: {
                 'Authorization': `Token ${token}`,
@@ -52,6 +57,8 @@ export async function useUpdateAllergyHistory(record_id){
         const id = urlParams.get('id');
         const editId = urlParams.get('edit_id');  // Check for edit_id
 
+        const ENDPOINT = getApiEndpoint();
+
         if (!editId) {
             return;
         }
@@ -67,7 +74,7 @@ export async function useUpdateAllergyHistory(record_id){
                 criticality,
             };
 
-            const response = await fetch(`http://127.0.0.1:8000/api/patient/update/${id}/allergy_history/${record_id}/`, {
+            const response = await fetch(`${ENDPOINT}/api/patient/update/${id}/allergy_history/${record_id}/`, {
                 method: "PUT",
                 headers: {
                     'Authorization': `Token ${token}`,
@@ -82,6 +89,7 @@ export async function useUpdateAllergyHistory(record_id){
             if (response.ok) {
                 sessionStorage.setItem('toastMessage', 'Record Successfully Updated');
                 sessionStorage.setItem('toastType', 'success');
+                forceRefresh();
             } else {
                 sessionStorage.setItem('toastMessage', 'Failed to Update Record');
                 sessionStorage.setItem('toastType', 'error');
