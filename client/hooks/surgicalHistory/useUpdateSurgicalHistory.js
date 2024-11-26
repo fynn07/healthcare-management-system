@@ -1,12 +1,17 @@
 import { removeParam } from '../../utils/removeParam.js';
+import { getApiEndpoint } from "../../utils/getApiEndpoint.js";
+import { UtcTimeValidifier } from '../../utils/UtcTimeValidifier.js';
+import { forceRefresh } from '../../utils/forceRefresh.js';
 
 async function getSurgicalData(record_id) {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
+
+    const ENDPOINT = getApiEndpoint();
     
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://127.0.0.1:8000/api/patient/fetch/${id}/surgical_history/${record_id}/`, {
+        const response = await fetch(`${ENDPOINT}/api/patient/fetch/${id}/surgical_history/${record_id}/`, {
             method: 'GET',
             headers: {
                 'Authorization': `Token ${token}`,
@@ -30,6 +35,8 @@ export async function useUpdateSurgicalHistory(record_id) {
     const surgical_data = await getSurgicalData(record_id);
     const addFormSurg = document.getElementById('add-formsurgery');
 
+    const ENDPOINT = getApiEndpoint();
+
     addFormSurg.classList.remove('hidden'); 
     
     document.getElementById("surgical-history-operation-procedure").value = surgical_data.operation_procedure;
@@ -45,7 +52,9 @@ export async function useUpdateSurgicalHistory(record_id) {
         const operation_procedure = document.getElementById("surgical-history-operation-procedure").value;
         const indication = document.getElementById("surgical-history-indication").value;
         const hospital = document.getElementById("surgical-history-hospital").value;
-        const operation_date = document.getElementById("surgical-history-operation-date").value;
+        let operation_date = document.getElementById("surgical-history-operation-date").value;
+
+        operation_date = UtcTimeValidifier(operation_date);
 
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
@@ -66,7 +75,7 @@ export async function useUpdateSurgicalHistory(record_id) {
                 operation_date,
             };
 
-            const response = await fetch(`http://127.0.0.1:8000/api/patient/update/${id}/surgical_history/${record_id}/`, {
+            const response = await fetch(`${ENDPOINT}/api/patient/update/${id}/surgical_history/${record_id}/`, {
                 method: "PUT",
                 headers: {
                     'Authorization': `Token ${token}`,
@@ -81,6 +90,7 @@ export async function useUpdateSurgicalHistory(record_id) {
             if (response.ok) {
                 sessionStorage.setItem('toastMessage', 'Record Successfully Updated');
                 sessionStorage.setItem('toastType', 'success');
+                forceRefresh();
             } else {
                 sessionStorage.setItem('toastMessage', 'Failed to Update Record');
                 sessionStorage.setItem('toastType', 'error');
