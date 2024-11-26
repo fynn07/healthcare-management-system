@@ -7,6 +7,7 @@ import { signOut } from "../../lib/appwrite";
 import { router } from "expo-router";
 import { useGlobalContext } from "../../context/GlobalProvider";
 import HealthDetails from "../subs/HealthDetails";
+import { StatusBar } from 'expo-status-bar';
 
 
 const Profile = () => {
@@ -130,6 +131,8 @@ const Profile = () => {
       
         <View className="h-10" />
       </ScrollView>
+      <StatusBar backgroundColor="#000000" style="dark" />
+
     </SafeAreaView>
   );
 };
