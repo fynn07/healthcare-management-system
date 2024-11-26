@@ -13,6 +13,7 @@ import MedicationForm from '../../components/forms/MedicationForm';
 import VaccinationForm from '../../components/forms/VaccinationForm';
 import FamilyForm from '../../components/forms/FamilyForm';
 import SurgicalForm from '../../components/forms/SurgicalForm';
+import SocialForm from '../../components/forms/SocialForm';
 import AllergyForm from '../../components/forms/AllergyForm';
 import VitalsRecord from '../../components/records/VitalsRecord';
 import { useGlobalContext } from '../../context/GlobalProvider';
@@ -94,7 +95,7 @@ const Records = () => {
               dateAdd={record.dateAdded}
               nicotine={record.nicotine}
               alcohol={record.alcohol} 
-                // drug = missing
+              drug={record.drug}
               diet={record.diet}
               physical={record.physicalActivity}
               onEdit={() => console.log("Edit Medication")}
