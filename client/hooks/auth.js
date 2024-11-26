@@ -1,13 +1,16 @@
 import { checkProvider } from "../utils/checkProviderPresent.js";
+import { getApiEndpoint } from "../utils/getApiEndpoint.js";
 
 document.getElementById("login-form").addEventListener("submit", async function(event) {
     event.preventDefault();
+
+    const ENDPOINT = getApiEndpoint();
     
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
     try {
-        const response = await fetch("http://127.0.0.1:8000/api/login/ ", {
+        const response = await fetch(`${ENDPOINT}/api/login/ `, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -58,6 +61,15 @@ document.getElementById("login-form").addEventListener("submit", async function(
             console.log("Wrong Credentials")
         }
     } catch (error) {
+        Toastify({
+            text: "Login Failed. Please check your credentials.",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "center", 
+            backgroundColor: "#FF6B6B",
+            stopOnFocus: true 
+        }).showToast();
         console.error("Error:", error);
     }
 });

@@ -1,7 +1,11 @@
+import { getApiEndpoint } from "../utils/getApiEndpoint.js";
+
 async function fetchPatients() {
+    const ENDPOINT = getApiEndpoint(); 
+
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://127.0.0.1:8000/api/patient/fetch/', {
+        const response = await fetch(`${ENDPOINT}/api/patient/fetch/`, {
             method: 'GET',
             headers: {
                 'Authorization': `Token ${token}`,

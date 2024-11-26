@@ -1,12 +1,17 @@
 import {removeParam} from '../../utils/removeParam.js';
+import { getApiEndpoint } from "../../utils/getApiEndpoint.js";
+import { UtcTimeValidifier } from '../../utils/UtcTimeValidifier.js';
+import { forceRefresh } from '../../utils/forceRefresh.js';
 
 async function getFamilyData(record_id){
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
+
+    const ENDPOINT = getApiEndpoint();
     
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://127.0.0.1:8000/api/patient/fetch/${id}/family_history/${record_id}/`, {
+        const response = await fetch(`${ENDPOINT}/api/patient/fetch/${id}/family_history/${record_id}/`, {
             method: 'GET',
             headers: {
                 'Authorization': `Token ${token}`,
@@ -30,6 +35,8 @@ async function getFamilyData(record_id){
 export async function useUpdateFamilyHistory(record_id){
     const family_data = await getFamilyData(record_id);
     const addFormFam = document.getElementById('add-formfam');
+
+    const ENDPOINT = getApiEndpoint();
 
     addFormFam.classList.remove('hidden'); 
     
@@ -61,7 +68,7 @@ export async function useUpdateFamilyHistory(record_id){
                 condition_illness, 
             };
 
-            const response = await fetch(`http://127.0.0.1:8000/api/patient/update/${id}/family_history/${record_id}/`, {
+            const response = await fetch(`${ENDPOINT}/api/patient/update/${id}/family_history/${record_id}/`, {
                 method: "PUT",
                 headers: {
                     'Authorization': `Token ${token}`,
@@ -76,6 +83,7 @@ export async function useUpdateFamilyHistory(record_id){
             if (response.ok) {
                 sessionStorage.setItem('toastMessage', 'Record Successfully Updated');
                 sessionStorage.setItem('toastType', 'success');
+                forceRefresh();
             } else {
                 sessionStorage.setItem('toastMessage', 'Failed to Update Record');
                 sessionStorage.setItem('toastType', 'error');
