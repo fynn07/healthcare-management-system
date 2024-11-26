@@ -26,5 +26,6 @@ namespace PostgreSQL.Data
         public DbSet<Provider> Providers { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<MedicationHistory> MedicationHistory { get; set; }
+        public DbSet<VaccinationHistory> VaccinationHistory { get; set; }
     }
 }
