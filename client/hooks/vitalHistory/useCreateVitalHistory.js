@@ -1,3 +1,7 @@
+import { getApiEndpoint } from "../../utils/getApiEndpoint.js";
+import { UtcTimeValidifier } from '../../utils/UtcTimeValidifier.js';
+import { forceRefresh } from '../../utils/forceRefresh.js';
+
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("vital-history-form");
 
@@ -16,12 +20,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const pulse_rate = document.getElementById("vital-history-pulse-rate").value;
         const blood_glucose = document.getElementById("vital-history-blood-glucose").value;
 
+        const ENDPOINT = getApiEndpoint();
+
         const id = urlParams.get('id');
 
         try {
             const token = localStorage.getItem('token');
             
-            const response = await fetch(`http://127.0.0.1:8000/api/patient/create/${id}/vital_history/`, {
+            const response = await fetch(`${ENDPOINT}/api/patient/create/${id}/vital_history/`, {
                 method: "POST",
                 headers: {
                     'Authorization': `Token ${token}`,
@@ -41,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (response.ok) {
                 sessionStorage.setItem('toastMessage', 'Record Successfully Added');
                 sessionStorage.setItem('toastType', 'success');
+                forceRefresh();
                 
             } else {
                 sessionStorage.setItem('toastMessage', 'Failed to Add Record');
