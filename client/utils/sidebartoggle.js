@@ -1,7 +1,6 @@
 const sidebarButton = document.getElementById('sidebar_button')
 const sidebar = document.getElementById('sidebar');
 const main = document.getElementById('main');
-const main2 = document.getElementById('main2');
 
 function toggleSidebar() {
     sidebar.classList.toggle('-translate-x-full');

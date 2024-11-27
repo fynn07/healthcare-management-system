@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <script type="module" defer src="../hooks/fetchProviderName.js"></script>
     <link rel="stylesheet" href="../dist/css/style.css">
-    <link href="../output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../output.css">
 
     <title>Digital IDs</title>
 </head>
@@ -82,7 +82,7 @@
 
     <!-- Main -->
     <main id="main"
-          class="flex items-start flex-col w-full mt-[69px] px-6 pt-8 pb-16 gap-12 transition-all">
+          class="flex flex-col w-full mt-[69px] px-6 pt-8 pb-16 gap-12 main transition-all">
         <nav class="flex w-full h-5 rounded-lg gap-2 items-center text-[#054F99]">
             <button type="button" id="sidebar_button" class="text-lg text-gray-600 sidebar-toggle flex flex-col">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -98,25 +98,66 @@
             </ul>
         </nav>
 
-        <div class="h-full w-full flex justify-center mt-10">
-            <div class="max-w-8xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 custom-table">
-                <span class="text-2xl font-semibold pl-4 text-sky-600 font-poppins">Digital IDs</span>
-                <div class="overflow-x-auto rounded-lg shadow-md pt-4">
-                    <table id="prescription-table" class="w-full text-sm text-left rtl:text-right  text-gray-500 dark:text-gray-400 font-poppins">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+
+        <div class="flex flex-col items-center w-full min-h-screen transition-all px-8 pt-2 gap-8">
+            <div class="flex flex-col w-full max-w-[1440px] pt-6 pb-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex flex-col font-poppins gap-1">
+                        <span class="text-2xl font-bold">Digital IDs</span>
+                        <span class="text-gray-500">View patients that have shared their Digital ID with you.</span>
+                    </div>
+                    <div class="flex gap-2 h-fit">
+                        <button id="generate_qr"
+                                class="flex gap-2 px-6 py-2.5 min-w-48 bg-blue_main text-white rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 3.75 9.375v-4.5ZM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 0 1-1.125-1.125v-4.5ZM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 13.5 9.375v-4.5Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 6.75h.75v.75h-.75v-.75ZM6.75 16.5h.75v.75h-.75v-.75ZM16.5 6.75h.75v.75h-.75v-.75ZM13.5 13.5h.75v.75h-.75v-.75ZM13.5 19.5h.75v.75h-.75v-.75ZM19.5 13.5h.75v.75h-.75v-.75ZM19.5 19.5h.75v.75h-.75v-.75ZM16.5 16.5h.75v.75h-.75v-.75Z" />
+                            </svg>
+                            <span>Generate QR</span>
+                        </button>
+                        <button id="add_patient"
+                                class="flex gap-2 px-6 py-2.5 min-w-48 bg-blue_super_light text-blue_main border border-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                            </svg>
+                            <span>Add a patient</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex w-full bg-white rounded-lg border border-[#DAE3E5] mt-2">
+                <label class="flex items-center w-full rounded-lg gap-2">
+                    <input type="text" name="search-patient" placeholder="Search patient name"
+                           class="flex rounded-lg w-full border-0 " style="outline: none; box-shadow: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6B7280"
+                         class="size-6 mr-3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                </label>
+            </div>
+
+            <!-- DIGITAL IDs CARD -->
+            <div id="digital-ids-card"
+                 class="flex flex-col justify-center w-full max-w-[1440px] bg-white rounded-lg border border-[#DAE3E5] dark:bg-gray-800 custom-table">
+
+                <div class="overflow-x-auto rounded-lg">
+                    <table id="prescription-table"
+                           class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 font-poppins">
+                        <thead class="text-xs text-gray-700 uppercase border-b border-[#DAE3E5] dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">Name</th>
                                 <th scope="col" class="px-6 py-3">Gender</th>
                                 <th scope="col" class="px-6 py-3">Birthdate</th>
-                                
+
                                 <th scope="col" class="px-6 py-3"><span class="sr-only">Edit</span></th>
                             </tr>
                         </thead>
                         <tbody id="digId-body">
-                            
+                            <!-- Data Rows -->
                         </tbody>
                     </table>
-                </div>         
+                </div>
             </div>
         </div>
     </main>

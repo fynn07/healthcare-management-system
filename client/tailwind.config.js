@@ -14,7 +14,10 @@ module.exports = {
       colors: {
         // Adds a custom blue shade
         'blue_super_light': '#E1F8FD',
-        'blue_main': '#054F99'
+        'blue_main': '#054F99',
+        'bookmark-purple': '#6B5B95', // Replace this with your desired color code
+        'bookmark-white': '#FFFFFF', // Define 'bookmark-white' if not already present
+
       },
     },
   },
