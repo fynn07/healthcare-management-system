@@ -82,7 +82,7 @@
 
     <!-- Main -->
     <main id="main"
-          class="flex flex-col w-full mt-[69px] px-6 pt-8 pb-16 gap-12 main transition-all">
+          class="flex flex-col items-center w-full mt-[69px] px-6 pt-8 pb-16 gap-12 main transition-all">
         <nav class="flex w-full h-5 rounded-lg gap-2 items-center text-[#054F99]">
             <button type="button" id="sidebar_button" class="text-lg text-gray-600 sidebar-toggle flex flex-col">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -98,9 +98,9 @@
             </ul>
         </nav>
 
-
-        <div class="flex flex-col items-center w-full min-h-screen transition-all px-8 pt-2 gap-8">
-            <div class="flex flex-col w-full max-w-[1440px] pt-6 pb-4">
+        <!-- DIGITAL ID CONTROLS -->
+        <div class="flex flex-col items-center w-full max-w-[1440px] min-h-screen transition-all px-8 pt-2 gap-8">
+            <div class="flex flex-col w-full pt-6 pb-4">
                 <div class="flex justify-between items-center">
                     <div class="flex flex-col font-poppins gap-1">
                         <span class="text-2xl font-bold">Digital IDs</span>
@@ -126,7 +126,8 @@
                 </div>
             </div>
 
-            <div class="flex w-full bg-white rounded-lg border border-[#DAE3E5] mt-2">
+            <!-- SEARCH PATIENT -->
+            <div class="flex w-full bg-white rounded-lg border border-[#DAE3E5] p-0.5 mt-2">
                 <label class="flex items-center w-full rounded-lg gap-2">
                     <input type="text" name="search-patient" placeholder="Search patient name"
                            class="flex rounded-lg w-full border-0 " style="outline: none; box-shadow: none;">
