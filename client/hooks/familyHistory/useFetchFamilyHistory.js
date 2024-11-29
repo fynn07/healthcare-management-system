@@ -1,12 +1,15 @@
 import { useUpdateFamilyHistory } from './useUpdateFamilyHistory.js';
+import { getApiEndpoint } from "../../utils/getApiEndpoint.js";
 
 async function fetchFamilyHistory(page = 1) {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
 
+    const ENDPOINT = getApiEndpoint();
+
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://127.0.0.1:8000/api/patient/fetch/${id}/family_history/?page=${page}`, {
+        const response = await fetch(`${ENDPOINT}/api/patient/fetch/${id}/family_history/?page=${page}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Token ${token}`,

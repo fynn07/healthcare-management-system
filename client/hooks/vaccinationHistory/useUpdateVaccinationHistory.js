@@ -1,12 +1,17 @@
 import { removeParam } from '../../utils/removeParam.js';
+import { getApiEndpoint } from "../../utils/getApiEndpoint.js";
+import { UtcTimeValidifier } from '../../utils/UtcTimeValidifier.js';
+import { forceRefresh } from '../../utils/forceRefresh.js';
 
 async function getVaccinationData(record_id) {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
+
+    const ENDPOINT = getApiEndpoint();
     
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://127.0.0.1:8000/api/patient/fetch/${id}/vaccination_history/${record_id}/`, {
+        const response = await fetch(`${ENDPOINT}/api/patient/fetch/${id}/vaccination_history/${record_id}/`, {
             method: 'GET',
             headers: {
                 'Authorization': `Token ${token}`,
@@ -30,6 +35,8 @@ export async function useUpdateVaccinationHistory(record_id) {
     const vaccination_data = await getVaccinationData(record_id);
     const addFormVacc = document.getElementById('add-formvacc');
 
+    const ENDPOINT = getApiEndpoint();
+
     addFormVacc.classList.remove('hidden'); 
     
         document.getElementById("vaccine-history-date-administered").value = vaccination_data.date_administered;
@@ -45,13 +52,16 @@ export async function useUpdateVaccinationHistory(record_id) {
     form.addEventListener("submit", async function(event) {
         event.preventDefault();
 
-        const date_administered = document.getElementById("vaccine-history-date-administered").value;
-        const next_dose_date = document.getElementById("vaccine-history-next-dose-date").value;
+        let date_administered = document.getElementById("vaccine-history-date-administered").value;
+        let next_dose_date = document.getElementById("vaccine-history-next-dose-date").value;
         const vaccine_name = document.getElementById("vaccine-history-vaccine-name").value;
         const brand_name = document.getElementById("vaccine-history-brand-name").value;
         const provider = document.getElementById("vaccine-history-provider").value;
         const site_given = document.getElementById("vaccine-history-site-given").value;
         const dose_ml = document.getElementById("vaccine-history-dose-ml").value;
+
+        date_administered = UtcTimeValidifier(date_administered);
+        next_dose_date = UtcTimeValidifier(next_dose_date);
 
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
@@ -75,7 +85,7 @@ export async function useUpdateVaccinationHistory(record_id) {
                 dose_ml,
             };
 
-            const response = await fetch(`http://127.0.0.1:8000/api/patient/update/${id}/vaccination_history/${record_id}/`, {
+            const response = await fetch(`${ENDPOINT}/api/patient/update/${id}/vaccination_history/${record_id}/`, {
                 method: "PUT",
                 headers: {
                     'Authorization': `Token ${token}`,
@@ -90,6 +100,7 @@ export async function useUpdateVaccinationHistory(record_id) {
             if (response.ok) {
                 sessionStorage.setItem('toastMessage', 'Record Successfully Updated');
                 sessionStorage.setItem('toastType', 'success');
+                forceRefresh();
             } else {
                 sessionStorage.setItem('toastMessage', 'Failed to Update Record');
                 sessionStorage.setItem('toastType', 'error');

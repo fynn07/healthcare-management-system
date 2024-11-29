@@ -1,3 +1,7 @@
+import { getApiEndpoint } from "../../utils/getApiEndpoint.js";
+import { UtcTimeValidifier } from '../../utils/UtcTimeValidifier.js';
+import { forceRefresh } from '../../utils/forceRefresh.js';
+
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("vaccination-history-form");
 
@@ -11,20 +15,25 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        const date_administered = document.getElementById("vaccine-history-date-administered").value;
-        const next_dose_date = document.getElementById("vaccine-history-next-dose-date").value;
+        let date_administered = document.getElementById("vaccine-history-date-administered").value;
+        let next_dose_date = document.getElementById("vaccine-history-next-dose-date").value;
         const vaccine_name = document.getElementById("vaccine-history-vaccine-name").value;
         const brand_name = document.getElementById("vaccine-history-brand-name").value;
         const provider = document.getElementById("vaccine-history-provider").value;
         const site_given = document.getElementById("vaccine-history-site-given").value;
         const dose_ml = document.getElementById("vaccine-history-dose-ml").value;
 
+        date_administered = UtcTimeValidifier(date_administered);
+        next_dose_date = UtcTimeValidifier(next_dose_date);
+
+        const ENDPOINT = getApiEndpoint();
+
         const id = urlParams.get('id');
 
         try {
             const token = localStorage.getItem('token');
             
-            const response = await fetch(`http://127.0.0.1:8000/api/patient/create/${id}/vaccination_history/`, {
+            const response = await fetch(`${ENDPOINT}/api/patient/create/${id}/vaccination_history/`, {
                 method: "POST",
                 headers: {
                     'Authorization': `Token ${token}`,
@@ -47,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (response.ok) {
                 sessionStorage.setItem('toastMessage', 'Record Successfully Added');
                 sessionStorage.setItem('toastType', 'success');
+                forceRefresh();
                 
             } else {
                 sessionStorage.setItem('toastMessage', 'Failed to Add Record');
