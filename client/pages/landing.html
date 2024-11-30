@@ -6,6 +6,8 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../dist/css/style.css">
     <title>Landing Page</title>
     <style>
         body {
@@ -13,19 +15,19 @@
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="text-gray-800 font-poppins border-box bg-gray-50 text-sm md:text-base">
 
     <!-- Header -->
-    <header class="bg-white shadow-md fixed w-full top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-blue-600">
-                <i class="font-light">The</i><span class="font-bold">HealthBook</span>
-            </h1>
+    <header class="fixed top-0 w-full min-h-[69px] z-10 py-4 bg-white border-b border-gray_border justify-center inline-flex z-10">
+        <div class="flex w-full xl:max-w-[1200px] mx-6 md:mx-12 lg:mx-16 justify-between items-center">
+            <a href="landing.html" class="justify-center items-center cursor-pointer gap-2.5 flex">
+                <img src="../assets/logo_the_healthbook.svg" alt="The Health Book Logo" class="h-[16px]">
+            </a>
             <nav>
-                <a href="#features" class="text-gray-700 font-medium hover:text-blue-600 mx-4">Features</a>
-                <a href="#about" class="text-gray-700 font-medium hover:text-blue-600 mx-4">About</a>
-                <a href="#contact" class="text-gray-700 font-medium hover:text-blue-600 mx-4">Contact</a>
-                <a href="#signin" class="bg-blue-600 text-white py-2 px-6 rounded-lg shadow hover:bg-blue-500 transition">
+                <a href="#about" class="text-gray-700 font-medium hover:text-blue_cta max-xs:hidden mx-4">About</a>
+                <a href="#features" class="text-gray-700 font-medium hover:text-blue_cta max-md:hidden mx-4">Features</a>
+                <a href="#contact" class="text-gray-700 font-medium hover:text-blue_cta max-md:hidden mx-4">Contact</a>
+                <a href="#signin" class="bg-blue_cta text-white py-2 px-4 sm:px-6 rounded-lg shadow hover:bg-blue_main transition">
                     Sign In
                 </a>
             </nav>
@@ -36,17 +38,17 @@
     <section class="bg-blue-50 h-screen flex items-center justify-center pt-16">
         <div class="container mx-auto flex flex-col lg:flex-row items-center">
             <div class="w-full lg:w-1/2 text-center lg:text-left">
-                <h1 class="text-4xl lg:text-5xl font-bold text-blue-600">
-                    Welcome to <span class="text-blue-800">HealthBook</span>
+                <h1 class="text-4xl lg:text-5xl font-bold text-blue_cta ">
+                    Welcome to <span class="text-blue_cta ">HealthBook</span>
                 </h1>
                 <p class="text-lg text-gray-600 mt-4">
                     Your all-in-one solution for managing patient records, seamlessly and securely.
                 </p>
                 <div class="mt-8">
-                    <a href="#features" class="bg-blue-600 text-white py-3 px-8 rounded-lg shadow-lg hover:bg-blue-500 transition mr-4">
+                    <a href="#features" class="bg-blue_cta  text-white py-3 px-8 rounded-lg shadow-lg hover:bg-blue-500 transition mr-4">
                         Learn More
                     </a>
-                    <a href="#signin" class="text-blue-600 font-medium underline hover:text-blue-800">
+                    <a href="#signin" class="text-blue_cta  font-medium underline hover:text-blue_cta ">
                         Get Started
                     </a>
                 </div>
@@ -60,25 +62,25 @@
 
     <section id="features" class="bg-white py-16">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center text-blue-600">Features</h2>
+            <h2 class="text-3xl font-bold text-center text-blue_cta ">Features</h2>
             <p class="text-gray-600 text-center mt-2">Discover what makes HealthBook your best choice</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <i class="ri-folder-user-line text-4xl text-blue-600"></i>
+                    <i class="ri-folder-user-line text-4xl text-blue_cta "></i>
                     <h3 class="text-xl font-semibold mt-4">Patient Management</h3>
                     <p class="text-gray-600 mt-2">
                         Securely store and access patient information anytime, anywhere.
                     </p>
                 </div>
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <i class="ri-heart-pulse-line text-4xl text-blue-600"></i>
+                    <i class="ri-heart-pulse-line text-4xl text-blue_cta "></i>
                     <h3 class="text-xl font-semibold mt-4">Health Insights</h3>
                     <p class="text-gray-600 mt-2">
                         Gain actionable insights with real-time data analytics.
                     </p>
                 </div>
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <i class="ri-lock-2-line text-4xl text-blue-600"></i>
+                    <i class="ri-lock-2-line text-4xl text-blue_cta "></i>
                     <h3 class="text-xl font-semibold mt-4">Data Security</h3>
                     <p class="text-gray-600 mt-2">
                         Your data is protected with the latest encryption standards.
@@ -90,12 +92,12 @@
 
     <section id="about" class="bg-blue-50 py-16">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold text-blue-600">Why Choose HealthBook?</h2>
+            <h2 class="text-3xl font-bold text-blue_cta ">Why Choose HealthBook?</h2>
             <p class="text-gray-600 mt-4">
                 HealthBook is trusted by healthcare providers around the globe for its reliability and ease of use.
             </p>
             <div class="mt-8">
-                <a href="#signin" class="bg-blue-600 text-white py-3 px-8 rounded-lg shadow-lg hover:bg-blue-500 transition">
+                <a href="#signin" class="bg-blue_cta  text-white py-3 px-8 rounded-lg shadow-lg hover:bg-blue-500 transition">
                     Get Started Today
                 </a>
             </div>

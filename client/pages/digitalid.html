@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <script type="module" defer src="../hooks/fetchProviderName.js"></script>
+    <script defer src="../utils/sidebartoggle.js"></script>
+
     <link rel="stylesheet" href="../dist/css/style.css">
     <link rel="stylesheet" href="../output.css">
 
@@ -19,7 +21,7 @@
 
 <body class="flex justify text-gray-800 font-poppins border-box bg-gray-50 ">
     <header class="fixed top-0 w-full z-10 px-6 py-4 bg-white border-b border-[#DAE3E5] justify-between items-center inline-flex z-10">
-        <a href="#" class="justify-center items-center cursor-pointer gap-2.5 flex">
+        <a href="landing.html" class="justify-center items-center cursor-pointer gap-2.5 flex">
             <img src="../assets/logo_the_healthbook.svg" alt="The Health Book Logo">
         </a>
 
@@ -82,7 +84,7 @@
 
     <!-- Main -->
     <main id="main"
-          class="flex flex-col items-center w-full mt-[69px] px-6 pt-8 pb-16 gap-12 main transition-all">
+          class="ml-80 xl:ml-80 flex flex-col items-center w-full mt-[69px] px-6 pt-8 pb-16 gap-12 main transition-all">
         <nav class="flex w-full h-5 rounded-lg gap-2 items-center text-[#054F99]">
             <button type="button" id="sidebar_button" class="text-lg text-gray-600 sidebar-toggle flex flex-col">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -162,15 +164,13 @@
             </div>
         </div>
     </main>
-    
 
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.bundle.js"></script>
     <script src="../../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-    <script type="module" src="../hooks/fetchPatients.js">
-    </script><script defer src="../utils/sidebartoggle.js"></script>
+    <script type="module" src="../hooks/fetchPatients.js"></script>
 
 </body>
 </html>

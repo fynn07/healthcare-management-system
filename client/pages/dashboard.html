@@ -29,8 +29,8 @@
     <title>Dashboard</title>
 </head>
 
-<body class="flex justify text-gray-800 font-poppins border-box bg-gray-50 ">
-    <header class="fixed top-0 w-full z-10 px-6 py-4 bg-white border-b border-[#DAE3E5] justify-between items-center inline-flex z-10">
+<body class="flex justify text-gray-800 font-poppins border-box bg-gray-50 text-sm md:text-base">
+    <header class="fixed top-0 w-full z-10 px-6 py-4 bg-white border-b border-gray_border justify-between items-center inline-flex z-10">
         <a href="landing.html" class="justify-center items-center cursor-pointer gap-2.5 flex">
             <img src="../assets/logo_the_healthbook.svg" alt="The Health Book Logo">
         </a>
@@ -53,7 +53,7 @@
     </header>
 
     <aside id="sidebar"
-        class="fixed transition-all xl:flex left-0 lg:w-80 h-full flex-col justify-start items-start grow basis-0 px-6 py-8 pt-[7rem] bg-white border-r border-[#DAE3E5] gap-8">
+        class="fixed transition-all xl:flex left-0 lg:w-80 h-full flex-col justify-start items-start grow basis-0 px-6 py-8 pt-[7rem] bg-white border-r border-gray_border gap-8">
         <div class="HospitalName flex flex-col gap-y-1">
             <a href="#">
                 <span class="provider_name_field text-neutral-800 text-base font-bold font-montserrat leading-normal"></span>
@@ -91,7 +91,7 @@
 
     <!-- Main -->
     <main id="main"
-          class="ml-80 flex items-start flex-col w-full mt-[69px] px-6 pt-8 pb-16 gap-12 transition-all">
+          class="ml-80 xl:ml-80 flex items-start flex-col w-full mt-[69px] px-6 pt-8 pb-16 gap-12 transition-all">
         <nav class="flex w-full h-5 rounded-lg gap-2 items-center text-[#054F99]">
             <button type="button" id="sidebar_button" class="text-lg text-gray-600 sidebar-toggle flex flex-col">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -112,7 +112,7 @@
             <div id="main_content" class="flex flex-col max-w-[1440px] gap-8 w-full">
                 <!-- Patient Profile Overview -->
                 <div
-                    class="flex flex-col justify-center w-full px-12 pt-8 pb-10 bg-white rounded-lg border border-[#DAE3E5] dark:bg-gray-800 custom-table">
+                    class="flex flex-col justify-center w-full px-12 pt-8 pb-10 bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex items-center gap-4 w-full">
                         <img class="h-24 w-24 rounded-full" src="../assets/default_user_profile.svg" alt="Profile Picture">
                         <div class="flex flex-col gap-1">
@@ -159,7 +159,7 @@
 
                 <!-- MEDICATION HISTORY -->
                 <div id="medication-history-card"
-                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-[#DAE3E5] dark:bg-gray-800 custom-table">
+                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex flex-col pt-6 gap-4">
                         <div class="flex justify-between px-8">
                             <span class="text-lg font-poppins font-bold">Medication History</span>
@@ -168,7 +168,7 @@
                                 + Add
                             </button>
                         </div>
-                        <div class="flex px-8 border-b border-[#DAE3E5] gap-4 text-base ">
+                        <div class="flex px-8 border-b border-gray_border gap-4 text-base ">
                             <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
                                 Prescribed by you
                             </button>
@@ -245,7 +245,7 @@
 
                 <!-- VACCINATION HISTORY -->
                 <div id="vaccination-history-card"
-                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-[#DAE3E5] dark:bg-gray-800 custom-table">
+                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex flex-col pt-6 gap-4">
                         <div class="flex justify-between px-8">
                             <span class="text-lg font-poppins font-bold">Vaccination History</span>
@@ -254,7 +254,7 @@
                                 + Add
                             </button>
                         </div>
-                        <div class="flex px-8 border-b border-[#DAE3E5] gap-4 text-base ">
+                        <div class="flex px-8 border-b border-gray_border gap-4 text-base ">
                             <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
                                 Administered by you
                             </button>
@@ -338,7 +338,7 @@
 
                 <!-- FAMILY HISTORY -->
                 <div id="family-history-card"
-                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-[#DAE3E5] dark:bg-gray-800 custom-table">
+                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex flex-col pt-6 gap-4">
                         <div class="flex justify-between px-8">
                             <span class="text-lg font-poppins font-bold">Family History</span>
@@ -347,7 +347,7 @@
                                 + Add
                             </button>
                         </div>
-                        <div class="flex px-8 border-b border-[#DAE3E5] gap-4 text-base ">
+                        <div class="flex px-8 border-b border-gray_border gap-4 text-base ">
                             <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
                                 Added by you
                             </button>
@@ -409,7 +409,7 @@
 
                 <!-- SOCIAL HISTORY -->
                 <div id="social-history-card"
-                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-[#DAE3E5] dark:bg-gray-800 custom-table">
+                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex flex-col pt-6 gap-4">
                         <div class="flex justify-between px-8">
                             <span class="text-lg font-poppins font-bold">Social History</span>
@@ -418,7 +418,7 @@
                                 + Add
                             </button>
                         </div>
-                        <div class="flex px-8 border-b border-[#DAE3E5] gap-4 text-base ">
+                        <div class="flex px-8 border-b border-gray_border gap-4 text-base ">
                             <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
                                 Added by you
                             </button>
@@ -494,7 +494,7 @@
 
                 <!-- SURGICAL HISTORY -->
                 <div id="surgical-history-card"
-                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-[#DAE3E5] dark:bg-gray-800 custom-table">
+                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex flex-col pt-6 gap-4">
                         <div class="flex justify-between px-8">
                             <span class="text-lg font-poppins font-bold">Surgical History</span>
@@ -503,7 +503,7 @@
                                 + Add
                             </button>
                         </div>
-                        <div class="flex px-8 border-b border-[#DAE3E5] gap-4 text-base ">
+                        <div class="flex px-8 border-b border-gray_border gap-4 text-base ">
                             <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
                                 Added by you
                             </button>
@@ -574,7 +574,7 @@
 
                 <!-- VITAL HISTORY -->
                 <div id="vital-history-card"
-                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-[#DAE3E5] dark:bg-gray-800 custom-table">
+                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex flex-col pt-6 gap-4">
                         <div class="flex justify-between px-8">
                             <span class="text-lg font-poppins font-bold">Vital Sign History</span>
@@ -583,7 +583,7 @@
                                 + Add
                             </button>
                         </div>
-                        <div class="flex px-8 border-b border-[#DAE3E5] gap-4 text-base ">
+                        <div class="flex px-8 border-b border-gray_border gap-4 text-base ">
                             <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
                                 Added by you
                             </button>
@@ -657,7 +657,7 @@
 
                 <!-- ALLERGY HISTORY -->
                 <div id="allergy-history-card"
-                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-[#DAE3E5] dark:bg-gray-800 custom-table">
+                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex flex-col pt-6 gap-4">
                         <div class="flex justify-between px-8">
                             <span class="text-lg font-poppins font-bold">Allergy History</span>
@@ -666,7 +666,7 @@
                                 + Add
                             </button>
                         </div>
-                        <div class="flex px-8 border-b border-[#DAE3E5] gap-4 text-base ">
+                        <div class="flex px-8 border-b border-gray_border gap-4 text-base ">
                             <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
                                 Added by you
                             </button>
