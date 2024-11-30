@@ -20,6 +20,7 @@ module.exports = {
         'bookmark-purple': '#6B5B95', // Replace this with your desired color code
         'bookmark-white': '#FFFFFF', // Define 'bookmark-white' if not already present
         'gray_border': '#DAE3E5',
+        'green_button' : '#15803D',
       },
       screens: {
         'xs': '480px', // => @media (min-width: 480px) { ... }

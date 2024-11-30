@@ -2369,3 +2369,21 @@ input:checked + .toggle-bg {
   left: 0;
   position: relative;
 }
+
+.bg_pattern::before {
+  content: "";
+  position: absolute;
+  background-position: center;
+  background-image: url("assets/background_pattern.svg");
+
+  background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1; /* Adjust the opacity here */
+  z-index: 1;
+}
