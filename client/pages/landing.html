@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="../dist/css/style.css">
+    <link href="../output.css" rel="stylesheet">
     <title>Landing Page</title>
     <style>
         body {
@@ -15,13 +16,13 @@
         }
     </style>
 </head>
-<body class="text-gray-800 font-poppins border-box bg-gray-50 text-sm md:text-base">
+<body class="flex flex-col text-gray-800 font-poppins border-box bg-white text-sm md:text-base">
 
     <!-- Header -->
     <header class="fixed top-0 w-full min-h-[69px] z-10 py-4 bg-white border-b border-gray_border justify-center inline-flex z-10">
         <div class="flex w-full xl:max-w-[1200px] mx-6 md:mx-12 lg:mx-16 justify-between items-center">
             <a href="landing.html" class="justify-center items-center cursor-pointer gap-2.5 flex">
-                <img src="../assets/logo_the_healthbook.svg" alt="The Health Book Logo" class="h-[16px]">
+                <img src="../assets/logo_the_healthbook.svg" alt="The Health Book Logo" class="h-[16px] sm:h-[18px]">
             </a>
             <nav>
                 <a href="#about" class="text-gray-700 font-medium hover:text-blue_cta max-xs:hidden mx-4">About</a>
@@ -34,75 +35,86 @@
         </div>
     </header>
 
-  
-    <section class="bg-blue-50 h-screen flex items-center justify-center pt-16">
-        <div class="container mx-auto flex flex-col lg:flex-row items-center">
-            <div class="w-full lg:w-1/2 text-center lg:text-left">
-                <h1 class="text-4xl lg:text-5xl font-bold text-blue_cta ">
-                    Welcome to <span class="text-blue_cta ">HealthBook</span>
-                </h1>
-                <p class="text-lg text-gray-600 mt-4">
-                    Your all-in-one solution for managing patient records, seamlessly and securely.
+
+    <main id="main" style="margin-top: 69px;"
+          class="flex items-center flex-col w-full mt-[690px]">
+        <section class="flex justify-end w-full bg-gradient-to-br from-[#FAF1F1] to-blue_super_light px-6 md:px-12 lg:pl-16 lg:pr-0 ">
+            <div class="flex w-full xl:w-[calc(50%+640px)] min-h-[800px] justify-end py-12">
+                <div class="w-full flex items-center flex-col lg:flex-row justify-between gap-8 xl:gap-24">
+                    <div class="flex flex-col w-full lg:max-w-[calc(0.45*1280px)] text-center lg:text-left my-8 gap-8">
+                        <h1 class="text-4xl lg:text-5xl lg:leading-[3rem] font-bold text-blue_cta ">
+                            Manage medical records effortlessly
+                        </h1>
+                        <p class="text-lg text-gray-600">
+                            Whether you're a healthcare professional or an individual managing your own health, we've got the tools to make it stress-free. Say goodbye to clutter and hello to convenience!
+                        </p>
+                        <div class="mt-8">
+                            <a href="#features" class="bg-blue_cta text-white py-3 px-8 rounded-lg hover:bg-blue-500 transition mr-4">
+                                Learn More
+                            </a>
+                            <a href="#signin" class="bg-blue_super_light border border-blue_cta hover:bg-blue_cta text-blue_main hover:text-white py-3 px-8 rounded-lg transition mr-4">
+                                Get Started
+                            </a>
+                        </div>
+                    </div>
+                    <div class="max-lg:hidden banner_image flex"></div>
+                    <div class="flex lg:hidden lg:opacity-0 w-full justify-center h-full">
+                        <img src="../assets/demo_medical_record_shadowed.png" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section id="features" class="bg-white py-16">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center text-blue_cta ">Features</h2>
+                <p class="text-gray-600 text-center mt-2">Discover what makes HealthBook your best choice</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <i class="ri-folder-user-line text-4xl text-blue_cta "></i>
+                        <h3 class="text-xl font-semibold mt-4">Patient Management</h3>
+                        <p class="text-gray-600 mt-2">
+                            Securely store and access patient information anytime, anywhere.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <i class="ri-heart-pulse-line text-4xl text-blue_cta "></i>
+                        <h3 class="text-xl font-semibold mt-4">Health Insights</h3>
+                        <p class="text-gray-600 mt-2">
+                            Gain actionable insights with real-time data analytics.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <i class="ri-lock-2-line text-4xl text-blue_cta "></i>
+                        <h3 class="text-xl font-semibold mt-4">Data Security</h3>
+                        <p class="text-gray-600 mt-2">
+                            Your data is protected with the latest encryption standards.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="bg-blue-50 py-16">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold text-blue_cta ">Why Choose HealthBook?</h2>
+                <p class="text-gray-600 mt-4">
+                    HealthBook is trusted by healthcare providers around the globe for its reliability and ease of use.
                 </p>
                 <div class="mt-8">
-                    <a href="#features" class="bg-blue_cta  text-white py-3 px-8 rounded-lg shadow-lg hover:bg-blue-500 transition mr-4">
-                        Learn More
-                    </a>
-                    <a href="#signin" class="text-blue_cta  font-medium underline hover:text-blue_cta ">
-                        Get Started
+                    <a href="#signin" class="bg-blue_cta  text-white py-3 px-8 rounded-lg shadow-lg hover:bg-blue-500 transition">
+                        Get Started Today
                     </a>
                 </div>
             </div>
-            <div class="w-full lg:w-1/2 mt-10 lg:mt-0">
-                <img src="https://via.placeholder.com/500x400" alt="HealthBook Preview" class="mx-auto rounded-lg shadow-lg">
-            </div>
-        </div>
-    </section>
+        </section>
 
 
-    <section id="features" class="bg-white py-16">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center text-blue_cta ">Features</h2>
-            <p class="text-gray-600 text-center mt-2">Discover what makes HealthBook your best choice</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <i class="ri-folder-user-line text-4xl text-blue_cta "></i>
-                    <h3 class="text-xl font-semibold mt-4">Patient Management</h3>
-                    <p class="text-gray-600 mt-2">
-                        Securely store and access patient information anytime, anywhere.
-                    </p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <i class="ri-heart-pulse-line text-4xl text-blue_cta "></i>
-                    <h3 class="text-xl font-semibold mt-4">Health Insights</h3>
-                    <p class="text-gray-600 mt-2">
-                        Gain actionable insights with real-time data analytics.
-                    </p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <i class="ri-lock-2-line text-4xl text-blue_cta "></i>
-                    <h3 class="text-xl font-semibold mt-4">Data Security</h3>
-                    <p class="text-gray-600 mt-2">
-                        Your data is protected with the latest encryption standards.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="bg-blue-50 py-16">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold text-blue_cta ">Why Choose HealthBook?</h2>
-            <p class="text-gray-600 mt-4">
-                HealthBook is trusted by healthcare providers around the globe for its reliability and ease of use.
-            </p>
-            <div class="mt-8">
-                <a href="#signin" class="bg-blue_cta  text-white py-3 px-8 rounded-lg shadow-lg hover:bg-blue-500 transition">
-                    Get Started Today
-                </a>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-white py-6">
