@@ -13,6 +13,7 @@ import MedicationForm from '../../components/forms/MedicationForm';
 import VaccinationForm from '../../components/forms/VaccinationForm';
 import FamilyForm from '../../components/forms/FamilyForm';
 import SurgicalForm from '../../components/forms/SurgicalForm';
+import SocialForm from '../../components/forms/SocialForm';
 import AllergyForm from '../../components/forms/AllergyForm';
 import VitalsRecord from '../../components/records/VitalsRecord';
 import { useGlobalContext } from '../../context/GlobalProvider';
@@ -20,7 +21,7 @@ import { useGlobalContext } from '../../context/GlobalProvider';
 
 
 const Records = () => {
-  const { user, userInfo, userDetails, medRecord} = useGlobalContext();
+  const { user, userInfo, userDetails, medRecord, socialRecord} = useGlobalContext();
   const [showForm, setShowForm] = useState(false);
   const [activeTab, setActiveTab] = useState('Medication');
   
@@ -88,16 +89,23 @@ const Records = () => {
       case 'Social':
         return (
           <View className="space-y-6">
+          {socialRecord?.map((record) => (
             <SocRecord
-              dateAdd="9/15/2019"
-              nicotine="10 years smoking"
-              alcohol="Occasional"
-              drug="Marijuana"
-              diet="High in carbs"
-              physical="Regular Exercise"
+              key={record.$id}  
+              dateAdd={record.dateAdded}
+              nicotine={record.nicotine}
+              alcohol={record.alcohol} 
+              drug={record.drug}
+              diet={record.diet}
+              physical={record.physicalActivity}
+              onEdit={() => console.log("Edit Medication")}
             />
-          </View>
+
+            
+          ))}
+        </View>
         );
+
       case 'Family History':
         return (
           <View className="space-y-6">
@@ -164,10 +172,27 @@ const Records = () => {
       {/* Header */}
       <View className="bg-zinc-100 py-4 px-4 flex-row position justify-between">
         <Text className="ml-3 text-black text-4xl font-sfbold">Records</Text>
-        <TouchableOpacity className="mr-2 mt-2">
-          <AntDesign name="addfile" size={24} color="blue" />
-          </TouchableOpacity> 
-       
+        <TouchableOpacity 
+          className="mr-2 mt-2"
+          onPress={() => setShowForm(true)}
+        >
+        
+          <AntDesign 
+            name="addfile" 
+            size={24} 
+            color={
+              activeTab === 'Medication' ? 'blue' :
+              activeTab === 'Vaccination' ? 'red' :
+              activeTab === 'Social' ? 'violet' :
+              activeTab === 'Family History' ? 'orange' :
+              activeTab === 'Surgical' ? 'green' :
+              activeTab === 'Allergy' ? 'purple' :
+              activeTab === 'Vitals' ? 'darkred' :
+              'gray' 
+            }
+          />
+
+        </TouchableOpacity>
       </View>
 
       <ScrollView>
@@ -222,6 +247,7 @@ const Records = () => {
         activeTab === 'Medication' ? (
           <MedicationForm
             isVisible={showForm}
+            
             onClose={() => setShowForm(false)}
           />
         ) : activeTab === 'Vaccination' ? (

@@ -11,6 +11,7 @@ export const config ={
     userInfoId: '671e52a1002f195cb02e',
     vaccCardId: '6720e5ab00240aa269c9',
     medicationRecordId: '6730d105003ba40f01a8',
+    socialRecordId: '67452ca2000a1db53c3e',
     storageId: '6708a044001803db029b'
 }
 
@@ -191,30 +192,50 @@ export const getUserMedicalRecords = async () => {
   }
 };
 
+  export const getSocialRecords = async () => {
+    try {
+        const currentAccount = await getAccount();
+        if(!currentAccount) throw new Error("User is not logged in.");
 
+        const socialRecordResponse = await databases.listDocuments(
+          config.databaseId,
+          config.socialRecordId,
+        );
+        if(socialRecordResponse.total === 0){
+          throw new Error("No Social Records found.");
+        }
 
-export const getUserFamRecords = async () => {
-  try {
-    const currentAccount = await getAccount();
-    if (!currentAccount) throw new Error("User is not logged in.");
-
-    const FamRecordResponse = await databases.listDocuments(
-      config.databaseId
-      
-    );
-
-    if(FamRecordResponse.total === 0){
-      throw new Error("No Records found");
+        return socialRecordResponse.documents; 
+    }catch (error) {
+      console.error("Error fetching user social records:", error);
+      return null;
     }
+  };
+
+
+
+// export const getUserFamRecords = async () => {
+//   try {
+//     const currentAccount = await getAccount();
+//     if (!currentAccount) throw new Error("User is not logged in.");
+
+//     const FamRecordResponse = await databases.listDocuments(
+//       config.databaseId
+      
+//     );
+
+//     if(FamRecordResponse.total === 0){
+//       throw new Error("No Records found");
+//     }
 
     
-    return FamRecordResponse.documents;
+//     return FamRecordResponse.documents;
     
-  } catch (error){
-    console.error("Error fetching user family records:", error);
-    return null;
-  }
-}
+//   } catch (error){
+//     console.error("Error fetching user family records:", error);
+//     return null;
+//   }
+// }
  
 export const addMedicationRecord = async (date, genericName, dosage, quantity) => {
   try {
