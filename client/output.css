@@ -10,6 +10,10 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *,
 ::before,
 ::after {
@@ -2384,6 +2388,33 @@ input:checked + .toggle-bg {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 1; /* Adjust the opacity here */
+  opacity: 0.6; /* Adjust the opacity here */
   z-index: 1;
+}
+
+.testimonial-carousel {
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.testimonial-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-carousel-holder::before, .testimonial-carousel-holder::after  {
+  content: "";
+  position: absolute;
+  height: 100%;
+}
+
+.testimonial-carousel-holder::before {
+  left: calc(3rem - 2px);
+}
+
+.testimonial-carousel-holder::after {
+  right: calc(3rem - 2px);
+}
+
+.testimonial-card {
+  scroll-snap-align: center;
 }
