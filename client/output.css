@@ -2429,7 +2429,7 @@ input:checked + .toggle-bg {
   display: none;
 }
 
-.testimonial-carousel-holder::before, .testimonial-carousel-holder::after  {
+.testimonial-carousel-holder::before, .testimonial-carousel-holder::after, #banner::after  {
   content: "";
   position: absolute;
   height: 100%;

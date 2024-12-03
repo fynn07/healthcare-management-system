@@ -36,8 +36,8 @@
     <main id="main"
           class="flex items-center flex-col w-full mt-[69px] gap-32 pb-16">
         <section class="flex justify-end w-full bg-gradient-to-br from-[#FAF1F1] to-[#F6F1FF] px-6 md:px-12 lg:pl-16 lg:pr-0 ">
-            <div class="flex w-full xl:w-[calc(50%+640px)] min-h-[800px] justify-end py-12">
-                <div class="w-full flex items-center flex-col lg:flex-row justify-between gap-8 xl:gap-24">
+            <div class="relative flex w-full xl:w-[calc(50%+720px)] min-h-[800px] justify-end py-12 ">
+                <div id="banner" class="w-full flex items-center flex-col lg:flex-row justify-between gap-8 xl:gap-24 after:bg-gradient-to-l from-[#F8F1F8] via-60% to-transparent xl:after:w-[32%] after:absolute after:right-0">
                     <div class="flex flex-col w-full lg:max-w-[calc(0.45*1280px)] text-center lg:text-left my-8 gap-8">
                         <h1 class="text-4xl lg:text-5xl lg:leading-[3rem] font-bold text-blue_cta ">
                             Manage medical records effortlessly
@@ -64,7 +64,7 @@
         </section>
 
 
-        <section id="features" class="">
+        <section id="features" class="px-8">
             <div class="container mx-auto">
                 <h2 class="text-3xl font-bold text-center text-blue_cta ">Features</h2>
                 <p class="text-gray-600 text-center mt-2">Discover what makes HealthBook your best choice</p>
@@ -132,10 +132,10 @@
 
 
         <section id="testimonial" class="flex flex-col w-full min-h-[69px] z-10 py-4 items-center gap-12">
-            <div class="flex flex-col items-center gap-6 text-center">
+            <div class="flex flex-col items-center gap-6 text-center px-4">
                 <h2 class="flex text-2xl sm:text-3xl font-bold">User Testimonials</h2>
                 <p class="flex max-w-[680px] lg:max-w-[800px]">
-                    TheHealthBook has already helped thousands of Filipinos in their health management goals. Here is what they've got to say.
+                    TheHealthBook has already helped thousands of Filipino doctors, patients, and healthcare workers in their health management goals. Here is what they've got to say.
                 </p>
             </div>
 
@@ -159,14 +159,13 @@
                     </div>
                 </div>
             </div>
-
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white py-6">
-        <div class="container mx-auto text-center text-gray-600">
+    <footer class="py-6 bg-neutral-900">
+        <div class="container mx-auto text-center text-neutral-100">
             <p>&copy; 2024 HealthBook. All rights reserved.</p>
         </div>
     </footer>
