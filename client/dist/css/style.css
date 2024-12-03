@@ -1129,6 +1129,10 @@ input:checked + .toggle-bg{
   top: 0px;
 }
 
+.top-1\/2{
+  top: 50%;
+}
+
 .z-10{
   z-index: 10;
 }
@@ -1333,6 +1337,16 @@ input:checked + .toggle-bg{
   height: 1.5rem;
 }
 
+.size-8{
+  width: 2rem;
+  height: 2rem;
+}
+
+.size-7{
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
 .h-24{
   height: 6rem;
 }
@@ -1418,6 +1432,14 @@ input:checked + .toggle-bg{
   height: 240px;
 }
 
+.h-64{
+  height: 16rem;
+}
+
+.h-32{
+  height: 8rem;
+}
+
 .max-h-full{
   max-height: 100%;
 }
@@ -1485,6 +1507,34 @@ input:checked + .toggle-bg{
 
 .w-\[100vw\]{
   width: 100vw;
+}
+
+.w-32{
+  width: 8rem;
+}
+
+.w-\[1000px\]{
+  width: 1000px;
+}
+
+.w-\[100\%\]{
+  width: 100%;
+}
+
+.w-\[99vw\]{
+  width: 99vw;
+}
+
+.w-\[96vw\]{
+  width: 96vw;
+}
+
+.w-\[98vw\]{
+  width: 98vw;
+}
+
+.w-\[98\.5vw\]{
+  width: 98.5vw;
 }
 
 .min-w-48{
@@ -1722,6 +1772,10 @@ input:checked + .toggle-bg{
   overflow: hidden;
 }
 
+.overflow-scroll{
+  overflow: scroll;
+}
+
 .overflow-x-auto{
   overflow-x: auto;
 }
@@ -1730,12 +1784,20 @@ input:checked + .toggle-bg{
   overflow-y: auto;
 }
 
+.overscroll-x-auto{
+  overscroll-behavior-x: auto;
+}
+
 .overscroll-x-contain{
   overscroll-behavior-x: contain;
 }
 
 .scroll-auto{
   scroll-behavior: auto;
+}
+
+.scroll-smooth{
+  scroll-behavior: smooth;
 }
 
 .rounded{
@@ -1920,12 +1982,30 @@ input:checked + .toggle-bg{
   background-color: rgb(255 255 255 / 0.5);
 }
 
+.bg-neutral-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#F1F0F4\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 240 244 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-75{
   --tw-bg-opacity: 0.75;
 }
 
 .bg-gradient-to-br{
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-l{
+  background-image: linear-gradient(to left, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-r{
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
 .from-\[\#FAF1F1\]{
@@ -1946,6 +2026,12 @@ input:checked + .toggle-bg{
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-neutral-50{
+  --tw-gradient-from: #fafafa var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(250 250 250 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .via-white{
   --tw-gradient-to: rgb(255 255 255 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #ffffff var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -1959,6 +2045,14 @@ input:checked + .toggle-bg{
 .via-\[\#ffffff\]{
   --tw-gradient-to: rgb(255 255 255 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #ffffff var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.via-60\%{
+  --tw-gradient-via-position: 60%;
+}
+
+.via-80\%{
+  --tw-gradient-via-position: 80%;
 }
 
 .to-\[\#F6F1FF\]{
@@ -2169,6 +2263,10 @@ input:checked + .toggle-bg{
 
 .pl-\[calc\(100vw-180px\)\]{
   padding-left: calc(100vw - 180px);
+}
+
+.pb-6{
+  padding-bottom: 1.5rem;
 }
 
 .text-left{
@@ -2560,6 +2658,20 @@ input:checked + .toggle-bg{
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.before\:backdrop-blur-lg::before{
+  content: var(--tw-content);
+  --tw-backdrop-blur: blur(16px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.before\:backdrop-blur-sm::before{
+  content: var(--tw-content);
+  --tw-backdrop-blur: blur(4px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
 .after\:w-\[320px\]::after{
   content: var(--tw-content);
   width: 320px;
@@ -2628,6 +2740,21 @@ input:checked + .toggle-bg{
 .hover\:bg-white:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-neutral-100:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-neutral-50:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#FAF1F1\]:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 241 241 / var(--tw-bg-opacity));
 }
 
 .hover\:text-\[\#054F99\]:hover{
@@ -2872,6 +2999,19 @@ input:checked + .toggle-bg{
   .max-md\:w-\[360px\]{
     width: 360px;
   }
+
+  .max-md\:w-\[calc\(100\%-360px\)\]{
+    width: calc(100% - 360px);
+  }
+
+  .max-md\:w-\[calc\(50\%-180px\)\]{
+    width: calc(50% - 180px);
+  }
+
+  .max-md\:rounded-t-xl{
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+  }
 }
 
 @media not all and (min-width: 480px){
@@ -2887,6 +3027,10 @@ input:checked + .toggle-bg{
 
   .sm\:mt-6{
     margin-top: 1.5rem;
+  }
+
+  .sm\:flex{
+    display: flex;
   }
 
   .sm\:h-\[18px\]{
@@ -2989,6 +3133,14 @@ input:checked + .toggle-bg{
 
   .md\:w-\[60\%\]{
     width: 60%;
+  }
+
+  .md\:w-\[calc\(100\%-600px\)\]{
+    width: calc(100% - 600px);
+  }
+
+  .md\:w-\[calc\(50\%-300px\)\]{
+    width: calc(50% - 300px);
   }
 
   .md\:grid-cols-3{
@@ -3156,6 +3308,14 @@ input:checked + .toggle-bg{
 
   .xl\:w-\[800px\]{
     width: 800px;
+  }
+
+  .xl\:w-\[calc\(100\%-800px\)\]{
+    width: calc(100% - 800px);
+  }
+
+  .xl\:w-\[calc\(50\%-400px\)\]{
+    width: calc(50% - 400px);
   }
 
   .xl\:max-w-\[1200px\]{

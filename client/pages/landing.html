@@ -67,26 +67,26 @@
         </section>
 
 
-        <section id="features" class="bg-white">
+        <section id="features" class="">
             <div class="container mx-auto">
                 <h2 class="text-3xl font-bold text-center text-blue_cta ">Features</h2>
                 <p class="text-gray-600 text-center mt-2">Discover what makes HealthBook your best choice</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
                         <i class="ri-folder-user-line text-4xl text-blue_cta "></i>
                         <h3 class="text-xl font-semibold mt-4">Patient Management</h3>
                         <p class="text-gray-600 mt-2">
                             Securely store and access patient information anytime, anywhere.
                         </p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
                         <i class="ri-heart-pulse-line text-4xl text-blue_cta "></i>
                         <h3 class="text-xl font-semibold mt-4">Health Insights</h3>
                         <p class="text-gray-600 mt-2">
                             Gain actionable insights with real-time data analytics.
                         </p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
                         <i class="ri-lock-2-line text-4xl text-blue_cta "></i>
                         <h3 class="text-xl font-semibold mt-4">Data Security</h3>
                         <p class="text-gray-600 mt-2">
@@ -134,7 +134,7 @@
         </section>
 
 
-        <section id="testimonial" class="flex flex-col w-full min-h-[69px] z-10 py-4 bg-white items-center gap-20">
+        <section id="testimonial" class="flex flex-col w-full min-h-[69px] z-10 py-4 items-center gap-12">
             <div class="flex flex-col items-center gap-6 text-center">
                 <h2 class="flex text-2xl sm:text-3xl font-bold">User Testimonials</h2>
                 <p class="flex max-w-[680px] lg:max-w-[800px]">
@@ -142,14 +142,31 @@
                 </p>
             </div>
 
-            <div class="relative flex w-full py-2 testimonial-carousel-holder before:w-[calc(50%-320px)] before:bg-gradient-to-r after:w-[calc(50%-320px)] after:bg-gradient-to-l before:from-white after:to-transparent">
-                <div class="grid gap-12 overflow-y-auto overscroll-x-contain scroll-auto grid-flow-col testimonial-carousel">
-                    <div class="flex w-full justify-center">
-                        <div class="flex flex-col rounded-xl shadow-lg bg-gradient-to-br from-[#FAF1F1] to-[#F6F1FF] testimonial-card md:flex-row md:h-[320px] md:w-[600px] xl:w-[800px] max-md:w-[360px]">
+            <div class="relative flex w-[98.5vw] testimonial-carousel-holder before:bg-gradient-to-r after:bg-gradient-to-l from-white via-60% to-transparent before:w-[calc(50%-320px)] after:w-[calc(50%-320px)] overflow-hidden">
+                <div class="grid gap-12 grid-flow-col overflow-y-auto testimonial-carousel">
+
+                    <div class="absolute left-0 hidden sm:flex justify-center items-center max-md:w-[calc(50%-180px)] md:w-[calc(50%-300px)] xl:w-[calc(50%-400px)] h-full z-20 transition-all bg-gradient-to-r from-white via-60% to-transparent">
+                        <button id="testimonial-button-left" class="flex p-4 rounded-full bg-white hover:bg-[#FAF1F1] testimonial-carousel-button transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="size-7">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="absolute right-0 hidden sm:flex justify-center items-center max-md:w-[calc(50%-180px)] md:w-[calc(50%-300px)] xl:w-[calc(50%-400px)] h-full z-20 transition-all bg-gradient-to-l from-white via-60% to-transparent">
+                        <button id="testimonial-button-right" class="flex p-4 rounded-full z-20 bg-white hover:bg-[#FAF1F1] testimonial-carousel-button transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="size-7">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="flex w-full justify-center py-6">
+                        <div class="flex flex-col rounded-xl shadow-lg bg-gradient-to-br from-[#FAF1F1] to-[#F6F1FF] testimonial-card md:flex-row md:h-[320px]  max-md:w-[360px] md:w-[600px] xl:w-[800px]">
                             <div class="flex w-full h-[240px] md:h-full md:w-[40%]">
                                 <img src="../assets/formal_me.png"
                                      alt="testimonial"
-                                     class="flex grow w-full object-cover max-h-full rounded-t-xl md:rounded-l-xl">
+                                     class="flex grow w-full object-cover max-h-full max-md:rounded-t-xl md:rounded-l-xl">
                             </div>
                             <div class="flex flex-col justify-between h-full w-full px-10 py-8 md:w-[60%]">
                                 <p>
@@ -164,54 +181,80 @@
                         </div>
                     </div>
 
-                    <div class="flex w-full justify-center">
-                        <div class="testimonial-card flex flex-col md:flex-row md:h-[320px] max-md:w-[360px] md:w-[600px] xl:w-[800px] rounded-xl shadow-lg bg-gradient-to-br from-[#FAF1F1] to-[#F6F1FF]">
-                            <div class="flex h-[240px] md:h-full w-full md:w-[40%]">
+                    <div class="flex w-full justify-center py-6">
+                        <div class="flex flex-col rounded-xl shadow-lg bg-gradient-to-br from-[#FAF1F1] to-[#F6F1FF] testimonial-card md:flex-row md:h-[320px]  max-md:w-[360px] md:w-[600px] xl:w-[800px]">
+                            <div class="flex w-full h-[240px] md:h-full md:w-[40%]">
                                 <img src="../assets/formal_me.png"
-                                     alt="testimonial" class="flex grow max-h-full w-full object-cover rounded-t-xl md:rounded-l-xl">
+                                     alt="testimonial"
+                                     class="flex grow w-full object-cover max-h-full max-md:rounded-t-xl md:rounded-l-xl">
                             </div>
-                            <div class="h-full w-full md:w-[60%] flex flex-col justify-between px-10 py-8">
-                                <p>The software is fantastic, and it is incredibly user-friendly, which is very essential during a pandemic.
+                            <div class="flex flex-col justify-between h-full w-full px-10 py-8 md:w-[60%]">
+                                <p>
+                                    The software is fantastic, and it is incredibly user-friendly, which is very essential during a pandemic.
                                     This software gets 5 stars from me, what a fantastic app.
                                 </p>
                                 <div class="flex flex-col gap-1">
-                                    <span class="font-bold text-xl text-blue_main mt-6">Ashley Ken Comandao</span>
+                                    <span class="mt-6 text-xl font-bold text-blue_main">Ashley Ken Comandao</span>
                                     <span class="text-blue_main">TheHealthBook App User</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="flex w-full justify-center">
-                        <div class="testimonial-card flex flex-col md:flex-row md:h-[320px] max-md:w-[360px] md:w-[600px] xl:w-[800px] rounded-xl shadow-lg bg-gradient-to-br from-[#FAF1F1] to-[#F6F1FF]">
-                            <div class="flex h-[240px] md:h-full w-full md:w-[40%]">
+                    <div class="flex w-full justify-center py-6">
+                        <div class="flex flex-col rounded-xl shadow-lg bg-gradient-to-br from-[#FAF1F1] to-[#F6F1FF] testimonial-card md:flex-row md:h-[320px]  max-md:w-[360px] md:w-[600px] xl:w-[800px]">
+                            <div class="flex w-full h-[240px] md:h-full md:w-[40%]">
                                 <img src="../assets/formal_me.png"
-                                     alt="testimonial" class="flex grow max-h-full w-full object-cover rounded-t-xl md:rounded-l-xl">
+                                     alt="testimonial"
+                                     class="flex grow w-full object-cover max-h-full max-md:rounded-t-xl md:rounded-l-xl">
                             </div>
-                            <div class="h-full w-full md:w-[60%] flex flex-col justify-between px-10 py-8">
-                                <p>The software is fantastic, and it is incredibly user-friendly, which is very essential during a pandemic.
+                            <div class="flex flex-col justify-between h-full w-full px-10 py-8 md:w-[60%]">
+                                <p>
+                                    The software is fantastic, and it is incredibly user-friendly, which is very essential during a pandemic.
                                     This software gets 5 stars from me, what a fantastic app.
                                 </p>
                                 <div class="flex flex-col gap-1">
-                                    <span class="font-bold text-xl text-blue_main mt-6">Ashley Ken Comandao</span>
+                                    <span class="mt-6 text-xl font-bold text-blue_main">Ashley Ken Comandao</span>
                                     <span class="text-blue_main">TheHealthBook App User</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="flex w-full justify-center">
-                        <div class="testimonial-card flex flex-col md:flex-row md:h-[320px] max-md:w-[360px] md:w-[600px] xl:w-[800px] rounded-xl shadow-lg bg-gradient-to-br from-[#FAF1F1] to-[#F6F1FF]">
-                            <div class="flex h-[240px] md:h-full w-full md:w-[40%]">
+                    <div class="flex w-full justify-center py-6">
+                        <div class="flex flex-col rounded-xl shadow-lg bg-gradient-to-br from-[#FAF1F1] to-[#F6F1FF] testimonial-card md:flex-row md:h-[320px]  max-md:w-[360px] md:w-[600px] xl:w-[800px]">
+                            <div class="flex w-full h-[240px] md:h-full md:w-[40%]">
                                 <img src="../assets/formal_me.png"
-                                     alt="testimonial" class="flex grow max-h-full w-full object-cover rounded-t-xl md:rounded-l-xl">
+                                     alt="testimonial"
+                                     class="flex grow w-full object-cover max-h-full max-md:rounded-t-xl md:rounded-l-xl">
                             </div>
-                            <div class="h-full w-full md:w-[60%] flex flex-col justify-between px-10 py-8">
-                                <p>The software is fantastic, and it is incredibly user-friendly, which is very essential during a pandemic.
+                            <div class="flex flex-col justify-between h-full w-full px-10 py-8 md:w-[60%]">
+                                <p>
+                                    The software is fantastic, and it is incredibly user-friendly, which is very essential during a pandemic.
                                     This software gets 5 stars from me, what a fantastic app.
                                 </p>
                                 <div class="flex flex-col gap-1">
-                                    <span class="font-bold text-xl text-blue_main mt-6">Ashley Ken Comandao</span>
+                                    <span class="mt-6 text-xl font-bold text-blue_main">Ashley Ken Comandao</span>
+                                    <span class="text-blue_main">TheHealthBook App User</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex w-full justify-center py-6">
+                        <div class="flex flex-col rounded-xl shadow-lg bg-gradient-to-br from-[#FAF1F1] to-[#F6F1FF] testimonial-card md:flex-row md:h-[320px]  max-md:w-[360px] md:w-[600px] xl:w-[800px]">
+                            <div class="flex w-full h-[240px] md:h-full md:w-[40%]">
+                                <img src="../assets/formal_me.png"
+                                     alt="testimonial"
+                                     class="flex grow w-full object-cover max-h-full max-md:rounded-t-xl md:rounded-l-xl">
+                            </div>
+                            <div class="flex flex-col justify-between h-full w-full px-10 py-8 md:w-[60%]">
+                                <p>
+                                    The software is fantastic, and it is incredibly user-friendly, which is very essential during a pandemic.
+                                    This software gets 5 stars from me, what a fantastic app.
+                                </p>
+                                <div class="flex flex-col gap-1">
+                                    <span class="mt-6 text-xl font-bold text-blue_main">Ashley Ken Comandao</span>
                                     <span class="text-blue_main">TheHealthBook App User</span>
                                 </div>
                             </div>
@@ -231,5 +274,8 @@
             <p>&copy; 2024 HealthBook. All rights reserved.</p>
         </div>
     </footer>
+
+
+    <script src="../utils/scrollTestimonial.js"></script>
 </body>
 </html>
