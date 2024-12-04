@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             <td class="px-6 py-4">${gender}</td>
             <td class="px-6 py-4">${birthday}<br>${age} Years Old </td>
             <td class="px-6 py-4 text-right">
-              <a href="../pages/dashboard.html?id=${id}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+              <a href="../pages/dashboard.html?id=${id}" class="font-medium text-blue-600 dark:text-blue_main hover:underline">View</a>
             </td>
           </tr>
         `;
