@@ -172,3 +172,28 @@ document.addEventListener('DOMContentLoaded', async function () {
         console.error("Error fetching vaccination history");
     }
 });
+
+
+// Filter for vaccination
+// TODO: add function to fetch vaccination either administered by you or administered by all
+const btnAll = document.getElementById('btn-vaccination-by-all');
+const btnYou = document.getElementById('btn-vaccination-by-you');
+
+// Class to toggle
+const activeClasses = ['border-b-2', 'text-blue_main', 'border-blue_main', 'font-medium'];
+
+btnAll.addEventListener('click', () => {
+    activeClasses.forEach(cls => btnYou.classList.remove(cls));
+    activeClasses.forEach(cls => btnAll.classList.add(cls));
+
+    // Perform action for "Administered by all"
+    console.log('Showing vaccinations administered by all.');
+});
+
+btnYou.addEventListener('click', () => {
+    activeClasses.forEach(cls => btnAll.classList.remove(cls));
+    activeClasses.forEach(cls => btnYou.classList.add(cls));
+
+    // Perform action for "Administered by you"
+    console.log('Showing vaccinations administered by you.');
+});

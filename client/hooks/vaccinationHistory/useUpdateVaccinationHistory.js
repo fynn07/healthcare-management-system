@@ -37,7 +37,7 @@ export async function useUpdateVaccinationHistory(record_id) {
 
     const ENDPOINT = getApiEndpoint();
 
-    addFormVacc.classList.remove('hidden'); 
+    // addFormVacc.classList.remove('hidden');
     
         document.getElementById("vaccine-history-date-administered").value = vaccination_data.date_administered;
         document.getElementById("vaccine-history-next-dose-date").value = vaccination_data.next_dose_date; 

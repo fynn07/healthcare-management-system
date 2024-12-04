@@ -35,65 +35,107 @@ document.addEventListener('DOMContentLoaded', function () {
   
     // Open form listeners
     addBtn.addEventListener('click', () => {
-        addForm.classList.remove('hidden');
+        addForm.classList.remove('invisible');
+        addForm.classList.remove('opacity-0');
+        addForm.classList.add('visible');
+        addForm.classList.add('opacity-100');
     });
   
     addBtnVacc.addEventListener('click', () => {
-        addFormVacc.classList.remove('hidden');
+        addFormVacc.classList.remove('invisible');
+        addFormVacc.classList.remove('opacity-0');
+        addFormVacc.classList.add('visible');
+        addFormVacc.classList.add('opacity-100');
     });
   
     addBtnFam.addEventListener('click', () => {
-        addFormFam.classList.remove('hidden');
+        addFormFam.classList.remove('invisible');
+        addFormFam.classList.remove('opacity-0');
+        addFormFam.classList.add('visible');
+        addFormFam.classList.add('opacity-100');
     });
 
     addBtnSocial.addEventListener('click', () => {
-        addFormSoc.classList.remove('hidden');
+        addFormSoc.classList.remove('invisible');
+        addFormSoc.classList.remove('opacity-0');
+        addFormSoc.classList.add('visible');
+        addFormSoc.classList.add('opacity-100');
     });
 
     addBtnSurg.addEventListener('click', () => {
-        addFormSurg.classList.remove('hidden');
+        addFormSurg.classList.remove('invisible');
+        addFormSurg.classList.remove('opacity-0');
+        addFormSurg.classList.add('visible');
+        addFormSurg.classList.add('opacity-100');
     });
 
     addBtnVital.addEventListener('click', () => {
-        addFormVital.classList.remove('hidden'); 
+        addFormVital.classList.remove('invisible');
+        addFormVital.classList.remove('opacity-0');
+        addFormVital.classList.add('visible');
+        addFormVital.classList.add('opacity-100');
     });
 
     addBtnAllergy.addEventListener('click', () => {
-        addFormAllergy.classList.remove('hidden'); 
+        addFormAllergy.classList.remove('invisible');
+        addFormAllergy.classList.remove('opacity-0');
+        addFormAllergy.classList.add('visible');
+        addFormAllergy.classList.add('opacity-100');
     });
 
 
   // Close form listeners
     closeForm.addEventListener('click', () => {
-        addForm.classList.add('hidden');
+        addForm.classList.remove('visible');
+        addForm.classList.remove('opacity-100');
+        addForm.classList.add('invisible');
+        addForm.classList.add('opacity-0');
         removeParam();
     });
   
     closeFormVacc.addEventListener('click', () => {
-        addFormVacc.classList.add('hidden');
+        addFormVacc.classList.remove('visible');
+        addFormVacc.classList.remove('opacity-100');
+        addFormVacc.classList.add('invisible');
+        addFormVacc.classList.add('opacity-0');
     });
   
     closeFormFam.addEventListener('click', () => {
-        addFormFam.classList.add('hidden');
+        addFormFam.classList.remove('visible');
+        addFormFam.classList.remove('opacity-100');
+        addFormFam.classList.add('invisible');
+        addFormFam.classList.add('opacity-0');
         removeParam();
     });
 
     closeFormSoc.addEventListener('click', () => {
-        addFormSoc.classList.add('hidden');
+        addFormSoc.classList.remove('visible');
+        addFormSoc.classList.remove('opacity-100');
+        addFormSoc.classList.add('invisible');
+        addFormSoc.classList.add('opacity-0');
         removeParam();
     });
 
     closeFormSurg.addEventListener('click', () => {
-        addFormSurg.classList.add('hidden');
+        addFormSurg.classList.remove('visible');
+        addFormSurg.classList.remove('opacity-100');
+        addFormSurg.classList.add('invisible');
+        addFormSurg.classList.add('opacity-0');
         removeParam();
     });
 
     closeFormVital.addEventListener('click', () => {
-        addFormVital.classList.add('hidden');
+        addFormVital.classList.remove('visible');
+        addFormVital.classList.remove('opacity-100');
+        addFormVital.classList.add('invisible');
+        addFormVital.classList.add('opacity-0');
     });
       
     closeFormAllergy.addEventListener('click', () => {
-        addFormAllergy.classList.add('hidden');
+        addFormAllergy.classList.remove('visible');
+        addFormAllergy.classList.remove('opacity-100');
+        addFormAllergy.classList.add('invisible');
+        addFormAllergy.classList.add('opacity-0');
         removeParam();
     });
 });
