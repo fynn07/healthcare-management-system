@@ -37,7 +37,7 @@ export async function useUpdateMedicationHistory(record_id) {
 
     const ENDPOINT = getApiEndpoint();
 
-    addFormMed.classList.remove('hidden'); 
+    // addFormMed.classList.remove('hidden');
     
     document.getElementById("medication-history-date-prescribed").value = medication_data.date_prescribed;
     document.getElementById("medication-history-generic-name").value = medication_data.generic_name;

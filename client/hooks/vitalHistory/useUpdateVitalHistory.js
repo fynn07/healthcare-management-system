@@ -37,7 +37,7 @@ export async function useUpdateVitalHistory(record_id) {
 
     const ENDPOINT = getApiEndpoint();
 
-    addFormVital.classList.remove('hidden'); 
+    // addFormVital.classList.remove('hidden');
     
     document.getElementById("vital-history-temperature").value = vital_data.temperature;
     document.getElementById("vital-history-blood-pressure").value = vital_data.blood_pressure;
