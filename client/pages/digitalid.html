@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <script type="module" defer src="../hooks/fetchProviderName.js"></script>
+    <script type="module" defer src="../utils/checkLoginStatus.js"></script>
+    <script type="module" defer src="../utils/logout.js"></script>
     <script defer src="../utils/sidebartoggle.js"></script>
 
     <link rel="stylesheet" href="../dist/css/style.css">
@@ -26,19 +28,11 @@
         </a>
 
         <div class="AccountHeader pr-4 justify-start items-center gap-4 flex text-neutral-600">
-            <button class="DropIcon w-6 h-auto relative flex cursor-pointer focus:outline-none">
-                <img src="../assets/icon_chevron.svg" alt="User icon" class="h-9">
+            <button id="logout-button"
+                    onclick="logout()"
+                    class="flex gap-2 px-6 py-2.5 min-w-36 bg-blue_light text-blue_main border border-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                <span>Logout</span>
             </button>
-
-            <div
-                class="provider_name_field text-lg font-medium font-source_sans_pro leading-normal cursor-pointer transition-transform">
-            </div>
-
-            <div class="ProfilePhoto w-8 h-auto rounded-full text-neutral-600">
-                <button class="flex items-center text-gray-600 cursor-pointer focus:outline-none">
-                    <img src="../assets/icon_user_circle.svg" alt="User icon" class="h-9">
-                </button>
-            </div>
         </div>
     </header>
 
@@ -117,6 +111,7 @@
                             </svg>
                             <span>Generate QR</span>
                         </button>
+                        <button id="add-patient"
                         <button id="add-patient"
                                 class="flex gap-2 px-6 py-2.5 min-w-48 bg-blue_super_light text-blue_main border border-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -237,30 +232,9 @@
     </main>
 
     
-    <script>
-      
-        document.getElementById('add-patient').addEventListener('click', function () {
-            document.getElementById('add-patient-form').classList.remove('hidden');
-        });
+  
 
-     
-        document.getElementById('close-form').addEventListener('click', function () {
-            document.getElementById('add-patient-form').classList.add('hidden');
-        });
 
-      
-        document.getElementById('patient-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-            const patientData = {};
-            formData.forEach((value, key) => {
-                patientData[key] = value;
-            });
-            console.log(patientData);  
-            document.getElementById('add-patient-form').classList.add('hidden');
-            alert('Patient added successfully');
-        });
-    </script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.bundle.js"></script>

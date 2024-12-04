@@ -17,6 +17,8 @@
 
     <script type="module" defer src="../hooks/fetchPatientDetails.js"></script>
     <script type="module" defer src="../hooks/fetchProviderName.js"></script>
+    <script type="module" defer src="../utils/checkLoginStatus.js"></script>
+    <script type="module" defer src="../utils/logout.js"></script>
 
     <script type="module" defer src="../hooks/medicationHistory/useFetchMedicationHistory.js"></script>
     <script type="module" defer src="../hooks/vaccinationHistory/useFetchVaccinationHistory.js"></script>
@@ -27,6 +29,7 @@
     <script type="module" defer src="../hooks/allergyHistory/useFetchAllergyHistory.js"></script>
 
     <title>Dashboard</title>
+    
 </head>
 
 <body class="flex justify text-gray-800 font-poppins border-box bg-neutral-50 text-sm md:text-base">
@@ -36,19 +39,11 @@
         </a>
 
         <div class="AccountHeader pr-4 justify-start items-center gap-4 flex text-neutral-600">
-            <button class="DropIcon w-6 h-auto relative flex cursor-pointer focus:outline-none">
-                <img src="../assets/icon_chevron.svg" alt="User icon" class="h-9">
+            <button id="logout-button"
+                    onclick="logout()"
+                    class="flex gap-2 px-6 py-2.5 min-w-36 bg-blue_light text-blue_main border border-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                <span>Logout</span>
             </button>
-
-            <div
-                class="provider_name_field text-lg font-medium font-source_sans_pro leading-normal cursor-pointer transition-transform">
-            </div>
-
-            <div class="ProfilePhoto w-8 h-auto rounded-full text-neutral-600">
-                <button class="flex items-center text-gray-600 cursor-pointer focus:outline-none">
-                    <img src="../assets/icon_user_circle.svg" alt="User icon" class="h-9">
-                </button>
-            </div>
         </div>
     </header>
 
@@ -762,5 +757,7 @@
     <script defer src="../vaccHistory.js"></script>
     <script defer src="../famHistory.js"></script>
     <script defer src="../socialHistory.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </body>
 </html>
