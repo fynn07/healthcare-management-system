@@ -14,14 +14,12 @@
     <script defer src="../utils/sideBarToggle.js"></script>
 
     <link rel="stylesheet" href="../dist/css/style.css">
-    <link rel="stylesheet" href="../output.css">
-
+    <link href="../output.css" rel="stylesheet">
     <title>Digital IDs</title>
 </head>
 
-<body class="flex justify text-gray-800 font-poppins border-box bg-gradient-to-bl from-[#FAF1F1] to-[#F6F1FF] min-h-screen">
+<body class="flex text-gray-800 font-poppins border-box bg-gradient-to-bl from-[#FAF1F1] to-[#F6F1FF] min-h-screen">
     <header class="fixed top-0 w-full z-10 px-6 py-4 bg-[#ffffff90] backdrop-blur-xl border-b border-[#DAE3E5] justify-between items-center inline-flex z-10">
-
 
         <a href="landing.html" class="justify-center items-center cursor-pointer gap-2.5 flex">
             <img src="../assets/logo_the_healthbook.svg" alt="The Health Book Logo">
@@ -43,8 +41,6 @@
             </div>
         </div>
     </header>
-
-    <!-- rest of the code -->
 
     <aside id="sidebar"
         class="fixed transition-all xl:flex left-0 lg:w-80 h-full flex-col justify-start items-start grow basis-0 px-6 py-8 pt-[7rem] bg-white border-r border-[#DAE3E5] gap-8">
@@ -174,6 +170,29 @@
     <script src="../../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
     <script type="module" src="../hooks/fetchPatients.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.bundle.js"></script>
+    <script src="../../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script type="module" src="../hooks/medicationHistory/useCreateMedicationHistory.js"></script>
+    <script type="module" src="../hooks/vaccinationHistory/useCreateVaccinationHistory.js"></script>
+    <script type="module" src="../hooks/familyHistory/useCreateFamilyHistory.js"></script>
+    <script type="module" src="../hooks/socialHistory/useCreateSocialHistory.js"></script>
+    <script type="module" src="../hooks/surgicalHistory/useCreateSurgicalHistory.js"></script>
+    <script type="module" src="../hooks/vitalHistory/useCreateVitalHistory.js"></script>
+    <script type="module" src="../hooks/allergyHistory/useCreateAllergyHistory.js"></script>
+    <script src="../utils/toastMessageOnRefresh.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script defer src="../medHistory.js"></script>
+    <script type="module" defer src="../utils/table.js"></script>
+    <script defer src="../vaccHistory.js"></script>
+    <script defer src="../famHistory.js"></script>
+    <script defer src="../socialHistory.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </body>
 </html>
