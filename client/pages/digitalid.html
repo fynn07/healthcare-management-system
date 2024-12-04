@@ -11,13 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <script type="module" defer src="../hooks/fetchProviderName.js"></script>
-<<<<<<< HEAD
-    <script type="module" defer src="../utils/checkLoginStatus.js"></script>
-    <script type="module" defer src="../utils/logout.js"></script>
-    <script defer src="../utils/sidebartoggle.js"></script>
-=======
     <script defer src="../utils/sideBarToggle.js"></script>
->>>>>>> ce8fac5d7c87abdd31e54f3905296f273f8e2069
 
     <link rel="stylesheet" href="../dist/css/style.css">
     <link rel="stylesheet" href="../output.css">
@@ -114,14 +108,8 @@
                             </svg>
                             <span>Generate QR</span>
                         </button>
-<<<<<<< HEAD
                         <button id="add-patient"
-                        <button id="add-patient"
-                                class="flex gap-2 px-6 py-2.5 min-w-48 bg-blue_super_light text-blue_main border border-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
-=======
-                        <button id="add_patient"
                                 class="flex gap-2 px-6 py-2.5 min-w-48 bg-blue_super_light text-blue_main border border-blue_main rounded-lg hover:bg-blue_light transition-all">
->>>>>>> ce8fac5d7c87abdd31e54f3905296f273f8e2069
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                             </svg>
@@ -166,15 +154,81 @@
                 </div>
             </div>
         </div>
+
+
+        <section id="add-patient-form" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
+            <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
+                <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Patient</h2>
+                <form id="patient-form">
+                    <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+                      
+                        <div class="sm:col-span-2">
+                            <label for="patient-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Name</label>
+                            <input type="text" name="patient-name" id="patient-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter patient's full name" required="">
+                        </div>
+        
+                    
+                        <div>
+                            <label for="patient-gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gender</label>
+                            <select id="patient-gender" name="patient-gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                                <option value="" disabled selected>Select gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+        
+                   
+                        <div>
+                            <label for="patient-birthdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Birthdate</label>
+                            <input type="date" name="patient-birthdate" id="patient-birthdate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="">
+                        </div>
+        
+                    
+                        <div>
+                            <label for="patient-height" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Height (cm)</label>
+                            <input type="number" name="patient-height" id="patient-height" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter height in cm" required="">
+                        </div>
+        
+                   
+                        <div>
+                            <label for="patient-weight" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Weight (kg)</label>
+                            <input type="number" name="patient-weight" id="patient-weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter weight in kg" required="">
+                        </div>
+        
+                     
+                        <div>
+                            <label for="patient-email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Address</label>
+                            <input type="email" name="patient-email" id="patient-email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter patient's email address" required="">
+                        </div>
+        
+                      
+                        <div>
+                            <label for="patient-contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact Number</label>
+                            <input type="tel" name="patient-contact" id="patient-contact" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter patient's contact number" required="">
+                        </div>
+
+                        <div>
+                            <label for="patient-address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
+                            <input type="text" name="patient-address" id="patient-address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter patient's address" required="">
+                        </div>
+                    </div>
+                    <div class="flex justify-between mt-4 sm:mt-6">
+                        <button type="button" id="close-form" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
+                        <button type="submit" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                            Add Patient
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+       
+    
     </main>
 
-<<<<<<< HEAD
-    
-  
 
+   
 
-=======
->>>>>>> ce8fac5d7c87abdd31e54f3905296f273f8e2069
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.bundle.js"></script>
