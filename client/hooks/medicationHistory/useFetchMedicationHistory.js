@@ -163,3 +163,30 @@ document.addEventListener('DOMContentLoaded', async function () {
         console.error("Error fetching medication history");
     }
 });
+
+
+
+// Filter for medication
+// TODO: add function to fetch medication either prescribed by you or prescribed by all
+const btnAll = document.getElementById('btn-medication-by-all');
+const btnYou = document.getElementById('btn-medication-by-you');
+
+// Class to toggle
+const activeClasses = ['border-b-2', 'text-blue_main', 'border-blue_main', 'font-medium'];
+
+btnAll.addEventListener('click', () => {
+    activeClasses.forEach(cls => btnYou.classList.remove(cls));
+    activeClasses.forEach(cls => btnAll.classList.add(cls));
+
+    // Perform action for "Prescribed by all"
+    console.log('Showing medications prescribed by all.');
+});
+
+btnYou.addEventListener('click', () => {
+    activeClasses.forEach(cls => btnAll.classList.remove(cls));
+    activeClasses.forEach(cls => btnYou.classList.add(cls));
+
+    // Perform action for "Prescribed by you"
+    console.log('Showing medications prescribed by you.');
+});
+

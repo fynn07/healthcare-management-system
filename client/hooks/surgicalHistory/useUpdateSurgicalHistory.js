@@ -103,3 +103,27 @@ export async function useUpdateSurgicalHistory(record_id) {
 
     });
 }
+
+
+// TODO: add function to fetch surgery record either added by you or added by all
+const btnAll = document.getElementById('btn-surgery-by-all');
+const btnYou = document.getElementById('btn-surgery-by-you');
+
+// Class to toggle
+const activeClasses = ['border-b-2', 'text-blue_main', 'border-blue_main', 'font-medium'];
+
+btnAll.addEventListener('click', () => {
+    activeClasses.forEach(cls => btnYou.classList.remove(cls));
+    activeClasses.forEach(cls => btnAll.classList.add(cls));
+
+    // Perform action for "Added by all"
+    console.log('Showing surgery added by all.');
+});
+
+btnYou.addEventListener('click', () => {
+    activeClasses.forEach(cls => btnAll.classList.remove(cls));
+    activeClasses.forEach(cls => btnYou.classList.add(cls));
+
+    // Perform action for "Added by you"
+    console.log('Showing surgery added by you.');
+});
