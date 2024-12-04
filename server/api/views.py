@@ -163,6 +163,42 @@ def create_medication_history_record(request, id):
 @api_view(['GET'])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
+def download_medical_records_pdf(request, id):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExist:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+    
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    # Fetch medication history
+    medication_history = MedicationHistory.objects.filter(patient=patient.id)
+
+    # Render the template with context
+    context = {
+        "patient": patient,
+        "provider": provider,
+        "medication_history": medication_history
+    }
+    html = render_to_string("medical_records_template.html", context)
+
+    # Generate the PDF
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = f'attachment; filename="medical_records_{patient.id}.pdf"'
+    pisa_status = pisa.CreatePDF(html, dest=response)
+
+    if pisa_status.err:
+        return Response({"error": "Error generating PDF"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+    return response
+
+
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def fetch_medication_history_records(request, id):   
     try:
         provider = Provider.objects.get(account=request.user.id)

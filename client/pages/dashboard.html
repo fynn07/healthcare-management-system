@@ -28,6 +28,7 @@
     <script type="module" defer src="../hooks/allergyHistory/useFetchAllergyHistory.js"></script>
 
     <title>Dashboard</title>
+    
 </head>
 
 <body class="flex justify-end text-gray-800 font-poppins border-box bg-gray-50 ">
@@ -156,26 +157,24 @@
             </div>
 
             <!-- MEDICATION HISTORY -->
-            <div id="medication-history-card"
-                 class="flex flex-col justify-center w-full bg-white rounded-lg border border-[#DAE3E5] dark:bg-gray-800 custom-table">
+            <div id="medication-history-card" class="flex flex-col justify-center w-full bg-white rounded-lg border border-[#DAE3E5] dark:bg-gray-800 custom-table">
                 <div class="flex flex-col pt-6 gap-4">
                     <div class="flex justify-between px-8">
                         <span class="text-lg font-poppins font-bold">Medication History</span>
-                        <button id="add-btn"
-                                class="px-4 py-2 bg-blue_super_light text-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
-                            + Add
-                        </button>
+                        <div class="flex gap-4">
+                            <button id="add-btn" class="px-4 py-2 bg-blue_super_light text-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins hide-on-pdf">
+                                + Add
+                            </button>
+                            <button id="download-pdf-btn" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 focus:ring-4 focus:ring-white font-poppins hide-on-pdf">
+                                Download PDF
+                            </button>
+                        </div>
                     </div>
-                    <div class="flex px-8 border-b border-[#DAE3E5] gap-4 text-base ">
-                        <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
-                            Prescribed by you
-                        </button>
-                        <button class="px-2 pb-4">
-                            Prescribed by others
-                        </button>
+                    <div class="flex px-8 border-b border-[#DAE3E5] gap-4 text-base">
+                        <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">Prescribed by you</button>
+                        <button class="px-2 pb-4">Prescribed by others</button>
                     </div>
                 </div>
-
                 <div class="overflow-x-auto">
                     <table id="medication-table"
                            class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 font-poppins">
@@ -744,7 +743,43 @@
        
         
     </main>
-    
+    <script>
+        document.getElementById('download-pdf-btn').addEventListener('click', function () {
+            // Temporarily hide the buttons by adding a class
+            const buttons = document.querySelectorAll('.hide-on-pdf');
+            buttons.forEach(button => button.style.display = 'none');
+            
+            // Get the content of the div (table in this case)
+            const content = document.getElementById('medication-history-card'); // Or any other container you want
+        
+            // Use html2pdf.js to generate the PDF
+            const options = {
+                margin: [10, 10, 10, 10],  // Adjust margins (top, left, bottom, right)
+                filename: 'medical_records.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,               // Increase scale for better quality
+                    logging: true,          // Optional: log details for debugging
+                    useCORS: true           // Enable CORS to load external resources (e.g., images, fonts)
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4',           // You can switch to 'letter' or other formats if needed
+                    orientation: 'landscape', // Change orientation to landscape for more horizontal space
+                    compressPdf: true
+                }
+            };
+        
+            // Use html2pdf to scrape the content and convert to PDF
+            html2pdf().from(content).set(options).save().then(() => {
+                // After generating the PDF, show the buttons back
+                buttons.forEach(button => button.style.display = 'block');
+            });
+        });
+        
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
 
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -765,5 +800,7 @@
     <script defer src="../vaccHistory.js"></script>
     <script defer src="../famHistory.js"></script>
     <script defer src="../socialHistory.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </body>
 </html>

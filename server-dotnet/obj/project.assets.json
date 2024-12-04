@@ -9071,24 +9071,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/mars/.nuget/packages/": {}
+    "C:\\Users\\Karl Christian Ajero\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mars/Desktop/Code/Websites/healthcare-management-system/server-dotnet/server-dotnet.csproj",
+      "projectUniqueName": "C:\\Users\\Karl Christian Ajero\\OneDrive\\Desktop\\healthcare-management-system\\server-dotnet\\server-dotnet.csproj",
       "projectName": "server-dotnet",
-      "projectPath": "/Users/mars/Desktop/Code/Websites/healthcare-management-system/server-dotnet/server-dotnet.csproj",
-      "packagesPath": "/Users/mars/.nuget/packages/",
-      "outputPath": "/Users/mars/Desktop/Code/Websites/healthcare-management-system/server-dotnet/obj/",
+      "projectPath": "C:\\Users\\Karl Christian Ajero\\OneDrive\\Desktop\\healthcare-management-system\\server-dotnet\\server-dotnet.csproj",
+      "packagesPath": "C:\\Users\\Karl Christian Ajero\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Karl Christian Ajero\\OneDrive\\Desktop\\healthcare-management-system\\server-dotnet\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/mars/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Karl Christian Ajero\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -9172,7 +9174,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

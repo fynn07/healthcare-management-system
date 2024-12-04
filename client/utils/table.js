@@ -97,4 +97,40 @@ document.addEventListener('DOMContentLoaded', function () {
         removeParam();
     });
 });
+
+document.getElementById('download-pdf-btn').addEventListener('click', async function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');  // Fetch patient ID from the URL
+    
+    const token = localStorage.getItem('token');
+    const ENDPOINT = getApiEndpoint(); // Assuming you have this function to get the base URL
+
+    try {
+        const response = await fetch(`${ENDPOINT}/api/patient/download-medical-records/${id}/`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Token ${token}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error("Error downloading PDF");
+        }
+
+        // Create a Blob from the PDF response
+        const blob = await response.blob();
+        
+        // Create a link element, use it to download the PDF
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `medical_records_${id}.pdf`;
+        
+        // Trigger the download by clicking the link
+        link.click();
+    } catch (error) {
+        console.error("Failed to download PDF:", error);
+    }
+});
+
   
