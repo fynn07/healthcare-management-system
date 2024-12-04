@@ -14,8 +14,17 @@ module.exports = {
       colors: {
         // Adds a custom blue shade
         'blue_super_light': '#E1F8FD',
-        'blue_main': '#054F99'
+        'blue_main': '#054F99',
+        'blue_light': '#e1effc',
+        'blue_cta': '#1B77B6',
+        'bookmark-purple': '#6B5B95', // Replace this with your desired color code
+        'bookmark-white': '#FFFFFF', // Define 'bookmark-white' if not already present
+        'gray_border': '#DAE3E5',
+        'green_button' : '#15803D',
       },
+      screens: {
+        'xs': '480px', // => @media (min-width: 480px) { ... }
+      }
     },
   },
   plugins: [
