@@ -11,14 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <script type="module" defer src="../hooks/fetchProviderName.js"></script>
+    <script defer src="../utils/sidebartoggle.js"></script>
+
     <link rel="stylesheet" href="../dist/css/style.css">
-    <link href="../output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../output.css">
+
     <title>Digital IDs</title>
 </head>
-<body class="flex justify-end text-gray-800 font-poppins border-box bg-gray-50">
-    
+
+<body class="flex justify text-gray-800 font-poppins border-box bg-gray-50 ">
     <header class="fixed top-0 w-full z-10 px-6 py-4 bg-white border-b border-[#DAE3E5] justify-between items-center inline-flex z-10">
-        <a href="#" class="justify-center items-center cursor-pointer gap-2.5 flex">
+        <a href="landing.html" class="justify-center items-center cursor-pointer gap-2.5 flex">
             <img src="../assets/logo_the_healthbook.svg" alt="The Health Book Logo">
         </a>
 
@@ -39,8 +42,11 @@
         </div>
     </header>
 
-    <aside
-        class="fixed hidden xl:flex left-0 lg:w-80 h-full flex-col justify-start items-start grow basis-0 px-6 py-8 pt-[7rem] bg-white border-r border-[#DAE3E5] gap-8">
+    <!-- rest of the code -->
+
+    <aside id="sidebar"
+        class="fixed transition-all xl:flex left-0 lg:w-80 h-full flex-col justify-start items-start grow basis-0 px-6 py-8 pt-[7rem] bg-white border-r border-[#DAE3E5] gap-8">
+
         <div class="HospitalName flex flex-col gap-y-1">
             <a href="#">
                 <span class="provider_name_field text-neutral-800 text-base font-bold font-montserrat leading-normal"></span>
@@ -75,64 +81,88 @@
         </ul>
     </aside>
 
-    <!-- start: Main -->
-    <main
-        class="flex justify-center w-full ml-0 xl:ml-80 px-16 min-h-screen transition-all mt-[69px] pt-10 pb-16 main">
 
-    <div id="main_content" class="flex flex-col max-w-[1200px] gap-8 w-full">
-            <div class="w-fit h-5 rounded-lg gap-2 inline-flex items-center text-[#054F99] mb-2">
-                <button type="button" class="text-lg text-gray-600 sidebar-toggle">
-                    <i class="ri-menu-line"></i>
-                </button>
-                <ul class="flex items-center text-sm ml-4">
-                    <li class="mr-2">
-                        <a href="/client/pages/digitalid.html" class="text-gray-400 hover:text-[#054F99] font-medium">Digital IDs</a>
-                    </li>
-                    <li class="text-gray-600 mr-2 font-medium">/</li>
-                    <li class="text-gray-600 mr-2 font-medium">Patients</li>
-                </ul>
-            </div>
+    <!-- Main -->
+    <main id="main"
+          class="ml-80 xl:ml-80 flex flex-col items-center w-full mt-[69px] px-6 pt-8 pb-16 gap-12 main transition-all">
+        <nav class="flex w-full h-5 rounded-lg gap-2 items-center text-[#054F99]">
+            <button type="button" id="sidebar_button" class="text-lg text-gray-600 sidebar-toggle flex flex-col">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                     stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8.25V18a2.25 2.25 0 0 0 2.25 2.25h13.5A2.25 2.25 0 0 0 21 18V8.25m-18 0V6a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6ZM7.5 6h.008v.008H7.5V6Zm2.25 0h.008v.008H9.75V6Z" />
+                </svg>
+            </button>
+            <ul class="flex items-center ml-1">
+                <li class="mr-2">
+                    <a href="#" class="text-gray-400 hover:text-gray-600 font-medium">Dashboard</a>
+                </li>
+               
+            </ul>
+        </nav>
 
-            <div id="medication-history-card" class="flex flex-col justify-center w-full bg-white rounded-lg border border-[#DAE3E5] dark:bg-gray-800 custom-table">
-                <div class="flex flex-col pt-6 gap-4">
-                    <div class="flex justify-between px-8">
-                        <span class="text-lg font-poppins font-bold">Patients</span>
-                        <div class="flex gap-4">
-                            <button id="add-btn" class="px-4 py-2 bg-blue_super_light text-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins hide-on-pdf">
-                                + Add Patient
-                            </button>
-                          
-                        </div>
+        <!-- DIGITAL ID CONTROLS -->
+        <div class="flex flex-col items-center w-full max-w-[1440px] min-h-screen transition-all px-8 pt-2 gap-8">
+            <div class="flex flex-col w-full pt-6 pb-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex flex-col font-poppins gap-1">
+                        <span class="text-2xl font-bold">Digital IDs</span>
+                        <span class="text-gray-500">View patients that have shared their Digital ID with you.</span>
                     </div>
-                    <div class="flex px-8 border-b border-[#DAE3E5] gap-4 text-base">
-                        <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">Prescribed by you</button>
-                 
+                    <div class="flex gap-2 h-fit">
+                        <button id="generate_qr"
+                                class="flex gap-2 px-6 py-2.5 min-w-48 bg-blue_main text-white rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 3.75 9.375v-4.5ZM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 0 1-1.125-1.125v-4.5ZM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 13.5 9.375v-4.5Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 6.75h.75v.75h-.75v-.75ZM6.75 16.5h.75v.75h-.75v-.75ZM16.5 6.75h.75v.75h-.75v-.75ZM13.5 13.5h.75v.75h-.75v-.75ZM13.5 19.5h.75v.75h-.75v-.75ZM19.5 13.5h.75v.75h-.75v-.75ZM19.5 19.5h.75v.75h-.75v-.75ZM16.5 16.5h.75v.75h-.75v-.75Z" />
+                            </svg>
+                            <span>Generate QR</span>
+                        </button>
+                        <button id="add-patient"
+                                class="flex gap-2 px-6 py-2.5 min-w-48 bg-blue_super_light text-blue_main border border-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                            </svg>
+                            <span>Add a patient</span>
+                        </button>
                     </div>
                 </div>
-                <div class="overflow-x-auto">
-                    <table id="medication-table"
+            </div>
+
+            <!-- SEARCH PATIENT -->
+            <div class="flex w-full bg-white rounded-lg border border-[#DAE3E5] p-0.5 mt-2">
+                <label class="flex items-center w-full rounded-lg gap-2">
+                    <input type="text" name="search-patient" placeholder="Search patient name"
+                           class="flex rounded-lg w-full border-0 " style="outline: none; box-shadow: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6B7280"
+                         class="size-6 mr-3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                </label>
+            </div>
+
+            <!-- DIGITAL IDs CARD -->
+            <div id="digital-ids-card"
+                 class="flex flex-col justify-center w-full max-w-[1440px] bg-white rounded-lg border border-[#DAE3E5] dark:bg-gray-800 custom-table">
+
+                <div class="overflow-x-auto rounded-lg">
+                    <table id="prescription-table"
                            class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 font-poppins">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase border-b border-[#DAE3E5] dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">Name</th>
                                 <th scope="col" class="px-6 py-3">Gender</th>
                                 <th scope="col" class="px-6 py-3">Birthdate</th>
-                               
+
+                                <th scope="col" class="px-6 py-3"><span class="sr-only">Edit</span></th>
                             </tr>
                         </thead>
                         <tbody id="digId-body">
-                        
+                            <!-- Data Rows -->
                         </tbody>
                     </table>
                 </div>
-                <nav aria-label="Page navigation example" class=" flex justify-end">
-                    <ul id="medication-history-navigation" class="flex items-center p-2 text-sm">
-                       
-                    </ul>
-                </nav>
             </div>
-
-           
+        
             <section id="add-patient-form" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
                 <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
                     <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Patient</h2>
@@ -199,11 +229,17 @@
                     </form>
                 </div>
             </section>
+           
+        
             
 
+  
+    </main>
+
+    
     <script>
       
-        document.getElementById('add-btn').addEventListener('click', function () {
+        document.getElementById('add-patient').addEventListener('click', function () {
             document.getElementById('add-patient-form').classList.remove('hidden');
         });
 
@@ -225,9 +261,6 @@
             alert('Patient added successfully');
         });
     </script>
-    </main>
-    
-
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.bundle.js"></script>
