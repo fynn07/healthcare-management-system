@@ -6,3 +6,4 @@ test.rest
 server-dotnet/.env
 server-dotnet/obj/
 server/api/__pycache__/
+server/server/__pycache__/
