@@ -1274,6 +1274,10 @@ input:checked + .toggle-bg{
   margin-top: 69px;
 }
 
+.ml-0{
+  margin-left: 0px;
+}
+
 .block{
   display: block;
 }
@@ -1385,6 +1389,10 @@ input:checked + .toggle-bg{
   height: 100vh;
 }
 
+.h-5{
+  height: 1.25rem;
+}
+
 .min-h-\[69px\]{
   min-height: 69px;
 }
@@ -1456,6 +1464,14 @@ input:checked + .toggle-bg{
 
 .max-w-screen-xl{
   max-width: 1280px;
+}
+
+.max-w-4xl{
+  max-width: 56rem;
+}
+
+.max-w-\[1200px\]{
+  max-width: 1200px;
 }
 
 .flex-1{
@@ -1879,6 +1895,10 @@ input:checked + .toggle-bg{
   --tw-bg-opacity: 0.95;
 }
 
+.bg-opacity-75{
+  --tw-bg-opacity: 0.75;
+}
+
 .bg-gradient-to-bl{
   background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
 }
@@ -2038,6 +2058,11 @@ input:checked + .toggle-bg{
   padding-bottom: 2rem;
 }
 
+.px-16{
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
 .pb-10{
   padding-bottom: 2.5rem;
 }
@@ -2092,6 +2117,10 @@ input:checked + .toggle-bg{
 
 .pt-\[7rem\]{
   padding-top: 7rem;
+}
+
+.pt-10{
+  padding-top: 2.5rem;
 }
 
 .text-left{
