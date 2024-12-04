@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PostgreSQL.Data;
@@ -11,9 +12,11 @@ using PostgreSQL.Data;
 namespace server_dotnet.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20241126040337_VitalHistory")]
+    partial class VitalHistory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,52 +94,6 @@ namespace server_dotnet.Migrations
                     b.HasIndex("ProviderId");
 
                     b.ToTable("Patients");
-                });
-
-            modelBuilder.Entity("YourNamespace.AllergyHistory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Criticality")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("character varying(30)")
-                        .HasColumnName("criticality");
-
-                    b.Property<DateTime>("DateAdded")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("date_added");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("description");
-
-                    b.Property<int>("PatientId")
-                        .HasColumnType("integer")
-                        .HasColumnName("patient_id");
-
-                    b.Property<string>("Severity")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("character varying(30)")
-                        .HasColumnName("severity");
-
-                    b.Property<string>("Substance")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("character varying(30)")
-                        .HasColumnName("substance");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PatientId");
-
-                    b.ToTable("AllergyHistory");
                 });
 
             modelBuilder.Entity("YourNamespace.FamilyHistory", b =>
@@ -525,17 +482,6 @@ namespace server_dotnet.Migrations
                         .IsRequired();
 
                     b.Navigation("Provider");
-                });
-
-            modelBuilder.Entity("YourNamespace.AllergyHistory", b =>
-                {
-                    b.HasOne("Patient", "Patient")
-                        .WithMany()
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("YourNamespace.FamilyHistory", b =>

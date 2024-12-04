@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PostgreSQL.Data;
@@ -11,9 +12,11 @@ using PostgreSQL.Data;
 namespace server_dotnet.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20241126030329_SocialHistory")]
+    partial class SocialHistory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,52 +94,6 @@ namespace server_dotnet.Migrations
                     b.HasIndex("ProviderId");
 
                     b.ToTable("Patients");
-                });
-
-            modelBuilder.Entity("YourNamespace.AllergyHistory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Criticality")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("character varying(30)")
-                        .HasColumnName("criticality");
-
-                    b.Property<DateTime>("DateAdded")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("date_added");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("description");
-
-                    b.Property<int>("PatientId")
-                        .HasColumnType("integer")
-                        .HasColumnName("patient_id");
-
-                    b.Property<string>("Severity")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("character varying(30)")
-                        .HasColumnName("severity");
-
-                    b.Property<string>("Substance")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("character varying(30)")
-                        .HasColumnName("substance");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PatientId");
-
-                    b.ToTable("AllergyHistory");
                 });
 
             modelBuilder.Entity("YourNamespace.FamilyHistory", b =>
@@ -276,51 +233,6 @@ namespace server_dotnet.Migrations
                     b.ToTable("SocialHistory");
                 });
 
-            modelBuilder.Entity("YourNamespace.SurgicalHistory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("DateAdded")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("date_added");
-
-                    b.Property<string>("Hospital")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)")
-                        .HasColumnName("hospital");
-
-                    b.Property<string>("Indication")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)")
-                        .HasColumnName("indication");
-
-                    b.Property<DateTime>("OperationDate")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("operation_date");
-
-                    b.Property<string>("OperationProcedure")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)")
-                        .HasColumnName("operation_procedure");
-
-                    b.Property<int>("PatientId")
-                        .HasColumnType("integer")
-                        .HasColumnName("patient_id");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PatientId");
-
-                    b.ToTable("SurgicalHistory");
-                });
-
             modelBuilder.Entity("YourNamespace.VaccinationHistory", b =>
                 {
                     b.Property<int>("Id")
@@ -380,53 +292,6 @@ namespace server_dotnet.Migrations
                     b.HasIndex("PatientId");
 
                     b.ToTable("VaccinationHistory");
-                });
-
-            modelBuilder.Entity("YourNamespace.VitalHistory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("BloodGlucose")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)")
-                        .HasColumnName("blood_glucose");
-
-                    b.Property<string>("BloodPressure")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)")
-                        .HasColumnName("blood_pressure");
-
-                    b.Property<DateTime>("DateAdded")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("date_added");
-
-                    b.Property<int>("PatientId")
-                        .HasColumnType("integer")
-                        .HasColumnName("patient_id");
-
-                    b.Property<string>("PulseRate")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)")
-                        .HasColumnName("pulse_rate");
-
-                    b.Property<string>("Temperature")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)")
-                        .HasColumnName("temperature");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PatientId");
-
-                    b.ToTable("VitalHistory");
                 });
 
             modelBuilder.Entity("server_dotnet.Models.Provider", b =>
@@ -527,17 +392,6 @@ namespace server_dotnet.Migrations
                     b.Navigation("Provider");
                 });
 
-            modelBuilder.Entity("YourNamespace.AllergyHistory", b =>
-                {
-                    b.HasOne("Patient", "Patient")
-                        .WithMany()
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Patient");
-                });
-
             modelBuilder.Entity("YourNamespace.FamilyHistory", b =>
                 {
                     b.HasOne("Patient", "Patient")
@@ -571,29 +425,7 @@ namespace server_dotnet.Migrations
                     b.Navigation("Patient");
                 });
 
-            modelBuilder.Entity("YourNamespace.SurgicalHistory", b =>
-                {
-                    b.HasOne("Patient", "Patient")
-                        .WithMany()
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Patient");
-                });
-
             modelBuilder.Entity("YourNamespace.VaccinationHistory", b =>
-                {
-                    b.HasOne("Patient", "Patient")
-                        .WithMany()
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Patient");
-                });
-
-            modelBuilder.Entity("YourNamespace.VitalHistory", b =>
                 {
                     b.HasOne("Patient", "Patient")
                         .WithMany()

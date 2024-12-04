@@ -1,3 +1,7 @@
+import { getApiEndpoint } from "../../utils/getApiEndpoint.js";
+import { UtcTimeValidifier } from '../../utils/UtcTimeValidifier.js';
+import { forceRefresh } from '../../utils/forceRefresh.js';
+
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("surgical-history-form");
 
@@ -7,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const urlParams = new URLSearchParams(window.location.search);
         const editId = urlParams.get('edit_id');
 
+        const ENDPOINT = getApiEndpoint();
+
         if (editId) {
             return;
         }
@@ -14,14 +20,16 @@ document.addEventListener("DOMContentLoaded", function() {
         const operation_procedure = document.getElementById("surgical-history-operation-procedure").value;
         const indication = document.getElementById("surgical-history-indication").value;
         const hospital = document.getElementById("surgical-history-hospital").value;
-        const operation_date = document.getElementById("surgical-history-operation-date").value;
+        let operation_date = document.getElementById("surgical-history-operation-date").value;
+
+        operation_date = UtcTimeValidifier(operation_date);
 
         const id = urlParams.get('id');
 
         try {
             const token = localStorage.getItem('token');
             
-            const response = await fetch(`http://127.0.0.1:8000/api/patient/create/${id}/surgical_history/`, {
+            const response = await fetch(`${ENDPOINT}/api/patient/create/${id}/surgical_history/`, {
                 method: "POST",
                 headers: {
                     'Authorization': `Token ${token}`,
@@ -41,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (response.ok) {
                 sessionStorage.setItem('toastMessage', 'Record Successfully Added');
                 sessionStorage.setItem('toastType', 'success');
+                forceRefresh();
                 
             } else {
                 sessionStorage.setItem('toastMessage', 'Failed to Add Record');
