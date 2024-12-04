@@ -98,12 +98,36 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// add a patient in digital ids
+
+document.getElementById('add-patient').addEventListener('click', function () {
+    document.getElementById('add-patient-form').classList.remove('hidden');
+});
+
+
+document.getElementById('close-form').addEventListener('click', function () {
+    document.getElementById('add-patient-form').classList.add('hidden');
+});
+
+
+document.getElementById('patient-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const patientData = {};
+    formData.forEach((value, key) => {
+        patientData[key] = value;
+    });
+    console.log(patientData);  
+    document.getElementById('add-patient-form').classList.add('hidden');
+   
+});
+
 document.getElementById('download-pdf-btn').addEventListener('click', async function () {
     const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('id');  // Fetch patient ID from the URL
+    const id = urlParams.get('id');  
     
     const token = localStorage.getItem('token');
-    const ENDPOINT = getApiEndpoint(); // Assuming you have this function to get the base URL
+    const ENDPOINT = getApiEndpoint(); 
 
     try {
         const response = await fetch(`${ENDPOINT}/api/patient/download-medical-records/${id}/`, {
@@ -118,15 +142,14 @@ document.getElementById('download-pdf-btn').addEventListener('click', async func
             throw new Error("Error downloading PDF");
         }
 
-        // Create a Blob from the PDF response
+       
         const blob = await response.blob();
         
-        // Create a link element, use it to download the PDF
+     
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
         link.download = `medical_records_${id}.pdf`;
-        
-        // Trigger the download by clicking the link
+     
         link.click();
     } catch (error) {
         console.error("Failed to download PDF:", error);

@@ -237,30 +237,9 @@
     </main>
 
     
-    <script>
-      
-        document.getElementById('add-patient').addEventListener('click', function () {
-            document.getElementById('add-patient-form').classList.remove('hidden');
-        });
+  
 
-     
-        document.getElementById('close-form').addEventListener('click', function () {
-            document.getElementById('add-patient-form').classList.add('hidden');
-        });
 
-      
-        document.getElementById('patient-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-            const patientData = {};
-            formData.forEach((value, key) => {
-                patientData[key] = value;
-            });
-            console.log(patientData);  
-            document.getElementById('add-patient-form').classList.add('hidden');
-            alert('Patient added successfully');
-        });
-    </script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.bundle.js"></script>
