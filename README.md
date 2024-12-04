@@ -1,30 +1,30 @@
-# 🌐 <span style="color:#1E90FF;">*theHealthBook*</span>  
-**<span style="color:#4682B4;">A Comprehensive Digital Healthcare Identification Management System</span>**  
+# 🌐 *theHealthBook*  
+**A Comprehensive Digital Healthcare Identification Management System**  
 
 Seamlessly manage medical records and healthcare identification using a powerful digital platform designed for patients, healthcare providers, and hospital administrators. *theHealthBook* is engineered to improve accessibility, enhance efficiency, and ensure security in managing healthcare documentation.  
 
 ---
 
-## 📖 <span style="color:#1E90FF;">Table of Contents</span>  
+## 📖 Table of Contents  
 
-1. [📋 <span style="color:#4682B4;">Project Overview</span>](#-project-overview)  
-2. [✨ <span style="color:#4682B4;">Core Features</span>](#-core-features)  
-3. [🛠️ <span style="color:#4682B4;">Technology Stack</span>](#-technology-stack)  
-4. [🖼️ <span style="color:#4682B4;">Site Previews</span>](#️-site-previews)  
-5. [📊 <span style="color:#4682B4;">Future Enhancements</span>](#-future-enhancements)  
-6. [👥 <span style="color:#4682B4;">Team Members</span>](#-team-members)  
-7. [📚 <span style="color:#4682B4;">Additional Resources</span>](#-additional-resources)  
-8. [📜 <span style="color:#4682B4;">License</span>](#-license)  
+1. [📋 Project Overview](#-project-overview)  
+2. [✨ Core Features](#-core-features)  
+3. [🛠️ Technology Stack](#-technology-stack)  
+4. [🖼️ Site Previews](#️-site-previews)  
+5. [📊 Future Enhancements](#-future-enhancements)  
+6. [👥 Team Members](#-team-members)  
+7. [📚 Additional Resources](#-additional-resources)  
+8. [📜 License](#-license)  
 
 ---
 
-## 📋 <span style="color:#1E90FF;">Project Overview</span>  
+## 📋 Project Overview  
 
 This project, developed as the **capstone** for **CSIT327 Information Management 2** at the *Cebu Institute of Technology - University*, is a cutting-edge solution for **streamlining healthcare management**.  
 
 ### **Goals**:  
-1. **<span style="color:#4682B4;">Revolutionize healthcare services</span>** with digital solutions.  
-2. Provide **<span style="color:#4682B4;">secure, centralized management</span>** of medical records.  
+1. **Revolutionize healthcare services** with digital solutions.  
+2. Provide **secure, centralized management** of medical records.  
 3. Enable healthcare providers to access critical patient data quickly.  
 
 Key functionalities include:  
@@ -33,29 +33,29 @@ Key functionalities include:
 
 ---
 
-## ✨ <span style="color:#1E90FF;">Core Features</span>  
+## ✨ Core Features  
 
-- **🔒 <span style="color:#4682B4;">Secure User Authentication</span>**  
+- **🔒 Secure User Authentication**  
   - Role-based access for patients, healthcare providers, and administrators.  
   - Password encryption and secure session management.  
 
-- **🆔 <span style="color:#4682B4;">Unique Digital Identification</span>**  
+- **🆔 Unique Digital Identification**  
   - Each patient is assigned a unique ID for streamlined tracking.  
 
-- **📑 <span style="color:#4682B4;">Comprehensive Medical Record Management</span>**  
+- **📑 Comprehensive Medical Record Management**  
   - Stores patient information such as allergies, medications, and diagnoses.  
   - Enables doctors to update and retrieve records in real time.  
 
-- **📱 <span style="color:#4682B4;">QR Code Integration</span>**  
+- **📱 QR Code Integration**  
   - Generate QR codes for each patient to facilitate secure data sharing.  
   - QR scanning enables instant record retrieval.  
 
-- **🌐 <span style="color:#4682B4;">Responsive Design</span>**  
+- **🌐 Responsive Design**  
   - Optimized for use across devices (desktop, tablet, mobile).  
 
 ---
 
-## 🛠️ <span style="color:#1E90FF;">Technology Stack</span>  
+## 🛠️ Technology Stack  
 
 | **Category**    | **Technology**              |  
 |------------------|-----------------------------|  
@@ -67,17 +67,17 @@ Key functionalities include:
 
 ---
 
-## 🖼️ <span style="color:#1E90FF;">Site Previews</span>  
+## 🖼️ Site Previews  
 
-### <span style="color:#4682B4;">Navigation Inside the Site</span>  
+### Navigation Inside the Site  
 ![Site Navigation](https://github.com/user-attachments/assets/6c7e4097-25b7-4533-8369-c23e22f2a6b6)  
 
-### <span style="color:#4682B4;">Landing Page</span>  
+### Landing Page  
 ![Landing Page](https://github.com/user-attachments/assets/5c49c0e1-f767-4a92-855d-874f0ac3c480)  
 
 ---
 
-## 👥 <span style="color:#1E90FF;">Team Members</span>  
+## 👥 Team Members  
 
 - **👩‍💻 [Ashley Ken Comandao](https://github.com/CodexPremiera)**  
 - **👨‍💻 [Fynn Nino Borja](https://github.com/fynn07)**  
@@ -85,7 +85,7 @@ Key functionalities include:
 
 ---
 
-## 📚 <span style="color:#1E90FF;">Additional Resources</span>  
+## 📚 Additional Resources  
 
 - 📊 [**Entity Relationship Diagram (ERD)**](https://link_to_erd)  
 - 🎨 [**Figma Prototype Design**](https://link_to_prototype)  
@@ -93,10 +93,10 @@ Key functionalities include:
 
 ---
 
-## 📜 <span style="color:#1E90FF;">License</span>  
+## 📜 License  
 
 This project is open-source and licensed under the **MIT License**.  
 
 ---
 
-### 🚀 <span style="color:#1E90FF;">*Empowering healthcare with digital innovation.*</span>  
+### 🚀 *Empowering healthcare with digital innovation.*  
