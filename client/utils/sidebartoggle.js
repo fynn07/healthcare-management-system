@@ -9,8 +9,8 @@ function toggleSidebar() {
         main.classList.toggle('xl:ml-80');
         main.classList.toggle('xl:ml-0');
     } else {
-        main.classList.toggle('ml-80');
-        main.classList.toggle('ml-0');
+        main.classList.toggle('max-xl:ml-60');
+        main.classList.toggle('max-xl:ml-0');
     }
 }
 
@@ -21,17 +21,11 @@ sidebarButton.addEventListener('click', toggleSidebar);
 function updateClasses() {
     if (window.innerWidth >= 1280) {
         // Screen width is at least 1280px (matches 'xl' breakpoint)
-        main.classList.add('ml-0');
-        main.classList.remove('ml-80');
-        main.classList.remove('xl:ml-0');
         main.classList.add('xl:ml-80');
 
 
     } else {
         // Screen width is below 1280px
-        main.classList.add('ml-0');
-        main.classList.remove('ml-80');
-        main.classList.remove('xl:ml-0');
         main.classList.remove('xl:ml-80');
     }
 
