@@ -38,6 +38,9 @@ export async function useUpdateSurgicalHistory(record_id) {
     const ENDPOINT = getApiEndpoint();
 
     addFormSurg.classList.remove('hidden'); 
+
+    document.getElementById("surgical-header").textContent = "Edit Surgical History Record";
+    document.getElementById("surgical-button").textContent = "Edit Record";
     
     document.getElementById("surgical-history-operation-procedure").value = surgical_data.operation_procedure;
     document.getElementById("surgical-history-indication").value = surgical_data.indication;

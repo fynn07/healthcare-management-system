@@ -36,30 +36,44 @@ document.addEventListener('DOMContentLoaded', function () {
     // Open form listeners
     addBtn.addEventListener('click', () => {
         addForm.classList.remove('hidden');
+        document.getElementById("medication-header").textContent = "Add Medication History Record";
+        document.getElementById("medication-button").textContent = "Add Record";
     });
   
     addBtnVacc.addEventListener('click', () => {
         addFormVacc.classList.remove('hidden');
+        document.getElementById("vaccination-header").textContent = "Add Vaccination History Record";
+        document.getElementById("vaccination-button").textContent = "Add Record";
     });
   
     addBtnFam.addEventListener('click', () => {
         addFormFam.classList.remove('hidden');
+        document.getElementById("family-header").textContent = "Add Family History Record";
+        document.getElementById("family-button").textContent = "Add Record";
     });
 
     addBtnSocial.addEventListener('click', () => {
         addFormSoc.classList.remove('hidden');
+        document.getElementById("social-header").textContent = "Add Social History Record";
+        document.getElementById("social-button").textContent = "Add Record";
     });
 
     addBtnSurg.addEventListener('click', () => {
         addFormSurg.classList.remove('hidden');
+        document.getElementById("surgical-header").textContent = "Add Surgical History Record";
+        document.getElementById("surgical-button").textContent = "Add Record";
     });
 
     addBtnVital.addEventListener('click', () => {
         addFormVital.classList.remove('hidden'); 
+        document.getElementById("vital-header").textContent = "Add Vital Sign History Record";
+        document.getElementById("vital-button").textContent = "Add Record";
     });
 
     addBtnAllergy.addEventListener('click', () => {
         addFormAllergy.classList.remove('hidden'); 
+        document.getElementById("allergy-header").textContent = "Add Allergy History Record";
+        document.getElementById("allergy-button").textContent = "Add Record";
     });
 
 

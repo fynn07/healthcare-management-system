@@ -38,6 +38,9 @@ export async function useUpdateMedicationHistory(record_id) {
     const ENDPOINT = getApiEndpoint();
 
     addFormMed.classList.remove('hidden'); 
+
+    document.getElementById("medication-header").textContent = "Edit Medication History Record";
+    document.getElementById("medication-button").textContent = "Edit Record";
     
     document.getElementById("medication-history-date-prescribed").value = medication_data.date_prescribed;
     document.getElementById("medication-history-generic-name").value = medication_data.generic_name;

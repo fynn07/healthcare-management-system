@@ -37,6 +37,9 @@ export async function useUpdateAllergyHistory(record_id){
     const addFormAllergy = document.getElementById('add-formallergy');
 
     addFormAllergy.classList.remove('hidden'); 
+
+    document.getElementById("allergy-header").textContent = "Edit Allergy History Record";
+    document.getElementById("allergy-button").textContent = "Edit Record";
     
     document.getElementById("allergy-history-substance").value = allergy_data.substance;
     document.getElementById("allergy-history-description").value = allergy_data.description;

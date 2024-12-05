@@ -112,7 +112,7 @@
                         <img class="h-24 w-24 rounded-full" src="../assets/default_user_profile.svg" alt="Profile Picture">
                         <div class="flex flex-col gap-1">
                             <h2 id="fullName" class="text-2xl font-semibold text-black tracking-tight font-poppins">N/A</h2>
-                            <span class="text-base text-gray-500 font-medium tracking-tight font-poppins">Shared Today, Mar 17 at 11:37</span>
+                            <span class="text-base text-gray-500 font-medium tracking-tight font-poppins">Patient | Patient Records</span>
                         </div>
                     </div>
 
@@ -202,7 +202,7 @@
                 <!-- Hidden Form Section -->
                 <section id="add-form" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
                     <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
-                        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Medication Record</h2>
+                        <h2 id="medication-header" class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Medication Record</h2>
                         <form id="medication-history-form">
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="sm:col-span-2">
@@ -229,7 +229,7 @@
                             </div>
                             <div class="flex justify-between mt-4 sm:mt-6">
                                 <button type="button" id="close-form" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <button type="submit" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                <button type="submit" id="medication-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
                                     Add Record
                                 </button>
                             </div>
@@ -287,7 +287,7 @@
 
                 <section id="add-formvacc" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
                     <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
-                        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Vaccination Record</h2>
+                        <h2 id="vaccination-header" class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Vaccination Record</h2>
                         <form id="vaccination-history-form">
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="sm:col-span-2">
@@ -322,7 +322,7 @@
                             </div>
                             <div class="flex justify-between mt-4 sm:mt-6">
                                 <button type="button" id="close-formvacc" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <button type="submit" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                <button type="submit" id="vaccination-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
                                     Add Record
                                 </button>
                             </div>
@@ -377,7 +377,7 @@
 
                 <section id="add-formfam" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
                     <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
-                        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Family History Record</h2>
+                        <h2 id="family-header" class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Family History Record</h2>
                         <form id="family-history-form">
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="w-full">
@@ -393,7 +393,7 @@
                             </div>
                             <div class="flex justify-between mt-4 sm:mt-6">
                                 <button type="button" id="close-formfam" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <button type="submit" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                <button type="submit" id="family-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
                                     Add Record
                                 </button>
                             </div>
@@ -451,7 +451,7 @@
 
                 <section id="add-formsocial" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
                     <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
-                        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Social History Record</h2>
+                        <h2 id="social-header" class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Social History Record</h2>
                         <form id="social-history-form">
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="w-full">
@@ -478,7 +478,7 @@
                             </div>
                             <div class="flex justify-between mt-4 sm:mt-6">
                                 <button type="button" id="close-formsocial" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <button type="submit" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                <button type="submit" id="social-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
                                     Add Record
                                 </button>
                             </div>
@@ -535,7 +535,7 @@
 
                 <section id="add-formsurgery" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
                     <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
-                        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Surgical History Record</h2>
+                        <h2 id="surgical-header" class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Surgical History Record</h2>
                         <form id="surgical-history-form">
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="w-full">
@@ -559,7 +559,7 @@
                             </div>
                             <div class="flex justify-between mt-4 sm:mt-6">
                                 <button type="button" id="close-formsurgery" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <button type="submit" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                <button type="submit" id="surgical-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
                                     Add Record
                                 </button>
                             </div>
@@ -616,7 +616,7 @@
 
                 <section id="add-formvital" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
                     <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
-                        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Vital Sign History Record</h2>
+                        <h2 id="vital-header" class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Vital Sign History Record</h2>
                         <form id="vital-history-form">
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="w-full">
@@ -641,7 +641,7 @@
                             </div>
                             <div class="flex justify-between mt-4 sm:mt-6">
                                 <button type="button" id="close-formvital" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <button type="submit" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                <button type="submit" id="vital-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
                                     Add Record
                                 </button>
                             </div>
@@ -699,7 +699,7 @@
 
                 <section id="add-formallergy" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
                     <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
-                        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Allergy History Record</h2>
+                        <h2 id="allergy-header" class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Allergy History Record</h2>
                         <form id="allergy-history-form">
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="w-full">
@@ -725,7 +725,7 @@
                             </div>
                             <div class="flex justify-between mt-4 sm:mt-6">
                                 <button type="button" id="close-formallergy" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <button type="submit" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                <button type="submit" id="allergy-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
                                     Add Record
                                 </button>
                             </div>
