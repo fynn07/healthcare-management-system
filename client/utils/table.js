@@ -38,42 +38,80 @@ document.addEventListener('DOMContentLoaded', function () {
         addForm.classList.remove('hidden');
         document.getElementById("medication-header").textContent = "Add Medication History Record";
         document.getElementById("medication-button").textContent = "Add Record";
+
+        document.getElementById("medication-history-date-prescribed").value = ""; 
+        document.getElementById("medication-history-generic-name").value = ""; 
+        document.getElementById("medication-history-dosage").value = ""; 
+        document.getElementById("medication-history-quantity").value = ""; 
+        document.getElementById("medication-history-instructions").value = ""; 
     });
   
     addBtnVacc.addEventListener('click', () => {
         addFormVacc.classList.remove('hidden');
         document.getElementById("vaccination-header").textContent = "Add Vaccination History Record";
         document.getElementById("vaccination-button").textContent = "Add Record";
+
+        document.getElementById("vaccine-history-date-administered").value = "";
+        document.getElementById("vaccine-history-next-dose-date").value =  "";
+        document.getElementById("vaccine-history-vaccine-name").value = "";
+        document.getElementById("vaccine-history-brand-name").value = "";
+        document.getElementById("vaccine-history-provider").value = "";
+        document.getElementById("vaccine-history-site-given").value = "";
+        document.getElementById("vaccine-history-dose-ml").value = "";
     });
   
     addBtnFam.addEventListener('click', () => {
         addFormFam.classList.remove('hidden');
         document.getElementById("family-header").textContent = "Add Family History Record";
         document.getElementById("family-button").textContent = "Add Record";
+
+        document.getElementById("family-history-relationship").value = "";
+        document.getElementById("family-history-condition-illness").value = "";
     });
 
     addBtnSocial.addEventListener('click', () => {
         addFormSoc.classList.remove('hidden');
         document.getElementById("social-header").textContent = "Add Social History Record";
         document.getElementById("social-button").textContent = "Add Record";
+
+        document.getElementById("social-history-nicotine-consumption").value = "";
+        document.getElementById("social-history-alcohol-consumption").value = "";
+        document.getElementById("social-history-drugs-taken").value = "";
+        document.getElementById("social-history-diet").value = "";
+        document.getElementById("social-history-physical-activity").value = "";
     });
 
     addBtnSurg.addEventListener('click', () => {
         addFormSurg.classList.remove('hidden');
         document.getElementById("surgical-header").textContent = "Add Surgical History Record";
         document.getElementById("surgical-button").textContent = "Add Record";
+
+        document.getElementById("surgical-history-operation-procedure").value = "";
+        document.getElementById("surgical-history-indication").value = "";
+        document.getElementById("surgical-history-hospital").value = "";
+        document.getElementById("surgical-history-operation-date").value = "";
     });
 
     addBtnVital.addEventListener('click', () => {
         addFormVital.classList.remove('hidden'); 
         document.getElementById("vital-header").textContent = "Add Vital Sign History Record";
         document.getElementById("vital-button").textContent = "Add Record";
+
+        document.getElementById("vital-history-temperature").value = "";
+        document.getElementById("vital-history-blood-pressure").value = "";
+        document.getElementById("vital-history-pulse-rate").value = "";
+        document.getElementById("vital-history-blood-glucose").value = "";
     });
 
     addBtnAllergy.addEventListener('click', () => {
         addFormAllergy.classList.remove('hidden'); 
         document.getElementById("allergy-header").textContent = "Add Allergy History Record";
         document.getElementById("allergy-button").textContent = "Add Record";
+        
+        document.getElementById("allergy-history-substance").value = "";
+        document.getElementById("allergy-history-description").value = "";
+        document.getElementById("allergy-history-severity").value = "";
+        document.getElementById("allergy-history-criticality").value = "";
     });
 
 
