@@ -41,6 +41,7 @@ class MedicationHistory(models.Model):
     dosage = models.CharField(max_length=30)
     quantity = models.PositiveIntegerField()
     instructions = models.TextField()
+    is_deleted = models.BooleanField(default=False)
 
 class VaccinationHistory(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
@@ -52,12 +53,14 @@ class VaccinationHistory(models.Model):
     site_given = models.CharField(max_length=30)
     dose_ml = models.CharField(max_length=20)
     next_dose_date = models.DateField(null=False)
+    is_deleted = models.BooleanField(default=False)
 
 class FamilyHistory(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     date_added = models.DateField(null=False)
     relationship = models.CharField(max_length=30)
     condition_illness = models.CharField(max_length=50)
+    is_deleted = models.BooleanField(default=False)
 
 class SocialHistory(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
@@ -67,6 +70,7 @@ class SocialHistory(models.Model):
     drugs_taken = models.CharField(max_length=30)
     diet = models.CharField(max_length=100)
     physical_activity = models.CharField(max_length=100)
+    is_deleted = models.BooleanField(default=False)
 
 class SurgicalHistory(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
@@ -75,6 +79,7 @@ class SurgicalHistory(models.Model):
     indication = models.CharField(max_length=50)
     hospital = models.CharField(max_length=50)
     operation_date = models.DateField(null=False)
+    is_deleted = models.BooleanField(default=False)
 
 class VitalHistory(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
@@ -83,6 +88,7 @@ class VitalHistory(models.Model):
     blood_pressure = models.CharField(max_length=20)
     pulse_rate = models.CharField(max_length=20)
     blood_glucose = models.CharField(max_length=20)
+    is_deleted = models.BooleanField(default=False)
 
 class AllergyHistory(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
@@ -91,6 +97,7 @@ class AllergyHistory(models.Model):
     description = models.TextField()
     severity = models.CharField(max_length=30)
     criticality = models.CharField(max_length=30)
+    is_deleted = models.BooleanField(default=False)
 
 
 

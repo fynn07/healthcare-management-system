@@ -40,6 +40,13 @@ urlpatterns = [
     path("patient/update/<int:id>/surgical_history/<int:record_id>/", views.update_surgical_history_record),
     path("patient/update/<int:id>/vital_history/<int:record_id>/", views.update_vital_history_record),
     path("patient/update/<int:id>/allergy_history/<int:record_id>/", views.update_allergy_history_record),
+    path("patient/delete/<int:id>/medication_history/<int:record_id>/", views.delete_medication_history_record),
+    path("patient/delete/<int:id>/vaccination_history/<int:record_id>/", views.delete_vaccination_history_record),
+    path("patient/delete/<int:id>/family_history/<int:record_id>/", views.delete_family_history_record),
+    path("patient/delete/<int:id>/social_history/<int:record_id>/", views.delete_social_history_record),
+    path("patient/delete/<int:id>/surgical_history/<int:record_id>/", views.delete_surgical_history_record),
+    path("patient/delete/<int:id>/vital_history/<int:record_id>/", views.delete_vital_history_record),
+    path("patient/delete/<int:id>/allergy_history/<int:record_id>/", views.delete_allergy_history_record),
     
     path('patient/download-medical-records/<int:id>/', views.download_medical_records_pdf, name='download_medical_records_pdf'),
 
