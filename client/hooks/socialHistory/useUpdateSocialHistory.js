@@ -38,6 +38,7 @@ export async function useUpdateSocialHistory(record_id) {
     const ENDPOINT = getApiEndpoint();
 
     addFormSoc.classList.remove('hidden'); 
+    document.getElementById('delete-social-record').classList.remove('hidden');
 
     document.getElementById("social-header").textContent = "Edit Social History Record";
     document.getElementById("social-button").textContent = "Edit Record";

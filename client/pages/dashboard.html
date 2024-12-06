@@ -54,8 +54,7 @@
                 <span class="provider_name_field text-neutral-800 text-base font-bold font-montserrat leading-normal"></span>
             </a>
 
-            <div class="LocalGovernmentUnit text-neutral-500 text-base font-normal font-source_sans_pro leading-tight">
-              Local Government Unit
+            <div id="provider-type" class="LocalGovernmentUnit text-neutral-500 text-base font-normal font-source_sans_pro leading-tight">
             </div>
         </div>
 
@@ -229,9 +228,13 @@
                             </div>
                             <div class="flex justify-between mt-4 sm:mt-6">
                                 <button type="button" id="close-form" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <button type="submit" id="medication-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
-                                    Add Record
-                                </button>
+                                <div>
+                                    <button type="button" id="delete-medication-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">Delete Record</button>
+                                    <button type="submit" id="medication-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                        Add Record
+                                    </button>
+                                <div>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -322,9 +325,12 @@
                             </div>
                             <div class="flex justify-between mt-4 sm:mt-6">
                                 <button type="button" id="close-formvacc" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <button type="submit" id="vaccination-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
-                                    Add Record
-                                </button>
+                                <div>
+                                    <button type="button" id="delete-vaccination-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">Delete Record</button>
+                                    <button type="submit" id="vaccination-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                        Add Record
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -393,9 +399,12 @@
                             </div>
                             <div class="flex justify-between mt-4 sm:mt-6">
                                 <button type="button" id="close-formfam" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <button type="submit" id="family-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
-                                    Add Record
-                                </button>
+                                <div>
+                                    <button type="button" id="delete-family-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">Delete Record</button>
+                                    <button type="submit" id="family-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                        Add Record
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -478,9 +487,12 @@
                             </div>
                             <div class="flex justify-between mt-4 sm:mt-6">
                                 <button type="button" id="close-formsocial" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <button type="submit" id="social-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
-                                    Add Record
-                                </button>
+                                <div>
+                                    <button type="button" id="delete-social-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">Delete Record</button>
+                                    <button type="submit" id="social-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                        Add Record
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -559,9 +571,12 @@
                             </div>
                             <div class="flex justify-between mt-4 sm:mt-6">
                                 <button type="button" id="close-formsurgery" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <button type="submit" id="surgical-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
-                                    Add Record
-                                </button>
+                                <div>
+                                    <button type="button" id="delete-surgical-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">Delete Record</button>
+                                    <button type="submit" id="surgical-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                        Add Record
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -641,9 +656,12 @@
                             </div>
                             <div class="flex justify-between mt-4 sm:mt-6">
                                 <button type="button" id="close-formvital" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <button type="submit" id="vital-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
-                                    Add Record
-                                </button>
+                                <div>
+                                    <button type="button" id="delete-vital-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">Delete Record</button>
+                                    <button type="submit" id="vital-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                        Add Record
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -725,9 +743,12 @@
                             </div>
                             <div class="flex justify-between mt-4 sm:mt-6">
                                 <button type="button" id="close-formallergy" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <button type="submit" id="allergy-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
-                                    Add Record
-                                </button>
+                                <div>
+                                    <button type="button" id="delete-allergy-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">Delete Record</button>
+                                    <button type="submit" id="allergy-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                        Add Record
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>

@@ -38,6 +38,7 @@ export async function useUpdateVaccinationHistory(record_id) {
     const ENDPOINT = getApiEndpoint();
 
     addFormVacc.classList.remove('hidden'); 
+    document.getElementById('delete-vaccination-record').classList.remove('hidden');
 
     document.getElementById("vaccination-header").textContent = "Edit Vaccination History Record";
     document.getElementById("vaccination-button").textContent = "Edit Record";

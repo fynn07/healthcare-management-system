@@ -38,6 +38,7 @@ export async function useUpdateVitalHistory(record_id) {
     const ENDPOINT = getApiEndpoint();
 
     addFormVital.classList.remove('hidden'); 
+    document.getElementById('delete-vital-record').classList.remove('hidden');
 
     document.getElementById("vital-header").textContent = "Edit Vital Sign History Record";
     document.getElementById("vital-button").textContent = "Edit Record";

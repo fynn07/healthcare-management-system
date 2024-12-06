@@ -37,6 +37,7 @@ export async function useUpdateMedicationHistory(record_id) {
 
     const ENDPOINT = getApiEndpoint();
 
+    document.getElementById('delete-medication-record').classList.remove('hidden');
     addFormMed.classList.remove('hidden'); 
 
     document.getElementById("medication-header").textContent = "Edit Medication History Record";

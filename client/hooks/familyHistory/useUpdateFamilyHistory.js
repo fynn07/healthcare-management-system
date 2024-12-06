@@ -39,6 +39,7 @@ export async function useUpdateFamilyHistory(record_id){
     const ENDPOINT = getApiEndpoint();
 
     addFormFam.classList.remove('hidden'); 
+    document.getElementById('delete-family-record').classList.remove('hidden');
 
     document.getElementById("family-header").textContent = "Edit Family History Record";
     document.getElementById("family-button").textContent = "Edit Record";
