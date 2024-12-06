@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Open form listeners
     addBtn.addEventListener('click', () => {
         addForm.classList.remove('hidden');
+        document.getElementById('delete-medication-record').classList.add('hidden');
+
         document.getElementById("medication-header").textContent = "Add Medication History Record";
         document.getElementById("medication-button").textContent = "Add Record";
 
@@ -48,6 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
   
     addBtnVacc.addEventListener('click', () => {
         addFormVacc.classList.remove('hidden');
+        document.getElementById('delete-vaccination-record').classList.add('hidden');
+
         document.getElementById("vaccination-header").textContent = "Add Vaccination History Record";
         document.getElementById("vaccination-button").textContent = "Add Record";
 
@@ -62,6 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
   
     addBtnFam.addEventListener('click', () => {
         addFormFam.classList.remove('hidden');
+        document.getElementById('delete-family-record').classList.add('hidden');
+
         document.getElementById("family-header").textContent = "Add Family History Record";
         document.getElementById("family-button").textContent = "Add Record";
 
@@ -71,6 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addBtnSocial.addEventListener('click', () => {
         addFormSoc.classList.remove('hidden');
+        document.getElementById('delete-social-record').classList.add('hidden');
+
         document.getElementById("social-header").textContent = "Add Social History Record";
         document.getElementById("social-button").textContent = "Add Record";
 
@@ -83,6 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addBtnSurg.addEventListener('click', () => {
         addFormSurg.classList.remove('hidden');
+        document.getElementById('delete-surgical-record').classList.add('hidden');
+
         document.getElementById("surgical-header").textContent = "Add Surgical History Record";
         document.getElementById("surgical-button").textContent = "Add Record";
 
@@ -94,6 +104,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addBtnVital.addEventListener('click', () => {
         addFormVital.classList.remove('hidden'); 
+        document.getElementById('delete-vital-record').classList.add('hidden');
+
         document.getElementById("vital-header").textContent = "Add Vital Sign History Record";
         document.getElementById("vital-button").textContent = "Add Record";
 
@@ -105,6 +117,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addBtnAllergy.addEventListener('click', () => {
         addFormAllergy.classList.remove('hidden'); 
+        document.getElementById('delete-allergy-record').classList.add('hidden');
+
         document.getElementById("allergy-header").textContent = "Add Allergy History Record";
         document.getElementById("allergy-button").textContent = "Add Record";
         
