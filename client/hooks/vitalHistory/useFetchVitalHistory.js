@@ -105,6 +105,16 @@ function updateVitalHistoryTable(vitalHistory) {
     const vital_history_body = document.getElementById('vital-history-body');
     vital_history_body.innerHTML = ''; 
 
+    if (vitalHistory.results.length === 0) {
+        vital_history_body.innerHTML = 
+        `<tr class="border-b border-t">
+            <td colspan="5" class="text-center py-3">
+            No Vital Records Found
+            </td>
+        </tr>`;
+        return;
+    }
+
     vitalHistory.results.forEach(item => {
         const formatted_item = formatVitalData(item);
         const row = `

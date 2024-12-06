@@ -106,6 +106,16 @@ function updateFamilyHistoryTable(familyHistory) {
     const family_history_body = document.getElementById('family-history-body');
     family_history_body.innerHTML = ''; 
 
+    if (familyHistory.results.length === 0) {
+        family_history_body.innerHTML = 
+        `<tr class="border-b border-t">
+            <td colspan="3" class="text-center py-3">
+            No Family Records Found
+            </td>
+        </tr>`;
+        return;
+    }
+
     familyHistory.results.forEach(item => {
         const formatted_item = formatFamilyData(item);
         const row = `

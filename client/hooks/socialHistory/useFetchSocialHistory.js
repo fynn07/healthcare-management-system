@@ -105,6 +105,16 @@ function updateSocialHistoryTable(socialHistory) {
     const social_history_body = document.getElementById('social-history-body');
     social_history_body.innerHTML = ''; 
 
+    if (socialHistory.results.length === 0) {
+        social_history_body.innerHTML = 
+        `<tr class="border-b border-t">
+            <td colspan="6" class="text-center py-3">
+            No Social Records Found
+            </td>
+        </tr>`;
+        return;
+    }
+
     socialHistory.results.forEach(item => {
         const formatted_item = formatSocialData(item);
         const row = `

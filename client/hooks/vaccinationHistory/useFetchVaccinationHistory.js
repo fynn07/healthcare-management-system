@@ -112,6 +112,16 @@ function updateVaccinationHistoryTable(vaccinationHistory) {
     const vaccination_history_body = document.getElementById('vaccination-history-body');
     vaccination_history_body.innerHTML = ''; 
 
+    if (vaccinationHistory.results.length === 0) {
+        vaccination_history_body.innerHTML = 
+        `<tr class="border-b border-t">
+            <td colspan="6" class="text-center py-3">
+            No Vaccination Records Found
+            </td>
+        </tr>`;
+        return;
+    }
+
     vaccinationHistory.results.forEach(item => {
         const formatted_item = formatVaccinationData(item);
         const row = `

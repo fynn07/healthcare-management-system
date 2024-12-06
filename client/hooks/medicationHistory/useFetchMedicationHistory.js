@@ -112,6 +112,16 @@ function updateMedicationHistoryTable(medicationHistory) {
     const medication_history_body = document.getElementById('medication-history-body');
     medication_history_body.innerHTML = ''; 
 
+    if (medicationHistory.results.length === 0) {
+        medication_history_body.innerHTML = 
+        `<tr class="border-b border-t">
+            <td colspan="6" class="text-center py-3">
+            No Medication Records Found
+            </td>
+        </tr>`;
+        return;
+    }
+
     medicationHistory.results.forEach(item => {
         const formatted_item = formatMedicationData(item);
         const row = `
