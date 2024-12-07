@@ -39,16 +39,6 @@
                     class="flex gap-2 px-6 py-2.5 min-w-36 bg-blue_light text-blue_main border border-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
                 <span>Logout</span>
             </button>
-
-            <!-- div
-                class="provider_name_field text-lg font-medium font-source_sans_pro leading-normal cursor-pointer transition-transform">
-            </div>
-
-            <div class="ProfilePhoto w-8 h-auto rounded-full text-neutral-600">
-                <button class="flex items-center text-gray-600 cursor-pointer focus:outline-none">
-                    <img src="../assets/icon_user_circle.svg" alt="User icon" class="h-9">
-                </button>
-            </div -->
         </div>
     </header>
 
@@ -124,7 +114,7 @@
                             </svg>
                             <span class="block md:hidden lg:flex">Scan QR</span>
                         </button>
-                        <button id="add_patient"
+                        <button id="add-patient"
                                 class="flex justify-center gap-2 px-4 md:px-6 py-2.5 max-md:w-1/2 lg:min-w-48 bg-blue_super_light text-blue_main border border-blue_main rounded-lg hover:bg-blue_light transition-all">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
@@ -166,9 +156,24 @@
                  class="flex flex-col justify-center w-full max-w-[1440px] bg-white rounded-xl border border-[#DAE3E5] dark:bg-gray-800 custom-table">
 
                 <div id="id-container" class="overflow-x-auto rounded-xl">
+                    <table id="prescription-table"
+                           class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 font-poppins">
+                        <thead class="text-xs text-gray-700 uppercase border-b border-[#DAE3E5] dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">Name</th>
+                                <th scope="col" class="px-6 py-3">Gender</th>
+                                <th scope="col" class="px-6 py-3">Birthdate</th>
+
+                                <th scope="col" class="px-6 py-3"><span class="sr-only">Edit</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="digId-body">
+                            <!-- Data Rows -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        
+
             <section id="add-patient-form" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
                 <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
                     <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Patient</h2>

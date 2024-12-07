@@ -1274,6 +1274,10 @@ input:checked + .toggle-bg{
   margin-top: 69px;
 }
 
+.ml-80{
+  margin-left: 20rem;
+}
+
 .block{
   display: block;
 }
@@ -1385,6 +1389,10 @@ input:checked + .toggle-bg{
   height: 100vh;
 }
 
+.h-5{
+  height: 1.25rem;
+}
+
 .min-h-\[69px\]{
   min-height: 69px;
 }
@@ -1444,6 +1452,10 @@ input:checked + .toggle-bg{
 
 .min-w-\[144px\]{
   min-width: 144px;
+}
+
+.min-w-48{
+  min-width: 12rem;
 }
 
 .max-w-4xl{
