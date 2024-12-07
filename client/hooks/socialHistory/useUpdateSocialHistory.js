@@ -37,7 +37,11 @@ export async function useUpdateSocialHistory(record_id) {
 
     const ENDPOINT = getApiEndpoint();
 
-    // addFormSoc.classList.remove('hidden');
+    // show form to edit the data
+    addFormSoc.classList.remove('invisible');
+    addFormSoc.classList.remove('opacity-0');
+    addFormSoc.classList.add('visible');
+    addFormSoc.classList.add('opacity-100');
     
     document.getElementById("social-history-nicotine-consumption").value = social_data.nicotine_consumption;
     document.getElementById("social-history-alcohol-consumption").value = social_data.alcohol_consumption;

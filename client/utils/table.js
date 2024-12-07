@@ -1,8 +1,8 @@
 import {removeParam} from './removeParam.js';
 
 document.addEventListener('DOMContentLoaded', function () {
-    const addBtn = document.getElementById('add-btn');
-    const addForm = document.getElementById('add-form');
+    const addBtnMed = document.getElementById('add-btn');
+    const addFormMed = document.getElementById('add-form');
     
     const addBtnVacc = document.getElementById('add-btnvacc');
     const addFormVacc = document.getElementById('add-formvacc');
@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   
     // Open form listeners
-    addBtn.addEventListener('click', () => {
-        addForm.classList.remove('invisible');
-        addForm.classList.remove('opacity-0');
-        addForm.classList.add('visible');
-        addForm.classList.add('opacity-100');
+    addBtnMed.addEventListener('click', () => {
+        addFormMed.classList.remove('invisible');
+        addFormMed.classList.remove('opacity-0');
+        addFormMed.classList.add('visible');
+        addFormMed.classList.add('opacity-100');
     });
   
     addBtnVacc.addEventListener('click', () => {
@@ -86,10 +86,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Close form listeners
     closeForm.addEventListener('click', () => {
-        addForm.classList.remove('visible');
-        addForm.classList.remove('opacity-100');
-        addForm.classList.add('invisible');
-        addForm.classList.add('opacity-0');
+        addFormMed.classList.remove('visible');
+        addFormMed.classList.remove('opacity-100');
+        addFormMed.classList.add('invisible');
+        addFormMed.classList.add('opacity-0');
         removeParam();
     });
   
