@@ -1,6 +1,6 @@
 import { getApiEndpoint } from "./getApiEndpoint.js";
 
-async function fetchProvider() {
+export async function fetchProvider() {
     const ENDPOINT = getApiEndpoint();
 
     try {
