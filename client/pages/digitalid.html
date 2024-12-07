@@ -36,7 +36,7 @@
         <div class="AccountHeader pr-4 justify-start items-center gap-4 flex text-neutral-600">
             <button id="logout-button"
                     onclick="logout()"
-                    class="flex gap-2 px-6 py-2.5 min-w-36 bg-blue_light text-blue_main border border-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                    class="px-8 py-2 bg-blue_super_light rounded-lg hover:bg-blue_cta text-blue_cta hover:text-white font-medium border border-blue_cta focus:ring-4 focus:ring-white transition-all">
                 <span>Logout</span>
             </button>
         </div>
@@ -45,28 +45,33 @@
     <aside id="sidebar"
         class="fixed transition-all xl:flex left-0 w-60 lg:w-80 h-full flex-col justify-start items-start grow basis-0 px-6 py-8 pt-[7rem] bg-white border-r border-[#DAE3E5] gap-8">
 
-        <nav id="second-nav" class="flex w-fit rounded-b-xl gap-2 items-center text-[#054F99] absolute top-[69px] right-[-12.5rem] md:right-[-14rem] lg:right-[-15rem] px-6 py-3 bg-[#fefefe] bg-opacity-95 backdrop-blur-xl shadow-lg border-b border-gray_border z-20">
+        <nav id="second-nav" class="flex w-fit rounded-b-xl gap-2 items-center text-[#054F99] absolute top-[69px] right-[-12.5rem] md:right-[-14rem] lg:right-[-15rem] px-6 py-3 bg-[#fefefe] bg-opacity-95 backdrop-blur-xl border-b border-x border-gray_border z-20">
             <button type="button" id="sidebar_button" class="text-lg text-gray-600 sidebar-toggle flex flex-col">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                      stroke="currentColor" class="size-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3 8.25V18a2.25 2.25 0 0 0 2.25 2.25h13.5A2.25 2.25 0 0 0 21 18V8.25m-18 0V6a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6ZM7.5 6h.008v.008H7.5V6Zm2.25 0h.008v.008H9.75V6Z" />
                 </svg>
             </button>
-            <ul class="flex items-center ml-1">
-                <li class="mr-2">
-                    <a href="#" class="text-gray-400 hover:text-gray-600 font-medium">Dashboard</a>
-                </li>
 
+            <ul class="flex items-center ml-1 text-nowrap">
+                <li class="mr-2">
+                    <a href="#" class="mr-2 font-medium hover:text-[#054F99]">Dashboard</a>
+                </li>
             </ul>
         </nav>
 
-        <div class="HospitalName flex flex-col gap-y-1">
+        <div class="HospitalName flex flex-col gap-y-2 px-1">
             <a href="#">
-                <span class="provider_name_field text-neutral-800 text-base font-bold font-montserrat leading-normal"></span>
+                <span class="provider_name_field text-neutral-800 text-2xl font-bold font-montserrat leading-normal"></span>
             </a>
 
-            <div id="provider-type" class="LocalGovernmentUnit text-neutral-500 text-base font-normal font-source_sans_pro leading-tight">
+            <div class="flex flex-wrap gap-0.5 text-neutral-500">
+                <span id="provider-type" class="flex w-fit h-fit LocalGovernmentUnit font-medium text-blue_main italic">
+                </span>
+                <span id="provider-location"  class="LocalGovernmentUnit text-base font-normal leading-tight">
+                </span>
             </div>
+
         </div>
 
         <ul id="page_tag_list" class="flex flex-col w-full gap-3 mt-8">
