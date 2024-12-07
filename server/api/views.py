@@ -134,9 +134,9 @@ def fetch_patients(request):
 @api_view(['GET'])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
-def generate_patient_json(request, id):
+def generate_patient_json(request, id, provider_account):
     try:
-        provider = Provider.objects.get(account=request.user.id)
+        provider = Provider.objects.get(account=provider_account)
     except:
         return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
     
