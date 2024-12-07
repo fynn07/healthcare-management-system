@@ -1141,6 +1141,10 @@ input:checked + .toggle-bg{
   top: 69px;
 }
 
+.left-\[24\.5rem\]{
+  left: 24.5rem;
+}
+
 .z-10{
   z-index: 10;
 }
@@ -1272,6 +1276,10 @@ input:checked + .toggle-bg{
 
 .mt-\[69px\]{
   margin-top: 69px;
+}
+
+.ml-80{
+  margin-left: 20rem;
 }
 
 .block{
@@ -1440,6 +1448,14 @@ input:checked + .toggle-bg{
 
 .min-w-\[144px\]{
   min-width: 144px;
+}
+
+.min-w-36{
+  min-width: 9rem;
+}
+
+.min-w-48{
+  min-width: 12rem;
 }
 
 .max-w-\[1440px\]{
@@ -1858,6 +1874,11 @@ input:checked + .toggle-bg{
 
 .bg-white\/50{
   background-color: rgb(255 255 255 / 0.5);
+}
+
+.bg-blue_light{
+  --tw-bg-opacity: 1;
+  background-color: rgb(217 235 250 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-95{
