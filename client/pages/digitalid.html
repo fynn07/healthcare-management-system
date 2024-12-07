@@ -11,7 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <script type="module" defer src="../hooks/fetchProviderName.js"></script>
-    <script defer src="../utils/sideBarToggle.js"></script>
+    <script type="module" defer src="../utils/checkLoginStatus.js"></script>
+    <script type="module" defer src="../utils/logout.js"></script>
+    <script defer src="../utils/sidebartoggle.js"></script>
 
     <link rel="stylesheet" href="../output.css">
     <link rel="stylesheet" href="../dist/css/style.css">
@@ -26,12 +28,14 @@
             <img src="../assets/logo_the_healthbook.svg" alt="The Health Book Logo">
         </a>
 
-        <div class="AccountHeader hidden sm:flex pr-4 justify-start items-center gap-4 text-neutral-600">
-            <button class="DropIcon w-6 h-auto relative flex cursor-pointer focus:outline-none">
-                <img src="../assets/icon_chevron_left.svg" alt="User icon" class="h-9">
+        <div class="AccountHeader pr-4 justify-start items-center gap-4 flex text-neutral-600">
+            <button id="logout-button"
+                    onclick="logout()"
+                    class="flex gap-2 px-6 py-2.5 min-w-36 bg-blue_light text-blue_main border border-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                <span>Logout</span>
             </button>
 
-            <div
+            <!-- div
                 class="provider_name_field text-lg font-medium font-source_sans_pro leading-normal cursor-pointer transition-transform">
             </div>
 
@@ -39,7 +43,7 @@
                 <button class="flex items-center text-gray-600 cursor-pointer focus:outline-none">
                     <img src="../assets/icon_user_circle.svg" alt="User icon" class="h-9">
                 </button>
-            </div>
+            </div -->
         </div>
     </header>
 
@@ -161,10 +165,19 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.bundle.js"></script>
+    <script src="../../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script type="module" src="../hooks/medicationHistory/useCreateMedicationHistory.js"></script>
+    <script type="module" src="../hooks/vaccinationHistory/useCreateVaccinationHistory.js"></script>
+    <script type="module" src="../hooks/familyHistory/useCreateFamilyHistory.js"></script>
+    <script type="module" src="../hooks/socialHistory/useCreateSocialHistory.js"></script>
+    <script type="module" src="../hooks/surgicalHistory/useCreateSurgicalHistory.js"></script>
+    <script type="module" src="../hooks/vitalHistory/useCreateVitalHistory.js"></script>
+    <script type="module" src="../hooks/allergyHistory/useCreateAllergyHistory.js"></script>
     <script src="../utils/toastMessageOnRefresh.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script defer src="../medHistory.js"></script>
+    <script type="module" defer src="../utils/table.js"></script>
     <script defer src="../vaccHistory.js"></script>
     <script defer src="../famHistory.js"></script>
     <script defer src="../socialHistory.js"></script>

@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from .views import download_medical_records_pdf
+
 
 urlpatterns = [
     path("test_token/", views.user_token_auth),
@@ -38,4 +40,8 @@ urlpatterns = [
     path("patient/update/<int:id>/surgical_history/<int:record_id>/", views.update_surgical_history_record),
     path("patient/update/<int:id>/vital_history/<int:record_id>/", views.update_vital_history_record),
     path("patient/update/<int:id>/allergy_history/<int:record_id>/", views.update_allergy_history_record),
+    
+    path('patient/download-medical-records/<int:id>/', views.download_medical_records_pdf, name='download_medical_records_pdf'),
+
+
 ]

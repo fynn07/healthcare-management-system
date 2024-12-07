@@ -139,4 +139,63 @@ document.addEventListener('DOMContentLoaded', function () {
         removeParam();
     });
 });
+
+// add a patient in digital ids
+
+document.getElementById('add-patient').addEventListener('click', function () {
+    document.getElementById('add-patient-form').classList.remove('hidden');
+});
+
+
+document.getElementById('close-form').addEventListener('click', function () {
+    document.getElementById('add-patient-form').classList.add('hidden');
+});
+
+
+document.getElementById('patient-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const patientData = {};
+    formData.forEach((value, key) => {
+        patientData[key] = value;
+    });
+    console.log(patientData);  
+    document.getElementById('add-patient-form').classList.add('hidden');
+   
+});
+
+document.getElementById('download-pdf-btn').addEventListener('click', async function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');  
+    
+    const token = localStorage.getItem('token');
+    const ENDPOINT = getApiEndpoint(); 
+
+    try {
+        const response = await fetch(`${ENDPOINT}/api/patient/download-medical-records/${id}/`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Token ${token}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error("Error downloading PDF");
+        }
+
+       
+        const blob = await response.blob();
+        
+     
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `medical_records_${id}.pdf`;
+     
+        link.click();
+    } catch (error) {
+        console.error("Failed to download PDF:", error);
+    }
+});
+
   

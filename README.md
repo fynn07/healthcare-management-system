@@ -1,51 +1,57 @@
 # 🌐 *theHealthBook*  
-**A Comprehensive Healthcare Digital Identification Management System**  
+**A Comprehensive Digital Healthcare Identification Management System**  
 
-Streamline the management of patient medical records and healthcare identification using a cutting-edge digital platform. Designed for patients, healthcare providers, and hospital staff, this web application ensures convenience and efficiency in handling healthcare documentation.  
+Seamlessly manage medical records and healthcare identification using a powerful digital platform designed for patients, healthcare providers, and hospital administrators. *theHealthBook* is engineered to improve accessibility, enhance efficiency, and ensure security in managing healthcare documentation.  
 
 ---
 
 ## 📖 Table of Contents  
 
-- [📋 Project Description](#-project-description)  
-- [✨ Features](#-features)  
-- [🛠️ Technology Stack](#-technology-stack)  
-- [👥 Team Members](#-team-members)  
-- [📚 Additional Resources](#-additional-resources)  
-- [📜 License](#-license)  
+1. [📋 Project Overview](#-project-overview)  
+2. [✨ Core Features](#-core-features)  
+3. [🛠️ Technology Stack](#-technology-stack)  
+4. [🖼️ Site Previews](#️-site-previews)  
+5. [📊 Future Enhancements](#-future-enhancements)  
+6. [👥 Team Members](#-team-members)  
+7. [📚 Additional Resources](#-additional-resources)  
+8. [📜 License](#-license)  
 
 ---
 
-## 📋 Project Description  
+## 📋 Project Overview  
 
-This project serves as the **capstone** for **CSIT327 Information Management 2** at *Cebu Institute of Technology - University*.  
-The goal: **revolutionize healthcare management** by offering a user-friendly web platform that enables the efficient handling of medical records and patient identification through:  
-- **Digital IDs**  
-- **QR Code Integration**  
+This project, developed as the **capstone** for **CSIT327 Information Management 2** at the *Cebu Institute of Technology - University*, is a cutting-edge solution for **streamlining healthcare management**.  
 
-Built with **Django**, this system simplifies healthcare data access for patients, doctors, and hospital staff.  
+### **Goals**:  
+1. **Revolutionize healthcare services** with digital solutions.  
+2. Provide **secure, centralized management** of medical records.  
+3. Enable healthcare providers to access critical patient data quickly.  
+
+Key functionalities include:  
+- **Digital IDs** for each patient.  
+- **Centralized storage** for medical records and profiles.  
 
 ---
 
-## ✨ Features  
+## ✨ Core Features  
 
-- :white_check_mark: **User Registration and Profile Management**  
-  Patients and healthcare providers can easily create and manage profiles.  
+- **🔒 Secure User Authentication**  
+  - Role-based access for patients, healthcare providers, and administrators.  
+  - Password encryption and secure session management.  
 
-- :white_check_mark: **Unique Digital Identification Generation**  
-  Each patient is assigned a unique digital ID for streamlined healthcare services.  
+- **🆔 Unique Digital Identification**  
+  - Each patient is assigned a unique ID for streamlined tracking.  
 
-- :white_check_mark: **Medical Record Storage**  
-  Store key medical information, such as allergies, medications, and diagnoses.  
+- **📑 Comprehensive Medical Record Management**  
+  - Stores patient information such as allergies, medications, and diagnoses.  
+  - Enables doctors to update and retrieve records in real time.  
 
-- :white_check_mark: **Search Functionality**  
-  Quickly search for patients using their digital ID or personal details.  
+- **📱 QR Code Integration**  
+  - Generate QR codes for each patient to facilitate secure data sharing.  
+  - QR scanning enables instant record retrieval.  
 
-- :white_check_mark: **Profile Update Notifications**  
-  Healthcare providers receive alerts when patient profiles are updated.  
-
-- :white_check_mark: **QR Code Access**  
-  Generate and scan QR codes to securely access patient information.  
+- **🌐 Responsive Design**  
+  - Optimized for use across devices (desktop, tablet, mobile).  
 
 ---
 
@@ -61,11 +67,21 @@ Built with **Django**, this system simplifies healthcare data access for patient
 
 ---
 
+## 🖼️ Site Previews  
+
+### Navigation Inside the Site  
+![Site Navigation](https://github.com/user-attachments/assets/6c7e4097-25b7-4533-8369-c23e22f2a6b6)  
+
+### Landing Page  
+![Landing Page](https://github.com/user-attachments/assets/5c49c0e1-f767-4a92-855d-874f0ac3c480)  
+
+---
+
 ## 👥 Team Members  
 
-- **👩‍💻 Ashley Ken Comandao**  
-- **👨‍💻 Fynn Nino Borja**  
-- **👨‍💻 Karl Christian Ajero**  
+- **👩‍💻 [Ashley Ken Comandao](https://github.com/CodexPremiera)**  
+- **👨‍💻 [Fynn Nino Borja](https://github.com/fynn07)**  
+- **👨‍💻 [Karl Christian Ajero](https://github.com/ZenXen7)**  
 
 ---
 
@@ -84,5 +100,3 @@ This project is open-source and licensed under the **MIT License**.
 ---
 
 ### 🚀 *Empowering healthcare with digital innovation.*  
-
-
