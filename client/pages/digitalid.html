@@ -62,21 +62,21 @@
 
         <div class="HospitalName flex flex-col gap-y-2 px-1">
             <a href="#">
-                <span class="provider_name_field text-neutral-800 text-2xl font-bold font-montserrat leading-normal"></span>
+                <span class="provider_name_field text-neutral-800 text-2xl font-bold font-montserrat leading-normal">&nbsp</span>
             </a>
 
             <div class="flex flex-wrap gap-0.5 text-neutral-500">
-                <span id="provider-type" class="flex w-fit h-fit LocalGovernmentUnit font-medium text-blue_main italic">
+                <span id="provider-type" class="flex w-fit h-fit LocalGovernmentUnit font-medium text-blue_main italic">&nbsp
                 </span>
-                <span id="provider-location"  class="LocalGovernmentUnit text-base font-normal leading-tight">
+                <span id="provider-location"  class="LocalGovernmentUnit text-base font-normal leading-tight">&nbsp
                 </span>
             </div>
 
         </div>
 
-        <ul id="page_tag_list" class="flex flex-col w-full gap-3 mt-8">
-            <li id="page_tab_digital_id"
-                class="bg-blue_super_light text-blue_main flex w-full px-5 py-3 gap-3 rounded-xl items-center cursor-pointer">
+        <div id="page_tag_list" class="flex flex-col w-full gap-3 mt-8">
+            <a href="#" id="page_tab_digital_id"
+                class="flex w-full px-5 py-3 gap-3 rounded-xl items-center cursor-pointer bg-blue_super_light text-blue_main">
                 <div class="flex">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                          stroke="currentColor" class="size-6">
@@ -84,8 +84,8 @@
                     </svg>
                 </div>
                 <span class="grow shrink basis-0 text-base leading-normal">Digital IDs</span>
-            </li>
-            <li id="page_tab_my_account"
+            </a>
+            <a href="my_account.html" id="page_tab_my_account"
                 class="flex w-full px-5 py-3 gap-3 rounded-xl items-center cursor-pointer">
                 <div class="flex">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -94,8 +94,8 @@
                     </svg>
                 </div>
                 <span class="grow shrink basis-0 text-base leading-normal">My Account</span>
-            </li>
-        </ul>
+            </a>
+        </div>
     </aside>
 
     <!-- Main -->
