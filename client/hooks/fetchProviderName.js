@@ -27,11 +27,15 @@ async function fetchProviderName(){
 document.addEventListener('DOMContentLoaded', async function () {
     const provider_names = document.getElementsByClassName('provider_name_field');
     const provider_type = document.getElementById('provider-type')
+    const provider_location = document.getElementById('provider-location')
 
     const provider_data = await fetchProviderName();
 
-    const type = `${provider_data.provider_type} (${provider_data.provider_location})`;
-    provider_type.insertAdjacentHTML('beforeend', type);
+    const type = `${provider_data.provider_type}`;
+    provider_type.insertAdjacentHTML('beforeend', type.toUpperCase());
+
+    const location = `${provider_data.provider_location}`;
+    provider_location.insertAdjacentHTML('beforeend', location);
 
     Array.from(provider_names).forEach(provider_name => {
         const row = `${provider_data.name}`;

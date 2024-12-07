@@ -1,8 +1,8 @@
 import {removeParam} from './removeParam.js';
 
 document.addEventListener('DOMContentLoaded', function () {
-    const addBtn = document.getElementById('add-btn');
-    const addForm = document.getElementById('add-form');
+    const addBtnMed = document.getElementById('add-btn');
+    const addFormMed = document.getElementById('add-form');
     
     const addBtnVacc = document.getElementById('add-btnvacc');
     const addFormVacc = document.getElementById('add-formvacc');
@@ -34,22 +34,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
   
     // Open form listeners
-    addBtn.addEventListener('click', () => {
-        addForm.classList.remove('hidden');
+    addBtnMed.addEventListener('click', () => {
+        // show form
+        addFormMed.classList.remove('invisible');
+        addFormMed.classList.remove('opacity-0');
+        addFormMed.classList.add('visible');
+        addFormMed.classList.add('opacity-100');
+
         document.getElementById('delete-medication-record').classList.add('hidden');
 
         document.getElementById("medication-header").textContent = "Add Medication History Record";
         document.getElementById("medication-button").textContent = "Add Record";
 
-        document.getElementById("medication-history-date-prescribed").value = ""; 
-        document.getElementById("medication-history-generic-name").value = ""; 
-        document.getElementById("medication-history-dosage").value = ""; 
-        document.getElementById("medication-history-quantity").value = ""; 
-        document.getElementById("medication-history-instructions").value = ""; 
+        document.getElementById("medication-history-date-prescribed").value = "";
+        document.getElementById("medication-history-generic-name").value = "";
+        document.getElementById("medication-history-dosage").value = "";
+        document.getElementById("medication-history-quantity").value = "";
+        document.getElementById("medication-history-instructions").value = "";
     });
   
     addBtnVacc.addEventListener('click', () => {
-        addFormVacc.classList.remove('hidden');
+        // show form
+        addFormVacc.classList.remove('invisible');
+        addFormVacc.classList.remove('opacity-0');
+        addFormVacc.classList.add('visible');
+        addFormVacc.classList.add('opacity-100');
+
+        // modify form
         document.getElementById('delete-vaccination-record').classList.add('hidden');
 
         document.getElementById("vaccination-header").textContent = "Add Vaccination History Record";
@@ -65,7 +76,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   
     addBtnFam.addEventListener('click', () => {
-        addFormFam.classList.remove('hidden');
+        // show form
+        addFormFam.classList.remove('invisible');
+        addFormFam.classList.remove('opacity-0');
+        addFormFam.classList.add('visible');
+        addFormFam.classList.add('opacity-100');
+
+        // modify form
         document.getElementById('delete-family-record').classList.add('hidden');
 
         document.getElementById("family-header").textContent = "Add Family History Record";
@@ -76,7 +93,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     addBtnSocial.addEventListener('click', () => {
-        addFormSoc.classList.remove('hidden');
+        // show form
+        addFormSoc.classList.remove('invisible');
+        addFormSoc.classList.remove('opacity-0');
+        addFormSoc.classList.add('visible');
+        addFormSoc.classList.add('opacity-100');
+
+        // modify form
         document.getElementById('delete-social-record').classList.add('hidden');
 
         document.getElementById("social-header").textContent = "Add Social History Record";
@@ -90,7 +113,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     addBtnSurg.addEventListener('click', () => {
-        addFormSurg.classList.remove('hidden');
+        // show form
+        addFormSurg.classList.remove('invisible');
+        addFormSurg.classList.remove('opacity-0');
+        addFormSurg.classList.add('visible');
+        addFormSurg.classList.add('opacity-100');
+
+        // modify form
         document.getElementById('delete-surgical-record').classList.add('hidden');
 
         document.getElementById("surgical-header").textContent = "Add Surgical History Record";
@@ -103,7 +132,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     addBtnVital.addEventListener('click', () => {
-        addFormVital.classList.remove('hidden'); 
+        // show form
+        addFormVital.classList.remove('invisible');
+        addFormVital.classList.remove('opacity-0');
+        addFormVital.classList.add('visible');
+        addFormVital.classList.add('opacity-100');
+
+        // modify form
         document.getElementById('delete-vital-record').classList.add('hidden');
 
         document.getElementById("vital-header").textContent = "Add Vital Sign History Record";
@@ -116,12 +151,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     addBtnAllergy.addEventListener('click', () => {
-        addFormAllergy.classList.remove('hidden'); 
+        // show form
+        addFormAllergy.classList.remove('invisible');
+        addFormAllergy.classList.remove('opacity-0');
+        addFormAllergy.classList.add('visible');
+        addFormAllergy.classList.add('opacity-100');
+
+        // modify form
         document.getElementById('delete-allergy-record').classList.add('hidden');
 
         document.getElementById("allergy-header").textContent = "Add Allergy History Record";
         document.getElementById("allergy-button").textContent = "Add Record";
-        
+
         document.getElementById("allergy-history-substance").value = "";
         document.getElementById("allergy-history-description").value = "";
         document.getElementById("allergy-history-severity").value = "";
@@ -131,35 +172,56 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Close form listeners
     closeForm.addEventListener('click', () => {
-        addForm.classList.add('hidden');
+        addFormMed.classList.remove('visible');
+        addFormMed.classList.remove('opacity-100');
+        addFormMed.classList.add('invisible');
+        addFormMed.classList.add('opacity-0');
         removeParam();
     });
   
     closeFormVacc.addEventListener('click', () => {
-        addFormVacc.classList.add('hidden');
+        addFormVacc.classList.remove('visible');
+        addFormVacc.classList.remove('opacity-100');
+        addFormVacc.classList.add('invisible');
+        addFormVacc.classList.add('opacity-0');
     });
   
     closeFormFam.addEventListener('click', () => {
-        addFormFam.classList.add('hidden');
+        addFormFam.classList.remove('visible');
+        addFormFam.classList.remove('opacity-100');
+        addFormFam.classList.add('invisible');
+        addFormFam.classList.add('opacity-0');
         removeParam();
     });
 
     closeFormSoc.addEventListener('click', () => {
-        addFormSoc.classList.add('hidden');
+        addFormSoc.classList.remove('visible');
+        addFormSoc.classList.remove('opacity-100');
+        addFormSoc.classList.add('invisible');
+        addFormSoc.classList.add('opacity-0');
         removeParam();
     });
 
     closeFormSurg.addEventListener('click', () => {
-        addFormSurg.classList.add('hidden');
+        addFormSurg.classList.remove('visible');
+        addFormSurg.classList.remove('opacity-100');
+        addFormSurg.classList.add('invisible');
+        addFormSurg.classList.add('opacity-0');
         removeParam();
     });
 
     closeFormVital.addEventListener('click', () => {
-        addFormVital.classList.add('hidden');
+        addFormVital.classList.remove('visible');
+        addFormVital.classList.remove('opacity-100');
+        addFormVital.classList.add('invisible');
+        addFormVital.classList.add('opacity-0');
     });
       
     closeFormAllergy.addEventListener('click', () => {
-        addFormAllergy.classList.add('hidden');
+        addFormAllergy.classList.remove('visible');
+        addFormAllergy.classList.remove('opacity-100');
+        addFormAllergy.classList.add('invisible');
+        addFormAllergy.classList.add('opacity-0');
         removeParam();
     });
 });

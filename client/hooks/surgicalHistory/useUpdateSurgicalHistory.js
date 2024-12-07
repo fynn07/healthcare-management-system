@@ -37,12 +37,18 @@ export async function useUpdateSurgicalHistory(record_id) {
 
     const ENDPOINT = getApiEndpoint();
 
-    addFormSurg.classList.remove('hidden'); 
+    // show form to edit the data
+    addFormSurg.classList.remove('invisible');
+    addFormSurg.classList.remove('opacity-0');
+    addFormSurg.classList.add('visible');
+    addFormSurg.classList.add('opacity-100');
+
+    // modify form
     document.getElementById('delete-surgical-record').classList.remove('hidden');
 
     document.getElementById("surgical-header").textContent = "Edit Surgical History Record";
     document.getElementById("surgical-button").textContent = "Edit Record";
-    
+
     document.getElementById("surgical-history-operation-procedure").value = surgical_data.operation_procedure;
     document.getElementById("surgical-history-indication").value = surgical_data.indication;
     document.getElementById("surgical-history-hospital").value = surgical_data.hospital;
