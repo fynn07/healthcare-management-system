@@ -39,20 +39,20 @@ const informationFormHTML = `
     <form id="provider-information-form" class="flex flex-col gap-8 text-gray-600">
         <div class="flex flex-col gap-4 sm:gap-6">
             <div class="w-full">
-                <label for="edit_provider_name" class="block mb-2 ml-1 text-sm font-medium dark:text-white">Name</label>
-                <input type="text" name="edit_provider_name" id="edit_provider_name"
+                <label for="account_name" class="block mb-2 ml-1 text-sm font-medium dark:text-white">Name</label>
+                <input type="text" name="account_name" id="account_name"
                     class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
                     placeholder="Enter provider name" required>
             </div>
             <div class="w-full">
-                <label for="edit_provider_type" class="block mb-2 ml-1 text-sm font-medium dark:text-white">Provider Type</label>
-                <input type="text" name="edit_provider_type" id="edit_provider_type"
+                <label for="account_type" class="block mb-2 ml-1 text-sm font-medium dark:text-white">Provider Type</label>
+                <input type="text" name="account_type" id="account_type"
                     class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
                     placeholder="Enter provider type" required>
             </div>
             <div class="w-full">
-                <label for="edit_provider_location" class="block mb-2 ml-1 text-sm font-medium dark:text-white">Location</label>
-                <input type="text" name="edit_provider_location" id="edit_provider_location"
+                <label for="account_location" class="block mb-2 ml-1 text-sm font-medium dark:text-white">Location</label>
+                <input type="text" name="account_location" id="account_location"
                     class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
                     placeholder="Enter provider location" required>
             </div>
@@ -72,20 +72,20 @@ const authenticationFormHTML = `
     <form id="provider-authentication-form" class="flex flex-col gap-8 text-gray-600 grow justify-between">
         <div class="flex flex-col gap-4 sm:gap-6">
             <div class="w-full">
-                <label for="edit_provider_email" class="block mb-2 ml-1 text-sm font-medium dark:text-white">Email</label>
-                <input type="email" name="edit_provider_email" id="edit_provider_email"
+                <label for="account_email" class="block mb-2 ml-1 text-sm font-medium dark:text-white">Email</label>
+                <input type="email" name="account_email" id="account_email"
                     class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
                     placeholder="Enter provider email" required>
             </div>
             <div class="w-full">
-                <label for="edit_provider_password" class="block mb-2 ml-1 text-sm font-medium dark:text-white">Password</label>
-                <input type="password" name="edit_provider_password" id="edit_provider_password"
+                <label for="account_password" class="block mb-2 ml-1 text-sm font-medium dark:text-white">Password</label>
+                <input type="password" name="account_password" id="account_password"
                     class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
                     placeholder="Enter provider password" required>
             </div>
             <div class="w-full">
-                <label for="edit_provider_re_password" class="block mb-2 ml-1 text-sm font-medium dark:text-white">Re-password</label>
-                <input type="password" name="edit_provider_re_password" id="edit_provider_re_password"
+                <label for="account_re_password" class="block mb-2 ml-1 text-sm font-medium dark:text-white">Re-password</label>
+                <input type="password" name="account_re_password" id="account_re_password"
                     class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
                     placeholder="Repeat provider password" required>
             </div>
