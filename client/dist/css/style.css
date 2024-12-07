@@ -1385,8 +1385,8 @@ input:checked + .toggle-bg{
   height: 100vh;
 }
 
-.h-0{
-  height: 0px;
+.min-h-\[440px\]{
+  min-height: 440px;
 }
 
 .min-h-\[69px\]{
@@ -1399,14 +1399,6 @@ input:checked + .toggle-bg{
 
 .min-h-screen{
   min-height: 100vh;
-}
-
-.min-h-\[899px\]{
-  min-height: 899px;
-}
-
-.min-h-\[440px\]{
-  min-height: 440px;
 }
 
 .w-1\/2{
@@ -1761,20 +1753,12 @@ input:checked + .toggle-bg{
   border-bottom-width: 2px;
 }
 
-.border-r{
-  border-right-width: 1px;
-}
-
-.border-b-4{
-  border-bottom-width: 4px;
-}
-
 .border-b-\[3px\]{
   border-bottom-width: 3px;
 }
 
-.border-none{
-  border-style: none;
+.border-r{
+  border-right-width: 1px;
 }
 
 .border-\[\#DAE3E5\]{
@@ -1815,21 +1799,6 @@ input:checked + .toggle-bg{
 .border-gray_border{
   --tw-border-opacity: 1;
   border-color: rgb(218 227 229 / var(--tw-border-opacity));
-}
-
-.border-blue-400{
-  --tw-border-opacity: 1;
-  border-color: rgb(118 169 250 / var(--tw-border-opacity));
-}
-
-.border-gray-200{
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
-}
-
-.border-gray-400{
-  --tw-border-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 
 .border-b-gray-800{
@@ -1936,16 +1905,6 @@ input:checked + .toggle-bg{
 
 .bg-white\/50{
   background-color: rgb(255 255 255 / 0.5);
-}
-
-.bg-neutral-300{
-  --tw-bg-opacity: 1;
-  background-color: rgb(212 212 212 / var(--tw-bg-opacity));
-}
-
-.bg-neutral-100{
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50{
@@ -2084,6 +2043,11 @@ input:checked + .toggle-bg{
   padding-right: 2rem;
 }
 
+.py-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .py-12{
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -2122,16 +2086,6 @@ input:checked + .toggle-bg{
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.px-10{
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
-.py-10{
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 
 .pb-10{
@@ -2188,14 +2142,6 @@ input:checked + .toggle-bg{
 
 .pt-\[7rem\]{
   padding-top: 7rem;
-}
-
-.pb-8{
-  padding-bottom: 2rem;
-}
-
-.pb-12{
-  padding-bottom: 3rem;
 }
 
 .text-left{
@@ -2484,10 +2430,6 @@ input:checked + .toggle-bg{
 
 .duration-300{
   transition-duration: 300ms;
-}
-
-.duration-500{
-  transition-duration: 500ms;
 }
 
 .ease-out{
@@ -2936,10 +2878,6 @@ input:checked + .toggle-bg{
 
   .sm\:gap-6{
     gap: 1.5rem;
-  }
-
-  .sm\:gap-8{
-    gap: 2rem;
   }
 
   .sm\:gap-x-12{
