@@ -165,3 +165,27 @@ document.addEventListener('DOMContentLoaded', async function () {
         console.error("Error fetching social history");
     }
 });
+
+
+// TODO: add function to fetch social record either added by you or added by all
+const btnAll = document.getElementById('btn-social-by-all');
+const btnYou = document.getElementById('btn-social-by-you');
+
+// Class to toggle
+const activeClasses = ['border-b-2', 'text-blue_main', 'border-blue_main', 'font-medium'];
+
+btnAll.addEventListener('click', () => {
+    activeClasses.forEach(cls => btnYou.classList.remove(cls));
+    activeClasses.forEach(cls => btnAll.classList.add(cls));
+
+    // Perform action for "Added by all"
+    console.log('Showing social added by all.');
+});
+
+btnYou.addEventListener('click', () => {
+    activeClasses.forEach(cls => btnAll.classList.remove(cls));
+    activeClasses.forEach(cls => btnYou.classList.add(cls));
+
+    // Perform action for "Added by you"
+    console.log('Showing social added by you.');
+});

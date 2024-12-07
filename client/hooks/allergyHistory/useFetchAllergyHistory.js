@@ -164,3 +164,28 @@ document.addEventListener('DOMContentLoaded', async function () {
         console.error("Error fetching allergy history");
     }
 });
+
+
+// TODO: add function to fetch allergy record either added by you or added by all
+const btnAll = document.getElementById('btn-allergy-by-all');
+const btnYou = document.getElementById('btn-allergy-by-you');
+
+// Class to toggle
+const activeClasses = ['border-b-2', 'text-blue_main', 'border-blue_main', 'font-medium'];
+
+btnAll.addEventListener('click', () => {
+    activeClasses.forEach(cls => btnYou.classList.remove(cls));
+    activeClasses.forEach(cls => btnAll.classList.add(cls));
+
+    // Perform action for "Added by all"
+    console.log('Showing allergy added by all.');
+});
+
+btnYou.addEventListener('click', () => {
+    activeClasses.forEach(cls => btnAll.classList.remove(cls));
+    activeClasses.forEach(cls => btnYou.classList.add(cls));
+
+    // Perform action for "Added by you"
+    console.log('Showing allergy added by you.');
+});
+

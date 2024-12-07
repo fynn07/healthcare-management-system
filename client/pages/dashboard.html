@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../output.css">
     <link rel="stylesheet" href="../dist/css/style.css">
-    <link href="../output.css" rel="stylesheet">
 
     <script type="module" defer src="../hooks/fetchPatientDetails.js"></script>
     <script type="module" defer src="../hooks/fetchProviderName.js"></script>
@@ -29,11 +29,10 @@
     <script type="module" defer src="../hooks/allergyHistory/useFetchAllergyHistory.js"></script>
 
     <title>Dashboard</title>
-    
 </head>
 
-<body class="flex justify text-gray-800 font-poppins border-box bg-neutral-50 text-sm md:text-base">
-    <header class="fixed top-0 w-full z-10 px-6 py-4 bg-white border-b border-gray_border justify-between items-center inline-flex z-10">
+<body class="flex justify text-gray-800 font-poppins border-box bg-gradient-to-bl from-[#FAF1F1] to-[#F6F1FF] text-sm md:text-base">
+    <header class="fixed top-0 w-full z-10 px-6 py-4 bg-[#ffffff90] backdrop-blur-xl border-b border-gray_border justify-between items-center inline-flex">
         <a href="landing.html" class="justify-center items-center cursor-pointer gap-2.5 flex">
             <img src="../assets/logo_the_healthbook.svg" alt="The Health Book Logo">
         </a>
@@ -44,11 +43,37 @@
                     class="flex gap-2 px-6 py-2.5 min-w-36 bg-blue_light text-blue_main border border-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
                 <span>Logout</span>
             </button>
+
+            <!-- div
+                class="provider_name_field text-lg font-medium font-source_sans_pro leading-normal cursor-pointer transition-transform">
+            </div>
+
+            <div class="ProfilePhoto w-8 h-auto rounded-full text-neutral-600">
+                <button class="flex items-center text-gray-600 cursor-pointer focus:outline-none">
+                    <img src="../assets/icon_user_circle.svg" alt="User icon" class="h-9">
+                </button>
+            </div -->
         </div>
     </header>
 
     <aside id="sidebar"
-        class="fixed transition-all xl:flex left-0 lg:w-80 h-full flex-col justify-start items-start grow basis-0 px-6 py-8 pt-[7rem] bg-white border-r border-gray_border gap-8">
+        class="fixed transition-all xl:flex left-0 lg:w-80 h-full flex-col justify-start items-start grow basis-0 px-6 py-8 pt-[7rem] bg-white border-r border-gray_border gap-8 ">
+        <nav id="second-nav" class="flex w-fit rounded-b-xl gap-2 items-center text-[#054F99] absolute top-[69px] right-[-21.5rem] md:right-[-23.5rem] lg:right-[-24.5rem] px-6 py-3 bg-[#fefefe] bg-opacity-95 backdrop-blur-xl shadow-lg border-b border-gray_border z-20">
+            <button type="button" id="sidebar_button" class="text-lg text-gray-600 sidebar-toggle flex flex-col">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                     stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8.25V18a2.25 2.25 0 0 0 2.25 2.25h13.5A2.25 2.25 0 0 0 21 18V8.25m-18 0V6a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6ZM7.5 6h.008v.008H7.5V6Zm2.25 0h.008v.008H9.75V6Z" />
+                </svg>
+            </button>
+            <ul class="flex items-center ml-1 text-nowrap">
+                <li class="mr-2">
+                    <a href="/client/pages/digitalid.html" class="text-gray-400 hover:text-[#054F99] font-medium">Dashboard</a>
+                </li>
+                <li class="text-gray-600 mr-2 font-medium">/</li>
+                <li class="mr-2 font-medium">Medical History</li>
+            </ul>
+        </nav>
+
         <div class="HospitalName flex flex-col gap-y-1">
             <a href="#">
                 <span class="provider_name_field text-neutral-800 text-base font-bold font-montserrat leading-normal"></span>
@@ -60,7 +85,7 @@
 
         <ul id="page_tag_list" class="flex flex-col w-full gap-3">
             <li id="page_tab_digital_id"
-                class="bg-blue_super_light text-blue_main flex w-full px-5 py-3 gap-3 rounded-lg items-center cursor-pointer">
+                class="bg-blue_super_light text-blue_main flex w-full px-5 py-3 gap-3 rounded-xl items-center cursor-pointer">
                 <div class="flex">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                          stroke="currentColor" class="size-6">
@@ -70,7 +95,7 @@
                 <span class="grow shrink basis-0 text-base leading-normal">Digital IDs</span>
             </li>
             <li id="page_tab_my_account"
-                class="flex w-full px-5 py-3 gap-3 rounded-lg items-center cursor-pointer">
+                class="flex w-full px-5 py-3 gap-3 rounded-xl items-center cursor-pointer">
                 <div class="flex">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                          stroke="currentColor" class="size-6">
@@ -85,28 +110,12 @@
 
     <!-- Main -->
     <main id="main"
-          class="ml-80 xl:ml-80 flex items-start flex-col w-full mt-[69px] px-6 pt-8 pb-16 gap-12 transition-all">
-        <nav class="flex w-full h-5 rounded-lg gap-2 items-center text-[#054F99]">
-            <button type="button" id="sidebar_button" class="text-lg text-gray-600 sidebar-toggle flex flex-col">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                     stroke="currentColor" class="size-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8.25V18a2.25 2.25 0 0 0 2.25 2.25h13.5A2.25 2.25 0 0 0 21 18V8.25m-18 0V6a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6ZM7.5 6h.008v.008H7.5V6Zm2.25 0h.008v.008H9.75V6Z" />
-                </svg>
-            </button>
-            <ul class="flex items-center ml-1">
-                <li class="mr-2">
-                    <a href="/client/pages/digitalid.html" class="text-gray-400 hover:text-[#054F99] font-medium">Dashboard</a>
-                </li>
-                <li class="text-gray-600 mr-2 font-medium">/</li>
-                <li class="text-gray-600 mr-2 font-medium">Medical History</li>
-            </ul>
-        </nav>
-
-        <div class="flex justify-center w-full min-h-screen transition-all main  px-8 pt-2">
+          class="xl:ml-80 flex items-start flex-col w-full mt-[69px] px-6 md:px-12 lg:px-16 py-24 gap-12 transition-all">
+        <div class="flex justify-center w-full min-h-screen transition-all main pt-2 gap-8">
             <div id="main_content" class="flex flex-col max-w-[1440px] gap-8 w-full">
                 <!-- Patient Profile Overview -->
                 <div
-                    class="flex flex-col justify-center w-full px-12 pt-8 pb-10 bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
+                    class="flex flex-col justify-center w-full px-12 pt-8 pb-10 bg-white rounded-xl border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex items-center gap-4 w-full">
                         <img class="h-24 w-24 rounded-full" src="../assets/default_user_profile.svg" alt="Profile Picture">
                         <div class="flex flex-col gap-1">
@@ -153,19 +162,26 @@
 
                 <!-- MEDICATION HISTORY -->
                 <div id="medication-history-card"
-                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
+                     class="flex flex-col justify-center w-full bg-white rounded-xl border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex flex-col pt-6 gap-4">
                         <div class="flex justify-between px-8">
                             <span class="text-lg font-poppins font-bold">Medication History</span>
                             <button id="add-btn"
-                                    class="px-4 py-2 bg-blue_super_light text-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                                    class="px-4 py-2 bg-blue_super_light rounded-xl hover:bg-blue_light text-blue_cta font-medium border border-blue_cta focus:ring-4 focus:ring-white transition-all">
                                 + Add
                             </button>
                         </div>
                         <div class="flex px-8 border-b border-gray_border gap-4 text-base ">
-                            <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
+                            <button class="px-2 pb-4 transition-all border-b-2 text-blue_main border-blue_main font-medium">
                                 Administered by you
                             </button>
+
+                            <!-- button id="btn-medication-by-all" class="px-2 pb-4 transition-all border-b-2 text-blue_main border-blue_main font-medium">
+                                Prescribed by all
+                            </button>
+                            <button id="btn-medication-by-you" class="px-2 pb-4 transition-all">
+                                Prescribed by you
+                            </button -->
                         </div>
                     </div>
 
@@ -195,11 +211,10 @@
                     </nav>
                 </div>
 
-                <!-- Hidden Form Section -->
-                <section id="add-form" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
-                    <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
+                <section id="add-form" class="invisible opacity-0 w-full h-[calc(100vh-69px)] mt-[69px] flex bg-gradient-to-br from-[#FAF1F180] to-[#F6F1FF80] backdrop-blur-xl fixed inset-0 justify-center items-center transition-all">
+                    <div class="w-full xl:max-w-[1200px] md:mx-12 lg:mx-16 border border-gray_border px-12 py-12 bg-white md:rounded-xl md:shadow-xl dark:bg-gray-800">
                         <h2 id="medication-header" class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Medication Record</h2>
-                        <form id="medication-history-form">
+                        <form id="medication-history-form" class="mt-8">
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="sm:col-span-2">
                                     <label for="medHistoryPrescribed" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Prescribed</label>
@@ -223,15 +238,16 @@
                                     <textarea id="medication-history-instructions" name="medHistoryInstructions" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
                                 </div>
                             </div>
-                            <div class="flex justify-between mt-4 sm:mt-6">
-                                <button type="button" id="close-form" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <div>
-                                    <button type="button" id="delete-medication-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">Delete Record</button>
-                                    <button type="submit" id="medication-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                            <div class="flex justify-between mt-8 sm:mt-6">
+                                <button type="button" id="close-form" class="flex min-w-[144px] justify-center px-4 py-2 bg-white hover:bg-blue_light text-blue_main border border-blue_main rounded-lg transition-all hover:font-medium">Cancel</button>
+                                <div class="flex gap-4">
+                                    <button type="button" id="delete-medication-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">
+                                        Delete Record
+                                    </button>
+                                    <button type="submit" id="medication-button" class="flex min-w-[144px] justify-center px-4 py-2 bg-blue_cta hover:bg-blue_main text-white rounded-lg transition-all">
                                         Add Record
                                     </button>
                                 <div>
-                                </div>
                             </div>
                         </form>
                     </div>
@@ -240,19 +256,26 @@
 
                 <!-- VACCINATION HISTORY -->
                 <div id="vaccination-history-card"
-                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
+                     class="flex flex-col justify-center w-full bg-white rounded-xl border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex flex-col pt-6 gap-4">
                         <div class="flex justify-between px-8">
                             <span class="text-lg font-poppins font-bold">Vaccination History</span>
                             <button id="add-btnvacc"
-                                    class="px-4 py-2 bg-blue_super_light text-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                                    class="px-4 py-2 bg-blue_super_light rounded-xl hover:bg-blue_light text-blue_cta font-medium border border-blue_cta focus:ring-4 focus:ring-white transition-all">
                                 + Add
                             </button>
                         </div>
                         <div class="flex px-8 border-b border-gray_border gap-4 text-base ">
-                            <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
+                            <button class="px-2 pb-4 transition-all border-b-2 text-blue_main border-blue_main font-medium">
                                 Administered by you
                             </button>
+
+                            <!-- button id="btn-vaccination-by-all" class="px-2 pb-4 transition-all border-b-2 text-blue_main border-blue_main font-medium">
+                                Administered by all
+                            </button>
+                            <button id="btn-vaccination-by-you" class="px-2 pb-4 transition-all">
+                                Administered by you
+                            </button -->
                         </div>
                     </div>
 
@@ -282,70 +305,78 @@
                     </nav>
                 </div>
 
-                <section id="add-formvacc" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
-                    <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
+                <section id="add-formvacc" class="invisible opacity-0 w-full h-[calc(100vh-69px)] mt-[69px] flex bg-gradient-to-br from-[#FAF1F180] to-[#F6F1FF80] backdrop-blur-xl fixed inset-0 justify-center items-center transition-all">
+                    <div class="w-full xl:max-w-[1200px] md:mx-12 lg:mx-16 border border-gray_border px-12 py-12 bg-white md:rounded-xl md:shadow-xl dark:bg-gray-800">
                         <h2 id="vaccination-header" class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Vaccination Record</h2>
-                        <form id="vaccination-history-form">
+                        <form id="vaccination-history-form" class="mt-8">
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="sm:col-span-2">
                                     <label for="vaccDateAdministered" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Administered</label>
-                                    <input type="date" name="vaccDateAdministered" id="vaccine-history-date-administered" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type date added" required="">
+                                    <input type="date" name="vaccDateAdministered" id="vaccine-history-date-administered" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type date added" required="">
                                 </div>
                                 <div class="sm:col-span-2">
                                     <label for="vaccNextDoseDate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Next Dose On</label>
-                                    <input type="date" name="vaccNextDoseDate" id="vaccine-history-next-dose-date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type date added" required="">
+                                    <input type="date" name="vaccNextDoseDate" id="vaccine-history-next-dose-date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type date added" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="vaccName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Vaccine Name</label>
-                                    <input type="text" name="vaccName" id="vaccine-history-vaccine-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Influenza Vaccine" required="">
+                                    <input type="text" name="vaccName" id="vaccine-history-vaccine-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Influenza Vaccine" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="brandName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand Name</label>
-                                    <input type="text" name="brandName" id="vaccine-history-brand-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Fluzone Quadrivalent" required="">
+                                    <input type="text" name="brandName" id="vaccine-history-brand-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Fluzone Quadrivalent" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="vaccProvider" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Provider</label>
-                                    <input type="text" name="provider" id="vaccine-history-provider" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="provider" id="vaccine-history-provider" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                                 </div>
 
                                 <div>
                                     <label for="vaccSite" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Site Given</label>
-                                    <input type="text" name="siteGiven" id="vaccine-history-site-given" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leg" required="">
+                                    <input type="text" name="siteGiven" id="vaccine-history-site-given" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leg" required="">
                                 </div>
                                 <div class="sm:col-span-2">
                                     <label for="vaccDose" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dose ML</label>
-                                    <input type="text" name="doseMl" id="vaccine-history-dose-ml" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="500mg" required="">
+                                    <input type="text" name="doseMl" id="vaccine-history-dose-ml" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="500mg" required="">
                                 </div>
                             </div>
-                            <div class="flex justify-between mt-4 sm:mt-6">
-                                <button type="button" id="close-formvacc" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <div>
-                                    <button type="button" id="delete-vaccination-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">Delete Record</button>
-                                    <button type="submit" id="vaccination-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                            <div class="flex justify-between mt-8 sm:mt-6">
+                                <button type="button" id="close-formvacc" class="flex min-w-[144px] justify-center px-4 py-2 bg-white hover:bg-blue_light text-blue_main border border-blue_main rounded-lg transition-all hover:font-medium">Cancel</button>
+                                <div class="flex gap-4">
+                                    <button type="button" id="delete-vaccination-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">
+                                        Delete Record
+                                    </button>
+                                    <button type="submit" id="vaccination-button" class="flex min-w-[144px] justify-center px-4 py-2 bg-blue_cta hover:bg-blue_main text-white rounded-lg transition-all">
                                         Add Record
                                     </button>
-                                </div>
+                                <div>
                             </div>
                         </form>
                     </div>
                 </section>
 
-
                 <!-- FAMILY HISTORY -->
                 <div id="family-history-card"
-                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
+                     class="flex flex-col justify-center w-full bg-white rounded-xl border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex flex-col pt-6 gap-4">
                         <div class="flex justify-between px-8">
                             <span class="text-lg font-poppins font-bold">Family History</span>
                             <button id="add-btnfam"
-                                    class="px-4 py-2 bg-blue_super_light text-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                                    class="px-4 py-2 bg-blue_super_light rounded-xl hover:bg-blue_light text-blue_cta font-medium border border-blue_cta focus:ring-4 focus:ring-white transition-all">
                                 + Add
                             </button>
                         </div>
                         <div class="flex px-8 border-b border-gray_border gap-4 text-base ">
-                            <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
-                                Administered by you
+                            <button class="px-2 pb-4 transition-all border-b-2 text-blue_main border-blue_main font-medium">
+                                Added by you
                             </button>
+
+                            <!-- button id="btn-family-by-all" class="px-2 pb-4 transition-all border-b-2 text-blue_main border-blue_main font-medium">
+                                Added by all
+                            </button>
+                            <button id="btn-family-by-you" class="px-2 pb-4 transition-all">
+                                Added by you
+                            </button -->
                         </div>
                     </div>
 
@@ -372,30 +403,31 @@
                     </nav>
                 </div>
 
-                <section id="add-formfam" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
-                    <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
+                <section id="add-formfam" class="invisible opacity-0 w-full h-[calc(100vh-69px)] mt-[69px] flex bg-gradient-to-br from-[#FAF1F180] to-[#F6F1FF80] backdrop-blur-xl fixed inset-0 justify-center items-center transition-all">
+                    <div class="w-full xl:max-w-[1200px] md:mx-12 lg:mx-16 border border-gray_border px-12 py-12 bg-white md:rounded-xl md:shadow-xl dark:bg-gray-800">
                         <h2 id="family-header" class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Family History Record</h2>
                         <form id="family-history-form">
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="w-full">
                                     <label for="relationship" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Relationship</label>
-                                    <input type="text" name="relation" id="family-history-relationship" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Mother" required="">
+                                    <input type="text" name="relation" id="family-history-relationship" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Mother" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="famIllness" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Condition Illness</label>
-                                    <input type="text" name="illness" id="family-history-condition-illness" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="illness" id="family-history-condition-illness" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                                 </div>
-
-
                             </div>
-                            <div class="flex justify-between mt-4 sm:mt-6">
-                                <button type="button" id="close-formfam" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <div>
-                                    <button type="button" id="delete-family-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">Delete Record</button>
-                                    <button type="submit" id="family-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+
+                            <div class="flex justify-between mt-8 sm:mt-6">
+                                <button type="button" id="close-formfam" class="flex min-w-[144px] justify-center px-4 py-2 bg-white hover:bg-blue_light text-blue_main border border-blue_main rounded-lg transition-all hover:font-medium">Cancel</button>
+                                <div class="flex gap-4">
+                                    <button type="button" id="delete-family-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">
+                                        Delete Record
+                                    </button>
+                                    <button type="submit" id="family-button" class="flex min-w-[144px] justify-center px-4 py-2 bg-blue_cta hover:bg-blue_main text-white rounded-lg transition-all">
                                         Add Record
                                     </button>
-                                </div>
+                                <div>
                             </div>
                         </form>
                     </div>
@@ -404,19 +436,25 @@
 
                 <!-- SOCIAL HISTORY -->
                 <div id="social-history-card"
-                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
+                     class="flex flex-col justify-center w-full bg-white rounded-xl border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex flex-col pt-6 gap-4">
                         <div class="flex justify-between px-8">
                             <span class="text-lg font-poppins font-bold">Social History</span>
                             <button id="add-btnsocial"
-                                    class="px-4 py-2 bg-blue_super_light text-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                                    class="px-4 py-2 bg-blue_super_light rounded-xl hover:bg-blue_light text-blue_cta font-medium border border-blue_cta focus:ring-4 focus:ring-white transition-all">
                                 + Add
                             </button>
                         </div>
                         <div class="flex px-8 border-b border-gray_border gap-4 text-base ">
-                            <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
-                                Administered by you
+                            <button class="px-2 pb-4 transition-all border-b-2 text-blue_main border-blue_main font-medium">
+                                Added by you
                             </button>
+                            <!-- button id="btn-social-by-all" class="px-2 pb-4 transition-all border-b-2 text-blue_main border-blue_main font-medium">
+                                Added by all
+                            </button>
+                            <button id="btn-social-by-you" class="px-2 pb-4 transition-all">
+                                Added by you
+                            </button -->
                         </div>
                     </div>
 
@@ -446,38 +484,38 @@
                     </nav>
                 </div>
 
-                <section id="add-formsocial" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
-                    <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
+                <section id="add-formsocial" class="invisible opacity-0 w-full h-[calc(100vh-69px)] mt-[69px] flex bg-gradient-to-br from-[#FAF1F180] to-[#F6F1FF80] backdrop-blur-xl fixed inset-0 justify-center items-center transition-all">
+                    <div class="w-full xl:max-w-[1200px] md:mx-12 lg:mx-16 border border-gray_border px-12 py-12 bg-white md:rounded-xl md:shadow-xl dark:bg-gray-800">
                         <h2 id="social-header" class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Social History Record</h2>
                         <form id="social-history-form">
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="w-full">
                                     <label for="nicotine" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nictone Consumption</label>
-                                    <input type="text" name="nicotine" id="social-history-nicotine-consumption" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
+                                    <input type="text" name="nicotine" id="social-history-nicotine-consumption" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="alcohol" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alcohol Consumption</label>
-                                    <input type="text" name="alcohol" id="social-history-alcohol-consumption" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
+                                    <input type="text" name="alcohol" id="social-history-alcohol-consumption" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="drugs" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Drugs taken</label>
-                                    <input type="text" name="drugs" id="social-history-drugs-taken" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="drugs" id="social-history-drugs-taken" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="diet" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Diet</label>
-                                    <input type="text" name="diet" id="social-history-diet" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="diet" id="social-history-diet" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="physicalAct" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Physical Activity</label>
-                                    <textarea id="social-history-physical-activity" name="physicalAct" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
+                                    <textarea id="social-history-physical-activity" name="physicalAct" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-xl border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
                                 </div>
 
                             </div>
-                            <div class="flex justify-between mt-4 sm:mt-6">
-                                <button type="button" id="close-formsocial" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <div>
+                            <div class="flex justify-between mt-8 sm:mt-6">
+                                <button type="button" id="close-formsocial" class="flex min-w-[144px] justify-center px-4 py-2 bg-white hover:bg-blue_light text-blue_main border border-blue_main rounded-lg transition-all hover:font-medium">Cancel</button>
+                                <div class="flex gap-4">
                                     <button type="button" id="delete-social-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">Delete Record</button>
-                                    <button type="submit" id="social-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                    <button type="submit" id="social-button" class="flex min-w-[144px] justify-center px-4 py-2 bg-blue_cta hover:bg-blue_main text-white rounded-lg transition-all">
                                         Add Record
                                     </button>
                                 </div>
@@ -489,19 +527,25 @@
 
                 <!-- SURGICAL HISTORY -->
                 <div id="surgical-history-card"
-                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
+                     class="flex flex-col justify-center w-full bg-white rounded-xl border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex flex-col pt-6 gap-4">
                         <div class="flex justify-between px-8">
                             <span class="text-lg font-poppins font-bold">Surgical History</span>
                             <button id="add-btnsurgery"
-                                    class="px-4 py-2 bg-blue_super_light text-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                                    class="px-4 py-2 bg-blue_super_light rounded-xl hover:bg-blue_light text-blue_cta font-medium border border-blue_cta focus:ring-4 focus:ring-white transition-all">
                                 + Add
                             </button>
                         </div>
                         <div class="flex px-8 border-b border-gray_border gap-4 text-base ">
-                            <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
-                                Administered by you
+                            <button class="px-2 pb-4 transition-all  border-b-2 text-blue_main border-blue_main font-medium">
+                                Added by you
                             </button>
+                            <!-- button id="btn-surgery-by-all" class="px-2 pb-4 transition-all border-b-2 text-blue_main border-blue_main font-medium">
+                                Added by all
+                            </button>
+                            <button id="btn-surgery-by-you" class="px-2 pb-4 transition-all">
+                                Added by you
+                            </button -->
                         </div>
                     </div>
 
@@ -530,35 +574,34 @@
                     </nav>
                 </div>
 
-                <section id="add-formsurgery" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
-                    <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
+                <section id="add-formsurgery" class="invisible opacity-0 w-full h-[calc(100vh-69px)] mt-[69px] flex bg-gradient-to-br from-[#FAF1F180] to-[#F6F1FF80] backdrop-blur-xl fixed inset-0 justify-center items-center transition-all">
+                    <div class="w-full xl:max-w-[1200px] md:mx-12 lg:mx-16 border border-gray_border px-12 py-12 bg-white md:rounded-xl md:shadow-xl dark:bg-gray-800">
                         <h2 id="surgical-header" class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Surgical History Record</h2>
                         <form id="surgical-history-form">
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="w-full">
                                     <label for="nicotine" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Operation Procedure</label>
-                                    <input type="text" name="nicotine" id="surgical-history-operation-procedure" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
+                                    <input type="text" name="nicotine" id="surgical-history-operation-procedure" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="alcohol" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Indication</label>
-                                    <input type="text" name="alcohol" id="surgical-history-indication" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
+                                    <input type="text" name="alcohol" id="surgical-history-indication" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="drugs" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hospital</label>
-                                    <input type="text" name="drugs" id="surgical-history-hospital" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="drugs" id="surgical-history-hospital" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="diet" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Operation Date</label>
-                                    <input type="date" name="diet" id="surgical-history-operation-date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="date" name="diet" id="surgical-history-operation-date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                                 </div>
-
-
                             </div>
-                            <div class="flex justify-between mt-4 sm:mt-6">
-                                <button type="button" id="close-formsurgery" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <div>
+
+                            <div class="flex justify-between mt-8 sm:mt-6">
+                                <button type="button" id="close-formsurgery" class="flex min-w-[144px] justify-center px-4 py-2 bg-white hover:bg-blue_light text-blue_main border border-blue_main rounded-lg transition-all hover:font-medium">Cancel</button>
+                                <div class="flex gap-4">
                                     <button type="button" id="delete-surgical-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">Delete Record</button>
-                                    <button type="submit" id="surgical-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                    <button type="submit" class="flex min-w-[144px] justify-center px-4 py-2 bg-blue_cta hover:bg-blue_main text-white rounded-lg transition-all">
                                         Add Record
                                     </button>
                                 </div>
@@ -569,19 +612,25 @@
 
                 <!-- VITAL HISTORY -->
                 <div id="vital-history-card"
-                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
+                     class="flex flex-col justify-center w-full bg-white rounded-xl border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex flex-col pt-6 gap-4">
                         <div class="flex justify-between px-8">
                             <span class="text-lg font-poppins font-bold">Vital Sign History</span>
                             <button id="add-btnvital"
-                                    class="px-4 py-2 bg-blue_super_light text-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                                    class="px-4 py-2 bg-blue_super_light rounded-xl hover:bg-blue_light text-blue_cta font-medium border border-blue_cta focus:ring-4 focus:ring-white transition-all">
                                 + Add
                             </button>
                         </div>
                         <div class="flex px-8 border-b border-gray_border gap-4 text-base ">
-                            <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
-                                Administered by you
+                            <button class="px-2 pb-4 transition-all border-b-2 text-blue_main border-blue_main font-medium">
+                                Added by you
                             </button>
+                            <!-- button id="btn-vital-by-all" class="px-2 pb-4 transition-all border-b-2 text-blue_main border-blue_main font-medium">
+                                Added by all
+                            </button>
+                            <button id="btn-vital-by-you" class="px-2 pb-4 transition-all">
+                                Added by you
+                            </button -->
                         </div>
                     </div>
 
@@ -611,36 +660,34 @@
                     </nav>
                 </div>
 
-                <section id="add-formvital" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
-                    <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
+                <section id="add-formvital" class="invisible opacity-0 w-full h-[calc(100vh-69px)] mt-[69px] flex bg-gradient-to-br from-[#FAF1F180] to-[#F6F1FF80] backdrop-blur-xl fixed inset-0 justify-center items-center transition-all">
+                    <div class="w-full xl:max-w-[1200px] md:mx-12 lg:mx-16 border border-gray_border px-12 py-12 bg-white md:rounded-xl md:shadow-xl dark:bg-gray-800">
                         <h2 id="vital-header" class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Vital Sign History Record</h2>
                         <form id="vital-history-form">
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="w-full">
                                     <label for="temperature" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Temperature</label>
-                                    <input type="text" name="nicotine" id="vital-history-temperature" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="39C" required="">
+                                    <input type="text" name="nicotine" id="vital-history-temperature" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="39C" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="bp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Blood Pressure</label>
-                                    <input type="text" name="bp" id="vital-history-blood-pressure" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
+                                    <input type="text" name="bp" id="vital-history-blood-pressure" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="pulse" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pulse Rate</label>
-                                    <input type="text" name="pulse" id="vital-history-pulse-rate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="pulse" id="vital-history-pulse-rate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="bg" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Blood Glucose</label>
-                                    <input type="text" name="bg" id="vital-history-blood-glucose" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="bg" id="vital-history-blood-glucose" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                                 </div>
-
-
-
                             </div>
-                            <div class="flex justify-between mt-4 sm:mt-6">
-                                <button type="button" id="close-formvital" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <div>
+
+                            <div class="flex justify-between mt-8 sm:mt-6">
+                                <button type="button" id="close-formvital" class="flex min-w-[144px] justify-center px-4 py-2 bg-white hover:bg-blue_light text-blue_main border border-blue_main rounded-lg transition-all hover:font-medium">Cancel</button>
+                                <div class="flex gap-4">
                                     <button type="button" id="delete-vital-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">Delete Record</button>
-                                    <button type="submit" id="vital-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                    <button type="submit" class="flex min-w-[144px] justify-center px-4 py-2 bg-blue_cta hover:bg-blue_main text-white rounded-lg transition-all">
                                         Add Record
                                     </button>
                                 </div>
@@ -652,19 +699,25 @@
 
                 <!-- ALLERGY HISTORY -->
                 <div id="allergy-history-card"
-                     class="flex flex-col justify-center w-full bg-white rounded-lg border border-gray_border dark:bg-gray-800 custom-table">
+                     class="flex flex-col justify-center w-full bg-white rounded-xl border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex flex-col pt-6 gap-4">
                         <div class="flex justify-between px-8">
                             <span class="text-lg font-poppins font-bold">Allergy History</span>
                             <button id="add-btnallergy"
-                                    class="px-4 py-2 bg-blue_super_light text-blue_main rounded hover:bg-blue_main hover:text-white focus:ring-4 focus:ring-white font-poppins">
+                                    class="px-4 py-2 bg-blue_super_light rounded-xl hover:bg-blue_light text-blue_cta font-medium border border-blue_cta focus:ring-4 focus:ring-white transition-all">
                                 + Add
                             </button>
                         </div>
                         <div class="flex px-8 border-b border-gray_border gap-4 text-base ">
-                            <button class="px-2 pb-4 border-b-2 text-blue_main border-blue_main font-medium">
+                            <button class="px-2 pb-4 transition-all border-b-2 text-blue_main border-blue_main font-medium">
                                 Administered by you
                             </button>
+                            <!-- button id="btn-allergy-by-all" class="px-2 pb-4 transition-all border-b-2 text-blue_main border-blue_main font-medium">
+                                Added by all
+                            </button>
+                            <button id="btn-allergy-by-you" class="px-2 pb-4 transition-all">
+                                Added by you
+                            </button -->
                         </div>
                     </div>
 
@@ -674,10 +727,10 @@
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">Date Added</th>
-                                        <th scope="col" class="px-6 py-3">Substance</th>
-                                        <th scope="col" class="px-6 py-3">Severity</th>
-                                        <th scope="col" class="px-6 py-3">Criticality</th>
-                                        <th scope="col" class="px-6 py-3">Description</th>
+                                        <th scope="col" class="px-6 py-3">Temperature</th>
+                                        <th scope="col" class="px-6 py-3">Blood Pressure</th>
+                                        <th scope="col" class="px-6 py-3">Pulse Rate</th>
+                                        <th scope="col" class="px-6 py-3">Blood Glucose</th>
                                         <th scope="col" class="px-6 py-3"><span class="sr-only">Edit</span></th>
                                 </tr>
                             </thead>
@@ -693,37 +746,35 @@
                     </nav>
                 </div>
 
-                <section id="add-formallergy" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
-                    <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
+                <section id="add-formallergy" class="invisible opacity-0 w-full h-[calc(100vh-69px)] mt-[69px] flex bg-gradient-to-br from-[#FAF1F180] to-[#F6F1FF80] backdrop-blur-xl fixed inset-0 justify-center items-center transition-all">
+                    <div class="w-full xl:max-w-[1200px] md:mx-12 lg:mx-16 border border-gray_border px-12 py-12 bg-white md:rounded-xl md:shadow-xl dark:bg-gray-800">
                         <h2 id="allergy-header" class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Allergy History Record</h2>
                         <form id="allergy-history-form">
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="w-full">
                                     <label for="temperature" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Substance</label>
-                                    <input type="text" name="nicotine" id="allergy-history-substance" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="39C" required="">
+                                    <input type="text" name="nicotine" id="allergy-history-substance" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="39C" required="">
                                 </div>
 
                                 <div class="w-full">
                                     <label for="severity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Severity</label>
-                                    <input type="text" name="severe" id="allergy-history-severity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="severe" id="allergy-history-severity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="crit" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Criticality</label>
-                                    <input type="text" name="cit" id="allergy-history-criticality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="cit" id="allergy-history-criticality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                                 </div>
                                 <div class="sm:col-span-2">
                                     <label for="allergyDesc" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-                                    <textarea id="allergy-history-description" name="allergyDesc" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
+                                    <textarea id="allergy-history-description" name="allergyDesc" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-xl border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
                                 </div>
-
-
-
                             </div>
-                            <div class="flex justify-between mt-4 sm:mt-6">
-                                <button type="button" id="close-formallergy" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
-                                <div>
+
+                            <div class="flex justify-between mt-8 sm:mt-6">
+                                <button type="button" id="close-formallergy" class="flex min-w-[144px] justify-center px-4 py-2 bg-white hover:bg-blue_light text-blue_main border border-blue_main rounded-lg transition-all hover:font-medium">Cancel</button>
+                                <div class="flex gap-4">
                                     <button type="button" id="delete-allergy-record" class="hidden px-4 py-2 bg-red-600 text-white border rounded hover:bg-red-700">Delete Record</button>
-                                    <button type="submit" id="allergy-button" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                    <button type="submit" class="flex min-w-[144px] justify-center px-4 py-2 bg-blue_cta hover:bg-blue_main text-white rounded-lg transition-all">
                                         Add Record
                                     </button>
                                 </div>
@@ -732,24 +783,24 @@
                     </div>
                 </section>
 
-                                <!-- Modal -->
+                <!-- Deletion Modal -->
                 <div id="confirm-deletion-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
                     <div class="bg-white rounded-lg shadow-lg p-6 max-w-md w-full">
                         <h4 class="text-lg font-semibold text-gray-800">Confirm Deletion</h4>
                         <p class="mt-2 text-gray-600">Are you sure you want to delete this allergy record?</p>
                         <div class="mt-4 flex justify-end space-x-3">
-                            <button id="cancel-delete-btn" 
+                            <button id="cancel-delete-btn"
                                 class="px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 focus:outline-none">
                                 No
                             </button>
-                            <button id="confirm-delete-btn" 
+                            <button id="confirm-delete-btn"
                                 class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 focus:outline-none">
                                 Yes
                             </button>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </main>
@@ -767,15 +818,15 @@
     <script type="module" src="../hooks/surgicalHistory/useCreateSurgicalHistory.js"></script> 
     <script type="module" src="../hooks/vitalHistory/useCreateVitalHistory.js"></script> 
     <script type="module" src="../hooks/allergyHistory/useCreateAllergyHistory.js"></script> 
-    <script type="module" src="../hooks/allergyHistory/useDeleteAllergyHistory.js"></script> 
-    <script type="module" src="../hooks/familyHistory/useDeleteFamilyHistory.js"></script> 
-    <script type="module" src="../hooks/medicationHistory/useDeleteMedicationHistory.js"></script> 
-    <script type="module" src="../hooks/socialHistory/useDeleteSocialHistory.js"></script> 
-    <script type="module" src="../hooks/surgicalHistory/useDeleteSurgicalHistory.js"></script> 
-    <script type="module" src="../hooks/vaccinationHistory/useDeleteVaccinationHistory.js"></script> 
-    <script type="module" src="../hooks/vitalHistory/useDeleteVitalHistory.js"></script> 
+    <script type="module" src="../hooks/allergyHistory/useDeleteAllergyHistory.js"></script>
+    <script type="module" src="../hooks/familyHistory/useDeleteFamilyHistory.js"></script>
+    <script type="module" src="../hooks/medicationHistory/useDeleteMedicationHistory.js"></script>
+    <script type="module" src="../hooks/socialHistory/useDeleteSocialHistory.js"></script>
+    <script type="module" src="../hooks/surgicalHistory/useDeleteSurgicalHistory.js"></script>
+    <script type="module" src="../hooks/vaccinationHistory/useDeleteVaccinationHistory.js"></script>
+    <script type="module" src="../hooks/vitalHistory/useDeleteVitalHistory.js"></script>
     <script src="../utils/toastMessageOnRefresh.js"></script>
-    <script defer src="../utils/sidebartoggle.js"></script>
+    <script defer src="../utils/sideBarToggle.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script defer src="../medHistory.js"></script>
     <script type="module" defer src="../utils/table.js"></script>
