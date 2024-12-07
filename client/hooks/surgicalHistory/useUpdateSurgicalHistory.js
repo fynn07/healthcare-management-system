@@ -53,6 +53,7 @@ export async function useUpdateSurgicalHistory(record_id) {
     document.getElementById("surgical-history-indication").value = surgical_data.indication;
     document.getElementById("surgical-history-hospital").value = surgical_data.hospital;
     document.getElementById("surgical-history-operation-date").value = surgical_data.operation_date;
+    console.log("hello")
 
     const form = document.getElementById("surgical-history-form");
 

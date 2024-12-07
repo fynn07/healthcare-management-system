@@ -16,26 +16,32 @@ document.addEventListener("DOMContentLoaded", () => {
             html5QrCode = new Html5Qrcode("qr-reader");
         }
 
-        html5QrCode.start(
-            { facingMode: "environment" }, // Use 'user' for front camera
-            {
-                fps: 10, // Frames per second
-                qrbox: { width: 250, height: 250 }, // Scanner area size
+        html5QrCode
+        .start(
+            { facingMode: "environment" },
+            { fps: 10, qrbox: { width: 250, height: 250 } },
+            async (decodedText, decodedResult) => {
+                if (window.isProcessingQR) {
+                    console.warn("QR processing already in progress...");
+                    return;
+                }
+    
+                window.isProcessingQR = true; // Prevent double execution
+                try {
+                    console.log("QR Code Scanned:", decodedText);
+                    await createPatientQR(decodedText);
+                } catch (error) {
+                    console.error("Error during patient creation:", error);
+                } finally {
+                    window.isProcessingQR = false; // Reset the flag
+                    stopScanner();
+                }
             },
-            (decodedText, decodedResult) => {
-                console.log("QR Code Scanned:", decodedText);
-                console.log("Full Decoded Result:", decodedResult);
-
-                createPatientQR(decodedText)
-
-                // Optionally, stop scanning after successful read
-                stopScanner();
-            },
-            (error) => {
-                // Log errors (optional)
-                console.warn("QR Code scan error:", error);
-            }
-        ).catch((err) => console.error("Failed to start scanner:", err));
+            (error) => console.warn("QR Code scan error:", error)
+        )
+        .catch((err) => console.error("Failed to start scanner:", err));
+    
+    
     });
 
     // Close modal and stop scanning
