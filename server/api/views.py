@@ -131,6 +131,43 @@ def fetch_patients(request):
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def generate_patient_json(request, id):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+    
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    patient_serializer = PatientSerializer(patient)
+    medication_serializer = MedicationHistorySerializer(MedicationHistory.objects.filter(patient=patient.id, is_deleted=False), many=True)
+    vaccination_serializer = VaccinationHistorySerializer(VaccinationHistory.objects.filter(patient=patient.id, is_deleted=False), many=True)
+    family_serializer = FamilyHistorySerializer(FamilyHistory.objects.filter(patient=patient.id, is_deleted=False), many=True)
+    social_serializer = SocialHistorySerializer(SocialHistory.objects.filter(patient=patient.id, is_deleted=False), many=True)
+    surgical_serializer = SurgicalHistorySerializer(SurgicalHistory.objects.filter(patient=patient.id, is_deleted=False), many=True)
+    vital_serializer = VitalHistorySerializer(VitalHistory.objects.filter(patient=patient.id, is_deleted=False), many=True)
+    allergy_serializer = AllergyHistorySerializer(AllergyHistory.objects.filter(patient=patient.id, is_deleted=False), many=True)
+
+    context = {
+        "patient": patient_serializer.data,
+        "medication_history": medication_serializer.data,
+        "vaccination_history": vaccination_serializer.data,
+        "family_history": family_serializer.data,
+        "social_history": social_serializer.data,
+        "surgical_history": surgical_serializer.data,
+        "vital_history": vital_serializer.data,
+        "allergy_history": allergy_serializer.data,
+    }
+
+    return Response(context, status=status.HTTP_200_OK)
+
+
 #RECORDS
 
 #MEDICATION HISTORY
