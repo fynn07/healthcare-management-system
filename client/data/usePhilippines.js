@@ -1837,10 +1837,12 @@ const cities = [
   { "name": "Turtle Islands", "province": "TAW" }
 ];
 
-const countrySelect = document.getElementById('provider_country')
 const regionSelect = document.getElementById('provider_region');
 const provinceSelect = document.getElementById('provider_province');
 const citySelect = document.getElementById('provider_city');
+
+const provinceError = document.getElementById('provider_province_error');
+const cityError = document.getElementById('provider_city_error');
 
 // Populate Regions
 regions.forEach((region) => {
@@ -1853,8 +1855,13 @@ regions.forEach((region) => {
 // Populate Provinces Based on Selected Region
 regionSelect.addEventListener('change', () => {
     const selectedRegion = regionSelect.value;
+
     // Clear previous options
     provinceSelect.innerHTML = '<option value="" disabled selected>Select your province</option>';
+
+    // remove error
+    provinceError.classList.add("opacity-0", "invisible");
+
     // Add new options
     provinces
         .filter(province => province.region === selectedRegion)
@@ -1874,6 +1881,10 @@ provinceSelect.addEventListener('change', () => {
     const selectedProvince = provinceSelect.value;
     // Clear previous options
     citySelect.innerHTML = '<option value="" disabled selected>Select your city</option>';
+
+    // remove error
+    cityError.classList.add("opacity-0", "invisible");
+
     // Add new options
     cities
         .filter(city => city.province === selectedProvince)

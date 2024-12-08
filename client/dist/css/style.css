@@ -1669,6 +1669,10 @@ input:checked + .toggle-bg{
   gap: 2rem;
 }
 
+.gap-0{
+  gap: 0px;
+}
+
 .gap-x-8{
   -moz-column-gap: 2rem;
        column-gap: 2rem;
@@ -2237,12 +2241,20 @@ input:checked + .toggle-bg{
   padding-left: 0.75rem;
 }
 
+.pl-1{
+  padding-left: 0.25rem;
+}
+
 .text-left{
   text-align: left;
 }
 
 .text-center{
   text-align: center;
+}
+
+.text-right{
+  text-align: right;
 }
 
 .font-poppins{
@@ -2430,6 +2442,11 @@ input:checked + .toggle-bg{
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-red_danger{
+  --tw-text-opacity: 1;
+  color: rgb(239 88 88 / var(--tw-text-opacity));
 }
 
 .opacity-0{
