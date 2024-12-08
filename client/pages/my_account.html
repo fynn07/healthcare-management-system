@@ -219,7 +219,7 @@
 
                                 <div id="provider_basic_buttons" class="flex w-full mt-8 md:mt-4 gap-4 flex-col sm:flex-row">
                                     <button id="provider_basic_edit" type="button"
-                                        class="flex justify-center gap-2 px-6 py-2.5 w-full md:w-48 bg-blue_cta rounded-lg hover:bg-blue_main text-white transition-all">
+                                        class="flex justify-center gap-2 px-6 py-2.5 w-full md:w-48 bg-blue_cta rounded-lg hover:bg-blue_main text-white transition-all hidden">
                                         <span class="block lg:flex">Edit</span>
                                     </button>
 
@@ -273,6 +273,26 @@
                                         class="w-full px-3 py-2 mb-4 rounded-md focus:outline-none focus:ring-1 focus:ring-blue_cta"
                                         required
                                     />
+                                </div>
+
+                                <div class="flex flex-col gap-1 pb-4">
+                                    <label for="provider_new_password" class="block mb-2 text-gray-600">New Password:</label>
+                                    <div class="flex w-full items-center gap-2 rounded-md border border-gray-500 focus:outline-none focus-within:ring-1 focus-within:ring-blue_cta focus-within:border-blue_cta">
+                                        <input
+                                            id="provider_new_password"
+                                            name="provider_new_password"
+                                            type="password" disabled
+                                            placeholder="Enter your new password"
+                                            class="w-full px-3 py-2 rounded-md focus:outline-none focus:ring-0 border-0"
+                                            required
+                                        />
+                                        <button type="button" id="show_new_password" class="flex flex-col h-full justify-center mx-3">
+                                            <svg id="eye_icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                              <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                            </svg>
+                                        </button>
+                                    </div>
                                 </div>
 
                                 <div id="provider_password_buttons" class="flex w-full mt-8 md:mt-4 gap-4 flex-col sm:flex-row">

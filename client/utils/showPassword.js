@@ -1,15 +1,17 @@
 const showPassword = document.getElementById('show_password');
-function togglePasswordVisibility() {
-    const passwordInput = document.getElementById('provider_password');
-    const eyeIcon = document.getElementById('eye-icon');
+const showNewPassword = document.getElementById('show_new_password');
+
+const passwordInput = document.getElementById('provider_password');
+const newPasswordInput = document.getElementById('provider_new_password');
+
+function togglePasswordVisibility(passwordInput) {
 
     // Toggle password visibility
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        eyeIcon.classList.add('eye-open'); // Optional: Add a class for styling changes
     } else {
         passwordInput.type = 'password';
-        eyeIcon.classList.remove('eye-open');
     }
 }
-showPassword.addEventListener("click", togglePasswordVisibility);
+showPassword.addEventListener("click", () => togglePasswordVisibility(passwordInput));
+showNewPassword.addEventListener("click", () => togglePasswordVisibility(newPasswordInput));
