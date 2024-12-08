@@ -1374,6 +1374,10 @@ input:checked + .toggle-bg{
   height: 100vh;
 }
 
+.h-5{
+  height: 1.25rem;
+}
+
 .min-h-\[440px\]{
   min-height: 440px;
 }
@@ -1457,6 +1461,10 @@ input:checked + .toggle-bg{
 
 .w-\[calc\(90vw-3rem\)\]{
   width: calc(90vw - 3rem);
+}
+
+.w-5{
+  width: 1.25rem;
 }
 
 .min-w-\[144px\]{
@@ -2645,6 +2653,14 @@ input:checked + .toggle-bg{
 .focus-within\:ring-blue_cta:focus-within{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(27 119 182 / var(--tw-ring-opacity));
+}
+
+.hover\:h-8:hover{
+  height: 2rem;
+}
+
+.hover\:w-8:hover{
+  width: 2rem;
 }
 
 .hover\:border-gray-300:hover{
