@@ -1858,6 +1858,8 @@ regionSelect.addEventListener('change', () => {
 
     // Clear previous options
     provinceSelect.innerHTML = '<option value="" disabled selected>Select your province</option>';
+    provinceSelect.classList.toggle("bg-gray-300");
+    provinceSelect.disabled = false;
 
     // remove error
     provinceError.classList.add("opacity-0", "invisible");
@@ -1881,6 +1883,8 @@ provinceSelect.addEventListener('change', () => {
     const selectedProvince = provinceSelect.value;
     // Clear previous options
     citySelect.innerHTML = '<option value="" disabled selected>Select your city</option>';
+    citySelect.classList.toggle("bg-gray-300");
+    citySelect.disabled = false;
 
     // remove error
     cityError.classList.add("opacity-0", "invisible");
