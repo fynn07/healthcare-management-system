@@ -16,9 +16,6 @@
     <link rel="stylesheet" href="../output.css" >
     <link rel="stylesheet" href="../dist/css/style.css">
 
-
-    <script type="module" defer src="../hooks/testimonials/fetchTestimonials.js"></script>
-
     <title>Tester | The HealthBook</title>
 </head>
 
@@ -75,7 +72,7 @@
                                     />
                                 </div>
 
-                                <div class="flex w-full gap-4">
+                                <div class="flex max-md:flex-col md:flex-row w-full gap-3 md:gap-4">
                                     <div class="flex flex-col w-full gap-1">
                                         <label for="provider_email" class="block mb-2 text-gray-600">Email:</label>
                                         <input
@@ -100,7 +97,6 @@
                                     </div>
                                 </div>
 
-
                                 <div class="flex flex-col w-full gap-1">
                                     <label for="provider_type" class="block mb-2 text-gray-600">Provider Type:</label>
                                     <select
@@ -116,18 +112,7 @@
                                     </select>
                                 </div>
 
-                                <div class="flex w-full gap-4">
-                                    <div class="flex flex-col w-full gap-1">
-                                        <label for="provider_country" class="block mb-2 text-gray-600">Country:</label>
-                                        <select
-                                            id="provider_country"
-                                            name="country"
-                                            class="w-full px-3 py-2 mb-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-                                            required
-                                        >
-                                            <option value="" disabled selected>Select your country</option>
-                                        </select>
-                                    </div>
+                                <div class="flex flex-col lg:flex-row w-full gap-3 lg:gap-4">
                                     <div class="flex flex-col w-full gap-1">
                                         <label for="provider_region" class="block mb-2 text-gray-600">Region:</label>
                                         <select
@@ -139,9 +124,6 @@
                                             <option value="" disabled selected>Select your region</option>
                                         </select>
                                     </div>
-                                </div>
-
-                                <div class="flex w-full gap-4">
                                     <div class="flex flex-col w-full gap-1">
                                         <label for="provider_province" class="block mb-2 text-gray-600">Province:</label>
                                         <select
@@ -178,10 +160,10 @@
                                     />
                                 </div>
 
-                                <div class="flex w-full justify-end mt-4">
+                                <div class="flex w-full justify-end mt-8 md:mt-4">
                                     <button id="provider_basic_submit" type="button"
-                                        class="flex justify-center gap-2 pl-4 pr-3 md:px-6 py-2.5 max-md:w-1/2 lg:min-w-48 bg-blue_cta rounded-lg hover:bg-blue_main text-white transition-all">
-                                        <span class="block md:hidden lg:flex">Proceed</span>
+                                        class="flex justify-center gap-2 px-6 py-2.5 max-md:w-full lg:min-w-48 bg-blue_cta rounded-lg hover:bg-blue_main text-white transition-all">
+                                        <span class="block lg:flex">Proceed</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
                                         </svg>
@@ -220,18 +202,18 @@
                                     />
                                 </div>
 
-                                <div class="flex w-full justify-between mt-4">
+                                <div class="flex flex-col md:flex-row w-full gap-3 lg:gap-6 mt-6 justify-between">
                                     <button type="button" id="provider_form_back"
-                                        class="flex justify-center gap-2 pl-4 pr-3 md:px-6 py-2.5 max-md:w-1/2 lg:min-w-48 rounded-lg border-2 border-blue_cta hover:bg-blue_cta text-blue_cta hover:text-white font-medium transition-all">
+                                        class="flex justify-center gap-2 pl-4 pr-3 md:px-6 py-2.5 w-full md:w-fit lg:min-w-48 rounded-lg border-2 border-blue_cta hover:bg-blue_cta text-blue_cta hover:text-white font-medium transition-all">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                           <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
                                         </svg>
-                                        <span class="block md:hidden lg:flex">Back</span>
+                                        <span class="block lg:flex">Back</span>
                                     </button>
 
                                     <button type="submit" id="provider_password_submit"
-                                        class="flex justify-center gap-2 pl-4 pr-3 md:px-6 py-2.5 max-md:w-1/2 lg:min-w-48 bg-blue_cta rounded-lg hover:bg-blue_main text-white transition-all">
-                                        <span class="block md:hidden lg:flex">Finish</span>
+                                        class="flex justify-center gap-2 pl-4 pr-3 md:px-6 py-2.5 w-full md:w-fit lg:min-w-48 bg-blue_cta rounded-lg hover:bg-blue_main text-white transition-all">
+                                        <span class="block lg:flex">Finish</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
                                         </svg>
@@ -258,7 +240,7 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
 
     <!-- Custom Modules -->
-    <script type="module" defer src="../hooks/createProvider.js"></script>
+    <!-- script type="module" defer src="../hooks/createProvider.js"></script -->
     <script type="module" defer src="../utils/checkLoginStatus.js"></script>
     <script type="module" defer src="../utils/logout.js"></script>
     <script type="module" src="../utils/redirectFromProvider.js"></script>
@@ -266,5 +248,6 @@
     <!-- Other Utility Scripts -->
     <script src="../utils/toastMessageOnRefresh.js"></script>
     <script src="../utils/scrollRegistrationForm.js"></script>
+    <script type="module" src="../data/usePhilippines.js"></script>
 </body>
 </html>
