@@ -7,3 +7,7 @@ server-dotnet/.env
 server-dotnet/obj/
 server/api/__pycache__/
 server/server/__pycache__/
+/client/assets/files/page 1.png
+/client/assets/files/page 1.svg
+/client/assets/files/page 2.png
+/client/assets/files/page 2.svg
