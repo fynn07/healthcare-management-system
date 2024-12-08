@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// add a patient in digital ids
+
 
 document.getElementById('add-patient').addEventListener('click', function () {
     document.getElementById('add-patient-form').classList.remove('hidden');

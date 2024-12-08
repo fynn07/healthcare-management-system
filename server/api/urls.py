@@ -13,6 +13,7 @@ urlpatterns = [
     path("patient/create/", views.create_patient),
     path("patient/fetch/", views.fetch_patients),
     path("patient/fetch/<int:id>/", views.fetch_single_patient),
+    path("patient/delete/<int:id>/", views.delete_patient),
     path("patient/fetch/<int:id>/generate_patient_json/<int:provider_account>/", views.generate_patient_json),
     path("patient/fetch/<int:id>/medication_history/", views.fetch_medication_history_records),
     path("patient/fetch/<int:id>/vaccination_history/", views.fetch_vaccination_history_records),

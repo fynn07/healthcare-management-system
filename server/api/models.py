@@ -29,6 +29,7 @@ class Patient(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     height = models.PositiveIntegerField()
     weight = models.PositiveIntegerField()
+    is_deleted = models.BooleanField(default=False)
 
     def __str__(self):
         return self.last_name

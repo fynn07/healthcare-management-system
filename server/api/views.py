@@ -133,10 +133,31 @@ def fetch_patients(request):
     except Provider.DoesNotExist:
         return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
     
-    patients = Patient.objects.filter(provider=provider)
+    patients = Patient.objects.filter(provider=provider, is_deleted=False)
     serializer = PatientSerializer(patients, many=True)
 
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['PUT'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def delete_patient(request, id):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExist:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+
+    # Set is_deleted to True
+    patient.is_deleted = True
+    patient.save()
+
+    return Response({"message": "Patient record successfully deleted."}, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
