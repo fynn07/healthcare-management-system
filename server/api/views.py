@@ -42,6 +42,14 @@ def user_login(request):
     serializer = UserSerializer(instance=user)
     return Response({"token": token.key, "user": serializer.data}, status=status.HTTP_200_OK)
 
+
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def fetch_user(request):
+    serializer = UserSerializer(instance=request.user)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
 @api_view(['POST'])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
@@ -131,6 +139,43 @@ def fetch_patients(request):
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def generate_patient_json(request, id, provider_account):
+    try:
+        provider = Provider.objects.get(account=provider_account)
+    except:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+    
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    patient_serializer = PatientSerializer(patient)
+    medication_serializer = MedicationHistorySerializer(MedicationHistory.objects.filter(patient=patient.id, is_deleted=False), many=True)
+    vaccination_serializer = VaccinationHistorySerializer(VaccinationHistory.objects.filter(patient=patient.id, is_deleted=False), many=True)
+    family_serializer = FamilyHistorySerializer(FamilyHistory.objects.filter(patient=patient.id, is_deleted=False), many=True)
+    social_serializer = SocialHistorySerializer(SocialHistory.objects.filter(patient=patient.id, is_deleted=False), many=True)
+    surgical_serializer = SurgicalHistorySerializer(SurgicalHistory.objects.filter(patient=patient.id, is_deleted=False), many=True)
+    vital_serializer = VitalHistorySerializer(VitalHistory.objects.filter(patient=patient.id, is_deleted=False), many=True)
+    allergy_serializer = AllergyHistorySerializer(AllergyHistory.objects.filter(patient=patient.id, is_deleted=False), many=True)
+
+    context = {
+        "patient": patient_serializer.data,
+        "medication_history": medication_serializer.data,
+        "vaccination_history": vaccination_serializer.data,
+        "family_history": family_serializer.data,
+        "social_history": social_serializer.data,
+        "surgical_history": surgical_serializer.data,
+        "vital_history": vital_serializer.data,
+        "allergy_history": allergy_serializer.data,
+    }
+
+    return Response(context, status=status.HTTP_200_OK)
+
+
 #RECORDS
 
 #MEDICATION HISTORY
@@ -210,7 +255,7 @@ def fetch_medication_history_records(request, id):
     except Patient.DoesNotExist:
         return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
     
-    medication_history = MedicationHistory.objects.filter(patient=patient.id)
+    medication_history = MedicationHistory.objects.filter(patient=patient.id, is_deleted=False)
 
     paginator, paginated_medication_history = initialize_pagination(medication_history, request)
 
@@ -272,6 +317,32 @@ def update_medication_history_record(request, id, record_id):
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['PUT'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def delete_medication_history_record(request, id, record_id):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExist:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    try:
+        medication_history = MedicationHistory.objects.get(id=record_id, patient=patient)
+    except MedicationHistory.DoesNotExist:
+        return Response({"error": "Medication history record not found."}, status=status.HTTP_404_NOT_FOUND)
+
+    # Set is_deleted to True
+    medication_history.is_deleted = True
+    medication_history.save()
+
+    return Response({"message": "Medication history record successfully deleted."}, status=status.HTTP_200_OK)
+
+
 #VACCINATION HISTORY
 
 @api_view(['POST'])
@@ -314,7 +385,7 @@ def fetch_vaccination_history_records(request, id):
     except Patient.DoesNotExist:
         return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
     
-    vaccination_history = VaccinationHistory.objects.filter(patient=patient.id)
+    vaccination_history = VaccinationHistory.objects.filter(patient=patient.id, is_deleted=False)
 
     paginator, paginated_vaccination_history = initialize_pagination(vaccination_history, request)
 
@@ -376,6 +447,31 @@ def update_vaccination_history_record(request, id, record_id):
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['PUT'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def delete_vaccination_history_record(request, id, record_id):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExist:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    try:
+        vaccination_history = VaccinationHistory.objects.get(id=record_id, patient=patient)
+    except VaccinationHistory.DoesNotExist:
+        return Response({"error": "Vaccination history record not found."}, status=status.HTTP_404_NOT_FOUND)
+
+    # Set is_deleted to True
+    vaccination_history.is_deleted = True
+    vaccination_history.save()
+
+    return Response({"message": "Vaccination history record successfully deleted."}, status=status.HTTP_200_OK)
+
 #FAMILY HISTORY
 
 @api_view(['POST'])
@@ -418,7 +514,7 @@ def fetch_family_history_records(request, id):
     except Patient.DoesNotExist:
         return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
     
-    family_history = FamilyHistory.objects.filter(patient=patient.id)
+    family_history = FamilyHistory.objects.filter(patient=patient.id, is_deleted=False)
 
     paginator, paginated_family_history = initialize_pagination(family_history, request)
 
@@ -480,6 +576,31 @@ def update_family_history_record(request, id, record_id):
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['PUT'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def delete_family_history_record(request, id, record_id):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExist:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    try:
+        family_history = FamilyHistory.objects.get(id=record_id, patient=patient)
+    except FamilyHistory.DoesNotExist:
+        return Response({"error": "Family history record not found."}, status=status.HTTP_404_NOT_FOUND)
+
+    # Set is_deleted to True
+    family_history.is_deleted = True
+    family_history.save()
+
+    return Response({"message": "Family history record successfully deleted."}, status=status.HTTP_200_OK)
+
 #SOCIAL HISTORY
 
 @api_view(['POST'])
@@ -522,7 +643,7 @@ def fetch_social_history_records(request, id):
     except Patient.DoesNotExist:
         return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
     
-    social_history = SocialHistory.objects.filter(patient=patient.id)
+    social_history = SocialHistory.objects.filter(patient=patient.id, is_deleted=False)
 
     paginator, paginated_social_history = initialize_pagination(social_history, request)
 
@@ -584,6 +705,31 @@ def update_social_history_record(request, id, record_id):
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['PUT'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def delete_social_history_record(request, id, record_id):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExist:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    try:
+        social_history = SocialHistory.objects.get(id=record_id, patient=patient)
+    except SocialHistory.DoesNotExist:
+        return Response({"error": "Social history record not found."}, status=status.HTTP_404_NOT_FOUND)
+
+    # Set is_deleted to True
+    social_history.is_deleted = True
+    social_history.save()
+
+    return Response({"message": "Social history record successfully deleted."}, status=status.HTTP_200_OK)
+
 #SURGICAL HISTORY
 
 @api_view(['POST'])
@@ -627,7 +773,7 @@ def fetch_surgical_history_records(request, id):
     except Patient.DoesNotExist:
         return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
     
-    surgical_history = SurgicalHistory.objects.filter(patient=patient.id)
+    surgical_history = SurgicalHistory.objects.filter(patient=patient.id, is_deleted=False)
 
     paginator, paginated_surgical_history = initialize_pagination(surgical_history, request)
 
@@ -690,6 +836,31 @@ def update_surgical_history_record(request, id, record_id):
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['PUT'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def delete_surgical_history_record(request, id, record_id):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExist:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    try:
+        surgical_history = SurgicalHistory.objects.get(id=record_id, patient=patient)
+    except SurgicalHistory.DoesNotExist:
+        return Response({"error": "Surgical history record not found."}, status=status.HTTP_404_NOT_FOUND)
+
+    # Set is_deleted to True
+    surgical_history.is_deleted = True
+    surgical_history.save()
+
+    return Response({"message": "Surgical history record successfully deleted."}, status=status.HTTP_200_OK)
+
 
 #VITAL SIGN HISTORY
 
@@ -734,7 +905,7 @@ def fetch_vital_history_records(request, id):
     except Patient.DoesNotExist:
         return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
     
-    vital_history = VitalHistory.objects.filter(patient=patient.id)
+    vital_history = VitalHistory.objects.filter(patient=patient.id, is_deleted=False)
 
     paginator, paginated_vital_history = initialize_pagination(vital_history, request)
 
@@ -796,6 +967,31 @@ def update_vital_history_record(request, id, record_id):
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['PUT'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def delete_vital_history_record(request, id, record_id):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExist:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    try:
+        vital_history = VitalHistory.objects.get(id=record_id, patient=patient)
+    except VitalHistory.DoesNotExist:
+        return Response({"error": "Vital history record not found."}, status=status.HTTP_404_NOT_FOUND)
+
+    # Set is_deleted to True
+    vital_history.is_deleted = True
+    vital_history.save()
+
+    return Response({"message": "Vital history record successfully deleted."}, status=status.HTTP_200_OK)
+
 #ALLERGY HISTORY 
 
 @api_view(['POST'])
@@ -838,7 +1034,7 @@ def fetch_allergy_history_records(request, id):
     except Patient.DoesNotExist:
         return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
     
-    allergy_history = AllergyHistory.objects.filter(patient=patient.id)
+    allergy_history = AllergyHistory.objects.filter(patient=patient.id, is_deleted=False)
 
     paginator, paginated_allergy_history = initialize_pagination(allergy_history, request)
 
@@ -899,3 +1095,28 @@ def update_allergy_history_record(request, id, record_id):
         return Response(serializer.data, status=status.HTTP_200_OK)
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['PUT'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def delete_allergy_history_record(request, id, record_id):
+    try:
+        provider = Provider.objects.get(account=request.user.id)
+    except Provider.DoesNotExist:
+        return Response({"error": "Provider not found for this account."}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        patient = Patient.objects.get(id=id, provider=provider)
+    except Patient.DoesNotExist:
+        return Response({"error": "Patient not found."}, status=status.HTTP_404_NOT_FOUND)
+    
+    try:
+        allergy_history = AllergyHistory.objects.get(id=record_id, patient=patient)
+    except AllergyHistory.DoesNotExist:
+        return Response({"error": "Allergy history record not found."}, status=status.HTTP_404_NOT_FOUND)
+
+    # Set is_deleted to True
+    allergy_history.is_deleted = True
+    allergy_history.save()
+
+    return Response({"message": "Allergy history record successfully deleted."}, status=status.HTTP_200_OK)

@@ -105,6 +105,16 @@ function updateAllergyHistoryTable(allergyHistory) {
     const allergy_history_body = document.getElementById('allergy-history-body');
     allergy_history_body.innerHTML = ''; 
 
+    if (allergyHistory.results.length === 0) {
+        allergy_history_body.innerHTML = 
+        `<tr class="border-b border-t">
+            <td colspan="5" class="text-center py-3">
+            No Allergy Records Found
+            </td>
+        </tr>`;
+        return;
+    }
+
     allergyHistory.results.forEach(item => {
         const formatted_item = formatAllergyData(item);
         const row = `

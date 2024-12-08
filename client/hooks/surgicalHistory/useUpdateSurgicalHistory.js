@@ -37,12 +37,23 @@ export async function useUpdateSurgicalHistory(record_id) {
 
     const ENDPOINT = getApiEndpoint();
 
-    //addFormSurg.classList.remove('hidden');
-    
+    // show form to edit the data
+    addFormSurg.classList.remove('invisible');
+    addFormSurg.classList.remove('opacity-0');
+    addFormSurg.classList.add('visible');
+    addFormSurg.classList.add('opacity-100');
+
+    // modify form
+    document.getElementById('delete-surgical-record').classList.remove('hidden');
+
+    document.getElementById("surgical-header").textContent = "Edit Surgical History Record";
+    document.getElementById("surgical-button").textContent = "Edit Record";
+
     document.getElementById("surgical-history-operation-procedure").value = surgical_data.operation_procedure;
     document.getElementById("surgical-history-indication").value = surgical_data.indication;
     document.getElementById("surgical-history-hospital").value = surgical_data.hospital;
     document.getElementById("surgical-history-operation-date").value = surgical_data.operation_date;
+    console.log("hello")
 
     const form = document.getElementById("surgical-history-form");
 
@@ -103,27 +114,3 @@ export async function useUpdateSurgicalHistory(record_id) {
 
     });
 }
-
-
-// TODO: add function to fetch surgery record either added by you or added by all
-const btnAll = document.getElementById('btn-surgery-by-all');
-const btnYou = document.getElementById('btn-surgery-by-you');
-
-// Class to toggle
-const activeClasses = ['border-b-2', 'text-blue_main', 'border-blue_main', 'font-medium'];
-
-btnAll.addEventListener('click', () => {
-    activeClasses.forEach(cls => btnYou.classList.remove(cls));
-    activeClasses.forEach(cls => btnAll.classList.add(cls));
-
-    // Perform action for "Added by all"
-    console.log('Showing surgery added by all.');
-});
-
-btnYou.addEventListener('click', () => {
-    activeClasses.forEach(cls => btnAll.classList.remove(cls));
-    activeClasses.forEach(cls => btnYou.classList.add(cls));
-
-    // Perform action for "Added by you"
-    console.log('Showing surgery added by you.');
-});

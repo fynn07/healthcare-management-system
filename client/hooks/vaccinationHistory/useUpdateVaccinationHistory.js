@@ -37,15 +37,25 @@ export async function useUpdateVaccinationHistory(record_id) {
 
     const ENDPOINT = getApiEndpoint();
 
-    // addFormVacc.classList.remove('hidden');
-    
-        document.getElementById("vaccine-history-date-administered").value = vaccination_data.date_administered;
-        document.getElementById("vaccine-history-next-dose-date").value = vaccination_data.next_dose_date; 
-        document.getElementById("vaccine-history-vaccine-name").value = vaccination_data.vaccine_name;
-        document.getElementById("vaccine-history-brand-name").value = vaccination_data.brand_name;
-        document.getElementById("vaccine-history-provider").value = vaccination_data.provider;
-        document.getElementById("vaccine-history-site-given").value = vaccination_data.site_given;
-        document.getElementById("vaccine-history-dose-ml").value = vaccination_data.dose_ml;
+    // show form to edit the data
+    addFormVacc.classList.remove('invisible');
+    addFormVacc.classList.remove('opacity-0');
+    addFormVacc.classList.add('visible');
+    addFormVacc.classList.add('opacity-100');
+
+    // modify form
+    document.getElementById('delete-vaccination-record').classList.remove('hidden');
+
+    document.getElementById("vaccination-header").textContent = "Edit Vaccination History Record";
+    document.getElementById("vaccination-button").textContent = "Edit Record";
+
+    document.getElementById("vaccine-history-date-administered").value = vaccination_data.date_administered;
+    document.getElementById("vaccine-history-next-dose-date").value = vaccination_data.next_dose_date;
+    document.getElementById("vaccine-history-vaccine-name").value = vaccination_data.vaccine_name;
+    document.getElementById("vaccine-history-brand-name").value = vaccination_data.brand_name;
+    document.getElementById("vaccine-history-provider").value = vaccination_data.provider;
+    document.getElementById("vaccine-history-site-given").value = vaccination_data.site_given;
+    document.getElementById("vaccine-history-dose-ml").value = vaccination_data.dose_ml;
 
     const form = document.getElementById("vaccination-history-form");
 

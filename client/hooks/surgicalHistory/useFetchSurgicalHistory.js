@@ -111,6 +111,16 @@ function updateSurgicalHistoryTable(surgicalHistory) {
     const surgical_history_body = document.getElementById('surgical-history-body');
     surgical_history_body.innerHTML = ''; 
 
+    if (surgicalHistory.results.length === 0) {
+        surgical_history_body.innerHTML = 
+        `<tr class="border-b border-t">
+            <td colspan="5" class="text-center py-3">
+            No Surgical Records Found
+            </td>
+        </tr>`;
+        return;
+    }
+
     surgicalHistory.results.forEach(item => {
         const formatted_item = formatSurgicalData(item);
         const row = `

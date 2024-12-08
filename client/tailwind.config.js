@@ -22,6 +22,8 @@ module.exports = {
         'bookmark-white': '#FFFFFF', // Define 'bookmark-white' if not already present
         'gray_border': '#DAE3E5',
         'green_button' : '#15803D',
+        'red_danger': '#EF5858',
+        'red_warning': '#da2b2a',
       },
       screens: {
         'xs': '480px', // => @media (min-width: 480px) { ... }
