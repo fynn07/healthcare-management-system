@@ -246,5 +246,5 @@ document.getElementById("generate_pdf").addEventListener("click", async() => {
         theme: 'striped'
     });
 
-    doc.save('TheHealthBook.pdf');
+    doc.save(`THB_${profileInformation.patient.last_name}_Records.pdf`);
 })
