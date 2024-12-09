@@ -54,7 +54,33 @@ function toggleEnableForm(type) {
 }
 
 
+function togglePasswordForm() {
+    // Get form elements and buttons
+    const saveButton = document.getElementById(`provider_password_save`);
+    const cancelButton = document.getElementById(`provider_password_cancel`);
+    const passwordForm = document.getElementById('provider_password_form');
 
+    const formInputs = document.querySelectorAll(`#provider_password_form input`);
+
+    // Add click event listener to Cancel button
+    cancelButton.addEventListener("click", () => {
+        passwordForm.reset();
+        console.log("Password change canceled!");
+
+        // TODO: Add logic to retain the old password
+    });
+
+    // Save button functionality (example)
+    saveButton.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent form submission for demo
+        console.log("Password has been changed!");
+
+        // TODO: Add logic to change password
+    });
+}
+
+
+/* ADD EVENT LISTENERS ON TABS */
 password_tab.addEventListener('click', () => {
     const scrollAmount = window.innerWidth; // Width of each slide
 
@@ -66,7 +92,7 @@ password_tab.addEventListener('click', () => {
         behavior: 'smooth',
     });
 
-    toggleEnableForm('password');
+    togglePasswordForm();
 });
 
 basic_tab.addEventListener('click', () => {

@@ -1856,13 +1856,15 @@ regions.forEach((region) => {
 regionSelect.addEventListener('change', () => {
     const selectedRegion = regionSelect.value;
 
+    // remove error
+    if (provinceSelect.disabled) {
+        provinceError.classList.add("opacity-0", "invisible");
+        provinceSelect.classList.toggle("bg-gray-300");
+        provinceSelect.disabled = false;
+    }
+
     // Clear previous options
     provinceSelect.innerHTML = '<option value="" disabled selected>Select your province</option>';
-    provinceSelect.classList.toggle("bg-gray-300");
-    provinceSelect.disabled = false;
-
-    // remove error
-    provinceError.classList.add("opacity-0", "invisible");
 
     // Add new options
     provinces
@@ -1881,13 +1883,15 @@ regionSelect.addEventListener('change', () => {
 // Populate Cities Based on Selected Province
 provinceSelect.addEventListener('change', () => {
     const selectedProvince = provinceSelect.value;
+
+    if (citySelect.disabled) {
+        citySelect.classList.toggle("bg-gray-300");
+        citySelect.disabled = false;
+        cityError.classList.add("opacity-0", "invisible");
+    }
+
     // Clear previous options
     citySelect.innerHTML = '<option value="" disabled selected>Select your city</option>';
-    citySelect.classList.toggle("bg-gray-300");
-    citySelect.disabled = false;
-
-    // remove error
-    cityError.classList.add("opacity-0", "invisible");
 
     // Add new options
     cities
