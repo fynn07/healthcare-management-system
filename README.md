@@ -98,6 +98,8 @@ Key functionalities include:
 ### Generate QR Feature  
 ![Generate QR](https://github.com/user-attachments/assets/ee3a2dc0-1de1-49a4-b00c-f81c3d09cd61)  
 
+### Print Patient's Record 
+![2024-12-0821-25-06-ezgif com-video-to-gif-converter (1)](https://github.com/user-attachments/assets/39b49003-13fc-4495-a76e-a58727ca9d9d)
 ---
 
 
