@@ -124,7 +124,7 @@ Follow these steps to set up and run the project locally:
 
 1. **Clone the Repository**  
    ```bash  
-   git clone https://github.com/your-repository/theHealthBook.git  
+   git clone https://github.com/fynn07/healthcare-management-system  
    cd theHealthBook 
 
 2. **Set Up a Virtual Environment**
