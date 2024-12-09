@@ -108,3 +108,11 @@
 #prescription-table:nth-last-child(1) {
   border-bottom: none; !important;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}

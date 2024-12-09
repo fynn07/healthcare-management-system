@@ -13,6 +13,8 @@
     "tailwindcss": "^3.4.13"
   },
   "dependencies": {
-    "flowbite": "^2.5.1"
+    "flowbite": "^2.5.1",
+    "philippines": "^1.0.0",
+    "stream-json": "^1.9.1"
   }
 }
