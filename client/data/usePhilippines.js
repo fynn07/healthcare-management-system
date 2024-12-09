@@ -1847,7 +1847,7 @@ const cityError = document.getElementById('provider_city_error');
 // Populate Regions
 regions.forEach((region) => {
     const option = document.createElement('option');
-    option.value = `${region.name} - ${region.long}`;
+    option.value = `${region.key}`;
     option.textContent = `${region.name} - ${region.long}`;
     regionSelect.appendChild(option);
 });
@@ -1871,7 +1871,7 @@ regionSelect.addEventListener('change', () => {
         .filter(province => province.region === selectedRegion)
         .forEach(province => {
             const option = document.createElement('option');
-            option.value = province.name;
+            option.value = province.key;
             option.textContent = province.name;
             provinceSelect.appendChild(option);
         });
