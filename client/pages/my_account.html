@@ -154,62 +154,55 @@
 
                                 <div class="flex flex-col w-full gap-1">
                                     <label for="provider_type" class="block mb-2 text-gray-600">Provider Type:</label>
-                                    <select
+                                    <input
+                                        type="text"
                                         id="provider_type"
                                         name="provider_type" disabled
                                         class="w-full px-3 py-2 mb-4 rounded-md focus:outline-none focus:ring-1 focus:ring-blue_cta"
                                         required
-                                    >
-                                        <option value="" disabled selected>Select type</option>
-                                        <option value="Clinic Facility">Clinic</option>
-                                        <option value="Hospital Facility">Hospital</option>
-                                        <option value="Local Government Unit">LGU (Local Government Unit)</option>
-                                    </select>
+                                    />
                                 </div>
 
                                 <div class="flex flex-col lg:flex-row w-full gap-3 lg:gap-4">
                                     <div class="flex flex-col w-full gap-1">
                                         <label for="provider_region" class="block mb-2 text-gray-600">Region:</label>
-                                        <select
+                                        <input
+                                            type="text"
                                             id="provider_region"
                                             name="region" disabled
                                             class="w-full px-3 py-2 mb-4 rounded-md focus:outline-none focus:ring-1 focus:ring-blue_cta"
                                             required
-                                        >
-                                            <option value="" disabled selected>Select your region</option>
-                                        </select>
+                                        />
                                     </div>
                                     <div class="flex flex-col w-full gap-1 pb-2">
                                         <label for="provider_province" class="block mb-2 text-gray-600">Province:</label>
-                                        <select
+                                        <input
+                                            type="text"
                                             id="provider_province"
                                             name="province" disabled
                                             class="w-full px-3 py-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue_cta"
                                             required
-                                        >
-                                            <option value="" disabled selected>Select your province</option>
-                                        </select>
+                                        />
                                         <span id="provider_province_error" class="text-sm text-gray-500 w-full pl-1 text-right italic transition-all hidden">*please select a region first</span>
                                     </div>
                                     <div class="flex flex-col w-full gap-1 pb-2">
                                         <label for="provider_city" class="block mb-2 text-gray-600">City:</label>
-                                        <select
+                                        <input
+                                            type="text"
                                             id="provider_city"
                                             name="city" disabled
                                             class="w-full px-3 py-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue_cta"
                                             required
-                                        >
-                                            <option value="" disabled selected>Select your city</option>
-                                        </select>
+                                        />
                                         <span id="provider_city_error" class="text-sm text-gray-500 w-full pl-1 text-right italic transition-all hidden">*please select a province first</span>
                                     </div>
                                 </div>
 
                                 <div class="flex flex-col gap-1">
-                                    <label for="provider_address_line" class="block mb-2 text-gray-600">Provider Address Line:</label>
+                                    <label for="provider_location" class="block mb-2 text-gray-600">Provider Address Line:</label>
                                     <input
-                                        id="provider_address_line"
-                                        name="provider_address_line"
+                                        id="provider_location"
+                                        name="provider_location"
                                         type="text" disabled
                                         placeholder="Enter unit/room/floor, bldg./lot/block/phase/house, and street name"
                                         class="w-full px-3 py-2 mb-4 rounded-md focus:outline-none focus:ring-1 focus:ring-blue_cta"
@@ -339,6 +332,7 @@
     <!-- Other Utility Scripts -->
     <script src="../utils/toastMessageOnRefresh.js"></script>
     <script src="../hooks/providerAccount/useMyAccount.js"></script>
+    <script defer type="module" src="../hooks/providerAccount/fetchAccountDetails.js"></script>
     <script src="../utils/switchTabProviderAccount.js"></script>
     <script src="../utils/showPassword.js"></script>
     <script type="module" src="../data/usePhilippines.js"></script>

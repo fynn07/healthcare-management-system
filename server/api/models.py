@@ -7,6 +7,11 @@ class Provider(models.Model):
     name = models.CharField(max_length=50)
     provider_type = models.CharField(max_length=50)
     provider_location = models.CharField(max_length=100)
+    provider_email = models.EmailField(max_length=50)
+    provider_contact_number = models.CharField(max_length=20)
+    provider_region = models.CharField(max_length=100)
+    provider_province = models.CharField(max_length=100)
+    provider_city = models.CharField(max_length=100)
 
     def __str__(self):
         return f"{self.name} ({self.account.username})"

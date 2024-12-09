@@ -48,19 +48,16 @@ async function fetchAccount(){
     }
 }
 
-
-export async function fetchProviderDetails(){
+document.addEventListener("DOMContentLoaded", async function() {
     const provider_data = await fetchProvider();
+    console.log(provider_data)
 
-    document.getElementById('edit-provider-name').value = provider_data.name
-    document.getElementById('edit-provider-type').value = provider_data.provider_type
-    document.getElementById('edit-provider-location').value = provider_data.provider_location
-}
-
-export async function fetchAccountDetails(){
-    const account_data = await fetchAccount();
-    
-    document.getElementById('edit-account-username').value = account_data.username
-    document.getElementById('edit-account-email').value = account_data.email
-    
-}
+    document.getElementById('provider_name').value = provider_data.name
+    document.getElementById('provider_email').value = provider_data.provider_email
+    document.getElementById('provider_contact_number').value = provider_data.provider_contact_number
+    document.getElementById('provider_type').value = provider_data.provider_type
+    document.getElementById('provider_region').value = provider_data.provider_region
+    document.getElementById('provider_province').value = provider_data.provider_province
+    document.getElementById('provider_city').value = provider_data.provider_city
+    document.getElementById('provider_location').value = provider_data.provider_location
+});
