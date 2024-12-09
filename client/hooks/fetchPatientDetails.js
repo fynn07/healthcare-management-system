@@ -44,6 +44,11 @@ document.addEventListener('DOMContentLoaded', async function () {
             document.getElementById('address').textContent = patient.address;
             document.getElementById('height').textContent = `${patient.height} cm`;
             document.getElementById('weight').textContent = `${patient.weight} kg`;
+
+            if(patient.profile_picture){
+                document.getElementById('patient_profile_picture').src = `../../server${patient.profile_picture}`
+            }
+
         } else {
             document.getElementById('fullName').textContent = 'No patient details found.';
         }

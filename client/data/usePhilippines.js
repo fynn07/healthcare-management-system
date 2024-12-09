@@ -1847,6 +1847,7 @@ const cityError = document.getElementById('provider_city_error');
 // Populate Regions
 regions.forEach((region) => {
     const option = document.createElement('option');
+    option.dataset.key = region.key;
     option.value = `${region.name} - ${region.long}`;
     option.textContent = `${region.name} - ${region.long}`;
     regionSelect.appendChild(option);
@@ -1854,7 +1855,7 @@ regions.forEach((region) => {
 
 // Populate Provinces Based on Selected Region
 regionSelect.addEventListener('change', () => {
-    const selectedRegion = regionSelect.value;
+    const selectedRegion = regionSelect.options[regionSelect.selectedIndex].dataset.key;
 
     // remove error
     if (provinceSelect.disabled) {
@@ -1871,6 +1872,7 @@ regionSelect.addEventListener('change', () => {
         .filter(province => province.region === selectedRegion)
         .forEach(province => {
             const option = document.createElement('option');
+            option.dataset.key = province.key;
             option.value = province.name;
             option.textContent = province.name;
             provinceSelect.appendChild(option);
@@ -1882,7 +1884,7 @@ regionSelect.addEventListener('change', () => {
 
 // Populate Cities Based on Selected Province
 provinceSelect.addEventListener('change', () => {
-    const selectedProvince = provinceSelect.value;
+    const selectedProvince = provinceSelect.options[provinceSelect.selectedIndex].dataset.key;
 
     if (citySelect.disabled) {
         citySelect.classList.toggle("bg-gray-300");
