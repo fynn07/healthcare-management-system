@@ -28,13 +28,14 @@ This project, developed as the **capstone** for **CSIT327 Information Management
 ### **Goals**:  
 1. **Revolutionize healthcare services** with digital solutions.  
 2. Provide **secure, centralized management** of medical records.  
-3. Enable healthcare providers to access critical patient data quickly.  
+3. Enable **healthcare providers to access critical patient data quickly**.  
 
 Key functionalities include:  
 - **Digital IDs** for each patient.  
 - **Centralized storage** for medical records and profiles.  
 - **Intelligent Patient Search** for enhanced efficiency.  
-
+- **Generate QR** for ease of share.  
+- **Print Patient PDF** for exporting patient's medical records into a PDF Format.  
 ---
 
 ## ✨ Core Features  
@@ -42,6 +43,11 @@ Key functionalities include:
 - **🔒 Secure User Authentication**  
   - Role-based access for patients, healthcare providers, and administrators.  
   - Password encryption and secure session management.  
+
+- **📄 Export Medical Records to PDF**  
+  - Patients can easily **export their medical records** into a **PDF format**.  
+  - The PDF feature includes a detailed summary of all the records inside **theHealthBook.**
+  - Ensures patient data is formatted professionally for printing or sharing.  
 
 - **🆔 Unique Digital Identification**  
   - Each patient is assigned a unique ID for streamlined tracking.  
