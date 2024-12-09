@@ -132,9 +132,14 @@
                     class="flex flex-col justify-center w-full px-12 pt-8 pb-10 bg-white rounded-xl border border-gray_border dark:bg-gray-800 custom-table">
 
                     <div class="flex justify-end">
-                        <button>
-                            <img src="../assets/bin.png" id="delete-patient-button" class="h-5 w-5 transition-all hover:h-8 hover:w-8" />
-                        </button>
+                        <div class="flex gap-6">
+                            <button>
+                                <img src="../assets/editing.png" id="edit-patient-button" class="h-5 w-5 transition-all hover:h-8 hover:w-8" />
+                            </button>
+                            <button>
+                                <img src="../assets/bin.png" id="delete-patient-button" class="h-5 w-5 transition-all hover:h-8 hover:w-8" />
+                            </button>
+                        </div>
                     </div>
 
                     <div class="flex items-center">
@@ -222,6 +227,86 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- EDIT PROFILE FIELD -->
+
+                <section id="edit-patient-form" class="hidden bg-white dark:bg-gray-900 fixed inset-0 bg-opacity-75 flex justify-center items-center">
+                    <div class="max-w-4xl w-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 font-poppins">
+                        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Edit Patient</h2>
+                        <form id="patient-form">
+                            <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+                                <!-- First Name -->
+                                <div>
+                                    <label for="patient-first-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
+                                    <input type="text" name="patient-first-name" id="patient-first-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter patient's first name" required="">
+                                </div>
+
+                                <!-- Last Name -->
+                                <div>
+                                    <label for="patient-last-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
+                                    <input type="text" name="patient-last-name" id="patient-last-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter patient's last name" required="">
+                                </div>
+
+                                <!-- Middle Name -->
+                                <div>
+                                    <label for="patient-middle-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Middle Name</label>
+                                    <input type="text" name="patient-middle-name" id="patient-middle-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter patient's middle name">
+                                </div>
+
+                                <!-- Gender Field -->
+                                <div>
+                                    <label for="patient-gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gender</label>
+                                    <select id="patient-gender" name="patient-gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                                        <option value="" disabled selected>Select gender</option>
+                                        <option value="M">Male</option>
+                                        <option value="F">Female</option>
+                                    </select>
+                                </div>
+
+                                <!-- Birthdate Field -->
+                                <div>
+                                    <label for="patient-birthdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Birthdate</label>
+                                    <input type="date" name="patient-birthdate" id="patient-birthdate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="">
+                                </div>
+
+                                <!-- Height Field -->
+                                <div>
+                                    <label for="patient-height" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Height (cm)</label>
+                                    <input type="number" name="patient-height" id="patient-height" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter height in cm" required="">
+                                </div>
+
+                                <!-- Weight Field -->
+                                <div>
+                                    <label for="patient-weight" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Weight (kg)</label>
+                                    <input type="number" name="patient-weight" id="patient-weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter weight in kg" required="">
+                                </div>
+
+                                <!-- Email Field -->
+                                <div>
+                                    <label for="patient-email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Address</label>
+                                    <input type="email" name="patient-email" id="patient-email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter patient's email address" required="">
+                                </div>
+
+                                <!-- Contact Number Field -->
+                                <div>
+                                    <label for="patient-contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact Number</label>
+                                    <input type="tel" name="patient-contact" id="patient-contact" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter patient's contact number" required="">
+                                </div>
+
+                                <div>
+                                    <label for="patient-address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
+                                    <input type="text" name="patient-address" id="patient-address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter patient's address" required="">
+                                </div>
+                            </div>
+                            <div class="flex justify-between mt-4 sm:mt-6">
+                                <button type="button" id="edit-close-form" class="px-4 py-2 bg-white text-blue_main border border-blue_main rounded">Cancel</button>
+                                <button type="submit" class="px-4 py-2 bg-blue_main text-white rounded hover:bg-blue-800">
+                                    Edit Patient
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
 
                 <!-- MEDICATION HISTORY -->
                 <div id="medication-history-card"
@@ -391,7 +476,7 @@
                                 </div>
                                 <div class="w-full">
                                     <label for="vaccProvider" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Provider</label>
-                                    <input type="text" name="provider" id="vaccine-history-provider" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="provider" id="vaccine-history-provider" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Moderna" required="">
                                 </div>
 
                                 <div>
@@ -477,7 +562,7 @@
                                 </div>
                                 <div class="w-full">
                                     <label for="famIllness" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Condition Illness</label>
-                                    <input type="text" name="illness" id="family-history-condition-illness" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="illness" id="family-history-condition-illness" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type 2 Diabetes" required="">
                                 </div>
                             </div>
 
@@ -554,19 +639,19 @@
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="w-full">
                                     <label for="nicotine" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nictone Consumption</label>
-                                    <input type="text" name="nicotine" id="social-history-nicotine-consumption" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
+                                    <input type="text" name="nicotine" id="social-history-nicotine-consumption" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Sometimes" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="alcohol" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alcohol Consumption</label>
-                                    <input type="text" name="alcohol" id="social-history-alcohol-consumption" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
+                                    <input type="text" name="alcohol" id="social-history-alcohol-consumption" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Rarely" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="drugs" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Drugs taken</label>
-                                    <input type="text" name="drugs" id="social-history-drugs-taken" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="drugs" id="social-history-drugs-taken" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Marijuana" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="diet" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Diet</label>
-                                    <input type="text" name="diet" id="social-history-diet" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="diet" id="social-history-diet" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Keto Diet" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="physicalAct" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Physical Activity</label>
@@ -644,15 +729,15 @@
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="w-full">
                                     <label for="nicotine" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Operation Procedure</label>
-                                    <input type="text" name="nicotine" id="surgical-history-operation-procedure" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
+                                    <input type="text" name="nicotine" id="surgical-history-operation-procedure" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Tumor Removal" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="alcohol" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Indication</label>
-                                    <input type="text" name="alcohol" id="surgical-history-indication" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
+                                    <input type="text" name="alcohol" id="surgical-history-indication" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="drugs" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hospital</label>
-                                    <input type="text" name="drugs" id="surgical-history-hospital" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="drugs" id="surgical-history-hospital" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Cebu Medical Center" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="diet" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Operation Date</label>
@@ -734,15 +819,15 @@
                                 </div>
                                 <div class="w-full">
                                     <label for="bp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Blood Pressure</label>
-                                    <input type="text" name="bp" id="vital-history-blood-pressure" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Taga Adlaw" required="">
+                                    <input type="text" name="bp" id="vital-history-blood-pressure" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="120/80 mm Hg" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="pulse" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pulse Rate</label>
-                                    <input type="text" name="pulse" id="vital-history-pulse-rate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="pulse" id="vital-history-pulse-rate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="70bpm" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="bg" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Blood Glucose</label>
-                                    <input type="text" name="bg" id="vital-history-blood-glucose" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="bg" id="vital-history-blood-glucose" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="99 mg/dL" required="">
                                 </div>
                             </div>
 
@@ -816,16 +901,16 @@
                             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                 <div class="w-full">
                                     <label for="temperature" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Substance</label>
-                                    <input type="text" name="nicotine" id="allergy-history-substance" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="39C" required="">
+                                    <input type="text" name="nicotine" id="allergy-history-substance" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Shellfish" required="">
                                 </div>
 
                                 <div class="w-full">
                                     <label for="severity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Severity</label>
-                                    <input type="text" name="severe" id="allergy-history-severity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="severe" id="allergy-history-severity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Midly Severe" required="">
                                 </div>
                                 <div class="w-full">
                                     <label for="crit" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Criticality</label>
-                                    <input type="text" name="cit" id="allergy-history-criticality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                    <input type="text" name="cit" id="allergy-history-criticality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Critical" required="">
                                 </div>
                                 <div class="sm:col-span-2">
                                     <label for="allergyDesc" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
@@ -889,6 +974,7 @@
     <script type="module" src="../hooks/vaccinationHistory/useDeleteVaccinationHistory.js"></script>
     <script type="module" src="../hooks/vitalHistory/useDeleteVitalHistory.js"></script>
     <script type="module" src="../hooks/deletePatient.js"></script>
+    <script type="module" src="../hooks/editPatient.js"></script>
     <script src="../utils/toastMessageOnRefresh.js"></script>
     <script defer src="../utils/sideBarToggle.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

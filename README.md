@@ -28,13 +28,14 @@ This project, developed as the **capstone** for **CSIT327 Information Management
 ### **Goals**:  
 1. **Revolutionize healthcare services** with digital solutions.  
 2. Provide **secure, centralized management** of medical records.  
-3. Enable healthcare providers to access critical patient data quickly.  
+3. Enable **healthcare providers to access critical patient data quickly**.  
 
 Key functionalities include:  
 - **Digital IDs** for each patient.  
 - **Centralized storage** for medical records and profiles.  
 - **Intelligent Patient Search** for enhanced efficiency.  
-
+- **Generate QR** for ease of share.  
+- **Print Patient PDF** for exporting patient's medical records into a PDF Format.  
 ---
 
 ## ✨ Core Features  
@@ -42,6 +43,11 @@ Key functionalities include:
 - **🔒 Secure User Authentication**  
   - Role-based access for patients, healthcare providers, and administrators.  
   - Password encryption and secure session management.  
+
+- **📄 Export Medical Records to PDF**  
+  - Patients can easily **export their medical records** into a **PDF format**.  
+  - The PDF feature includes a detailed summary of all the records inside **theHealthBook.**
+  - Ensures patient data is formatted professionally for printing or sharing.  
 
 - **🆔 Unique Digital Identification**  
   - Each patient is assigned a unique ID for streamlined tracking.  
@@ -92,6 +98,8 @@ Key functionalities include:
 ### Generate QR Feature  
 ![Generate QR](https://github.com/user-attachments/assets/ee3a2dc0-1de1-49a4-b00c-f81c3d09cd61)  
 
+### Print Patient's Record 
+![2024-12-0821-25-06-ezgif com-video-to-gif-converter (1)](https://github.com/user-attachments/assets/39b49003-13fc-4495-a76e-a58727ca9d9d)
 ---
 
 
@@ -118,7 +126,7 @@ Follow these steps to set up and run the project locally:
 
 1. **Clone the Repository**  
    ```bash  
-   git clone https://github.com/your-repository/theHealthBook.git  
+   git clone https://github.com/fynn07/healthcare-management-system  
    cd theHealthBook 
 
 2. **Set Up a Virtual Environment**
