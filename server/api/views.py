@@ -120,7 +120,11 @@ def create_patient(request):
     data = request.data.copy()
     data['provider'] = provider.id
 
+    if 'profile_image' in request.FILES:
+        data['profile_image'] = request.FILES['profile_image']
+
     serializer = PatientSerializer(data=data)
+
 
     if serializer.is_valid():
         serializer.save()

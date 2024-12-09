@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 from .views import download_medical_records_pdf
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -55,5 +57,4 @@ urlpatterns = [
     
     path('patient/download-medical-records/<int:id>/', views.download_medical_records_pdf, name='download_medical_records_pdf'),
 
-
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
