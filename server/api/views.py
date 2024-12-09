@@ -14,6 +14,14 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
 
+from django.conf import settings
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+import os
+import uuid
+
 
 @api_view(['GET'])
 @authentication_classes([SessionAuthentication, TokenAuthentication])
@@ -106,6 +114,21 @@ def fetch_provider(request):
     serializer = ProviderSerializer(provider)
 
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def upload(request):
+    image = request.FILES['profile_picture']
+        
+    extension = image.name.split('.')[-1]  # Get the file extension
+    unique_filename = f"{uuid.uuid4()}.{extension}"  # Create a random filename with extension
+    
+    file_path = default_storage.save(f"profile_pictures/{unique_filename}", ContentFile(image.read()))
+    
+    file_url = os.path.join(settings.MEDIA_URL, file_path)
+    
+    return JsonResponse({'profile_picture_url': file_url})
 
 
 @api_view(['POST'])

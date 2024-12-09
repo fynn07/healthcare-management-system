@@ -5,6 +5,8 @@ import { forceRefresh } from '../utils/forceRefresh.js';
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("patient-form");
 
+    const ENDPOINT = getApiEndpoint();
+
     form.addEventListener("submit", async function(event) {
         event.preventDefault();
     
@@ -24,11 +26,28 @@ document.addEventListener("DOMContentLoaded", function() {
     
         // Append image file
         const imageFile = document.getElementById("patient-image").files[0];
+
         if (imageFile) {
-            formData.append("profile_picture", imageFile);
+            const imageData = new FormData();
+
+            imageData.append("profile_picture", imageFile);
+
+            const token = localStorage.getItem('token');
+
+
+            const response = await fetch(`${ENDPOINT}/api/upload/`, {
+                method: "POST",
+                headers: {
+                    'Authorization': `Token ${token}`
+                },
+                body: imageData
+            });
+    
+            const result = await response.json();
+
+            formData.append("profile_picture", result.profile_picture_url);
         }
     
-        const ENDPOINT = getApiEndpoint();
     
         try {
             const token = localStorage.getItem('token');

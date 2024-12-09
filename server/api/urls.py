@@ -13,6 +13,7 @@ urlpatterns = [
     path("fetch_provider/", views.fetch_provider),
     path("fetch_user/", views.fetch_user),
     path("change_user_password/", views.change_user_password),
+    path("upload/", views.upload),
     path("patient/create/", views.create_patient),
     path("patient/fetch/", views.fetch_patients),
     path("patient/fetch/<int:id>/", views.fetch_single_patient),

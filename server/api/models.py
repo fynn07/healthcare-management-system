@@ -2,11 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 
-def generate_unique_filename(instance, filename):
-    extension = filename.split('.')[-1]
-    unique_filename = f"{uuid.uuid4()}.{extension}"  
-    return f"profile_pictures/{unique_filename}"
-
 class Provider(models.Model):
     account = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
@@ -39,7 +34,7 @@ class Patient(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     height = models.PositiveIntegerField()
     weight = models.PositiveIntegerField()
-    profile_picture = models.ImageField(upload_to=generate_unique_filename, null=True)
+    profile_picture = models.CharField(max_length=255, blank=True, null=True)
     is_deleted = models.BooleanField(default=False)
 
     def __str__(self):
