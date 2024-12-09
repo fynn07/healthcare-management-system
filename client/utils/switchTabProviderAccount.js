@@ -69,14 +69,6 @@ function togglePasswordForm() {
 
         // TODO: Add logic to retain the old password
     });
-
-    // Save button functionality (example)
-    saveButton.addEventListener("click", (event) => {
-        event.preventDefault(); // Prevent form submission for demo
-        console.log("Password has been changed!");
-
-        // TODO: Add logic to change password
-    });
 }
 
 

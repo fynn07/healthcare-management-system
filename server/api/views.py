@@ -42,6 +42,22 @@ def user_login(request):
     serializer = UserSerializer(instance=user)
     return Response({"token": token.key, "user": serializer.data}, status=status.HTTP_200_OK)
 
+@api_view(['PUT'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def change_user_password(request):
+    user = request.user
+    
+    data = request.data.copy()  
+
+    if not user.check_password(data['password']):
+        return Response({"detail": "Not Found"}, status=status.HTTP_404_NOT_FOUND)
+
+    user.set_password(data['new_password'])
+    user.save() 
+
+    return Response({"detail": "Success"}, status=status.HTTP_200_OK)
+
 
 @api_view(['GET'])
 @authentication_classes([TokenAuthentication])
@@ -61,6 +77,11 @@ def setup_provider(request):
     
     data = request.data.copy()  
     data['account'] = user.id 
+
+    user.set_password(data['password'])
+    user.save() 
+
+    del data['password']
     
     serializer = ProviderSerializer(data=data)
     
