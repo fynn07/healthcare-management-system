@@ -33,7 +33,7 @@ file_name4 = "socialHistory/fetchSocial.py"
 file_name5 = "surgicalHistory/fetchSurgical.py"
 file_name6 = "vaccinationHistory/fetchVaccination.py"
 file_name7 = "fetchVital.py"
-target_size_mb = 20  # Desired size in MB
+target_size_mb = 10  # Desired size in MB
 
 # Call the function to generate the large Python file
 generate_large_python_file(file_name1, target_size_mb)
