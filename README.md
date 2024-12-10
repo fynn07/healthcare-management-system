@@ -115,6 +115,10 @@ Additionally, the **React Native mobile app** offers:
 
 The **React Native mobile app** complements theHealthBook by offering a seamless way to access records on the go. Below are previews of the mobile app interface:  
 
+
+#### Demo of the application:
+**https://streamable.com/j0ktwy** 
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/7db95036-7892-4b7a-83e0-7668f6f5f92d" alt="Mobile App 1" width="200" style="margin: 10px;">
   <img src="https://github.com/user-attachments/assets/74a2e5e0-11c2-4f54-9db3-e4a0267e3a76" alt="Mobile App 2" width="200" style="margin: 10px;">
@@ -133,7 +137,9 @@ The **React Native mobile app** complements theHealthBook by offering a seamless
 
 - 📊 [**Entity Relationship Diagram (ERD)**](https://link_to_erd)  
 - 🎨 [**Figma Prototype Design**](https://link_to_prototype)  
-- 📅 [**Gantt Chart**](https://link_to_gantt_chart)  
+![figmaproto](https://github.com/user-attachments/assets/bea0c397-95d1-4421-bc03-77fc598f6ad3)
+- 📅 [**Gantt Chart**](https://link_to_gantt_chart) 
+![GanntChart](https://github.com/user-attachments/assets/b15eb999-1228-4b83-8da6-5a346f02c6f2) 
 
 ---
 
