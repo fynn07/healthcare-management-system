@@ -30,6 +30,11 @@ async function deletePatient(){
 }
 
 document.getElementById('delete-patient-button').addEventListener('click', (event) => {
+    // close patient dropdown
+    const dropdown = document.getElementById("patient_dropdown");
+    dropdown.classList.toggle("hidden");
+    dropdown.classList.toggle("opacity-0");
+
     // Show the modal
     const modal = document.getElementById('confirm-deletion-modal');
 

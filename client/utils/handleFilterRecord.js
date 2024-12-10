@@ -7,28 +7,6 @@ filter_dropdown_button.addEventListener("click", () => {
     filter_dropdown.classList.toggle("opacity-0");
 })
 
-
-/*
-const check_medication = document.getElementById("check_medication");
-const medication_card = document.getElementById("medication-history-card");
-
-check_medication.addEventListener("click", () => {
-    console.log('press')
-    medication_card.classList.toggle("hidden")
-})
-*/
-
-
-const mappings = {
-    check_medication: "medication-history-card",
-    check_vaccination: "vaccination-history-card",
-    check_family: "family-history-card",
-    check_social: "social-history-card",
-    check_surgical: "surgical-history-card",
-    check_vital_sign: "vital-history-card",
-    check_allergy: "allergy-history-card",
-};
-
 const records = [
     "medication", "vaccination", "family", "social", "surgical", "vital", "allergy"
 ]
@@ -55,8 +33,6 @@ function listenCheckboxes() {
         });
     });
 }
-
-document.addEventListener("DOMContentLoaded", listenCheckboxes);
 
 function handleSelectAll() {
     const selectAllButton = document.getElementById("check_all_button");
@@ -87,4 +63,8 @@ function handleSelectAll() {
         });
     });
 }
-document.addEventListener("DOMContentLoaded", handleSelectAll);
+
+document.addEventListener("DOMContentLoaded", () => {
+    listenCheckboxes();
+    handleSelectAll();
+});

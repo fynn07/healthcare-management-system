@@ -36,6 +36,11 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 
     document.getElementById('edit-patient-button').addEventListener('click', function () {
+        // close patient dropdown
+        const dropdown = document.getElementById("patient_dropdown");
+        dropdown.classList.toggle("hidden");
+        dropdown.classList.toggle("opacity-0");
+
         document.getElementById('edit-patient-form').classList.remove('hidden');
     });
 
