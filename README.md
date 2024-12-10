@@ -111,9 +111,9 @@ Key functionalities include:
 
 ## 📚 Additional Resources  
 
-- 📊 [**Entity Relationship Diagram (ERD)**](https://link_to_erd)  
-- 🎨 [**Figma Prototype Design**](https://link_to_prototype)  
-- 📅 [**Gantt Chart**](https://link_to_gantt_chart)  
+- 📊 [**Entity Relationship Diagram (ERD)**](https://lucid.app/publicSegments/view/483a454a-335b-497f-bd68-f3f35b4f9169)  
+- 🎨 [**Figma Prototype Design**](https://www.figma.com/design/7pBNDB34Q27ic4JaCFkfnA/Capstone---The-Health-Book?node-id=209-110398&t=nl8uhnFfy6P2xNnf-1)  
+- 📅 [**Gantt Chart**](https://www.notion.so/1334fa96be248082aaccd3e17ba6304f?v=1334fa96be24805898a3000c520d0201)  
 
 ---
 
