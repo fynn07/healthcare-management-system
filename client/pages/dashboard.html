@@ -168,8 +168,8 @@
                                 </svg>
                             </button>
 
-                            <!-- DROPDOWN -->
-                                <div id="patient_dropdown" class="flex hidden opacity-0 flex-col absolute -bottom-2 right-0 z-50 translate-y-full rounded-xl shadow-lg bg-white border border-gray_border w-[220px] transition-all">
+                            <!-- PATIENT DROPDOWN -->
+                            <div id="patient_dropdown" class="flex hidden opacity-0 flex-col absolute -bottom-2 right-0 z-50 translate-y-full rounded-xl shadow-lg bg-white border border-gray_border w-[220px] transition-all">
                                 <div id="generate_dropdown_buttons" class="flex lg:hidden flex-col py-2 border-b border-gray_border"">
                                     <button id="profile_generate_qr"
                                             class="flex gap-2 w-full px-6 py-4 rounded-lg hover:bg-blue_super_light hover:text-blue_main transition-all">
@@ -207,7 +207,6 @@
                             </div>
                         </div>
                     </div>
-
 
                     <div id="generatedQRModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
                         <div class="bg-white shadow-lg rounded-lg p-6 w-96">
@@ -262,6 +261,69 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- FILTER RECORDS -->
+                <div class="flex w-full justify-end relative">
+                    <button id="filter_record_button" type="button"
+                            class="flex gap-4 px-4 py-1.5 rounded-full border border-gray-400 text-gray-600 bg-white hover:bg-blue_super_light">
+                        <span>Filter record by:</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+
+                    <form id="filter_record_dropdown" class="flex hidden flex-col opacity-0 absolute -bottom-2 right-0 z-50 py-2 translate-y-full rounded-xl shadow-lg bg-white border border-gray_border w-[260px] transition-all">
+                        <!-- Checkbox with label -->
+
+                        <div class="flex flex-col w-full py-2 border-b border-gray-300">
+                            <button type="button" id="check_all_button" class="flex w-full px-6 py-3 justify-between hover:bg-blue_super_light">
+                                <label for="check_all" class="italic">Select All History</label>
+                                <input id="check_all" type="checkbox" name="check_all" value="check_all" checked
+                                       class="rounded focus:ring-0">
+                            </button>
+                        </div>
+
+                        <div class="flex flex-col w-full pt-2 text-gray-600">
+                            <button type="button" id="check_medication_button" class="flex w-full px-6 py-3 justify-between hover:bg-blue_super_light">
+                                <label for="check_medication">Medication History</label>
+                                <input id="check_medication" type="checkbox" name="check_medication" value="check_medication" checked
+                                       class="rounded focus:ring-0">
+                            </button>
+                            <button type="button" id="check_vaccination_button" class="flex w-full px-6 py-3 justify-between hover:bg-blue_super_light">
+                                <label for="check_vaccination">Vaccination History</label>
+                                <input id="check_vaccination" type="checkbox" name="check_vaccination" value="check_vaccination" checked
+                                       class="rounded focus:ring-0">
+                            </button>
+                            <div id="check_family_button" class="flex w-full px-6 py-3 justify-between hover:bg-blue_super_light">
+                                <label for="check_family">Family History</label>
+                                <input id="check_family" type="checkbox" name="check_family" value="check_family" checked
+                                       class="rounded focus:ring-0">
+                            </div>
+                            <button type="button" id="check_social_button" class="flex w-full px-6 py-3 justify-between hover:bg-blue_super_light">
+                                <label for="check_social">Social History</label>
+                                <input id="check_social" type="checkbox" name="check_social" value="check_social" checked
+                                       class="rounded focus:ring-0">
+                            </button>
+                            <button type="button" id="check_surgical_button" class="flex w-full px-6 py-3 justify-between hover:bg-blue_super_light">
+                                <label for="check_surgical">Surgical History</label>
+                                <input id="check_surgical" type="checkbox" name="check_surgical" value="check_surgical" checked
+                                       class="rounded focus:ring-0">
+                            </button>
+                            <button type="button" id="check_vital_button" class="flex w-full px-6 py-3 justify-between hover:bg-blue_super_light">
+                                <label for="check_vital">Vital Sign History</label>
+                                <input id="check_vital" type="checkbox" name="check_vital_sign" value="check_vital" checked
+                                       class="rounded focus:ring-0">
+                            </button>
+                            <button type="button" id="check_allergy_button" class="flex w-full px-6 py-3 justify-between hover:bg-blue_super_light">
+                                <label for="check_allergy">Allergy History</label>
+                                <input id="check_allergy" type="checkbox" name="check_allergy" value="check_allergy" checked
+                                       class="rounded focus:ring-0">
+                            </button>
+                        </div>
+                        
+
+                    </form>
                 </div>
 
                 <!-- EDIT PROFILE FIELD -->
@@ -345,7 +407,7 @@
 
                 <!-- MEDICATION HISTORY -->
                 <div id="medication-history-card"
-                     class="flex flex-col justify-center w-full bg-white rounded-xl border border-gray_border dark:bg-gray-800 custom-table">
+                     class="flex-col justify-center w-full bg-white rounded-xl border border-gray_border dark:bg-gray-800 custom-table">
                     <div class="flex flex-col pt-6 gap-4">
                         <div class="flex justify-between px-8">
                             <span class="text-lg font-poppins font-bold">Medication History</span>
@@ -1011,6 +1073,7 @@
     <script type="module" src="../hooks/editPatient.js"></script>
     <script src="../utils/toastMessageOnRefresh.js"></script>
     <script src="../utils/handlePatientDropdown.js"></script>
+    <script src="../utils/handleFilterRecord.js"></script>
     <script defer src="../utils/sideBarToggle.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script defer src="../medHistory.js"></script>
