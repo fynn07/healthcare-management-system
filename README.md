@@ -6,6 +6,7 @@
 Seamlessly manage medical records and healthcare identification using a powerful digital platform designed for patients, healthcare providers, and hospital administrators. theHealthBook is engineered to improve accessibility, enhance efficiency, and ensure security in managing healthcare documentation.
 
 In addition to the web platform, theHealthBook also features a dedicated mobile application built with React Native. This mobile app, available in a separate repository, allows users to easily view and manage their records on the go, further enhancing convenience and accessibility.
+
 ---
 
 ## 📖 Table of Contents  
