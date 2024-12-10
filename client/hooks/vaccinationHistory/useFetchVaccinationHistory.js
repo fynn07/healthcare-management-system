@@ -122,7 +122,7 @@ function updateVaccinationHistoryTable(vaccinationHistory) {
         return;
     }
 
-    vaccinationHistory.results.forEach(item => {
+    vaccinationHistory.results.reverse().forEach(item => {
         const formatted_item = formatVaccinationData(item);
         const row = `
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">

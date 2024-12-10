@@ -115,7 +115,7 @@ function updateVitalHistoryTable(vitalHistory) {
         return;
     }
 
-    vitalHistory.results.forEach(item => {
+    vitalHistory.results.reverse().forEach(item => {
         const formatted_item = formatVitalData(item);
         const row = `
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">

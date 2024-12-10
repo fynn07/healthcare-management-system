@@ -115,7 +115,7 @@ function updateSocialHistoryTable(socialHistory) {
         return;
     }
 
-    socialHistory.results.forEach(item => {
+    socialHistory.results.reverse().forEach(item => {
         const formatted_item = formatSocialData(item);
         const row = `
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
