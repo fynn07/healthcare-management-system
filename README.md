@@ -3,8 +3,9 @@
 
 *Empowering healthcare with digital innovation.*  
 
-Seamlessly manage medical records and healthcare identification using a powerful digital platform designed for patients, healthcare providers, and hospital administrators. **theHealthBook** is engineered to improve accessibility, enhance efficiency, and ensure security in managing healthcare documentation.  
+Seamlessly manage medical records and healthcare identification using a powerful digital platform designed for patients, healthcare providers, and hospital administrators. theHealthBook is engineered to improve accessibility, enhance efficiency, and ensure security in managing healthcare documentation.
 
+In addition to the web platform, theHealthBook also features a dedicated mobile application built with React Native. This mobile app, available in a separate repository, allows users to easily view and manage their records on the go, further enhancing convenience and accessibility.
 ---
 
 ## 📖 Table of Contents  
@@ -13,11 +14,11 @@ Seamlessly manage medical records and healthcare identification using a powerful
 2. [✨ Core Features](#-core-features)  
 3. [🛠️ Technology Stack](#-technology-stack)  
 4. [🖼️ Site Previews](#-site-previews)  
-
-5. [👥 Team Members](-#team-members)  
-6. [📚 Additional Resources](-#additional-resources)  
-7. [🚀 How to Run the Project](#-how-to-run-the-project)  
-8. [📜 License](-#license)  
+5. [📱 Mobile Application](#-mobile-application)  
+6. [👥 Team Members](#-team-members)  
+7. [📚 Additional Resources](#-additional-resources)  
+8. [🚀 How to Run the Project](#-how-to-run-the-project)  
+9. [📜 License](#-license)  
 
 ---
 
@@ -36,7 +37,14 @@ Key functionalities include:
 - **Intelligent Patient Search** for enhanced efficiency.  
 - **Generate QR** for ease of share.  
 - **Print Patient PDF** for exporting patient's medical records into a PDF Format.  
----
+
+Additionally, the **React Native mobile app** offers:  
+- **Simplified record access** for patients.  
+- **Seamless syncing** with the main web platform.  
+- Designed for **optimal performance** across iOS and Android devices.  
+   
+
+---  
 
 ## ✨ Core Features  
 
@@ -102,6 +110,17 @@ Key functionalities include:
 ![2024-12-0821-25-06-ezgif com-video-to-gif-converter (1)](https://github.com/user-attachments/assets/39b49003-13fc-4495-a76e-a58727ca9d9d)
 ---
 
+## 🖼️ Mobile Application  
+
+The **React Native mobile app** complements theHealthBook by offering a seamless way to access records on the go. Below are previews of the mobile app interface:  
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7db95036-7892-4b7a-83e0-7668f6f5f92d" alt="Mobile App 1" width="200" style="margin: 10px;">
+  <img src="https://github.com/user-attachments/assets/74a2e5e0-11c2-4f54-9db3-e4a0267e3a76" alt="Mobile App 2" width="200" style="margin: 10px;">
+  <img src="https://github.com/user-attachments/assets/590aac94-2a2f-495e-ad6b-152052b3c9c4" alt="Mobile App 3" width="200" style="margin: 10px;">
+</p>  
+
+---  
 
 ## 👥 Team Members  
 
