@@ -25,8 +25,6 @@ In addition to the web platform, theHealthBook also features a dedicated mobile 
 
 ## 📋 Project Overview  
 
-This project, developed as the **capstone** for **CSIT327 Information Management 2** at the *Cebu Institute of Technology - University*, is a cutting-edge solution for **streamlining healthcare management**.  
-
 ### **Goals**:  
 1. **Revolutionize healthcare services** with digital solutions.  
 2. Provide **secure, centralized management** of medical records.  
