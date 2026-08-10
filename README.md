@@ -125,12 +125,6 @@ The **React Native mobile app** complements theHealthBook by offering a seamless
 
 ---  
 
-## 👥 Team Members  
-
-- **👩‍💻 [Ashley Ken Comandao](https://github.com/CodexPremiera)**  
-- **👨‍💻 [Fynn Nino Borja](https://github.com/fynn07)**  
-- **👨‍💻 [Karl Christian Ajero](https://github.com/ZenXen7)**  
-
 ## 📚 Additional Resources  
 
 - 📊 [**Entity Relationship Diagram (ERD)**](https://link_to_erd)  
